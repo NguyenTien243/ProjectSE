@@ -18,10 +18,9 @@ Danh sách các yêu cầu của đề tài:
 11. Giao diện đơn giản, dễ nhìn
 12. Hiện danh sách camera các bãi
 13. Có chỗ để sao lưu dữ liệu
-14. Thanh chắn barrie tự động
-15. Có thể gia hạn thanh toán, mua vé tháng bằng phần mềm
-16. Cho phép chuyển luồng ra vào
-17. Đồng bộ dữ liệu từ máy đọc thẻ và camera
+14. Có thể gia hạn thanh toán, mua vé tháng bằng phần mềm
+15. Cho phép chuyển luồng ra vào
+16. Đồng bộ dữ liệu từ máy đọc thẻ và camera
 
 Hướng dẫn sử dụng:
 1.
