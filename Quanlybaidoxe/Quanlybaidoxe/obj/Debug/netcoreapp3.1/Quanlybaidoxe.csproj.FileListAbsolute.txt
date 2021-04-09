@@ -1,0 +1,17 @@
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Quanlybaidoxe.exe
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Quanlybaidoxe.deps.json
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Quanlybaidoxe.runtimeconfig.json
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Quanlybaidoxe.runtimeconfig.dev.json
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Quanlybaidoxe.dll
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Quanlybaidoxe.pdb
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.csprojAssemblyReference.cache
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form1.resources
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.csproj.GenerateResource.cache
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.AssemblyInfoInputs.cache
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.AssemblyInfo.cs
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.csproj.CoreCompileInputs.cache
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.dll
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.pdb
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.genruntimeconfig.cache
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Properties.Resources.resources
+D:\Tai_Lieu\CNPM\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form2.resources
