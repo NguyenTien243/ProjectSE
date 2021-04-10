@@ -39,3 +39,27 @@ D:\SPKT\Năm 3 HK2\Công nghệ phần mềm\ProjectSE\Quanlybaidoxe\Quanlybaido
 D:\SPKT\Năm 3 HK2\Công nghệ phần mềm\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.dll
 D:\SPKT\Năm 3 HK2\Công nghệ phần mềm\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.pdb
 D:\SPKT\Năm 3 HK2\Công nghệ phần mềm\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.genruntimeconfig.cache
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Quanlybaidoxe.exe
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Quanlybaidoxe.deps.json
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Quanlybaidoxe.runtimeconfig.json
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Quanlybaidoxe.runtimeconfig.dev.json
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Quanlybaidoxe.dll
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Quanlybaidoxe.pdb
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.DangNhap.resources
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form2.resources
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Properties.Resources.resources
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.AssemblyInfo.cs
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.csproj.CopyComplete
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.dll
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.pdb
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.genruntimeconfig.cache

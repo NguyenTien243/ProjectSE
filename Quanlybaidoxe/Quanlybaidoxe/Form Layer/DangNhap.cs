@@ -67,6 +67,11 @@ namespace Quanlybaidoxe
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
+            if (txtTenDangNhap.Text.Trim().Length == 0 || txtMatKhau.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin!");
+                return;
+            }
             for (int i = 0; i < dtTaiKhoan.Rows.Count; i++)
             {
                 if (txtTenDangNhap.Text.Trim() == dtTaiKhoan.Rows[i]["TaiKhoan"].ToString().Trim() && txtMatKhau.Text.Trim() == dtTaiKhoan.Rows[i]["MatKhau"].ToString().Trim())

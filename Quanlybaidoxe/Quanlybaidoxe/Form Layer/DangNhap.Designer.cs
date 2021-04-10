@@ -74,7 +74,7 @@ namespace Quanlybaidoxe
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(42, 351);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(47, 52);
+            this.pictureBox2.Size = new System.Drawing.Size(47, 44);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -93,7 +93,7 @@ namespace Quanlybaidoxe
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(42, 442);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(47, 52);
+            this.pictureBox3.Size = new System.Drawing.Size(47, 44);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
@@ -150,9 +150,8 @@ namespace Quanlybaidoxe
             this.txtTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtTenDangNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.txtTenDangNhap.Location = new System.Drawing.Point(95, 351);
-            this.txtTenDangNhap.Multiline = true;
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(346, 52);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(346, 44);
             this.txtTenDangNhap.TabIndex = 1;
             // 
             // txtMatKhau
@@ -161,10 +160,9 @@ namespace Quanlybaidoxe
             this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.txtMatKhau.Location = new System.Drawing.Point(95, 442);
-            this.txtMatKhau.Multiline = true;
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '•';
-            this.txtMatKhau.Size = new System.Drawing.Size(346, 52);
+            this.txtMatKhau.Size = new System.Drawing.Size(346, 44);
             this.txtMatKhau.TabIndex = 2;
             // 
             // label2
@@ -194,6 +192,7 @@ namespace Quanlybaidoxe
             // 
             // DangNhap
             // 
+            this.AcceptButton = this.btnDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
