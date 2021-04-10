@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SPKT\\Năm 3 HK2\\Công nghệ phần mềm\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj": {}
+    "D:\\SPKT\\Năm 3 HK2\\Công nghệ phần mềm\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj": {}
   },
   "projects": {
-    "D:\\SPKT\\Năm 3 HK2\\Công nghệ phần mềm\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj": {
+    "D:\\SPKT\\Năm 3 HK2\\Công nghệ phần mềm\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SPKT\\Năm 3 HK2\\Công nghệ phần mềm\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj",
+        "projectUniqueName": "D:\\SPKT\\Năm 3 HK2\\Công nghệ phần mềm\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj",
         "projectName": "Quanlybaidoxe",
-        "projectPath": "D:\\SPKT\\Năm 3 HK2\\Công nghệ phần mềm\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj",
+        "projectPath": "D:\\SPKT\\Năm 3 HK2\\Công nghệ phần mềm\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\SPKT\\Năm 3 HK2\\Công nghệ phần mềm\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe\\obj\\",
+        "outputPath": "D:\\SPKT\\Năm 3 HK2\\Công nghệ phần mềm\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -43,6 +43,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
