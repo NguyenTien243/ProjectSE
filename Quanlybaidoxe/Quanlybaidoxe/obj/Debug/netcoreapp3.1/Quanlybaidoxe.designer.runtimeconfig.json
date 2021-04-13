@@ -6,7 +6,7 @@
       "version": "3.1.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\Admin\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\dell\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\Admin\\.nuget\\packages",
       "C:\\Microsoft\\Xamarin\\NuGet"
     ],
