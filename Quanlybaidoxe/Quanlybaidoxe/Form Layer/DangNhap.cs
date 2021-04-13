@@ -1,4 +1,5 @@
 ﻿using Quanlybaidoxe.BS_Layer;
+using Quanlybaidoxe.Form_Layer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -77,6 +78,8 @@ namespace Quanlybaidoxe
                 if (txtTenDangNhap.Text.Trim() == dtTaiKhoan.Rows[i]["TaiKhoan"].ToString().Trim() && txtMatKhau.Text.Trim() == dtTaiKhoan.Rows[i]["MatKhau"].ToString().Trim())
                 {
                     MessageBox.Show("Đăng nhập thành công !!");
+                    DashBoard f = new DashBoard();
+                    f.ShowDialog();
                     return;
                 }
             }
