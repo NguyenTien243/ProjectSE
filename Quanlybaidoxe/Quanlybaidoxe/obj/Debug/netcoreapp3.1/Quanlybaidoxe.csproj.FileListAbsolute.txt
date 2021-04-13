@@ -63,3 +63,4 @@ C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\
 C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.dll
 C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.pdb
 C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.genruntimeconfig.cache
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.DashBoard.resources
