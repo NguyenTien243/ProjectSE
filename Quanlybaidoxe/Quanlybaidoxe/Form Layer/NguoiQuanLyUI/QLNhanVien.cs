@@ -126,14 +126,14 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 dgvQLNV.Rows[r].Cells[0].Value.ToString();
                 this.txtTenNV.Text =
                 dgvQLNV.Rows[r].Cells[1].Value.ToString();
-              //  dateTimePickerNgay.Value
+                //  dateTimePickerNgay.Value
 
 
                 //if (dgvQLNV.Rows[r].Cells[2].Value.ToString() == "")
                 //    this.cboCongViec.SelectedIndex = -1;
                 //else
                 //    this.cboCongViec.SelectedItem = dgvQLNV.Rows[r].Cells[2].Value.ToString(); // chọn hiển thị tên công việc
-
+                this.dateTimePickerNgay.Value = Convert.ToDateTime(dgvQLNV.Rows[r].Cells[2].Value.ToString());
                 this.txtCMND.Text =
                 dgvQLNV.Rows[r].Cells[4].Value.ToString();
                 this.txtSDT.Text =
@@ -153,7 +153,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void QLNhanVien_Load(object sender, EventArgs e)
         {
-            LoadThongTin();           
+            LoadThongTin();
+            dgvQLNV.Columns["NgaySinh"].DefaultCellStyle.Format = "dd/MM/yyyy"; // fomat dạng ngày đổ lên datagridview https://www.ddth.com/showthread.php/312166-H%E1%BB%8Fi-v%E1%BB%81-format-datatime-trong-datagridview-c%E1%BB%A7a-c
 
         }
 
