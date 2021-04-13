@@ -41,6 +41,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 btnThem.Enabled = true;
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
+                pntTaiKhoan.Enabled = false;
                 // Cho thao tác trên các nút Thêm / Sửa / Xóa /Thoát
                 //if (SHAREVAR.ChonNV == true)
                 //{
@@ -65,11 +66,13 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            pnlQuanLyNV.Enabled = false;
 
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            pntTaiKhoan.Enabled = true;
             // Kich hoạt biến Them
             Them = true;
             // Xóa trống các đối tượng trong Panel
@@ -83,13 +86,13 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtMaNV.Enabled = true;
             // Cho thao tác trên các nút Lưu / Hủy / Panel
             this.btnLuu.Enabled = true;
-         //   this.btnHuy.Enabled = true;
+            //   this.btnHuy.Enabled = true;
             this.pnlQuanLyNV.Enabled = true;
             // Không cho thao tác trên các nút Thêm / Xóa / Thoát
             this.btnThem.Enabled = false;
             this.btnSua.Enabled = false;
             this.btnXoa.Enabled = false;
-           // this.btnThoat.Enabled = false;
+            // this.btnThoat.Enabled = false;
             // Đưa con trỏ đến TextField txtXe
             this.txtMaNV.Focus();
         }
@@ -153,5 +156,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             LoadThongTin();           
 
         }
+
+      
     }
 }
