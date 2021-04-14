@@ -250,6 +250,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnLuu.TabIndex = 33;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -268,6 +269,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnSua.TabIndex = 31;
             this.btnSua.Text = "Sữa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -296,6 +298,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             this.txtMatKhau2.Location = new System.Drawing.Point(222, 96);
             this.txtMatKhau2.Name = "txtMatKhau2";
+            this.txtMatKhau2.PasswordChar = '*';
             this.txtMatKhau2.Size = new System.Drawing.Size(224, 27);
             this.txtMatKhau2.TabIndex = 45;
             // 
@@ -313,6 +316,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             this.txtMatKhau.Location = new System.Drawing.Point(223, 54);
             this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(223, 27);
             this.txtMatKhau.TabIndex = 43;
             // 
