@@ -31,6 +31,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         {
             this.label1 = new System.Windows.Forms.Label();
             this.pnlQuanLyNV = new System.Windows.Forms.Panel();
+            this.txtLuong = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.radNam = new System.Windows.Forms.RadioButton();
             this.radNu = new System.Windows.Forms.RadioButton();
             this.dateTimePickerNgay = new System.Windows.Forms.DateTimePicker();
@@ -58,6 +60,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label10 = new System.Windows.Forms.Label();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.pnlQuanLyNV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLNV)).BeginInit();
             this.pntTaiKhoan.SuspendLayout();
@@ -75,6 +78,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             // pnlQuanLyNV
             // 
+            this.pnlQuanLyNV.Controls.Add(this.txtLuong);
+            this.pnlQuanLyNV.Controls.Add(this.label6);
             this.pnlQuanLyNV.Controls.Add(this.radNam);
             this.pnlQuanLyNV.Controls.Add(this.radNu);
             this.pnlQuanLyNV.Controls.Add(this.dateTimePickerNgay);
@@ -94,6 +99,24 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.pnlQuanLyNV.Name = "pnlQuanLyNV";
             this.pnlQuanLyNV.Size = new System.Drawing.Size(914, 232);
             this.pnlQuanLyNV.TabIndex = 1;
+            // 
+            // txtLuong
+            // 
+            this.txtLuong.Enabled = false;
+            this.txtLuong.Location = new System.Drawing.Point(155, 199);
+            this.txtLuong.Name = "txtLuong";
+            this.txtLuong.Size = new System.Drawing.Size(198, 27);
+            this.txtLuong.TabIndex = 24;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(16, 199);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 28);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Lương:";
             // 
             // radNam
             // 
@@ -244,7 +267,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(36, 300);
+            this.btnLuu.Location = new System.Drawing.Point(37, 374);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(94, 41);
             this.btnLuu.TabIndex = 33;
@@ -254,16 +277,17 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(36, 373);
+            this.btnXoa.Location = new System.Drawing.Point(294, 300);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(94, 41);
             this.btnXoa.TabIndex = 32;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(300, 300);
+            this.btnSua.Location = new System.Drawing.Point(167, 300);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(94, 41);
             this.btnSua.TabIndex = 31;
@@ -273,7 +297,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(169, 300);
+            this.btnThem.Location = new System.Drawing.Point(37, 300);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(94, 41);
             this.btnThem.TabIndex = 30;
@@ -347,11 +371,22 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label11.TabIndex = 40;
             this.label11.Text = "Tài khoản:";
             // 
+            // btnHuy
+            // 
+            this.btnHuy.Location = new System.Drawing.Point(169, 373);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(94, 41);
+            this.btnHuy.TabIndex = 36;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // QLNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 762);
+            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.pntTaiKhoan);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnXoa);
@@ -405,5 +440,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.TextBox txtLuong;
+        private System.Windows.Forms.Label label6;
     }
 }
