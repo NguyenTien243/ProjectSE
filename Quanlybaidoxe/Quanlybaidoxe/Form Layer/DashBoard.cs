@@ -26,7 +26,7 @@ namespace Quanlybaidoxe.Form_Layer
         }
         private void DashBoard_Load(object sender, EventArgs e)
         {
-
+          
         }
 
         private void pnlChucNang_Paint(object sender, PaintEventArgs e)
@@ -37,6 +37,22 @@ namespace Quanlybaidoxe.Form_Layer
         private void button5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Khai báo biến traloi
+            DialogResult traloi;
+            // Hiện hộp thoại hỏi đáp
+            traloi = MessageBox.Show("Bạn có chắc thoát không?", "Trả lời",
+            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            // Kiểm tra có nhắp chọn nút Ok không?
+            if (traloi == DialogResult.OK)
+            {
+                this.Close();
+                new DangNhap().Show();
+            }
+            //f.Show();
         }
     }
 }

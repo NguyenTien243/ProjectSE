@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TY0tUC3y0McowTEYgCY4UDaMBpjWt3vkF6wNVEeSTVxTUDvyzEzDQasD5nAXk2tLmjOy42qewMMXLvC5sF0vBQ==",
+  "dgSpecHash": "x28jPHOplnXRfqXRGAyko9zncCv3dosePY4or+4MXDlv/PjLgHkS0fs/GD09fraryJZocIzogRkMmO7tqMmsbg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Bai\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

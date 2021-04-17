@@ -16,7 +16,7 @@ namespace Quanlybaidoxe.BS_Layer
 
         public DataSet LayTaiKkhoanNV()
         {
-            return db.ExecuteQueryDataSet("SELECT TaiKhoan,MatKhau,dbo.TaiKhoan.MaNV, TenNV FROM dbo.TaiKhoan, dbo.NhanVien WHERE TaiKhoan.MaNV = NhanVien.MaNV", CommandType.Text);
+            return db.ExecuteQueryDataSet("SELECT TaiKhoan,MatKhau,dbo.TaiKhoan.MaNV, TenNV, MaCV FROM dbo.TaiKhoan, dbo.NhanVien WHERE TaiKhoan.MaNV = NhanVien.MaNV", CommandType.Text);
         }
         //public DataSet KTChucVu(string MaNV)
         //{
