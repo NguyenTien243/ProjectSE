@@ -15,6 +15,7 @@ namespace Quanlybaidoxe
 {
     public partial class DangNhap : Form
     {
+        DashBoard formquanly;
         public DangNhap()
         {
             InitializeComponent();
@@ -77,10 +78,24 @@ namespace Quanlybaidoxe
             {
                 if (txtTenDangNhap.Text.Trim() == dtTaiKhoan.Rows[i]["TaiKhoan"].ToString().Trim() && txtMatKhau.Text.Trim() == dtTaiKhoan.Rows[i]["MatKhau"].ToString().Trim())
                 {
-                    MessageBox.Show("Đăng nhập thành công !!");
-                    DashBoard f = new DashBoard();
-                    f.ShowDialog();
-                    return;
+                    if (dtTaiKhoan.Rows[i]["MaCV"].ToString().Trim() == "CV01")
+                        {
+                        MessageBox.Show("Đăng nhập thành công !!");
+                        //txtTenDangNhap.ResetText();
+                        //txtMatKhau.ResetText();
+                        //txtTenDangNhap.Focus();
+                        formquanly = new DashBoard();
+                        this.Hide();
+                        formquanly.ShowDialog();
+   
+                      
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đăng nhập thành công với tài khoản nhân viên, giao diện nhân viên chưa hoàn thành !!");
+                        return;
+                    }    
                 }
             }
             MessageBox.Show("Sai tài khoản hoặc mật khẩu !!!");
@@ -114,5 +129,7 @@ namespace Quanlybaidoxe
                 MessageBox.Show("Không lấy được nội dung trong table. Lỗi rồi!!!");
             }
         }
+
+        
     }
 }

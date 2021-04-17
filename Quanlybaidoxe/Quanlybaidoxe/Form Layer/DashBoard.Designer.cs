@@ -76,6 +76,7 @@ namespace Quanlybaidoxe.Form_Layer
             this.button4.Text = "Đăng xuất";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
