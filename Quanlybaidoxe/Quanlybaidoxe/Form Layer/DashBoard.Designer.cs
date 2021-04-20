@@ -203,6 +203,7 @@ namespace Quanlybaidoxe.Form_Layer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DashBoard";
             this.Load += new System.EventHandler(this.DashBoard_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DashBoard_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
