@@ -333,5 +333,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.pnlQuanLyNV.Enabled = false;
             dgvQLNV_CellClick(null, null);
         }
+        
     }
 }
