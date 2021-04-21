@@ -106,7 +106,7 @@ namespace Quanlybaidoxe.Form_Layer
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(256, 75);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Thống kê";
+            this.button2.Text = "Bãi đỗ xe";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button2.UseVisualStyleBackColor = true;
             // 
