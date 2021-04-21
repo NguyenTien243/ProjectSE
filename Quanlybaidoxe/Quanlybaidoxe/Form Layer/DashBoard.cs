@@ -69,6 +69,28 @@ namespace Quanlybaidoxe.Form_Layer
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
+
         //Hết phần di chuyển form
+
+        private void btnBaiDoXe_Click(object sender, EventArgs e)
+        {
+            this.pnlChucNang.Controls.Clear();
+            BaiDoXe ad = new BaiDoXe();
+            ad.TopLevel = false;
+            this.pnlChucNang.Controls.Add(ad);
+            ad.Show();
+        }
+
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            this.pnlChucNang.Controls.Clear();
+            QLNhanVien ad = new QLNhanVien();
+            ad.TopLevel = false;
+            this.pnlChucNang.Controls.Add(ad);
+            ad.Show();
+        }
+
+      
     }
 }
