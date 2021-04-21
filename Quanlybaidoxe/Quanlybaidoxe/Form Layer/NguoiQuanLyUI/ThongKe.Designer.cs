@@ -34,37 +34,37 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtDoanhThu = new System.Windows.Forms.Label();
+            this.lbDoanhThu = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtSoLuongKhachHang = new System.Windows.Forms.Label();
+            this.lbSoLuongKhachHang = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtChoTrong = new System.Windows.Forms.Label();
+            this.lbChoTrong = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtSoXeDangGui = new System.Windows.Forms.Label();
+            this.lbSoXeDangGui = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtSoLuongNhanVien = new System.Windows.Forms.Label();
+            this.lbSoLuongNhanVien = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tboxTimKiem = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtSoViTriDo = new System.Windows.Forms.Label();
+            this.lbSoViTriDo = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.txtSoKhachHangCoVe = new System.Windows.Forms.Label();
+            this.lbSoKhachHangCoVe = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -96,7 +96,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtDoanhThu);
+            this.panel1.Controls.Add(this.lbDoanhThu);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 74);
             this.panel1.Name = "panel1";
@@ -124,16 +124,16 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label3.TabIndex = 0;
             this.label3.Text = "VND";
             // 
-            // txtDoanhThu
+            // lbDoanhThu
             // 
-            this.txtDoanhThu.AutoSize = true;
-            this.txtDoanhThu.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtDoanhThu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.txtDoanhThu.Location = new System.Drawing.Point(19, 59);
-            this.txtDoanhThu.Name = "txtDoanhThu";
-            this.txtDoanhThu.Size = new System.Drawing.Size(50, 59);
-            this.txtDoanhThu.TabIndex = 0;
-            this.txtDoanhThu.Text = "0";
+            this.lbDoanhThu.AutoSize = true;
+            this.lbDoanhThu.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbDoanhThu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.lbDoanhThu.Location = new System.Drawing.Point(19, 59);
+            this.lbDoanhThu.Name = "lbDoanhThu";
+            this.lbDoanhThu.Size = new System.Drawing.Size(50, 59);
+            this.lbDoanhThu.TabIndex = 0;
+            this.lbDoanhThu.Text = "0";
             // 
             // label2
             // 
@@ -150,7 +150,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtSoLuongKhachHang);
+            this.panel2.Controls.Add(this.lbSoLuongKhachHang);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Location = new System.Drawing.Point(379, 74);
             this.panel2.Name = "panel2";
@@ -178,16 +178,16 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label4.TabIndex = 0;
             this.label4.Text = "Khách hàng";
             // 
-            // txtSoLuongKhachHang
+            // lbSoLuongKhachHang
             // 
-            this.txtSoLuongKhachHang.AutoSize = true;
-            this.txtSoLuongKhachHang.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtSoLuongKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.txtSoLuongKhachHang.Location = new System.Drawing.Point(19, 59);
-            this.txtSoLuongKhachHang.Name = "txtSoLuongKhachHang";
-            this.txtSoLuongKhachHang.Size = new System.Drawing.Size(50, 59);
-            this.txtSoLuongKhachHang.TabIndex = 0;
-            this.txtSoLuongKhachHang.Text = "0";
+            this.lbSoLuongKhachHang.AutoSize = true;
+            this.lbSoLuongKhachHang.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbSoLuongKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.lbSoLuongKhachHang.Location = new System.Drawing.Point(19, 59);
+            this.lbSoLuongKhachHang.Name = "lbSoLuongKhachHang";
+            this.lbSoLuongKhachHang.Size = new System.Drawing.Size(50, 59);
+            this.lbSoLuongKhachHang.TabIndex = 0;
+            this.lbSoLuongKhachHang.Text = "0";
             // 
             // label6
             // 
@@ -203,7 +203,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // panel3
             // 
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.txtChoTrong);
+            this.panel3.Controls.Add(this.lbChoTrong);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Location = new System.Drawing.Point(757, 74);
             this.panel3.Name = "panel3";
@@ -221,16 +221,16 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label5.TabIndex = 0;
             this.label5.Text = "Chỗ trống";
             // 
-            // txtChoTrong
+            // lbChoTrong
             // 
-            this.txtChoTrong.AutoSize = true;
-            this.txtChoTrong.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtChoTrong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.txtChoTrong.Location = new System.Drawing.Point(19, 59);
-            this.txtChoTrong.Name = "txtChoTrong";
-            this.txtChoTrong.Size = new System.Drawing.Size(50, 59);
-            this.txtChoTrong.TabIndex = 0;
-            this.txtChoTrong.Text = "0";
+            this.lbChoTrong.AutoSize = true;
+            this.lbChoTrong.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbChoTrong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.lbChoTrong.Location = new System.Drawing.Point(19, 59);
+            this.lbChoTrong.Name = "lbChoTrong";
+            this.lbChoTrong.Size = new System.Drawing.Size(50, 59);
+            this.lbChoTrong.TabIndex = 0;
+            this.lbChoTrong.Text = "0";
             // 
             // label8
             // 
@@ -247,7 +247,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.txtSoXeDangGui);
+            this.panel4.Controls.Add(this.lbSoXeDangGui);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Location = new System.Drawing.Point(12, 295);
             this.panel4.Name = "panel4";
@@ -275,16 +275,16 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label7.TabIndex = 0;
             this.label7.Text = "Xe";
             // 
-            // txtSoXeDangGui
+            // lbSoXeDangGui
             // 
-            this.txtSoXeDangGui.AutoSize = true;
-            this.txtSoXeDangGui.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtSoXeDangGui.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.txtSoXeDangGui.Location = new System.Drawing.Point(19, 59);
-            this.txtSoXeDangGui.Name = "txtSoXeDangGui";
-            this.txtSoXeDangGui.Size = new System.Drawing.Size(50, 59);
-            this.txtSoXeDangGui.TabIndex = 0;
-            this.txtSoXeDangGui.Text = "0";
+            this.lbSoXeDangGui.AutoSize = true;
+            this.lbSoXeDangGui.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbSoXeDangGui.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.lbSoXeDangGui.Location = new System.Drawing.Point(19, 59);
+            this.lbSoXeDangGui.Name = "lbSoXeDangGui";
+            this.lbSoXeDangGui.Size = new System.Drawing.Size(50, 59);
+            this.lbSoXeDangGui.TabIndex = 0;
+            this.lbSoXeDangGui.Text = "0";
             // 
             // label10
             // 
@@ -301,7 +301,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             this.panel5.Controls.Add(this.pictureBox4);
             this.panel5.Controls.Add(this.label11);
-            this.panel5.Controls.Add(this.txtSoLuongNhanVien);
+            this.panel5.Controls.Add(this.lbSoLuongNhanVien);
             this.panel5.Controls.Add(this.label13);
             this.panel5.Location = new System.Drawing.Point(379, 295);
             this.panel5.Name = "panel5";
@@ -329,16 +329,16 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label11.TabIndex = 0;
             this.label11.Text = "Nhân viên";
             // 
-            // txtSoLuongNhanVien
+            // lbSoLuongNhanVien
             // 
-            this.txtSoLuongNhanVien.AutoSize = true;
-            this.txtSoLuongNhanVien.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtSoLuongNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.txtSoLuongNhanVien.Location = new System.Drawing.Point(19, 59);
-            this.txtSoLuongNhanVien.Name = "txtSoLuongNhanVien";
-            this.txtSoLuongNhanVien.Size = new System.Drawing.Size(50, 59);
-            this.txtSoLuongNhanVien.TabIndex = 0;
-            this.txtSoLuongNhanVien.Text = "0";
+            this.lbSoLuongNhanVien.AutoSize = true;
+            this.lbSoLuongNhanVien.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbSoLuongNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.lbSoLuongNhanVien.Location = new System.Drawing.Point(19, 59);
+            this.lbSoLuongNhanVien.Name = "lbSoLuongNhanVien";
+            this.lbSoLuongNhanVien.Size = new System.Drawing.Size(50, 59);
+            this.lbSoLuongNhanVien.TabIndex = 0;
+            this.lbSoLuongNhanVien.Text = "0";
             // 
             // label13
             // 
@@ -374,7 +374,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // panel6
             // 
             this.panel6.Controls.Add(this.label14);
-            this.panel6.Controls.Add(this.txtSoViTriDo);
+            this.panel6.Controls.Add(this.lbSoViTriDo);
             this.panel6.Controls.Add(this.label16);
             this.panel6.Location = new System.Drawing.Point(757, 295);
             this.panel6.Name = "panel6";
@@ -392,16 +392,16 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label14.TabIndex = 0;
             this.label14.Text = "Vị trí";
             // 
-            // txtSoViTriDo
+            // lbSoViTriDo
             // 
-            this.txtSoViTriDo.AutoSize = true;
-            this.txtSoViTriDo.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtSoViTriDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.txtSoViTriDo.Location = new System.Drawing.Point(19, 59);
-            this.txtSoViTriDo.Name = "txtSoViTriDo";
-            this.txtSoViTriDo.Size = new System.Drawing.Size(50, 59);
-            this.txtSoViTriDo.TabIndex = 0;
-            this.txtSoViTriDo.Text = "0";
+            this.lbSoViTriDo.AutoSize = true;
+            this.lbSoViTriDo.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbSoViTriDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.lbSoViTriDo.Location = new System.Drawing.Point(19, 59);
+            this.lbSoViTriDo.Name = "lbSoViTriDo";
+            this.lbSoViTriDo.Size = new System.Drawing.Size(50, 59);
+            this.lbSoViTriDo.TabIndex = 0;
+            this.lbSoViTriDo.Text = "0";
             // 
             // label16
             // 
@@ -418,7 +418,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             this.panel7.Controls.Add(this.pictureBox6);
             this.panel7.Controls.Add(this.label17);
-            this.panel7.Controls.Add(this.txtSoKhachHangCoVe);
+            this.panel7.Controls.Add(this.lbSoKhachHangCoVe);
             this.panel7.Controls.Add(this.label19);
             this.panel7.Location = new System.Drawing.Point(12, 507);
             this.panel7.Name = "panel7";
@@ -446,16 +446,16 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label17.TabIndex = 0;
             this.label17.Text = "Khách hàng";
             // 
-            // txtSoKhachHangCoVe
+            // lbSoKhachHangCoVe
             // 
-            this.txtSoKhachHangCoVe.AutoSize = true;
-            this.txtSoKhachHangCoVe.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtSoKhachHangCoVe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.txtSoKhachHangCoVe.Location = new System.Drawing.Point(19, 59);
-            this.txtSoKhachHangCoVe.Name = "txtSoKhachHangCoVe";
-            this.txtSoKhachHangCoVe.Size = new System.Drawing.Size(50, 59);
-            this.txtSoKhachHangCoVe.TabIndex = 0;
-            this.txtSoKhachHangCoVe.Text = "0";
+            this.lbSoKhachHangCoVe.AutoSize = true;
+            this.lbSoKhachHangCoVe.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbSoKhachHangCoVe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.lbSoKhachHangCoVe.Location = new System.Drawing.Point(19, 59);
+            this.lbSoKhachHangCoVe.Name = "lbSoKhachHangCoVe";
+            this.lbSoKhachHangCoVe.Size = new System.Drawing.Size(50, 59);
+            this.lbSoKhachHangCoVe.TabIndex = 0;
+            this.lbSoKhachHangCoVe.Text = "0";
             // 
             // label19
             // 
@@ -519,36 +519,36 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label txtDoanhThu;
+        private System.Windows.Forms.Label lbDoanhThu;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label txtSoLuongKhachHang;
+        private System.Windows.Forms.Label lbSoLuongKhachHang;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label txtChoTrong;
+        private System.Windows.Forms.Label lbChoTrong;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label txtSoXeDangGui;
+        private System.Windows.Forms.Label lbSoXeDangGui;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label txtSoLuongNhanVien;
+        private System.Windows.Forms.Label lbSoLuongNhanVien;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox tboxTimKiem;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label txtSoViTriDo;
+        private System.Windows.Forms.Label lbSoViTriDo;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label txtSoKhachHangCoVe;
+        private System.Windows.Forms.Label lbSoKhachHangCoVe;
         private System.Windows.Forms.Label label19;
     }
 }
