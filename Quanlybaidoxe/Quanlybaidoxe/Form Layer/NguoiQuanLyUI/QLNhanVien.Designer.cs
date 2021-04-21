@@ -420,7 +420,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(968, 763);
+            this.ClientSize = new System.Drawing.Size(965, 762);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.pntTaiKhoan);

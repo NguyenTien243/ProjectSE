@@ -32,10 +32,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongKe));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtDoanhThu = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtDoanhThu = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -103,17 +103,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.panel1.Size = new System.Drawing.Size(333, 185);
             this.panel1.TabIndex = 39;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(19, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 31);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Doanh thu";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -123,17 +112,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // txtDoanhThu
-            // 
-            this.txtDoanhThu.AutoSize = true;
-            this.txtDoanhThu.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtDoanhThu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.txtDoanhThu.Location = new System.Drawing.Point(19, 59);
-            this.txtDoanhThu.Name = "txtDoanhThu";
-            this.txtDoanhThu.Size = new System.Drawing.Size(50, 60);
-            this.txtDoanhThu.TabIndex = 0;
-            this.txtDoanhThu.Text = "0";
             // 
             // label3
             // 
@@ -145,6 +123,28 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label3.Size = new System.Drawing.Size(84, 41);
             this.label3.TabIndex = 0;
             this.label3.Text = "VND";
+            // 
+            // txtDoanhThu
+            // 
+            this.txtDoanhThu.AutoSize = true;
+            this.txtDoanhThu.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtDoanhThu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.txtDoanhThu.Location = new System.Drawing.Point(19, 59);
+            this.txtDoanhThu.Name = "txtDoanhThu";
+            this.txtDoanhThu.Size = new System.Drawing.Size(50, 59);
+            this.txtDoanhThu.TabIndex = 0;
+            this.txtDoanhThu.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(19, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(128, 31);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Doanh thu";
             // 
             // panel2
             // 
@@ -185,7 +185,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtSoLuongKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.txtSoLuongKhachHang.Location = new System.Drawing.Point(19, 59);
             this.txtSoLuongKhachHang.Name = "txtSoLuongKhachHang";
-            this.txtSoLuongKhachHang.Size = new System.Drawing.Size(50, 60);
+            this.txtSoLuongKhachHang.Size = new System.Drawing.Size(50, 59);
             this.txtSoLuongKhachHang.TabIndex = 0;
             this.txtSoLuongKhachHang.Text = "0";
             // 
@@ -205,7 +205,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.txtChoTrong);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(742, 74);
+            this.panel3.Location = new System.Drawing.Point(757, 74);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(196, 185);
             this.panel3.TabIndex = 39;
@@ -228,7 +228,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtChoTrong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.txtChoTrong.Location = new System.Drawing.Point(19, 59);
             this.txtChoTrong.Name = "txtChoTrong";
-            this.txtChoTrong.Size = new System.Drawing.Size(50, 60);
+            this.txtChoTrong.Size = new System.Drawing.Size(50, 59);
             this.txtChoTrong.TabIndex = 0;
             this.txtChoTrong.Text = "0";
             // 
@@ -282,7 +282,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtSoXeDangGui.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.txtSoXeDangGui.Location = new System.Drawing.Point(19, 59);
             this.txtSoXeDangGui.Name = "txtSoXeDangGui";
-            this.txtSoXeDangGui.Size = new System.Drawing.Size(50, 60);
+            this.txtSoXeDangGui.Size = new System.Drawing.Size(50, 59);
             this.txtSoXeDangGui.TabIndex = 0;
             this.txtSoXeDangGui.Text = "0";
             // 
@@ -336,7 +336,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtSoLuongNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.txtSoLuongNhanVien.Location = new System.Drawing.Point(19, 59);
             this.txtSoLuongNhanVien.Name = "txtSoLuongNhanVien";
-            this.txtSoLuongNhanVien.Size = new System.Drawing.Size(50, 60);
+            this.txtSoLuongNhanVien.Size = new System.Drawing.Size(50, 59);
             this.txtSoLuongNhanVien.TabIndex = 0;
             this.txtSoLuongNhanVien.Text = "0";
             // 
@@ -357,7 +357,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.tboxTimKiem.Location = new System.Drawing.Point(559, 12);
             this.tboxTimKiem.Multiline = true;
             this.tboxTimKiem.Name = "tboxTimKiem";
-            this.tboxTimKiem.Size = new System.Drawing.Size(379, 42);
+            this.tboxTimKiem.Size = new System.Drawing.Size(394, 42);
             this.tboxTimKiem.TabIndex = 40;
             this.tboxTimKiem.Text = "Nhập thứ bạn muốn tìm kiếm";
             // 
@@ -376,7 +376,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.panel6.Controls.Add(this.label14);
             this.panel6.Controls.Add(this.txtSoViTriDo);
             this.panel6.Controls.Add(this.label16);
-            this.panel6.Location = new System.Drawing.Point(742, 295);
+            this.panel6.Location = new System.Drawing.Point(757, 295);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(196, 185);
             this.panel6.TabIndex = 39;
@@ -399,7 +399,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtSoViTriDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.txtSoViTriDo.Location = new System.Drawing.Point(19, 59);
             this.txtSoViTriDo.Name = "txtSoViTriDo";
-            this.txtSoViTriDo.Size = new System.Drawing.Size(50, 60);
+            this.txtSoViTriDo.Size = new System.Drawing.Size(50, 59);
             this.txtSoViTriDo.TabIndex = 0;
             this.txtSoViTriDo.Text = "0";
             // 
@@ -453,7 +453,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtSoKhachHangCoVe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.txtSoKhachHangCoVe.Location = new System.Drawing.Point(19, 59);
             this.txtSoKhachHangCoVe.Name = "txtSoKhachHangCoVe";
-            this.txtSoKhachHangCoVe.Size = new System.Drawing.Size(50, 60);
+            this.txtSoKhachHangCoVe.Size = new System.Drawing.Size(50, 59);
             this.txtSoKhachHangCoVe.TabIndex = 0;
             this.txtSoKhachHangCoVe.Text = "0";
             // 
@@ -473,7 +473,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(950, 716);
+            this.ClientSize = new System.Drawing.Size(965, 762);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.tboxTimKiem);
             this.Controls.Add(this.panel6);
