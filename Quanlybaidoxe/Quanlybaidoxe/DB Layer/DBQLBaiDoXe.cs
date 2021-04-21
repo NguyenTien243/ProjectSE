@@ -8,98 +8,98 @@ namespace Quanlybaidoxe.DB_Layer
 {
     class DBQLBaiDoXe
     {
-        string ConnStr = @"Data Source=(local);Initial Catalog=QLBaiDoXe;Integrated Security=True";
-        SqlConnection conn = null;
-        SqlCommand comm = null;
-        SqlDataAdapter da = null;
+        string ConnectString = @"Data Source=(local);Initial Catalog=QLBaiDoXe;Integrated Security=True";
+        SqlConnection connect = null;
+        SqlCommand command = null;
+        SqlDataAdapter adapter = null;
         public DBQLBaiDoXe()
         {
-            conn = new SqlConnection(ConnStr);
-            comm = conn.CreateCommand();
+            connect = new SqlConnection(ConnectString);
+            command = connect.CreateCommand();
         }
-        public DataSet ExecuteQueryDataSet(string strSQL, CommandType ct)
+        public DataSet ExecuteQueryDataSet(string stringquery, CommandType commandtype)
         {
-            if (conn.State == ConnectionState.Open)
-                conn.Close();
-            conn.Open();
-            comm.CommandText = strSQL;
-            comm.CommandType = ct;
-            da = new SqlDataAdapter(comm);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            return ds;
+            if (connect.State == ConnectionState.Open)
+                connect.Close();
+            connect.Open();
+            command.CommandText = stringquery;
+            command.CommandType = commandtype;
+            adapter = new SqlDataAdapter(command);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset);
+            return dataset;
         }
-        public DataSet ExecuteQueryDataSet(string strSQL, SqlParameter[] para, CommandType ct)
+        public DataSet ExecuteQueryDataSet(string stringquery, SqlParameter[] parameters, CommandType commandtype)
         {
-            if (conn.State == ConnectionState.Open)
-                conn.Close();
-            conn.Open();
-            comm = new SqlCommand();
+            if (connect.State == ConnectionState.Open)
+                connect.Close();
+            connect.Open();
+            command = new SqlCommand();
 
 
-            comm.CommandText = strSQL;
-            comm.CommandType = ct;
-            foreach (var item in para)
+            command.CommandText = stringquery;
+            command.CommandType = commandtype;
+            foreach (var item in parameters)
             {
-                comm.Parameters.Add(item);
+                command.Parameters.Add(item);
             }
-            da = new SqlDataAdapter(comm);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            return ds;
+            adapter = new SqlDataAdapter(command);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset);
+            return dataset;
         }
-        public bool MyExecuteNonQuery(string strSQL, SqlParameter[] para, CommandType ct, ref string error)
+        public bool MyExecuteNonQuery(string stringquery, SqlParameter[] parameters, CommandType commandtype, ref string error)
         {
-            bool f = false;
-            if (conn.State == ConnectionState.Open)
-                conn.Close();
-            conn.Open();
+            bool check = false;
+            if (connect.State == ConnectionState.Open)
+                connect.Close();
+            connect.Open();
             //comm = new SqlCommand();
-            comm.CommandText = strSQL;
-            comm.CommandType = ct;
+            command.CommandText = stringquery;
+            command.CommandType = commandtype;
 
-            foreach (var item in para)
+            foreach (var item in parameters)
             {
-                comm.Parameters.Add(item);
+                command.Parameters.Add(item);
             }
             try
             {
 
-                if (comm.ExecuteNonQuery() != 0)
-                    f = true;
+                if (command.ExecuteNonQuery() != 0)
+                    check = true;
             }
-            catch (SqlException ex)
+            catch (SqlException exception)
             {
-                error = ex.Message;
+                error = exception.Message;
             }
             finally
             {
-                conn.Close();
+                connect.Close();
             }
-            return f;
+            return check;
         }
-        public bool MyExecuteNonQuery(string strSQL, CommandType ct, ref string error)
+        public bool MyExecuteNonQuery(string stringquery, CommandType commandtype, ref string error)
         {
-            bool f = false;
-            if (conn.State == ConnectionState.Open)
-                conn.Close();
-            conn.Open();
-            comm.CommandText = strSQL;
-            comm.CommandType = ct;
+            bool check = false;
+            if (connect.State == ConnectionState.Open)
+                connect.Close();
+            connect.Open();
+            command.CommandText = stringquery;
+            command.CommandType = commandtype;
             try
             {
-                comm.ExecuteNonQuery();
-                f = true;
+                command.ExecuteNonQuery();
+                check = true;
             }
-            catch (SqlException ex)
+            catch (SqlException exception)
             {
-                error = ex.Message;
+                error = exception.Message;
             }
             finally
             {
-                conn.Close();
+                connect.Close();
             }
-            return f;
+            return check;
         }
     }
 }

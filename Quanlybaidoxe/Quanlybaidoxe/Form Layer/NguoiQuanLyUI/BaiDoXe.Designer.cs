@@ -43,26 +43,26 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbTongBaiOto = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lbTongBaiXeMay = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.lbTongBaiXeDap = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.pnlSLXe = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbTongBaiXeDap = new System.Windows.Forms.Label();
+            this.lbTongBaiXeMay = new System.Windows.Forms.Label();
+            this.lbTongBaiOto = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.dgvQLBDX = new System.Windows.Forms.DataGridView();
             this.pnlQuanLyNV.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnlSLXe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLBDX)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,112 +209,35 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // pnlSLXe
             // 
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.lbTongBaiXeDap);
-            this.panel1.Controls.Add(this.lbTongBaiXeMay);
-            this.panel1.Controls.Add(this.lbTongBaiOto);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(452, 57);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(504, 232);
-            this.panel1.TabIndex = 40;
+            this.pnlSLXe.Controls.Add(this.pictureBox3);
+            this.pnlSLXe.Controls.Add(this.pictureBox2);
+            this.pnlSLXe.Controls.Add(this.pictureBox1);
+            this.pnlSLXe.Controls.Add(this.label13);
+            this.pnlSLXe.Controls.Add(this.label10);
+            this.pnlSLXe.Controls.Add(this.label4);
+            this.pnlSLXe.Controls.Add(this.lbTongBaiXeDap);
+            this.pnlSLXe.Controls.Add(this.lbTongBaiXeMay);
+            this.pnlSLXe.Controls.Add(this.lbTongBaiOto);
+            this.pnlSLXe.Controls.Add(this.label11);
+            this.pnlSLXe.Controls.Add(this.label7);
+            this.pnlSLXe.Controls.Add(this.label6);
+            this.pnlSLXe.Controls.Add(this.label5);
+            this.pnlSLXe.Location = new System.Drawing.Point(452, 57);
+            this.pnlSLXe.Name = "pnlSLXe";
+            this.pnlSLXe.Size = new System.Drawing.Size(504, 232);
+            this.pnlSLXe.TabIndex = 40;
             // 
-            // pictureBox1
+            // pictureBox3
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(85, 53);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(19, 177);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 41);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Xe";
-            // 
-            // lbTongBaiOto
-            // 
-            this.lbTongBaiOto.AutoSize = true;
-            this.lbTongBaiOto.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbTongBaiOto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.lbTongBaiOto.Location = new System.Drawing.Point(19, 110);
-            this.lbTongBaiOto.Name = "lbTongBaiOto";
-            this.lbTongBaiOto.Size = new System.Drawing.Size(50, 59);
-            this.lbTongBaiOto.TabIndex = 0;
-            this.lbTongBaiOto.Text = "0";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(19, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(225, 31);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Số vị trí đỗ hiện tại:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(19, 66);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 31);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Ô tô";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(188, 66);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 31);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Xe máy";
-            // 
-            // lbTongBaiXeMay
-            // 
-            this.lbTongBaiXeMay.AutoSize = true;
-            this.lbTongBaiXeMay.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbTongBaiXeMay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.lbTongBaiXeMay.Location = new System.Drawing.Point(188, 110);
-            this.lbTongBaiXeMay.Name = "lbTongBaiXeMay";
-            this.lbTongBaiXeMay.Size = new System.Drawing.Size(50, 59);
-            this.lbTongBaiXeMay.TabIndex = 0;
-            this.lbTongBaiXeMay.Text = "0";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(188, 177);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 41);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Xe";
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(450, 53);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 44);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -326,27 +249,15 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // label11
+            // pictureBox1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(356, 66);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 31);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Xe đạp";
-            // 
-            // lbTongBaiXeDap
-            // 
-            this.lbTongBaiXeDap.AutoSize = true;
-            this.lbTongBaiXeDap.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbTongBaiXeDap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.lbTongBaiXeDap.Location = new System.Drawing.Point(356, 110);
-            this.lbTongBaiXeDap.Name = "lbTongBaiXeDap";
-            this.lbTongBaiXeDap.Size = new System.Drawing.Size(50, 59);
-            this.lbTongBaiXeDap.TabIndex = 0;
-            this.lbTongBaiXeDap.Text = "0";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(85, 53);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label13
             // 
@@ -359,15 +270,104 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label13.TabIndex = 0;
             this.label13.Text = "Xe";
             // 
-            // pictureBox3
+            // label10
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(450, 53);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 44);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.label10.Location = new System.Drawing.Point(188, 177);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 41);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Xe";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(19, 177);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 41);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Xe";
+            // 
+            // lbTongBaiXeDap
+            // 
+            this.lbTongBaiXeDap.AutoSize = true;
+            this.lbTongBaiXeDap.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTongBaiXeDap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.lbTongBaiXeDap.Location = new System.Drawing.Point(356, 110);
+            this.lbTongBaiXeDap.Name = "lbTongBaiXeDap";
+            this.lbTongBaiXeDap.Size = new System.Drawing.Size(50, 59);
+            this.lbTongBaiXeDap.TabIndex = 0;
+            this.lbTongBaiXeDap.Text = "0";
+            // 
+            // lbTongBaiXeMay
+            // 
+            this.lbTongBaiXeMay.AutoSize = true;
+            this.lbTongBaiXeMay.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTongBaiXeMay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.lbTongBaiXeMay.Location = new System.Drawing.Point(188, 110);
+            this.lbTongBaiXeMay.Name = "lbTongBaiXeMay";
+            this.lbTongBaiXeMay.Size = new System.Drawing.Size(50, 59);
+            this.lbTongBaiXeMay.TabIndex = 0;
+            this.lbTongBaiXeMay.Text = "0";
+            // 
+            // lbTongBaiOto
+            // 
+            this.lbTongBaiOto.AutoSize = true;
+            this.lbTongBaiOto.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTongBaiOto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.lbTongBaiOto.Location = new System.Drawing.Point(19, 110);
+            this.lbTongBaiOto.Name = "lbTongBaiOto";
+            this.lbTongBaiOto.Size = new System.Drawing.Size(50, 59);
+            this.lbTongBaiOto.TabIndex = 0;
+            this.lbTongBaiOto.Text = "0";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.label11.Location = new System.Drawing.Point(356, 66);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(88, 31);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Xe đạp";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(188, 66);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 31);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Xe máy";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(19, 66);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 31);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Ô tô";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(19, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(225, 31);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Số vị trí đỗ hiện tại:";
             // 
             // dgvQLBDX
             // 
@@ -387,7 +387,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(965, 762);
             this.Controls.Add(this.dgvQLBDX);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlSLXe);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnXoa);
@@ -399,13 +399,14 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.Name = "BaiDoXe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BaiDoXe";
+            this.Load += new System.EventHandler(this.BaiDoXe_Load);
             this.pnlQuanLyNV.ResumeLayout(false);
             this.pnlQuanLyNV.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pnlSLXe.ResumeLayout(false);
+            this.pnlSLXe.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLBDX)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -427,7 +428,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlSLXe;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;

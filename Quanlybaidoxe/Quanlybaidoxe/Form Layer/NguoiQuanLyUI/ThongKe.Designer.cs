@@ -31,53 +31,53 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongKe));
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlDoanhThu = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lbDoanhThu = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlSLKhachHang = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lbSoLuongKhachHang = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlChoTrong = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.lbChoTrong = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnlSLXeDangGui = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lbSoXeDangGui = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnlSLNhanVien = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.lbSoLuongNhanVien = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tboxTimKiem = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.pnlSLViTri = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.lbSoViTriDo = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.pnlSoLuongKhachHangCoVe = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.lbSoKhachHangCoVe = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.pnlDoanhThu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.pnlSLKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pnlChoTrong.SuspendLayout();
+            this.pnlSLXeDangGui.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.pnlSLNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.pnlSLViTri.SuspendLayout();
+            this.pnlSoLuongKhachHangCoVe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,16 +92,16 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label1.TabIndex = 38;
             this.label1.Text = "QUẢN LÝ BÃI ĐỖ XE";
             // 
-            // panel1
+            // pnlDoanhThu
             // 
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.lbDoanhThu);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(12, 74);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(333, 185);
-            this.panel1.TabIndex = 39;
+            this.pnlDoanhThu.Controls.Add(this.pictureBox1);
+            this.pnlDoanhThu.Controls.Add(this.label3);
+            this.pnlDoanhThu.Controls.Add(this.lbDoanhThu);
+            this.pnlDoanhThu.Controls.Add(this.label2);
+            this.pnlDoanhThu.Location = new System.Drawing.Point(12, 74);
+            this.pnlDoanhThu.Name = "pnlDoanhThu";
+            this.pnlDoanhThu.Size = new System.Drawing.Size(333, 185);
+            this.pnlDoanhThu.TabIndex = 39;
             // 
             // pictureBox1
             // 
@@ -146,16 +146,16 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label2.TabIndex = 0;
             this.label2.Text = "Doanh thu";
             // 
-            // panel2
+            // pnlSLKhachHang
             // 
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.lbSoLuongKhachHang);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(379, 74);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(333, 185);
-            this.panel2.TabIndex = 39;
+            this.pnlSLKhachHang.Controls.Add(this.pictureBox2);
+            this.pnlSLKhachHang.Controls.Add(this.label4);
+            this.pnlSLKhachHang.Controls.Add(this.lbSoLuongKhachHang);
+            this.pnlSLKhachHang.Controls.Add(this.label6);
+            this.pnlSLKhachHang.Location = new System.Drawing.Point(379, 74);
+            this.pnlSLKhachHang.Name = "pnlSLKhachHang";
+            this.pnlSLKhachHang.Size = new System.Drawing.Size(333, 185);
+            this.pnlSLKhachHang.TabIndex = 39;
             // 
             // pictureBox2
             // 
@@ -200,15 +200,15 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label6.TabIndex = 0;
             this.label6.Text = "Số lượng khách hàng";
             // 
-            // panel3
+            // pnlChoTrong
             // 
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.lbChoTrong);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(757, 74);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(196, 185);
-            this.panel3.TabIndex = 39;
+            this.pnlChoTrong.Controls.Add(this.label5);
+            this.pnlChoTrong.Controls.Add(this.lbChoTrong);
+            this.pnlChoTrong.Controls.Add(this.label8);
+            this.pnlChoTrong.Location = new System.Drawing.Point(757, 74);
+            this.pnlChoTrong.Name = "pnlChoTrong";
+            this.pnlChoTrong.Size = new System.Drawing.Size(196, 185);
+            this.pnlChoTrong.TabIndex = 39;
             // 
             // label5
             // 
@@ -243,16 +243,16 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label8.TabIndex = 0;
             this.label8.Text = "Chỗ trống";
             // 
-            // panel4
+            // pnlSLXeDangGui
             // 
-            this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.lbSoXeDangGui);
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Location = new System.Drawing.Point(12, 295);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(333, 185);
-            this.panel4.TabIndex = 39;
+            this.pnlSLXeDangGui.Controls.Add(this.pictureBox3);
+            this.pnlSLXeDangGui.Controls.Add(this.label7);
+            this.pnlSLXeDangGui.Controls.Add(this.lbSoXeDangGui);
+            this.pnlSLXeDangGui.Controls.Add(this.label10);
+            this.pnlSLXeDangGui.Location = new System.Drawing.Point(12, 295);
+            this.pnlSLXeDangGui.Name = "pnlSLXeDangGui";
+            this.pnlSLXeDangGui.Size = new System.Drawing.Size(333, 185);
+            this.pnlSLXeDangGui.TabIndex = 39;
             // 
             // pictureBox3
             // 
@@ -297,16 +297,16 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label10.TabIndex = 0;
             this.label10.Text = "Số lượng xe đang gửi";
             // 
-            // panel5
+            // pnlSLNhanVien
             // 
-            this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Controls.Add(this.label11);
-            this.panel5.Controls.Add(this.lbSoLuongNhanVien);
-            this.panel5.Controls.Add(this.label13);
-            this.panel5.Location = new System.Drawing.Point(379, 295);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(333, 185);
-            this.panel5.TabIndex = 39;
+            this.pnlSLNhanVien.Controls.Add(this.pictureBox4);
+            this.pnlSLNhanVien.Controls.Add(this.label11);
+            this.pnlSLNhanVien.Controls.Add(this.lbSoLuongNhanVien);
+            this.pnlSLNhanVien.Controls.Add(this.label13);
+            this.pnlSLNhanVien.Location = new System.Drawing.Point(379, 295);
+            this.pnlSLNhanVien.Name = "pnlSLNhanVien";
+            this.pnlSLNhanVien.Size = new System.Drawing.Size(333, 185);
+            this.pnlSLNhanVien.TabIndex = 39;
             // 
             // pictureBox4
             // 
@@ -371,15 +371,15 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.pictureBox5.TabIndex = 1;
             this.pictureBox5.TabStop = false;
             // 
-            // panel6
+            // pnlSLViTri
             // 
-            this.panel6.Controls.Add(this.label14);
-            this.panel6.Controls.Add(this.lbSoViTriDo);
-            this.panel6.Controls.Add(this.label16);
-            this.panel6.Location = new System.Drawing.Point(757, 295);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(196, 185);
-            this.panel6.TabIndex = 39;
+            this.pnlSLViTri.Controls.Add(this.label14);
+            this.pnlSLViTri.Controls.Add(this.lbSoViTriDo);
+            this.pnlSLViTri.Controls.Add(this.label16);
+            this.pnlSLViTri.Location = new System.Drawing.Point(757, 295);
+            this.pnlSLViTri.Name = "pnlSLViTri";
+            this.pnlSLViTri.Size = new System.Drawing.Size(196, 185);
+            this.pnlSLViTri.TabIndex = 39;
             // 
             // label14
             // 
@@ -414,16 +414,16 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label16.TabIndex = 0;
             this.label16.Text = "Số vị trí đỗ";
             // 
-            // panel7
+            // pnlSoLuongKhachHangCoVe
             // 
-            this.panel7.Controls.Add(this.pictureBox6);
-            this.panel7.Controls.Add(this.label17);
-            this.panel7.Controls.Add(this.lbSoKhachHangCoVe);
-            this.panel7.Controls.Add(this.label19);
-            this.panel7.Location = new System.Drawing.Point(12, 507);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(333, 185);
-            this.panel7.TabIndex = 39;
+            this.pnlSoLuongKhachHangCoVe.Controls.Add(this.pictureBox6);
+            this.pnlSoLuongKhachHangCoVe.Controls.Add(this.label17);
+            this.pnlSoLuongKhachHangCoVe.Controls.Add(this.lbSoKhachHangCoVe);
+            this.pnlSoLuongKhachHangCoVe.Controls.Add(this.label19);
+            this.pnlSoLuongKhachHangCoVe.Location = new System.Drawing.Point(12, 507);
+            this.pnlSoLuongKhachHangCoVe.Name = "pnlSoLuongKhachHangCoVe";
+            this.pnlSoLuongKhachHangCoVe.Size = new System.Drawing.Size(333, 185);
+            this.pnlSoLuongKhachHangCoVe.TabIndex = 39;
             // 
             // pictureBox6
             // 
@@ -476,36 +476,36 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.ClientSize = new System.Drawing.Size(965, 762);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.tboxTimKiem);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlSLViTri);
+            this.Controls.Add(this.pnlChoTrong);
+            this.Controls.Add(this.pnlSLKhachHang);
+            this.Controls.Add(this.pnlSLNhanVien);
+            this.Controls.Add(this.pnlSoLuongKhachHangCoVe);
+            this.Controls.Add(this.pnlSLXeDangGui);
+            this.Controls.Add(this.pnlDoanhThu);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ThongKe";
             this.Text = "ThongKe";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlDoanhThu.ResumeLayout(false);
+            this.pnlDoanhThu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnlSLKhachHang.ResumeLayout(false);
+            this.pnlSLKhachHang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.pnlChoTrong.ResumeLayout(false);
+            this.pnlChoTrong.PerformLayout();
+            this.pnlSLXeDangGui.ResumeLayout(false);
+            this.pnlSLXeDangGui.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.pnlSLNhanVien.ResumeLayout(false);
+            this.pnlSLNhanVien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.pnlSLViTri.ResumeLayout(false);
+            this.pnlSLViTri.PerformLayout();
+            this.pnlSoLuongKhachHangCoVe.ResumeLayout(false);
+            this.pnlSoLuongKhachHangCoVe.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -515,37 +515,37 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlDoanhThu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbDoanhThu;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlSLKhachHang;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbSoLuongKhachHang;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlChoTrong;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbChoTrong;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnlSLXeDangGui;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbSoXeDangGui;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pnlSLNhanVien;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbSoLuongNhanVien;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox tboxTimKiem;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel pnlSLViTri;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lbSoViTriDo;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel pnlSoLuongKhachHangCoVe;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label lbSoKhachHangCoVe;

@@ -14,5 +14,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         {
             InitializeComponent();
         }
+
+        private void BaiDoXe_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -116,7 +116,7 @@ namespace Quanlybaidoxe
                 //Lấy account nhân viên
                 dtTaiKhoan = new DataTable();
                 dtTaiKhoan.Clear();
-                DataSet dsANV = dbBaiDoXe.LayTaiKkhoanNV();
+                DataSet dsANV = dbBaiDoXe.GetStaffAccounts();
                 dtTaiKhoan = dsANV.Tables[0];
                 // Xóa trống các đối tượng trong Panel
                 this.txtTenDangNhap.ResetText();

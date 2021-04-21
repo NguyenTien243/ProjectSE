@@ -14,21 +14,21 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         {
             InitializeComponent();
         }
-        DataTable dtNV = null;
-        DataSet dt = null;
-        BLNhanVien dbNV = new BLNhanVien();
+        DataTable datatableNV = null;
+        
+        BLNhanVien blNV = new BLNhanVien();
         bool Them;
         string err;
         private void LoadThongTin()
         {
             try
             {
-                dtNV = new DataTable();
-                dtNV.Clear();
-                DataSet ds = dbNV.LayNV();
-                dtNV = ds.Tables[0];
+                datatableNV = new DataTable();
+                datatableNV.Clear();
+                DataSet ds = blNV.GetStaffs();
+                datatableNV = ds.Tables[0];
                 // Đưa dữ liệu lên DataGridView
-                dgvQLNV.DataSource = dtNV;
+                dgvQLNV.DataSource = datatableNV;
                 // Thay đổi độ rộng cột
                 dgvQLNV.AutoResizeColumns();
                 // Xóa trống các đối tượng trong Panel
@@ -42,21 +42,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
                 pntTaiKhoan.Enabled = false;
-                // Cho thao tác trên các nút Thêm / Sửa / Xóa /Thoát
-                //if (SHAREVAR.ChonNV == true)
-                //{
-                //    this.btnSua.Enabled = false;
-                //    this.btnXoa.Enabled = false;
-                //    this.btnThem.Enabled = false;
-                //}
-                //else
-                //{
-                //    this.btnSua.Enabled = true;
-                //    this.btnXoa.Enabled = true;
-                //    this.btnThem.Enabled = true;
-                //}
-                // this.btnThoat.Enabled = true;
-                ////
                 dgvQLNV_CellClick(null, null);
             }
             catch
@@ -81,7 +66,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             if (radNam.Checked == true)
                 Gioitinh = "Nam";
             else Gioitinh = "Nữ";
-            dbNV = new BLNhanVien();
+            blNV = new BLNhanVien();
             if (txtMaNV.Text.Trim().Length == 0 || txtTenNV.Text.Trim().Length == 0 || txtDiaChi.Text.Trim().Length == 0 || txtCMND.Text.Trim().Length == 0
                 || txtSDT.Text.Trim().Length == 0 || txtTaiKhoan.Text.Trim().Length == 0 || txtMatKhau.Text.Trim().Length == 0)
             {
@@ -93,13 +78,13 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             {
                 try
 
-                { //DataSet dsNV = dbNV.KiemTraTrungMaNV(txtMaNV.Text);
-                    if (dbNV.KiemTraTrungMaNV(txtMaNV.Text).Tables[0].Rows.Count != 0)
+                { 
+                    if (blNV.CheckStaffId(txtMaNV.Text).Tables[0].Rows.Count != 0)
                     {
                         MessageBox.Show("Mã nhân viên bị trùng, vui lòng nhập mã khác!");
                     }
                     else
-                     if (dbNV.KiemTraTrungTaiKhoan(txtTaiKhoan.Text).Tables[0].Rows.Count != 0)
+                     if (blNV.CheckAcount(txtTaiKhoan.Text).Tables[0].Rows.Count != 0)
                     {
                         MessageBox.Show("Tài khoản đã có người sử dụng, vui lòng đổi tài khoảnc!");
                     }
@@ -111,8 +96,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
                     else
                     {
-                        dbNV = new BLNhanVien();
-                        if (dbNV.ThemNV(txtMaNV.Text, txtTenNV.Text, dateTimePickerNgay.Value, Gioitinh, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtTaiKhoan.Text, txtMatKhau.Text,luong, ref err))
+                        blNV = new BLNhanVien();
+                        if (blNV.AddStaff(txtMaNV.Text, txtTenNV.Text, dateTimePickerNgay.Value, Gioitinh, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtTaiKhoan.Text, txtMatKhau.Text,luong, ref err))
                             MessageBox.Show("Thêm thành công");
                         else
                             MessageBox.Show("Thêm thất bại!!");
@@ -125,10 +110,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             }
             else
             {
-                dbNV = new BLNhanVien();
+                blNV = new BLNhanVien();
                 int r = dgvQLNV.CurrentCell.RowIndex;
                 string MaNV = dgvQLNV.Rows[r].Cells[0].Value.ToString();
-                if (dbNV.CapNhatNV(MaNV, txtTenNV.Text, dateTimePickerNgay.Value, Gioitinh, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtTaiKhoan.Text, txtMatKhau.Text,luong, ref err) == true)
+                if (blNV.UpdateStaff(MaNV, txtTenNV.Text, dateTimePickerNgay.Value, Gioitinh, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtTaiKhoan.Text, txtMatKhau.Text,luong, ref err) == true)
                 {
                     MessageBox.Show("Sửa thành công!");
                     LoadThongTin();
@@ -147,14 +132,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // Kich hoạt biến Them
             Them = true;
             // Xóa trống các đối tượng trong Panel
-
-            ResetValue();
-            //this.txtMaNV.ResetText();
-            //this.txtTenNV.ResetText();
-            //this.txtSDT.ResetText();
-            //this.txtDiaChi.ResetText();
-            //this.txtTaiKhoan.ResetText();
-            //this.txtMatKhau.ResetText();
+            ResetValue();           
             txtLuong.Enabled = true;
             this.txtMaNV.Enabled = true;
             // Cho thao tác trên các nút Lưu / Hủy / Panel
@@ -178,8 +156,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // Kich hoạt biến Them
             Them = false;
             // Xóa trống các đối tượng trong Panel
-
-
             this.txtMaNV.Enabled = true;
             // Cho thao tác trên các nút Lưu / Hủy / Panel
             this.btnLuu.Enabled = true;
@@ -197,8 +173,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtTenNV.Focus();
         }
 
-
-
         private void dgvQLNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -209,24 +183,14 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                     return;
                 else
                     r = dgvQLNV.CurrentCell.RowIndex;
-                // Chuyển thông tin lên panel
-                //if (dgvNV.Rows[r].Cells[0].Value.ToString() == null)
-                //    return;
 
-
-                this.txtMaNV.Text =
-                dgvQLNV.Rows[r].Cells[0].Value.ToString();
-                this.txtTenNV.Text =
-                dgvQLNV.Rows[r].Cells[1].Value.ToString();
+                this.txtMaNV.Text = dgvQLNV.Rows[r].Cells[0].Value.ToString();
+                this.txtTenNV.Text = dgvQLNV.Rows[r].Cells[1].Value.ToString();
                 if (dgvQLNV.Rows[r].Cells[3].Value.ToString() == "Nam")
                     radNam.Checked = true;
                 else
                     radNu.Checked = true;
 
-                //if (dgvQLNV.Rows[r].Cells[2].Value.ToString() == "")
-                //    this.cboCongViec.SelectedIndex = -1;
-                //else
-                //    this.cboCongViec.SelectedItem = dgvQLNV.Rows[r].Cells[2].Value.ToString(); // chọn hiển thị tên công việc
                 try
                 {
                     this.dateTimePickerNgay.Value = Convert.ToDateTime(dgvQLNV.Rows[r].Cells[2].Value.ToString());
@@ -235,16 +199,11 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 {
                     
                 }
-                    this.txtCMND.Text =
-                dgvQLNV.Rows[r].Cells[4].Value.ToString();
-                this.txtSDT.Text =
-                dgvQLNV.Rows[r].Cells[5].Value.ToString();
-                this.txtDiaChi.Text =
-                dgvQLNV.Rows[r].Cells[6].Value.ToString();
-                this.txtTaiKhoan.Text =
-                dgvQLNV.Rows[r].Cells[7].Value.ToString();
-                this.txtMatKhau.Text =
-                dgvQLNV.Rows[r].Cells[8].Value.ToString();
+                this.txtCMND.Text = dgvQLNV.Rows[r].Cells[4].Value.ToString();
+                this.txtSDT.Text = dgvQLNV.Rows[r].Cells[5].Value.ToString();
+                this.txtDiaChi.Text = dgvQLNV.Rows[r].Cells[6].Value.ToString();
+                this.txtTaiKhoan.Text = dgvQLNV.Rows[r].Cells[7].Value.ToString();
+                this.txtMatKhau.Text = dgvQLNV.Rows[r].Cells[8].Value.ToString();
                 this.txtLuong.Text = dgvQLNV.Rows[r].Cells["Luong"].Value.ToString();
             }
             catch
@@ -280,8 +239,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 // Kiểm tra có nhắp chọn nút Ok không?
                 if (traloi == DialogResult.Yes)
                 {
-                    dbNV = new BLNhanVien();
-                    if (dbNV.XoaNV(this.txtMaNV.Text, ref err))
+                    blNV = new BLNhanVien();
+                    if (blNV.DeleteStaff(this.txtMaNV.Text, ref err))
                         // Thông báo
                         MessageBox.Show("Đã xóa xong!");
                     else

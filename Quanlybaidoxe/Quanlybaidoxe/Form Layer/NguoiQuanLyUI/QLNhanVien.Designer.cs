@@ -331,9 +331,9 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.label6.Location = new System.Drawing.Point(1, 195);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(155, 28);
+            this.label6.Size = new System.Drawing.Size(77, 28);
             this.label6.TabIndex = 29;
-            this.label6.Text = "Loại nhân viên:";
+            this.label6.Text = "Lương:";
             // 
             // label8
             // 
