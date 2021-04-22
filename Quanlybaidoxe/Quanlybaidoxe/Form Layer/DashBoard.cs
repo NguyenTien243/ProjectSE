@@ -1,4 +1,5 @@
-﻿using Quanlybaidoxe.Form_Layer.NguoiQuanLyUI;
+﻿using Quanlybaidoxe.BS_Layer;
+using Quanlybaidoxe.Form_Layer.NguoiQuanLyUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,44 +17,32 @@ namespace Quanlybaidoxe.Form_Layer
             InitializeComponent();
             hienthi();
         }
+        BLNhanVien blNhanVien;
+        string manv;
         void hienthi()
         {
             this.pnlChucNang.Controls.Clear();
-            QLNhanVien ad = new QLNhanVien();
-            ad.TopLevel = false;
-            this.pnlChucNang.Controls.Add(ad);
-            ad.Show();
+            QLNhanVien formNhanVien = new QLNhanVien();
+            formNhanVien.TopLevel = false;
+            this.pnlChucNang.Controls.Add(formNhanVien);
+            formNhanVien.Show();
         }
         private void DashBoard_Load(object sender, EventArgs e)
         {
-          
+            blNhanVien = new BLNhanVien();
+            DataSet datasetInfo = blNhanVien.GetPositionStaff(manv); // lấy tên nhân viên và tên chức vụ của nhân viên
+            lbUserName.Text += "  " +datasetInfo.Tables[0].Rows[0]["TenNV"].ToString();
+            lbChucVu.Text += " " + datasetInfo.Tables[0].Rows[0]["TenCV"].ToString();
         }
-
-        private void pnlChucNang_Paint(object sender, PaintEventArgs e)
+        public void fundata(string manv)
         {
-
+            this.manv = manv;
         }
+      
 
-        private void button5_Click(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            // Khai báo biến traloi
-            DialogResult traloi;
-            // Hiện hộp thoại hỏi đáp
-            traloi = MessageBox.Show("Bạn có chắc thoát không?", "Trả lời",
-            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            // Kiểm tra có nhắp chọn nút Ok không?
-            if (traloi == DialogResult.OK)
-            {
-                this.Close();
-                new DangNhap().Show();
-            }
-            //f.Show();
-        }
+        
         //Di chuyển form
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -85,12 +74,37 @@ namespace Quanlybaidoxe.Form_Layer
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             this.pnlChucNang.Controls.Clear();
-            QLNhanVien ad = new QLNhanVien();
-            ad.TopLevel = false;
-            this.pnlChucNang.Controls.Add(ad);
-            ad.Show();
+            QLNhanVien FormNhanVien = new QLNhanVien();
+            FormNhanVien.TopLevel = false;
+            this.pnlChucNang.Controls.Add(FormNhanVien);
+            FormNhanVien.Show();
+        }
+
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            // Khai báo biến traloi
+            DialogResult traloi;
+            // Hiện hộp thoại hỏi đáp
+            traloi = MessageBox.Show("Bạn có chắc thoát không?", "Trả lời",
+            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            // Kiểm tra có nhắp chọn nút Ok không?
+            if (traloi == DialogResult.OK)
+            {
+                this.Close();
+                new DangNhap().Show();
+            }
         }
 
       
+
+        private void btnTrangChu_Click(object sender, EventArgs e)
+        {
+            this.pnlChucNang.Controls.Clear();
+            ThongKe FormThongKe = new ThongKe();
+            FormThongKe.TopLevel = false;
+            this.pnlChucNang.Controls.Add(FormThongKe);
+            FormThongKe.Show();
+        }
     }
 }

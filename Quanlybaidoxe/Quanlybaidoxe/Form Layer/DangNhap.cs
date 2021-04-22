@@ -15,6 +15,7 @@ namespace Quanlybaidoxe
 {
     public partial class DangNhap : Form
     {
+        string manv;
         DashBoard formquanly;
         public DangNhap()
         {
@@ -74,17 +75,29 @@ namespace Quanlybaidoxe
                 MessageBox.Show("Vui lòng nhập đủ thông tin!");
                 return;
             }
+
+            //var kq = from account in dtTaiKhoan.AsEnumerable()
+            //         where account.Field<string>("TaiKhoan").Trim() == "tiendeptrai"// && account.Field<string>("MatKhau") == txtMatKhau.Text.Trim()
+            //         select new
+            //         { TK = account.Field<string>("TaiKhoan"),
+            //            mk = account.Field<string>("MatKhau")};
             for (int i = 0; i < dtTaiKhoan.Rows.Count; i++)
             {
                 if (txtTenDangNhap.Text.Trim() == dtTaiKhoan.Rows[i]["TaiKhoan"].ToString().Trim() && txtMatKhau.Text.Trim() == dtTaiKhoan.Rows[i]["MatKhau"].ToString().Trim())
                 {
+                    
+                    
+                    manv = dtTaiKhoan.Rows[i]["MaNV"].ToString().Trim();
                     if (dtTaiKhoan.Rows[i]["MaCV"].ToString().Trim() == "CV01")
                         {
                         MessageBox.Show("Đăng nhập thành công !!");
                         //txtTenDangNhap.ResetText();
                         //txtMatKhau.ResetText();
                         //txtTenDangNhap.Focus();
-                        formquanly = new DashBoard();
+                        formquanly = new DashBoard();  
+                        // chuyền mã nhân viên sang form DashBoard
+                        delPassData delpassdata = new delPassData(formquanly.fundata); //https://daynhauhoc.com/t/cach-truyen-du-lieu-giua-2-form-trong-c/33911
+                        delpassdata(manv);  
                         this.Hide();
                         formquanly.ShowDialog();
    
@@ -99,12 +112,11 @@ namespace Quanlybaidoxe
                 }
             }
             MessageBox.Show("Sai tài khoản hoặc mật khẩu !!!");
-            //frm_Management = new Form_Management();
-            ////frm_Management.getForm(this, dtNV.Rows[i][2].ToString());
-            //frm_Management.Show();
-            //this.Hide();
+            
         }
 
+
+        public delegate void delPassData(string manv);
         private void DangNhap_Load(object sender, EventArgs e)
         {
             LoadData();
