@@ -20,7 +20,7 @@ namespace Quanlybaidoxe.BS_Layer
         /// <returns></returns>
         public DataSet GetStaffAccounts()
         {
-            return dbtaikhoan.ExecuteQueryDataSet("SELECT TaiKhoan,MatKhau,dbo.TaiKhoan.MaNV, TenNV, MaCV FROM dbo.TaiKhoan, dbo.NhanVien WHERE TaiKhoan.MaNV = NhanVien.MaNV", CommandType.Text);
+            return dbtaikhoan.ExecuteQueryDataSet("SELECT TaiKhoan,MatKhau,TaiKhoan.MaNV as MaNV, TenNV, MaCV FROM dbo.TaiKhoan, dbo.NhanVien WHERE TaiKhoan.MaNV = NhanVien.MaNV", CommandType.Text);
         }
         
     }

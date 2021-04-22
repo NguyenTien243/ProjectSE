@@ -48,9 +48,25 @@ namespace Quanlybaidoxe.BS_Layer
             return dbViTri.ExecuteQueryDataSet("SELECT COUNT(ViTri.MaXe) FROM ViTri JOIN Xe ON ViTri.MaXe = Xe.MaXe WHERE MaLoaiXe = (SELECT MaLoaiXe FROM LoaiXe WHERE TenLoaiXe = 'Ô tô')", CommandType.Text);
         }
         public DataSet CountMotorbike()
-        {
-            //return dbViTri.MyExecuteNonQuery("SELECT COUNT(ViTri.MaXe) FROM ViTri JOIN Xe ON ViTri.MaXe = Xe.MaXe WHERE MaLoaiXe = (SELECT MaLoaiXe FROM LoaiXe WHERE TenLoaiXe='Xe máy')", CommandType.Text, ref err);
+        { 
             return dbViTri.ExecuteQueryDataSet("SELECT COUNT(ViTri.MaXe) FROM ViTri JOIN Xe ON ViTri.MaXe = Xe.MaXe WHERE MaLoaiXe = (SELECT MaLoaiXe FROM LoaiXe WHERE TenLoaiXe = 'Xe máy')", CommandType.Text);
         }
+
+        public DataSet SearchPositionbyID(string MaViTri)
+        {
+            return dbViTri.ExecuteQueryDataSet("SELECT * From ViTri where MaViTri = '" + MaViTri + "'", CommandType.Text);
+        }
+        public DataSet SearchPositionbyName(string TenViTri)
+        {
+            return dbViTri.ExecuteQueryDataSet("SELECT * From ViTri where TenViTri = '" + TenViTri + "'", CommandType.Text);
+        }
+
+        public bool DeletePosition(string MaViTri, ref string err)
+        {
+            string sqlString = "Delete From ViTri Where MaViTri = @MaVT";
+            SqlParameter[] para = { new SqlParameter("@MaVT", MaViTri) };
+            return dbViTri.MyExecuteNonQuery(sqlString, para, CommandType.Text, ref err);
+        }
+
     }
 }

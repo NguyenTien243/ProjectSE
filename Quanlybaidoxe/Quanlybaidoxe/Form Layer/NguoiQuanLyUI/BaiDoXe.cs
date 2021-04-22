@@ -35,7 +35,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 // Xóa trống các đối tượng trong Panel
                 //ResetValue();
                 btnThem.Enabled = true;
-                btnXoa.Enabled = false;
+                btnXoa.Enabled = true;
                 btnSua.Enabled = true;
                 btnHuy.Enabled = false;
                 btnLuu.Enabled = false;
@@ -55,8 +55,22 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private void BaiDoXe_Load(object sender, EventArgs e)
         {
             LoadData();
+            
         }
-
+        private void AutocomleteSearch()
+        {
+            AutoCompleteStringCollection autoSearchID = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection autoSearchName = new AutoCompleteStringCollection();
+            foreach (DataTable name in blViTri.GetPosition().Tables[0].Columns)
+            {
+                
+                
+            }
+            // http://vualaptrinh.blogspot.com/2015/07/chuc-nang-autocomplete-cua-textbox.html
+            txtTimKiem.AutoCompleteCustomSource = autoSearchID;
+            txtTimKiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtTimKiem.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+        }
         private void dgvQLBDX_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -148,6 +162,98 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 }
                 else MessageBox.Show("Không thể chỉnh sửa!!");
             }    
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            // Xóa trống các đối tượng trong Panel
+            ResetValue();
+            // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
+            this.btnThem.Enabled = true;
+            this.btnSua.Enabled = true;
+            this.btnXoa.Enabled = true;
+            this.dgvQLBDX.Enabled = true;
+            // Không cho thao tác trên các nút Lưu / Hủy / Panel
+            this.btnLuu.Enabled = false;
+            this.btnHuy.Enabled = false;
+            this.pnlQuanLyNV.Enabled = false;
+            dgvQLBDX_CellClick(null, null);
+        }
+
+        private void ResetValue()
+        {
+            txtMaViTri.ResetText();
+            txtTenViTri.ResetText();
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            if(cboTimKiem.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn loại tìm kiếm");
+                return;
+            }    
+            
+            if(cboTimKiem.SelectedIndex == 0)
+            {
+                dgvQLBDX.DataSource = blViTri.SearchPositionbyID(txtTimKiem.Text).Tables[0];
+                dgvQLBDX_CellClick(null, null);
+            }   
+            else
+            {
+                if (cboTimKiem.SelectedIndex == 1)
+                {
+                    dgvQLBDX.DataSource = blViTri.SearchPositionbyName(txtTimKiem.Text).Tables[0];
+                    dgvQLBDX_CellClick(null, null);
+                }
+            }    
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Thực hiện lệnh
+                // Lấy thứ tự record hiện hành
+                int row = dgvQLBDX.CurrentCell.RowIndex;
+                // Lấy MaKH của record hiện hành
+                string strNV =
+                dgvQLBDX.Rows[row].Cells[0].Value.ToString();
+                // Viết câu lệnh SQL
+                // Hiện thông báo xác nhận việc xóa mẫu t
+                // Khai báo biến traloi
+                DialogResult traloi;
+                // Hiện hộp thoại hỏi đáp
+                traloi = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                // Kiểm tra có nhắp chọn nút Ok không?
+                if (traloi == DialogResult.Yes)
+                {
+                    blViTri = new BLViTriXe();
+                    if (blViTri.DeletePosition(this.txtMaViTri.Text, ref err))
+                        // Thông báo
+                        MessageBox.Show("Đã xóa xong!");
+                    else
+                        // Thông báo
+                        MessageBox.Show("Xóa bị lỗi!");
+                    // Cập nhật lại DataGridView
+                    LoadData();
+                }
+                else
+                {
+                    // Thông báo
+                    MessageBox.Show("Không thực hiện việc xóa mẫu tin!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Không xóa được. Lỗi rồi!");
+            }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }
