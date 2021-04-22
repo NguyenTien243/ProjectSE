@@ -112,11 +112,10 @@ namespace Quanlybaidoxe
                 }
             }
             MessageBox.Show("Sai tài khoản hoặc mật khẩu !!!");
-            //frm_Management = new Form_Management();
-            ////frm_Management.getForm(this, dtNV.Rows[i][2].ToString());
-            //frm_Management.Show();
-            //this.Hide();
+            
         }
+
+
         public delegate void delPassData(string manv);
         private void DangNhap_Load(object sender, EventArgs e)
         {

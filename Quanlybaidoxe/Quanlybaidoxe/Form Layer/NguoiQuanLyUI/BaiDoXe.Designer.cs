@@ -339,6 +339,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.cboTimKiem.Name = "cboTimKiem";
             this.cboTimKiem.Size = new System.Drawing.Size(178, 28);
             this.cboTimKiem.TabIndex = 46;
+            this.cboTimKiem.SelectedIndexChanged += new System.EventHandler(this.cboTimKiem_SelectedIndexChanged);
             // 
             // btnTim
             // 

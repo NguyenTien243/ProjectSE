@@ -59,15 +59,22 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         private void AutocomleteSearch()
         {
-            AutoCompleteStringCollection autoSearchID = new AutoCompleteStringCollection();
+            if (cboTimKiem.SelectedIndex == -1)
+                return;
+            AutoCompleteStringCollection autoSearchID = new AutoCompleteStringCollection(); // thu thập những mẫu gợi í
             AutoCompleteStringCollection autoSearchName = new AutoCompleteStringCollection();
-            foreach (DataTable name in blViTri.GetPosition().Tables[0].Columns)
-            {
-                
-                
-            }
-            // http://vualaptrinh.blogspot.com/2015/07/chuc-nang-autocomplete-cua-textbox.html
-            txtTimKiem.AutoCompleteCustomSource = autoSearchID;
+            blViTri = new BLViTriXe();
+            DataSet datasetPosition = blViTri.GetPosition();
+            for ( int i = 0; i < datasetPosition.Tables[0].Rows.Count;i++)
+                {
+                autoSearchID.Add(datasetPosition.Tables[0].Rows[i]["MaViTri"].ToString().Trim()); // thêm gợi ý vào biến autoSearchID
+                autoSearchName.Add(datasetPosition.Tables[0].Rows[i]["TenViTri"].ToString().Trim());
+                }
+            // tham khảo autocompletesearch từ http://vualaptrinh.blogspot.com/2015/07/chuc-nang-autocomplete-cua-textbox.html
+           if(cboTimKiem.SelectedIndex == 0)
+                txtTimKiem.AutoCompleteCustomSource = autoSearchID;
+           else
+                txtTimKiem.AutoCompleteCustomSource = autoSearchName;
             txtTimKiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtTimKiem.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
         }
@@ -216,9 +223,13 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 // Thực hiện lệnh
                 // Lấy thứ tự record hiện hành
                 int row = dgvQLBDX.CurrentCell.RowIndex;
-                // Lấy MaKH của record hiện hành
-                string strNV =
-                dgvQLBDX.Rows[row].Cells[0].Value.ToString();
+                blViTri = new BLViTriXe();
+                // nếu mã vị trí hiện đang có xe thì không cho xóa
+                if(blViTri.CheckDeletePosition(txtMaViTri.Text.Trim(), ref err) == false)
+                {
+                    MessageBox.Show("Vị trí hiện tại đang có xe, vui lòng cho xe ra khỏi vị trí trước khi xóa!");
+                    return;
+                }    
                 // Viết câu lệnh SQL
                 // Hiện thông báo xác nhận việc xóa mẫu t
                 // Khai báo biến traloi
@@ -229,6 +240,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 // Kiểm tra có nhắp chọn nút Ok không?
                 if (traloi == DialogResult.Yes)
                 {
+
                     blViTri = new BLViTriXe();
                     if (blViTri.DeletePosition(this.txtMaViTri.Text, ref err))
                         // Thông báo
@@ -254,6 +266,14 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private void btnReload_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void cboTimKiem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboTimKiem.SelectedIndex == -1)
+                return;
+            else
+                AutocomleteSearch();
         }
     }
 }

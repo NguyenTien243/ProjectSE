@@ -67,6 +67,13 @@ namespace Quanlybaidoxe.BS_Layer
             SqlParameter[] para = { new SqlParameter("@MaVT", MaViTri) };
             return dbViTri.MyExecuteNonQuery(sqlString, para, CommandType.Text, ref err);
         }
+        public bool CheckDeletePosition(string MaViTri, ref string err)
+        {
+            string sqlString = "Select * From ViTri Where MaViTri = '"+MaViTri+"' and MaXe is NULL";
+            if (dbViTri.ExecuteQueryDataSet(sqlString, CommandType.Text).Tables[0].Rows.Count >= 1)
+                return true;
+            return false;
+        }
 
     }
 }
