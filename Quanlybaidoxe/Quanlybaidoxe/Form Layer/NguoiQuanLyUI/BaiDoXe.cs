@@ -208,7 +208,11 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 MessageBox.Show("Vui lòng chọn loại tìm kiếm");
                 return;
             }    
-            
+            if (txtTimKiem.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Vui lòng nhập nội dung tìm kiếm");
+                return;
+            }    
             if(cboTimKiem.SelectedIndex == 0)
             {
                 dgvQLBDX.DataSource = blViTri.SearchPositionbyID(txtTimKiem.Text).Tables[0];
