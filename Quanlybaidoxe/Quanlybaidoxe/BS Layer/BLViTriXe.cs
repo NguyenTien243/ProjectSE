@@ -75,5 +75,13 @@ namespace Quanlybaidoxe.BS_Layer
             return false;
         }
 
+        public bool CheckNamePosition(string mavitri, string tenvitri, ref string err)
+        {
+            string sqlString = "Select MaViTri From ViTri Where MaViTri != '" + mavitri.Trim() + "' and TenViTri = '" + tenvitri.Trim() + "'";
+            if (dbViTri.ExecuteQueryDataSet(sqlString, CommandType.Text).Tables[0].Rows.Count >= 1)
+                return false;
+            return true;
+        }
+
     }
 }

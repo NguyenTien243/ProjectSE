@@ -159,6 +159,14 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             }   
             else
             {
+                // kiểm tra Trùng Tên
+                blViTri = new BLViTriXe();
+                if (blViTri.CheckNamePosition(txtMaViTri.Text.Trim(), txtTenViTri.Text.Trim(), ref err) == false)
+                {
+                    MessageBox.Show("Tên vị trí bị trùng vui lòng kiểm tra lại");
+                    return;
+                }
+
                 blViTri = new BLViTriXe();
                 int r = dgvQLBDX.CurrentCell.RowIndex;
                 string MaViTri = dgvQLBDX.Rows[r].Cells[0].Value.ToString();
