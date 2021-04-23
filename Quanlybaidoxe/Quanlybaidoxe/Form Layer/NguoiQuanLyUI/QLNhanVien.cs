@@ -188,10 +188,11 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnThem.Enabled = false;
             this.btnSua.Enabled = false;
             this.btnXoa.Enabled = false;
-
+            txtMatKhau2.Text = txtMatKhau.Text;
             txtMaNV.Enabled = false;
             // this.btnThoat.Enabled = false;
             // Đưa con trỏ đến TextField txtXe
+            dgvQLNV.Enabled = false;
             this.txtTenNV.Focus();
         }
 
@@ -238,7 +239,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         {
             LoadThongTin();
             dgvQLNV.Columns["NgaySinh"].DefaultCellStyle.Format = "dd/MM/yyyy"; // fomat dạng ngày đổ lên datagridview https://www.ddth.com/showthread.php/312166-H%E1%BB%8Fi-v%E1%BB%81-format-datatime-trong-datagridview-c%E1%BB%A7a-c
-
+            dgvQLNV.Enabled = true;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

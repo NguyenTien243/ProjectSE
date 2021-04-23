@@ -138,7 +138,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             if(Add == true)
             {
                 blViTri = new BLViTriXe();
-                try {
+              //  try 
+                {
                     if (blViTri.CheckPositionId(txtMaViTri.Text).Tables[0].Rows.Count != 0)
                     {
                         MessageBox.Show("Vị trí này đã tồn tại, hãy nhập mã vị trí khác");
@@ -151,11 +152,11 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                     }
                     else MessageBox.Show("Có lỗi xảy ra, chưa thêm được!!");
                 }
-                catch
-                {
-                    MessageBox.Show("Không thể thêm được");
-                    LoadData();
-                }
+                //catch
+                //{
+                //    MessageBox.Show("Không thể thêm được");
+                //    LoadData();
+                //}
             }   
             else
             {
