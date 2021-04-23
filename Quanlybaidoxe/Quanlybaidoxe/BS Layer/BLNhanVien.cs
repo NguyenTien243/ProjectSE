@@ -56,9 +56,9 @@ namespace Quanlybaidoxe.BS_Layer
         /// </summary>
         /// <param name="TaiKhoan"></param>
         /// <returns></returns>
-        public DataSet CheckAcount(string TaiKhoan)
+        public DataSet CheckAcount(string TaiKhoan,string manv)
         {
-            return dbNhanVien.ExecuteQueryDataSet("SELECT TaiKhoan FROM TaiKhoan WHERE TaiKhoan ='" + TaiKhoan + "'", CommandType.Text);
+            return dbNhanVien.ExecuteQueryDataSet("SELECT TaiKhoan FROM TaiKhoan WHERE TaiKhoan ='" + TaiKhoan + "' and MaNV != '"+manv.Trim()+"'", CommandType.Text);
         }
 
         public bool UpdateStaff(string MaNV, string TenNV, DateTime NgaySinh, string GioiTinh, string CMND, string sdt, string DiaChi, string TaiKhoan, string MatKhau,float Luong, ref string err)
@@ -84,6 +84,14 @@ namespace Quanlybaidoxe.BS_Layer
             string sqlString = "Delete From TaiKhoan Where MaNV = @MaNV; Delete From NhanVien Where MaNV = @MaNV";
             SqlParameter[] para = { new SqlParameter("@MaNV", MaNV) };
             return dbNhanVien.MyExecuteNonQuery(sqlString, para, CommandType.Text, ref err);
+        }
+
+        public bool CheckCMND(string manv,string cmnd, ref string err)
+        {
+            string sqlString = "Select CMND From NhanVien Where MaNV != '"+manv.Trim()+"' and CMND = '" + cmnd.Trim() + "'";
+            if (dbNhanVien.ExecuteQueryDataSet(sqlString, CommandType.Text).Tables[0].Rows.Count >= 1)
+                return false;
+            return true;
         }
     }
 }

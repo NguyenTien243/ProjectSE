@@ -38,16 +38,9 @@ namespace Quanlybaidoxe.Form_Layer
         {
             this.manv = manv;
         }
-        private void pnlChucNang_Paint(object sender, PaintEventArgs e)
-        {
-            
+      
 
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         
         //Di chuyển form
@@ -103,7 +96,9 @@ namespace Quanlybaidoxe.Form_Layer
             }
         }
 
-        private void btnThongKe_Click(object sender, EventArgs e)
+      
+
+        private void btnTrangChu_Click(object sender, EventArgs e)
         {
             this.pnlChucNang.Controls.Clear();
             ThongKe FormThongKe = new ThongKe();
