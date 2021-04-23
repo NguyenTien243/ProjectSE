@@ -24,6 +24,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         {
             try
             {
+                dgvQLBDX.Enabled = true;
                 datatableViTri = new DataTable();
                 datatableViTri.Clear();
                 DataSet ds = blViTri.GetPosition();
@@ -114,6 +115,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            dgvQLBDX.Enabled = false;
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
             btnSua.Enabled = false;
@@ -283,10 +285,13 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void cboTimKiem_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtTimKiem.ResetText();
             if (cboTimKiem.SelectedIndex == -1)
                 return;
             else
                 AutocomleteSearch();
         }
+
+        
     }
 }
