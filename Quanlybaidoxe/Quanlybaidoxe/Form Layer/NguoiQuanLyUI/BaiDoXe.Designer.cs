@@ -347,7 +347,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTim.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTim.ForeColor = System.Drawing.Color.White;
-            this.btnTim.Location = new System.Drawing.Point(841, 377);
+            this.btnTim.Location = new System.Drawing.Point(841, 370);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(94, 41);
             this.btnTim.TabIndex = 47;
@@ -357,7 +357,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(649, 391);
+            this.txtTimKiem.Location = new System.Drawing.Point(649, 384);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(178, 27);
             this.txtTimKiem.TabIndex = 27;
@@ -367,7 +367,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(471, 391);
+            this.label9.Location = new System.Drawing.Point(469, 380);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(164, 28);
             this.label9.TabIndex = 48;

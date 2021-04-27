@@ -31,18 +31,18 @@ namespace Quanlybaidoxe.Form_Layer
         {
             blNhanVien = new BLNhanVien();
             DataSet datasetInfo = blNhanVien.GetPositionStaff(manv); // lấy tên nhân viên và tên chức vụ của nhân viên
-            lbUserName.Text += "  " +datasetInfo.Tables[0].Rows[0]["TenNV"].ToString();
+            lbUserName.Text += "  " + datasetInfo.Tables[0].Rows[0]["TenNV"].ToString();
             lbChucVu.Text += " " + datasetInfo.Tables[0].Rows[0]["TenCV"].ToString();
         }
         public void fundata(string manv)
         {
             this.manv = manv;
         }
-      
 
-        
 
-        
+
+
+
         //Di chuyển form
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -96,7 +96,7 @@ namespace Quanlybaidoxe.Form_Layer
             }
         }
 
-      
+
 
         private void btnTrangChu_Click(object sender, EventArgs e)
         {
@@ -105,6 +105,33 @@ namespace Quanlybaidoxe.Form_Layer
             FormThongKe.TopLevel = false;
             this.pnlChucNang.Controls.Add(FormThongKe);
             FormThongKe.Show();
+        }
+
+        private void btnDoXe_Click(object sender, EventArgs e)
+        {
+            this.pnlChucNang.Controls.Clear();
+            DoXe FormDoXe = new DoXe();
+            FormDoXe.TopLevel = false;
+            this.pnlChucNang.Controls.Add(FormDoXe);
+            FormDoXe.Show();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            this.pnlChucNang.Controls.Clear();
+            AdminForm FormAdmin = new AdminForm();
+            FormAdmin.TopLevel = false;
+            this.pnlChucNang.Controls.Add(FormAdmin);
+            FormAdmin.Show();
+        }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            this.pnlChucNang.Controls.Clear();
+            QLKhachHang FormQLKhachHang = new QLKhachHang();
+            FormQLKhachHang.TopLevel = false;
+            this.pnlChucNang.Controls.Add(FormQLKhachHang);
+            FormQLKhachHang.Show();
         }
     }
 }

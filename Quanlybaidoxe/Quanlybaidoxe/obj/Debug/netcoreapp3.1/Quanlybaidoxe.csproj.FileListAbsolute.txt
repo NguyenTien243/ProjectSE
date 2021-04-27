@@ -159,3 +159,11 @@ D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcore
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.BaiDoXe.resources
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.ThongKe.resources
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.AdminForm.resources
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.DoXe.resources
+C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.QLKhachHang.resources

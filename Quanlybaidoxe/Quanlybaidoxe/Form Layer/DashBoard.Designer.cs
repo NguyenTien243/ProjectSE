@@ -31,8 +31,10 @@ namespace Quanlybaidoxe.Form_Layer
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.btnDoXe = new System.Windows.Forms.Button();
             this.btnDangXuat = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnKhachHang = new System.Windows.Forms.Button();
             this.btnBaiDoXe = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnTrangChu = new System.Windows.Forms.Button();
@@ -50,8 +52,10 @@ namespace Quanlybaidoxe.Form_Layer
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.btnAdmin);
+            this.panel1.Controls.Add(this.btnDoXe);
             this.panel1.Controls.Add(this.btnDangXuat);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btnKhachHang);
             this.panel1.Controls.Add(this.btnBaiDoXe);
             this.panel1.Controls.Add(this.btnNhanVien);
             this.panel1.Controls.Add(this.btnTrangChu);
@@ -62,38 +66,72 @@ namespace Quanlybaidoxe.Form_Layer
             this.panel1.Size = new System.Drawing.Size(256, 762);
             this.panel1.TabIndex = 0;
             // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmin.Image")));
+            this.btnAdmin.Location = new System.Drawing.Point(0, 579);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(256, 67);
+            this.btnAdmin.TabIndex = 1;
+            this.btnAdmin.Text = "Admin";
+            this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // btnDoXe
+            // 
+            this.btnDoXe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDoXe.FlatAppearance.BorderSize = 0;
+            this.btnDoXe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoXe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDoXe.ForeColor = System.Drawing.Color.White;
+            this.btnDoXe.Image = ((System.Drawing.Image)(resources.GetObject("btnDoXe.Image")));
+            this.btnDoXe.Location = new System.Drawing.Point(0, 512);
+            this.btnDoXe.Name = "btnDoXe";
+            this.btnDoXe.Size = new System.Drawing.Size(256, 67);
+            this.btnDoXe.TabIndex = 1;
+            this.btnDoXe.Text = "Đỗ xe";
+            this.btnDoXe.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnDoXe.UseVisualStyleBackColor = true;
+            this.btnDoXe.Click += new System.EventHandler(this.btnDoXe_Click);
+            // 
             // btnDangXuat
             // 
-            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDangXuat.FlatAppearance.BorderSize = 0;
             this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDangXuat.ForeColor = System.Drawing.Color.White;
             this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
-            this.btnDangXuat.Location = new System.Drawing.Point(0, 550);
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 695);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(256, 75);
+            this.btnDangXuat.Size = new System.Drawing.Size(256, 67);
             this.btnDangXuat.TabIndex = 1;
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnDangXuat.UseVisualStyleBackColor = true;
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
-            // button3
+            // btnKhachHang
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(0, 475);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(256, 75);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Khách hàng";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnKhachHang.FlatAppearance.BorderSize = 0;
+            this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhachHang.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnKhachHang.ForeColor = System.Drawing.Color.White;
+            this.btnKhachHang.Image = ((System.Drawing.Image)(resources.GetObject("btnKhachHang.Image")));
+            this.btnKhachHang.Location = new System.Drawing.Point(0, 445);
+            this.btnKhachHang.Name = "btnKhachHang";
+            this.btnKhachHang.Size = new System.Drawing.Size(256, 67);
+            this.btnKhachHang.TabIndex = 1;
+            this.btnKhachHang.Text = "Khách hàng";
+            this.btnKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnKhachHang.UseVisualStyleBackColor = true;
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
             // btnBaiDoXe
             // 
@@ -103,9 +141,9 @@ namespace Quanlybaidoxe.Form_Layer
             this.btnBaiDoXe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBaiDoXe.ForeColor = System.Drawing.Color.White;
             this.btnBaiDoXe.Image = ((System.Drawing.Image)(resources.GetObject("btnBaiDoXe.Image")));
-            this.btnBaiDoXe.Location = new System.Drawing.Point(0, 400);
+            this.btnBaiDoXe.Location = new System.Drawing.Point(0, 378);
             this.btnBaiDoXe.Name = "btnBaiDoXe";
-            this.btnBaiDoXe.Size = new System.Drawing.Size(256, 75);
+            this.btnBaiDoXe.Size = new System.Drawing.Size(256, 67);
             this.btnBaiDoXe.TabIndex = 1;
             this.btnBaiDoXe.Text = "Bãi đỗ xe";
             this.btnBaiDoXe.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -120,9 +158,9 @@ namespace Quanlybaidoxe.Form_Layer
             this.btnNhanVien.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNhanVien.ForeColor = System.Drawing.Color.White;
             this.btnNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.Image")));
-            this.btnNhanVien.Location = new System.Drawing.Point(0, 325);
+            this.btnNhanVien.Location = new System.Drawing.Point(0, 311);
             this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Size = new System.Drawing.Size(256, 75);
+            this.btnNhanVien.Size = new System.Drawing.Size(256, 67);
             this.btnNhanVien.TabIndex = 1;
             this.btnNhanVien.Text = "Nhân viên";
             this.btnNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -139,7 +177,7 @@ namespace Quanlybaidoxe.Form_Layer
             this.btnTrangChu.Image = ((System.Drawing.Image)(resources.GetObject("btnTrangChu.Image")));
             this.btnTrangChu.Location = new System.Drawing.Point(0, 250);
             this.btnTrangChu.Name = "btnTrangChu";
-            this.btnTrangChu.Size = new System.Drawing.Size(256, 75);
+            this.btnTrangChu.Size = new System.Drawing.Size(256, 61);
             this.btnTrangChu.TabIndex = 1;
             this.btnTrangChu.Text = "Trang chủ";
             this.btnTrangChu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -236,11 +274,13 @@ namespace Quanlybaidoxe.Form_Layer
         private System.Windows.Forms.Label lbUserName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDangXuat;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnKhachHang;
         private System.Windows.Forms.Button btnBaiDoXe;
         private System.Windows.Forms.Panel pnl;
         private System.Windows.Forms.Panel pnlChucNang;
         private System.Windows.Forms.Button btnNhanVien;
         private System.Windows.Forms.Label lbChucVu;
+        private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Button btnDoXe;
     }
 }
