@@ -32,6 +32,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label1 = new System.Windows.Forms.Label();
             this.dgvAdmin = new System.Windows.Forms.DataGridView();
             this.pnlQuanLyNV = new System.Windows.Forms.Panel();
+            this.cboLoaiXe = new System.Windows.Forms.ComboBox();
             this.txtUuDai = new System.Windows.Forms.Label();
             this.txtGioToiDa = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtLoaiXe = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtGiaVe = new System.Windows.Forms.TextBox();
@@ -80,6 +80,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             // pnlQuanLyNV
             // 
+            this.pnlQuanLyNV.Controls.Add(this.cboLoaiXe);
             this.pnlQuanLyNV.Controls.Add(this.txtUuDai);
             this.pnlQuanLyNV.Controls.Add(this.txtGioToiDa);
             this.pnlQuanLyNV.Controls.Add(this.label5);
@@ -88,7 +89,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.pnlQuanLyNV.Controls.Add(this.label4);
             this.pnlQuanLyNV.Controls.Add(this.textBox4);
             this.pnlQuanLyNV.Controls.Add(this.label3);
-            this.pnlQuanLyNV.Controls.Add(this.txtLoaiXe);
             this.pnlQuanLyNV.Controls.Add(this.textBox3);
             this.pnlQuanLyNV.Controls.Add(this.label2);
             this.pnlQuanLyNV.Controls.Add(this.txtGiaVe);
@@ -98,6 +98,14 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.pnlQuanLyNV.Name = "pnlQuanLyNV";
             this.pnlQuanLyNV.Size = new System.Drawing.Size(944, 232);
             this.pnlQuanLyNV.TabIndex = 47;
+            // 
+            // cboLoaiXe
+            // 
+            this.cboLoaiXe.FormattingEnabled = true;
+            this.cboLoaiXe.Location = new System.Drawing.Point(161, 154);
+            this.cboLoaiXe.Name = "cboLoaiXe";
+            this.cboLoaiXe.Size = new System.Drawing.Size(252, 28);
+            this.cboLoaiXe.TabIndex = 27;
             // 
             // txtUuDai
             // 
@@ -179,13 +187,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label3.TabIndex = 26;
             this.label3.Text = "Tên giá vé:";
             // 
-            // txtLoaiXe
-            // 
-            this.txtLoaiXe.Location = new System.Drawing.Point(161, 156);
-            this.txtLoaiXe.Name = "txtLoaiXe";
-            this.txtLoaiXe.Size = new System.Drawing.Size(251, 27);
-            this.txtLoaiXe.TabIndex = 7;
-            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(668, 23);
@@ -263,6 +264,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnLuu.TabIndex = 53;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -345,7 +347,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox txtLoaiXe;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox txtGiaVe;
         private System.Windows.Forms.Button btnReload;
@@ -354,5 +355,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.ComboBox cboLoaiXe;
     }
 }
