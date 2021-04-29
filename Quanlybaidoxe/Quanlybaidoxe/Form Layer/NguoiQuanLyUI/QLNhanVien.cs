@@ -87,7 +87,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             {
                 try
 
-                { 
+                {
+                    DateTime now = DateTime.Today;
                     if (blNV.CheckStaffId(txtMaNV.Text).Tables[0].Rows.Count != 0)
                     {
                         MessageBox.Show("Mã nhân viên bị trùng, vui lòng nhập mã khác!");
@@ -95,15 +96,13 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                     else
                      if (blNV.CheckAcount(txtTaiKhoan.Text,txtMaNV.Text).Tables[0].Rows.Count != 0)
                     {
-                        MessageBox.Show("Tài khoản đã có người sử dụng, vui lòng đổi tài khoảnc!");
-                    }
-                    else
-                     if (txtMatKhau.Text != txtMatKhau2.Text)
+                        MessageBox.Show("Tài khoản đã có người sử dụng, vui lòng đổi tài khoản!");
+                    }                   
+                    else if(now.Year - dateTimePickerNgay.Value.Year < 18)
                     {
-                        MessageBox.Show("Việc xác nhận mật khẩu không trùng khớp. Vui lòng nhập lại!");
-                    }
-
-                    else
+                        MessageBox.Show("Chỉ nhận người đủ 18 tuổi");
+                    }    
+                        else
                     {
                         blNV = new BLNhanVien();
                         if (blNV.AddStaff(txtMaNV.Text, txtTenNV.Text, dateTimePickerNgay.Value, Gioitinh, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtTaiKhoan.Text, txtMatKhau.Text,luong, ref err))
@@ -124,14 +123,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 {
                     MessageBox.Show("Tài khoản đã có người sử dụng, vui lòng đổi tài khoảnc!");
                     return;
-                }
-                else
-                     if (txtMatKhau.Text != txtMatKhau2.Text)
-                {
-                    MessageBox.Show("Việc xác nhận mật khẩu không trùng khớp. Vui lòng nhập lại!");
-                    return;
-                }
-
+                }               
                 blNV = new BLNhanVien();
                 int r = dgvQLNV.CurrentCell.RowIndex;
                 string MaNV = dgvQLNV.Rows[r].Cells[0].Value.ToString();
@@ -188,7 +180,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnThem.Enabled = false;
             this.btnSua.Enabled = false;
             this.btnXoa.Enabled = false;
-            txtMatKhau2.Text = txtMatKhau.Text;
+           
             txtMaNV.Enabled = false;
             // this.btnThoat.Enabled = false;
             // Đưa con trỏ đến TextField txtXe
@@ -292,7 +284,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             txtSDT.ResetText();
             txtTaiKhoan.ResetText();
             txtMatKhau.ResetText();
-            txtMatKhau2.ResetText();
+           
             txtLuong.ResetText();
             txtLuong.Enabled = false;
             radNam.Checked = false;
