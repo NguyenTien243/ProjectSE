@@ -110,12 +110,18 @@ namespace Quanlybaidoxe.BS_Layer
            return "Select * From Giave Where MaGiaVe = '" + MaVe + "' and VeThang = 1";
         }
 
-        public bool EditTicket(string magiave, string tengiave, ref string err)
+        public bool EditTicket(string magiave, string tengiave,float giatien,string maloaixe,int giotoithieu,int giotoida,int uudai,int vethang, ref string err)
         {
-            string sqlString = "UPDATE GiaVe SET TenGiaVe=@TenViTri WHERE MaViTri=@MaViTri";
+            string sqlString = "UPDATE GiaVe SET MaGiaVe = @MaGiaVe, TenGiaVe = @TenGiaVe, GiaTien = @GiaTien, MaLoaiXe = @MaLoaiXe, GioToiThieu = @GioToiThieu, GioToiDa = @GioToiDa,UuDai = @UuDai,VeThang = @VeThang where MaGiaVe = @MaGiaVe";
             SqlParameter[] parameters = {
-                new SqlParameter("@MaViTri", magiave),
-                new SqlParameter("@TenViTri",tengiave),
+                new SqlParameter("@MaGiaVe", magiave),
+                new SqlParameter("@TenGiaVe",tengiave),
+                new SqlParameter("@GiaTien",giatien),
+                new SqlParameter("@MaLoaiXe",maloaixe),
+                new SqlParameter("@GioToiThieu",giotoithieu),
+                new SqlParameter("@GioToiDa",giotoida),
+                new SqlParameter("@UuDai",uudai),
+                new SqlParameter("@VeThang",vethang),
             };
             return dbGiaVe.MyExecuteNonQuery(sqlString, parameters, CommandType.Text, ref err);
         }
