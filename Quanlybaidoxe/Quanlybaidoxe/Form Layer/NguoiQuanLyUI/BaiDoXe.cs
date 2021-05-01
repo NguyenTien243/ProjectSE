@@ -137,7 +137,15 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 return;
             }
 
-            if(Add == true)
+            // kiểm tra Trùng Tên
+            blViTri = new BLViTriXe();
+            if (blViTri.CheckNamePosition(txtMaViTri.Text.Trim(), txtTenViTri.Text.Trim(), ref err) == false)
+            {
+                MessageBox.Show("Tên vị trí bị trùng vui lòng kiểm tra lại");
+                return;
+            }
+
+            if (Add == true)
             {
                 blViTri = new BLViTriXe();
               //  try 
@@ -162,13 +170,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             }   
             else
             {
-                // kiểm tra Trùng Tên
-                blViTri = new BLViTriXe();
-                if (blViTri.CheckNamePosition(txtMaViTri.Text.Trim(), txtTenViTri.Text.Trim(), ref err) == false)
-                {
-                    MessageBox.Show("Tên vị trí bị trùng vui lòng kiểm tra lại");
-                    return;
-                }
+               
 
                 blViTri = new BLViTriXe();
                 int r = dgvQLBDX.CurrentCell.RowIndex;

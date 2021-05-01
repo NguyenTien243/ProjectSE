@@ -90,5 +90,48 @@ namespace Quanlybaidoxe.BS_Layer
                 return false;
             }
         }
+
+        public bool DeleteTicket(string MaGiaVe, ref string err)
+        {
+            string sqlString = "Delete From GiaVe Where MaGiaVe = @MaGiaVe";
+            SqlParameter[] para = { new SqlParameter("@MaGiaVe", MaGiaVe) };
+            return dbGiaVe.MyExecuteNonQuery(sqlString, para, CommandType.Text, ref err);
+        }
+        public bool CheckDeleteTicket(string Mave, ref string err)
+        {
+            // không cho phép xóa vé ngày, chỉ cho phép xóa vé tháng
+            string sqlString = GetStringCheckDeleteTicket(Mave);
+            if (dbGiaVe.ExecuteQueryDataSet(sqlString, CommandType.Text).Tables[0].Rows.Count >= 1)
+                return true;
+            return false;
+        }
+        private string GetStringCheckDeleteTicket(string MaVe)
+        {
+           return "Select * From Giave Where MaGiaVe = '" + MaVe + "' and VeThang = 1";
+        }
+
+        public bool EditTicket(string magiave, string tengiave,float giatien,string maloaixe,int giotoithieu,int giotoida,int uudai,int vethang, ref string err)
+        {
+            string sqlString = "UPDATE GiaVe SET MaGiaVe = @MaGiaVe, TenGiaVe = @TenGiaVe, GiaTien = @GiaTien, MaLoaiXe = @MaLoaiXe, GioToiThieu = @GioToiThieu, GioToiDa = @GioToiDa,UuDai = @UuDai,VeThang = @VeThang where MaGiaVe = @MaGiaVe";
+            SqlParameter[] parameters = {
+                new SqlParameter("@MaGiaVe", magiave),
+                new SqlParameter("@TenGiaVe",tengiave),
+                new SqlParameter("@GiaTien",giatien),
+                new SqlParameter("@MaLoaiXe",maloaixe),
+                new SqlParameter("@GioToiThieu",giotoithieu),
+                new SqlParameter("@GioToiDa",giotoida),
+                new SqlParameter("@UuDai",uudai),
+                new SqlParameter("@VeThang",vethang),
+            };
+            return dbGiaVe.MyExecuteNonQuery(sqlString, parameters, CommandType.Text, ref err);
+        }
+
+        public bool CheckNameTicket(string magiave, string tengiave, ref string err)
+        {
+            string sqlString = "Select * From GiaVe Where MaGiaVe != '" + magiave.Trim() + "' and TenGiaVe = '" + tengiave.Trim() + "'";
+            if (dbGiaVe.ExecuteQueryDataSet(sqlString, CommandType.Text).Tables[0].Rows.Count >= 1)
+                return false;
+            return true;
+        }
     }
 }

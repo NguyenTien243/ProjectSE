@@ -18,6 +18,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         DataTable dataTableGiaVe = null;
         BLGiaVe blGiaVe = new BLGiaVe();
         int VeThang;
+        float giave;
+        int giotoithieu, giotoida, uudai;
         bool Add;
         string err;         
         private void LoadData()
@@ -46,6 +48,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                     cboLoaiXe.Items.Add(blGiaVe.GetVehicleCategory().Tables[0].Rows[dem][0].ToString());
                 }
                 pnlQuanLyGiaVe.Enabled = false;
+
                 dgvGiaVe_CellClick(null, null);
             }
             catch
@@ -54,15 +57,85 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             }
         }
 
-
-
-        private void btnLuu_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Hàm kiểm tra trùng tên giá vé, giờ tối thiểu, giờ tối đa, ưu đãi, giá vé
+        /// </summary>
+        private bool CheckDaTa(ref float giave,ref int giotoithieu,ref int giotoida,ref int uudai)
         {
+            bool check = true;
+            // kiểm tra phải nhập đủ thông tin
             if (txtMaGiaVe.Text.Trim().Length == 0 || txtTenGiaVe.Text.Trim().Length == 0
-                || txtGiaVe.Text.Trim().Length == 0 || cboLoaiXe.Text.Trim().Length == 0 
+                || txtGiaVe.Text.Trim().Length == 0 || cboLoaiXe.Text.Trim().Length == 0
                 || txtGioToiThieu.Text.Trim().Length == 0 || txtGioToiDa.Text.Trim().Length == 0 || txtUuDai.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Vui lòng điền đủ thông tin!!");
+                check = false;
+            }
+
+            // kiểm tra giá vé có nhập đúng hay không
+            try
+            {
+                giave = float.Parse(txtGiaVe.Text.Trim());
+                if (giave < 0) // nếu giá vé nhỏ hơn 0 thì chia 0 cho xảy ra lỗi để nhảy vào catch
+                {
+                    MessageBox.Show("Giá vé phải là kiểu số và lớn hơn hoặc bằng 0!");
+                    check = false;
+                }    
+            }
+            catch
+            {
+                MessageBox.Show("Giá vé phải là kiểu số và lớn hơn hoặc bằng 0!");
+                check = false;
+            }
+
+            // kiểm tra giờ tối thiểu và giờ tối đa có phải là kiểu int không
+            try
+            {
+                giotoithieu = int.Parse(txtGioToiThieu.Text.Trim());
+                giotoida = int.Parse(txtGioToiDa.Text.Trim());
+                if (giotoida < 0 || giotoida < 0) // nếu giờ tối thiểu hoặc giờ tối đa nhỏ hơn 0 thì chia 0 cho xảy ra lỗi để nhảy vào catch
+                {
+                    MessageBox.Show("Giờ tối thiểu và giờ tối đa phải là số nguyên và lớn hơn hoặc bằng 0!");
+                    check = false;
+                }    
+            }
+            catch
+            {
+                MessageBox.Show("Giờ tối thiểu và giờ tối đa phải là số nguyên và lớn hơn hoặc bằng 0!");
+                check = false;
+            }
+            // kiểm tra giờ tối thiểu phải nhỏ hơn giờ tối đa
+            if (giotoida < giotoithieu)
+            {
+                MessageBox.Show("Giờ tối thiểu phải nhỏ hơn giờ tối đa!");
+                check = false;
+            }
+            // kiểm tra ưu đãi >=0
+            try
+            {
+                uudai = int.Parse(txtUuDai.Text.Trim());
+                if (uudai < 0) // nếu ưu đãi nhỏ hơn 0 thì chia 0 cho lỗi nhảy vào hàm catch để thông báo
+                {
+                    MessageBox.Show("Vui lòng nhập ưu đãi là số nguyên không âm!");
+                    check = false;
+                }    
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng nhập ưu đãi là số nguyên không âm!");
+                check = false;
+            }
+            return check;
+        }
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (CheckDaTa(ref giave, ref giotoithieu, ref giotoida, ref uudai) == false)
+                return;
+            // kiểm tra Trùng Tên
+            blGiaVe = new BLGiaVe();
+            if (blGiaVe.CheckNameTicket(txtMaGiaVe.Text.Trim(), txtTenGiaVe.Text.Trim(), ref err) == false)
+            {
+                MessageBox.Show("Tên giá vé bị trùng vui lòng kiểm tra lại");
                 return;
             }
 
@@ -92,18 +165,19 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
          
             }
             else
-            {//CODE SỬA
-                
-
-                //blGiaVe = new BLGiaVe();
-                //int r = dgvQLBDX.CurrentCell.RowIndex;
-                //string MaViTri = dgvQLBDX.Rows[r].Cells[0].Value.ToString();
-                //if (blViTri.EditPosition(MaViTri, txtTenViTri.Text, ref err) == true)
-                //{
-                //    MessageBox.Show("Chỉnh sửa thành công, đã cập nhật lại thông tin");
-                //    LoadData();
-                //}
-                //else MessageBox.Show("Không thể chỉnh sửa!!");
+            { 
+                blGiaVe = new BLGiaVe();
+                string maloaive = blGiaVe.GetVechicleId(cboLoaiXe.Text).Tables[0].Rows[0][0].ToString();
+                int r = dgvGiaVe.CurrentCell.RowIndex;
+                string MaViTri = dgvGiaVe.Rows[r].Cells[0].Value.ToString();
+                blGiaVe = new BLGiaVe();
+                if (blGiaVe.EditTicket(txtMaGiaVe.Text.Trim(), txtTenGiaVe.Text.Trim(), giave,maloaive, giotoithieu, giotoida, uudai, VeThang, ref err) == true)
+                {
+                    MessageBox.Show("Chỉnh sửa thành công, đã cập nhật lại thông tin");
+                    LoadData();
+                    txtMaGiaVe.Enabled = true;
+                }
+                else MessageBox.Show("Không thể chỉnh sửa!!");
             }
         }
 
@@ -124,6 +198,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 txtGioToiDa.Text = dgvGiaVe.Rows[r].Cells[5].Value.ToString();
                 txtUuDai.Text = dgvGiaVe.Rows[r].Cells[6].Value.ToString();
                 cboLoaiXe.Text  = blGiaVe.GetNameVehicle(dgvGiaVe.Rows[r].Cells[3].Value.ToString()).Tables[0].Rows[0][0].ToString();
+                if (dgvGiaVe.Rows[r].Cells["VeThang"].Value.ToString() == "True")
+                    checkBoxVeThang.Checked = true;
+                else
+                    checkBoxVeThang.Checked = false;
             }
             catch
             {
@@ -134,10 +212,13 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private void AdminForm_Load(object sender, EventArgs e)
         {
             LoadData();
+            // không cho thay đỏi checkbox trên datagridview : https://www.codeproject.com/Questions/133512/Disable-checkbox-in-datagridview
+            dgvGiaVe.Columns["VeThang"].ReadOnly = true;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            checkBoxVeThang.Checked = false;
             Add = true;
             //ResetValue();
             btnThem.Enabled = false;
@@ -168,9 +249,9 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         {
             Add = false;
             pnlQuanLyGiaVe.Enabled = true;
+            txtMaGiaVe.Enabled = true;
             ResetValue();
-            LoadData();
-            
+            LoadData();          
         }
 
         private void checkBoxVeThang_CheckedChanged(object sender, EventArgs e)
@@ -188,6 +269,79 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 txtGioToiDa.Enabled = true;
                 txtGioToiThieu.Enabled = true;
                 VeThang = 0;
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if(checkBoxVeThang.Checked ==true)
+            {
+                txtGioToiDa.Text = "0";
+                txtGioToiThieu.Text = "0";
+                VeThang = 1;
+            }    
+            dgvGiaVe.Enabled = false;
+            btnLuu.Enabled = true;
+            btnHuy.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            btnThem.Enabled = false;
+            pnlQuanLyGiaVe.Enabled = true;
+            txtMaGiaVe.Enabled = false;
+            dgvGiaVe.Enabled = false;
+            Add = false;
+        }
+
+    
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Thực hiện lệnh
+                // Lấy thứ tự record hiện hành
+                int row = dgvGiaVe.CurrentCell.RowIndex;
+                blGiaVe = new BLGiaVe();
+                // nếu mã vị trí hiện đang có xe thì không cho xóa
+                if (blGiaVe.CheckDeleteTicket(txtMaGiaVe.Text.Trim(), ref err) == false)
+                {
+                    MessageBox.Show("Không cho phép xóa vé ngày!");
+                    return;
+                }
+                // Viết câu lệnh SQL
+                // Hiện thông báo xác nhận việc xóa mẫu t
+                // Khai báo biến traloi
+                DialogResult traloi;
+                // Hiện hộp thoại hỏi đáp
+                traloi = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                // Kiểm tra có nhắp chọn nút Ok không?
+                if (traloi == DialogResult.Yes)
+                {
+
+                    blGiaVe = new BLGiaVe();
+                    if (blGiaVe.DeleteTicket(this.txtMaGiaVe.Text, ref err))
+                        // Thông báo
+                        MessageBox.Show("Đã xóa xong!");
+                    else
+                        // Thông báo
+                        MessageBox.Show("Xóa bị lỗi!");
+                    // Cập nhật lại DataGridView
+                    LoadData();
+                }
+                else
+                {
+                    // Thông báo
+                    MessageBox.Show("Không thực hiện việc xóa mẫu tin!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Không xóa được. Lỗi rồi!");
             }
         }
     }
