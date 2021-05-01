@@ -31,6 +31,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         {
             this.label1 = new System.Windows.Forms.Label();
             this.pnlQuanLyNV = new System.Windows.Forms.Panel();
+            this.radNu = new System.Windows.Forms.RadioButton();
+            this.radNam = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.txtUuDai = new System.Windows.Forms.Label();
             this.txtGioToiDa = new System.Windows.Forms.Label();
@@ -38,6 +40,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtGioToiThieu = new System.Windows.Forms.Label();
             this.txtNgaySinh = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtNgayHetHan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaXe = new System.Windows.Forms.TextBox();
@@ -45,9 +48,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtCMND = new System.Windows.Forms.TextBox();
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.txtMaKH = new System.Windows.Forms.TextBox();
-            this.radNam = new System.Windows.Forms.RadioButton();
-            this.radNu = new System.Windows.Forms.RadioButton();
-            this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.dgvQLBDX = new System.Windows.Forms.DataGridView();
             this.btnReload = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
@@ -98,6 +98,28 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.pnlQuanLyNV.Name = "pnlQuanLyNV";
             this.pnlQuanLyNV.Size = new System.Drawing.Size(944, 232);
             this.pnlQuanLyNV.TabIndex = 49;
+            // 
+            // radNu
+            // 
+            this.radNu.AutoSize = true;
+            this.radNu.Location = new System.Drawing.Point(371, 161);
+            this.radNu.Name = "radNu";
+            this.radNu.Size = new System.Drawing.Size(50, 24);
+            this.radNu.TabIndex = 28;
+            this.radNu.TabStop = true;
+            this.radNu.Text = "Nữ";
+            this.radNu.UseVisualStyleBackColor = true;
+            // 
+            // radNam
+            // 
+            this.radNam.AutoSize = true;
+            this.radNam.Location = new System.Drawing.Point(170, 161);
+            this.radNam.Name = "radNam";
+            this.radNam.Size = new System.Drawing.Size(62, 24);
+            this.radNam.TabIndex = 28;
+            this.radNam.TabStop = true;
+            this.radNam.Text = "Nam";
+            this.radNam.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -172,6 +194,13 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label4.TabIndex = 25;
             this.label4.Text = "CMND:";
             // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Location = new System.Drawing.Point(669, 24);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(251, 27);
+            this.txtDiaChi.TabIndex = 7;
+            // 
             // txtNgayHetHan
             // 
             this.txtNgayHetHan.Location = new System.Drawing.Point(669, 68);
@@ -228,35 +257,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(252, 27);
             this.txtMaKH.TabIndex = 5;
-            // 
-            // radNam
-            // 
-            this.radNam.AutoSize = true;
-            this.radNam.Location = new System.Drawing.Point(170, 161);
-            this.radNam.Name = "radNam";
-            this.radNam.Size = new System.Drawing.Size(62, 24);
-            this.radNam.TabIndex = 28;
-            this.radNam.TabStop = true;
-            this.radNam.Text = "Nam";
-            this.radNam.UseVisualStyleBackColor = true;
-            // 
-            // radNu
-            // 
-            this.radNu.AutoSize = true;
-            this.radNu.Location = new System.Drawing.Point(371, 161);
-            this.radNu.Name = "radNu";
-            this.radNu.Size = new System.Drawing.Size(50, 24);
-            this.radNu.TabIndex = 28;
-            this.radNu.TabStop = true;
-            this.radNu.Text = "Nữ";
-            this.radNu.UseVisualStyleBackColor = true;
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.Location = new System.Drawing.Point(669, 24);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(251, 27);
-            this.txtDiaChi.TabIndex = 7;
             // 
             // dgvQLBDX
             // 
@@ -333,6 +333,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnSua.TabIndex = 52;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 

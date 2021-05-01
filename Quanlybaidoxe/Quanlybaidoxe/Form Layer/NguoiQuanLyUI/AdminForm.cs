@@ -58,14 +58,28 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            //if (txtMaGiaVe.Text.Trim().Length == 0 || txtTenGiaVe.Text.Trim().Length == 0
+            //    || txtGiaVe.Text.Trim().Length == 0 || cboLoaiXe.Text.Trim().Length == 0 
+            //    || txtGioToiThieu.Text.Trim().Length == 0 || txtGioToiDa.Text.Trim().Length == 0 || txtUuDai.Text.Trim().Length == 0)
+            //{
+            //    MessageBox.Show("Vui lòng điền đủ thông tin!!");
+            //    return;
+            //}
+
+
             if (txtMaGiaVe.Text.Trim().Length == 0 || txtTenGiaVe.Text.Trim().Length == 0
-                || txtGiaVe.Text.Trim().Length == 0 || cboLoaiXe.Text.Trim().Length == 0 
-                || txtGioToiThieu.Text.Trim().Length == 0 || txtGioToiDa.Text.Trim().Length == 0 || txtUuDai.Text.Trim().Length == 0)
+                || txtGiaVe.Text.Trim().Length == 0 || cboLoaiXe.Text.Trim().Length == 0
+                || txtUuDai.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Vui lòng điền đủ thông tin!!");
                 return;
             }
-
+            else
+            if(checkBoxVeThang.Checked == false && (txtGioToiThieu.Text.Trim().Length == 0 || txtGioToiDa.Text.Trim().Length == 0))
+            {
+                MessageBox.Show("Vui lòng điền đủ thông tin!!");
+                return;
+            }
             if (Add == true)
             {
                 blGiaVe = new BLGiaVe();
@@ -92,18 +106,18 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
          
             }
             else
-            {//CODE SỬA
-                
+            {
 
-                //blGiaVe = new BLGiaVe();
-                //int r = dgvQLBDX.CurrentCell.RowIndex;
-                //string MaViTri = dgvQLBDX.Rows[r].Cells[0].Value.ToString();
-                //if (blViTri.EditPosition(MaViTri, txtTenViTri.Text, ref err) == true)
-                //{
-                //    MessageBox.Show("Chỉnh sửa thành công, đã cập nhật lại thông tin");
-                //    LoadData();
-                //}
-                //else MessageBox.Show("Không thể chỉnh sửa!!");
+
+                blGiaVe = new BLGiaVe();
+                int r =  dgvGiaVe.CurrentCell.RowIndex;
+                string MaGiaVe = dgvGiaVe.Rows[r].Cells[0].Value.ToString();
+                if (blGiaVe.EditPosition(MaViTri, txtTenViTri.Text, ref err) == true)
+                {
+                    MessageBox.Show("Chỉnh sửa thành công, đã cập nhật lại thông tin");
+                    LoadData();
+                }
+                else MessageBox.Show("Không thể chỉnh sửa!!");
             }
         }
 
@@ -124,6 +138,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 txtGioToiDa.Text = dgvGiaVe.Rows[r].Cells[5].Value.ToString();
                 txtUuDai.Text = dgvGiaVe.Rows[r].Cells[6].Value.ToString();
                 cboLoaiXe.Text  = blGiaVe.GetNameVehicle(dgvGiaVe.Rows[r].Cells[3].Value.ToString()).Tables[0].Rows[0][0].ToString();
+                if (dgvGiaVe.Rows[r].Cells["VeThang"].Value.ToString() == "True")
+                    checkBoxVeThang.Checked = true;
+                else
+                    checkBoxVeThang.Checked = false;
             }
             catch
             {
@@ -168,9 +186,9 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         {
             Add = false;
             pnlQuanLyGiaVe.Enabled = true;
+            txtMaGiaVe.Enabled = true;
             ResetValue();
-            LoadData();
-            
+            LoadData();          
         }
 
         private void checkBoxVeThang_CheckedChanged(object sender, EventArgs e)
@@ -188,6 +206,72 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 txtGioToiDa.Enabled = true;
                 txtGioToiThieu.Enabled = true;
                 VeThang = 0;
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            dgvGiaVe.Enabled = false;
+            btnLuu.Enabled = true;
+            btnHuy.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            btnThem.Enabled = false;
+            pnlQuanLyGiaVe.Enabled = true;
+            txtMaGiaVe.Enabled = false;
+            dgvGiaVe.Enabled = false;
+            Add = false;
+        }
+        
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Thực hiện lệnh
+                // Lấy thứ tự record hiện hành
+                int row = dgvGiaVe.CurrentCell.RowIndex;
+                blGiaVe = new BLGiaVe();
+                // nếu mã vị trí hiện đang có xe thì không cho xóa
+                if (blGiaVe.CheckDeleteTicket(txtMaGiaVe.Text.Trim(), ref err) == false)
+                {
+                    MessageBox.Show("Không cho phép xóa vé ngày!");
+                    return;
+                }
+                // Viết câu lệnh SQL
+                // Hiện thông báo xác nhận việc xóa mẫu t
+                // Khai báo biến traloi
+                DialogResult traloi;
+                // Hiện hộp thoại hỏi đáp
+                traloi = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                // Kiểm tra có nhắp chọn nút Ok không?
+                if (traloi == DialogResult.Yes)
+                {
+
+                    blGiaVe = new BLGiaVe();
+                    if (blGiaVe.DeleteTicket(this.txtMaGiaVe.Text, ref err))
+                        // Thông báo
+                        MessageBox.Show("Đã xóa xong!");
+                    else
+                        // Thông báo
+                        MessageBox.Show("Xóa bị lỗi!");
+                    // Cập nhật lại DataGridView
+                    LoadData();
+                }
+                else
+                {
+                    // Thông báo
+                    MessageBox.Show("Không thực hiện việc xóa mẫu tin!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Không xóa được. Lỗi rồi!");
             }
         }
     }

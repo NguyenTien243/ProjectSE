@@ -14,5 +14,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         {
             InitializeComponent();
         }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

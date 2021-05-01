@@ -90,5 +90,42 @@ namespace Quanlybaidoxe.BS_Layer
                 return false;
             }
         }
+
+        public bool DeleteTicket(string MaGiaVe, ref string err)
+        {
+            string sqlString = "Delete From GiaVe Where MaGiaVe = @MaGiaVe";
+            SqlParameter[] para = { new SqlParameter("@MaGiaVe", MaGiaVe) };
+            return dbGiaVe.MyExecuteNonQuery(sqlString, para, CommandType.Text, ref err);
+        }
+        public bool CheckDeleteTicket(string Mave, ref string err)
+        {
+            // không cho phép xóa vé ngày, chỉ cho phép xóa vé tháng
+            string sqlString = GetStringCheckDeleteTicket(Mave);
+            if (dbGiaVe.ExecuteQueryDataSet(sqlString, CommandType.Text).Tables[0].Rows.Count >= 1)
+                return true;
+            return false;
+        }
+        private string GetStringCheckDeleteTicket(string MaVe)
+        {
+           return "Select * From Giave Where MaGiaVe = '" + MaVe + "' and VeThang = 1";
+        }
+
+        public bool EditTicket(string magiave, string tengiave, ref string err)
+        {
+            string sqlString = "UPDATE GiaVe SET TenGiaVe=@TenViTri WHERE MaViTri=@MaViTri";
+            SqlParameter[] parameters = {
+                new SqlParameter("@MaViTri", magiave),
+                new SqlParameter("@TenViTri",tengiave),
+            };
+            return dbGiaVe.MyExecuteNonQuery(sqlString, parameters, CommandType.Text, ref err);
+        }
+
+        public bool CheckNameTicket(string magiave, string tengiave, ref string err)
+        {
+            string sqlString = "Select * From GiaVe Where MaGiaVe != '" + magiave.Trim() + "' and TenGiaVe = '" + tengiave.Trim() + "'";
+            if (dbGiaVe.ExecuteQueryDataSet(sqlString, CommandType.Text).Tables[0].Rows.Count >= 1)
+                return false;
+            return true;
+        }
     }
 }
