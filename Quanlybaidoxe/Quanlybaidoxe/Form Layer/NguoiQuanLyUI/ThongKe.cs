@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Quanlybaidoxe.BS_Layer;
 
 namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 {
@@ -13,6 +14,26 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         public ThongKe()
         {
             InitializeComponent();
+        }
+        BLNhanVien blNhanVien = new BLNhanVien();
+        BLKhachHang blKhachHang = new BLKhachHang();
+        BLViTriXe blViTri = new BLViTriXe();
+        BLXe blXe = new BLXe();
+        private void LoadData()
+        {
+            //Đếm số lượng Nhân viên
+            lbSoLuongNhanVien.Text = blNhanVien.CountNhanVien().Tables[0].Rows[0][0].ToString();
+            //Đếm số lượng khách hàng
+            lbSoLuongKhachHang.Text = blKhachHang.CountKhachHang().Tables[0].Rows[0][0].ToString();
+            //Đếm số lượng vị trí đỗ xe
+            lbSoViTriDo.Text = blViTri.CountVitrido().Tables[0].Rows[0][0].ToString();
+            //Đếm số lượng xe
+            lbSoXeDangGui.Text = blXe.CountXe().Tables[0].Rows[0][0].ToString();
+        }
+
+        private void ThongKe_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

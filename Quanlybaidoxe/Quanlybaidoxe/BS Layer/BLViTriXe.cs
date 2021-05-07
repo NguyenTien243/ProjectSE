@@ -82,6 +82,10 @@ namespace Quanlybaidoxe.BS_Layer
                 return false;
             return true;
         }
+        public DataSet CountVitrido()
+        {
+            return dbViTri.ExecuteQueryDataSet("Select COUNT(ViTri.MaViTri) From ViTri ", CommandType.Text);
+        }
 
     }
 }

@@ -45,7 +45,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 //ĐẾM SỐ LƯỢNG XE
                 lbTongBaiOto.Text = blViTri.CountCar().Tables[0].Rows[0][0].ToString();
                 lbTongBaiXeMay.Text = blViTri.CountMotorbike().Tables[0].Rows[0][0].ToString();
-
+                
                 dgvQLBDX_CellClick(null, null);
             }
             catch
@@ -293,7 +293,5 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             else
                 AutocomleteSearch();
         }
-
-        
     }
 }

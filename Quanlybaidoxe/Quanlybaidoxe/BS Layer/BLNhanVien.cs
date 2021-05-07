@@ -93,5 +93,10 @@ namespace Quanlybaidoxe.BS_Layer
                 return false;
             return true;
         }
+        public DataSet CountNhanVien()
+        {
+            return dbNhanVien.ExecuteQueryDataSet("Select COUNT(NhanVien.MaNV) From NhanVien ", CommandType.Text);
+        }
     }
+
 }
