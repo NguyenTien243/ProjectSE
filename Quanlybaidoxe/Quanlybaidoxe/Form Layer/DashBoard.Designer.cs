@@ -78,7 +78,7 @@ namespace Quanlybaidoxe.Form_Layer
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(256, 67);
             this.btnAdmin.TabIndex = 1;
-            this.btnAdmin.Text = "Admin";
+            this.btnAdmin.Text = "Giá vé";
             this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnAdmin.UseVisualStyleBackColor = true;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
@@ -145,7 +145,7 @@ namespace Quanlybaidoxe.Form_Layer
             this.btnBaiDoXe.Name = "btnBaiDoXe";
             this.btnBaiDoXe.Size = new System.Drawing.Size(256, 67);
             this.btnBaiDoXe.TabIndex = 1;
-            this.btnBaiDoXe.Text = "Bãi đỗ xe";
+            this.btnBaiDoXe.Text = "Vị Trí";
             this.btnBaiDoXe.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnBaiDoXe.UseVisualStyleBackColor = true;
             this.btnBaiDoXe.Click += new System.EventHandler(this.btnBaiDoXe_Click);

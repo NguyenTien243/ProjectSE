@@ -9,9 +9,9 @@ using Quanlybaidoxe.BS_Layer;
 
 namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 {
-    public partial class AdminForm : Form
+    public partial class QLGiaVe : Form
     {
-        public AdminForm()
+        public QLGiaVe()
         {
             InitializeComponent();
         }
@@ -21,11 +21,12 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         float giave;
         int giotoithieu, giotoida, uudai;
         bool Add;
-        string err;         
+        string err;
         private void LoadData()
         {
             try
             {
+                btnReload.Enabled = true;
                 dgvGiaVe.Enabled = true;
                 dataTableGiaVe = new DataTable();
                 dataTableGiaVe.Clear();
@@ -44,7 +45,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 btnLuu.Enabled = false;
                 cboLoaiXe.Items.Clear();
                 for (int dem = 0; dem < blGiaVe.GetVehicleCategory().Tables[0].Rows.Count; dem++) //Thêm loại xe vào combobox
-                {                   
+                {
                     cboLoaiXe.Items.Add(blGiaVe.GetVehicleCategory().Tables[0].Rows[dem][0].ToString());
                 }
                 pnlQuanLyGiaVe.Enabled = false;
@@ -60,7 +61,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         /// <summary>
         /// Hàm kiểm tra trùng tên giá vé, giờ tối thiểu, giờ tối đa, ưu đãi, giá vé
         /// </summary>
-        private bool CheckDaTa(ref float giave,ref int giotoithieu,ref int giotoida,ref int uudai)
+        private bool CheckDaTa(string Gia, string giotoithieu, string giotoida, string uudai)
         {
             bool check = true;
             // kiểm tra phải nhập đủ thông tin
@@ -71,65 +72,66 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 MessageBox.Show("Vui lòng điền đủ thông tin!!");
                 check = false;
             }
+            blGiaVe = new BLGiaVe();
+            check = blGiaVe.CheckType(giotoithieu, giotoida, uudai, Gia);
+            ////// kiểm tra giá vé có nhập đúng hay không
+            //try
+            //{
+            //    giave = float.Parse(txtGiaVe.Text.Trim());
+            //    if (giave < 0) // nếu giá vé nhỏ hơn 0 thì chia 0 cho xảy ra lỗi để nhảy vào catch
+            //    {
+            //        MessageBox.Show("Giá vé phải là kiểu số và lớn hơn hoặc bằng 0!");
+            //        check = false;
+            //    }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Giá vé phải là kiểu số và lớn hơn hoặc bằng 0!");
+            //    check = false;
+            //}
 
-            // kiểm tra giá vé có nhập đúng hay không
-            try
-            {
-                giave = float.Parse(txtGiaVe.Text.Trim());
-                if (giave < 0) // nếu giá vé nhỏ hơn 0 thì chia 0 cho xảy ra lỗi để nhảy vào catch
-                {
-                    MessageBox.Show("Giá vé phải là kiểu số và lớn hơn hoặc bằng 0!");
-                    check = false;
-                }    
-            }
-            catch
-            {
-                MessageBox.Show("Giá vé phải là kiểu số và lớn hơn hoặc bằng 0!");
-                check = false;
-            }
-
-            // kiểm tra giờ tối thiểu và giờ tối đa có phải là kiểu int không
-            try
-            {
-                giotoithieu = int.Parse(txtGioToiThieu.Text.Trim());
-                giotoida = int.Parse(txtGioToiDa.Text.Trim());
-                if (giotoida < 0 || giotoida < 0) // nếu giờ tối thiểu hoặc giờ tối đa nhỏ hơn 0 thì chia 0 cho xảy ra lỗi để nhảy vào catch
-                {
-                    MessageBox.Show("Giờ tối thiểu và giờ tối đa phải là số nguyên và lớn hơn hoặc bằng 0!");
-                    check = false;
-                }    
-            }
-            catch
-            {
-                MessageBox.Show("Giờ tối thiểu và giờ tối đa phải là số nguyên và lớn hơn hoặc bằng 0!");
-                check = false;
-            }
-            // kiểm tra giờ tối thiểu phải nhỏ hơn giờ tối đa
-            if (giotoida < giotoithieu)
-            {
-                MessageBox.Show("Giờ tối thiểu phải nhỏ hơn giờ tối đa!");
-                check = false;
-            }
-            // kiểm tra ưu đãi >=0
-            try
-            {
-                uudai = int.Parse(txtUuDai.Text.Trim());
-                if (uudai < 0) // nếu ưu đãi nhỏ hơn 0 thì chia 0 cho lỗi nhảy vào hàm catch để thông báo
-                {
-                    MessageBox.Show("Vui lòng nhập ưu đãi là số nguyên không âm!");
-                    check = false;
-                }    
-            }
-            catch
-            {
-                MessageBox.Show("Vui lòng nhập ưu đãi là số nguyên không âm!");
-                check = false;
-            }
+            //// kiểm tra giờ tối thiểu và giờ tối đa có phải là kiểu int không
+            //try
+            //{
+            //    giotoithieu = int.Parse(txtGioToiThieu.Text.Trim());
+            //    giotoida = int.Parse(txtGioToiDa.Text.Trim());
+            //    if (giotoithieu < 0 || giotoida < 0) // nếu giờ tối thiểu hoặc giờ tối đa nhỏ hơn 0 thì chia 0 cho xảy ra lỗi để nhảy vào catch
+            //    {
+            //        MessageBox.Show("Giờ tối thiểu và giờ tối đa phải là số nguyên và lớn hơn hoặc bằng 0!");
+            //        check = false;
+            //    }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Giờ tối thiểu và giờ tối đa phải là số nguyên và lớn hơn hoặc bằng 0!");
+            //    check = false;
+            //}
+            //// kiểm tra giờ tối thiểu phải nhỏ hơn giờ tối đa
+            //if (giotoida < giotoithieu)
+            //{
+            //    MessageBox.Show("Giờ tối thiểu phải nhỏ hơn giờ tối đa!");
+            //    check = false;
+            //}
+            //// kiểm tra ưu đãi >=0
+            //try
+            //{
+            //    uudai = int.Parse(txtUuDai.Text.Trim());
+            //    if (uudai < 0) // nếu ưu đãi nhỏ hơn 0 thì chia 0 cho lỗi nhảy vào hàm catch để thông báo
+            //    {
+            //        MessageBox.Show("Vui lòng nhập ưu đãi là số nguyên không âm!");
+            //        check = false;
+            //    }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Vui lòng nhập ưu đãi là số nguyên không âm!");
+            //    check = false;
+            //}
             return check;
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (CheckDaTa(ref giave, ref giotoithieu, ref giotoida, ref uudai) == false)
+            if (CheckDaTa(txtGiaVe.Text, txtGioToiThieu.Text, txtGioToiDa.Text, txtUuDai.Text) == false)
                 return;
             // kiểm tra Trùng Tên
             blGiaVe = new BLGiaVe();
@@ -143,11 +145,11 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             {
                 blGiaVe = new BLGiaVe();
                 //  try 
-                
-                    if (blGiaVe.CheckType(txtGioToiThieu.Text, txtGioToiDa.Text,txtUuDai.Text) == true)
+
+                //if (blGiaVe.CheckType(txtGioToiThieu.Text, txtGioToiDa.Text, txtUuDai.Text,txtGiaVe.Text) == true)
+                {
+                    //if (blGiaVe.CheckTime(txtGioToiThieu.Text, txtGioToiDa.Text) == true)
                     {
-                        if (blGiaVe.CheckTime(txtGioToiThieu.Text, txtGioToiDa.Text) == true)
-                       {
                         if (blGiaVe.CheckTicketId(txtMaGiaVe.Text).Tables[0].Rows.Count != 0)
                         {
                             MessageBox.Show("Vị trí này đã tồn tại, hãy nhập mã vị trí khác");
@@ -156,22 +158,23 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                         {
 
                             MessageBox.Show("Đã thêm giá vé mới");
+                            
                             LoadData();
                         }
                         else MessageBox.Show("Có lỗi xảy ra, chưa thêm được!!");
-                       }
                     }
-              
-         
+                }
+
+
             }
             else
-            { 
+            {
                 blGiaVe = new BLGiaVe();
                 string maloaive = blGiaVe.GetVechicleId(cboLoaiXe.Text).Tables[0].Rows[0][0].ToString();
                 int r = dgvGiaVe.CurrentCell.RowIndex;
                 string MaViTri = dgvGiaVe.Rows[r].Cells[0].Value.ToString();
                 blGiaVe = new BLGiaVe();
-                if (blGiaVe.EditTicket(txtMaGiaVe.Text.Trim(), txtTenGiaVe.Text.Trim(), giave,maloaive, giotoithieu, giotoida, uudai, VeThang, ref err) == true)
+                if (blGiaVe.EditTicket(txtMaGiaVe.Text.Trim(), txtTenGiaVe.Text.Trim(), giave, maloaive, giotoithieu, giotoida, uudai, VeThang, ref err) == true)
                 {
                     MessageBox.Show("Chỉnh sửa thành công, đã cập nhật lại thông tin");
                     LoadData();
@@ -190,14 +193,14 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 if (dgvGiaVe.CurrentCell == null)
                     return;
                 else
-                    r = dgvGiaVe.CurrentCell.RowIndex;               
+                    r = dgvGiaVe.CurrentCell.RowIndex;
                 txtMaGiaVe.Text = dgvGiaVe.Rows[r].Cells[0].Value.ToString();
                 txtTenGiaVe.Text = dgvGiaVe.Rows[r].Cells[1].Value.ToString();
                 txtGiaVe.Text = dgvGiaVe.Rows[r].Cells[2].Value.ToString();
                 txtGioToiThieu.Text = dgvGiaVe.Rows[r].Cells[4].Value.ToString();
                 txtGioToiDa.Text = dgvGiaVe.Rows[r].Cells[5].Value.ToString();
                 txtUuDai.Text = dgvGiaVe.Rows[r].Cells[6].Value.ToString();
-                cboLoaiXe.Text  = blGiaVe.GetNameVehicle(dgvGiaVe.Rows[r].Cells[3].Value.ToString()).Tables[0].Rows[0][0].ToString();
+                cboLoaiXe.Text = blGiaVe.GetNameVehicle(dgvGiaVe.Rows[r].Cells[3].Value.ToString()).Tables[0].Rows[0][0].ToString();
                 if (dgvGiaVe.Rows[r].Cells["VeThang"].Value.ToString() == "True")
                     checkBoxVeThang.Checked = true;
                 else
@@ -231,7 +234,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             dgvGiaVe.Enabled = false;
             //  cboLoaiXe.Items.Add(blGiaVe.GetVehicleCategory());
             cboLoaiXe.Enabled = true;
-
+            btnReload.Enabled = false;
             checkBoxVeThang.Enabled = true;
             dgvGiaVe.Enabled = false;
         }
@@ -251,11 +254,11 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             pnlQuanLyGiaVe.Enabled = true;
             txtMaGiaVe.Enabled = true;
             ResetValue();
-            LoadData();          
+            LoadData();
         }
 
         private void checkBoxVeThang_CheckedChanged(object sender, EventArgs e)
-        {       
+        {
             if (checkBoxVeThang.Checked == true)
             {
                 txtGioToiDa.Enabled = false;
@@ -274,12 +277,12 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if(checkBoxVeThang.Checked ==true)
+            if (checkBoxVeThang.Checked == true)
             {
                 txtGioToiDa.Text = "0";
                 txtGioToiThieu.Text = "0";
                 VeThang = 1;
-            }    
+            }
             dgvGiaVe.Enabled = false;
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
@@ -292,7 +295,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             Add = false;
         }
 
-    
+
         private void btnReload_Click(object sender, EventArgs e)
         {
             LoadData();

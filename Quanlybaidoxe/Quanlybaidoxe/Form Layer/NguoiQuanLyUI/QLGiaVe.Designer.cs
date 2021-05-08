@@ -1,7 +1,7 @@
 ﻿
 namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 {
-    partial class AdminForm
+    partial class QLGiaVe
     {
         /// <summary>
         /// Required designer variable.
@@ -64,9 +64,9 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(340, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 45);
+            this.label1.Size = new System.Drawing.Size(276, 45);
             this.label1.TabIndex = 39;
-            this.label1.Text = "ADMIN PANEL";
+            this.label1.Text = "QUẢN LÝ GIÁ VÉ";
             // 
             // dgvGiaVe
             // 
@@ -110,7 +110,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.checkBoxVeThang.Location = new System.Drawing.Point(498, 153);
             this.checkBoxVeThang.Name = "checkBoxVeThang";
             this.checkBoxVeThang.Size = new System.Drawing.Size(119, 32);
-            this.checkBoxVeThang.TabIndex = 28;
+            this.checkBoxVeThang.TabIndex = 8;
             this.checkBoxVeThang.Text = "Vé tháng";
             this.checkBoxVeThang.UseVisualStyleBackColor = true;
             this.checkBoxVeThang.CheckedChanged += new System.EventHandler(this.checkBoxVeThang_CheckedChanged);
@@ -121,7 +121,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.cboLoaiXe.Location = new System.Drawing.Point(161, 154);
             this.cboLoaiXe.Name = "cboLoaiXe";
             this.cboLoaiXe.Size = new System.Drawing.Size(252, 28);
-            this.cboLoaiXe.TabIndex = 27;
+            this.cboLoaiXe.TabIndex = 4;
             // 
             // txt3
             // 
@@ -190,7 +190,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtGioToiDa.Location = new System.Drawing.Point(669, 68);
             this.txtGioToiDa.Name = "txtGioToiDa";
             this.txtGioToiDa.Size = new System.Drawing.Size(251, 27);
-            this.txtGioToiDa.TabIndex = 7;
+            this.txtGioToiDa.TabIndex = 6;
             // 
             // label3
             // 
@@ -226,21 +226,21 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtGiaVe.Location = new System.Drawing.Point(161, 110);
             this.txtGiaVe.Name = "txtGiaVe";
             this.txtGiaVe.Size = new System.Drawing.Size(252, 27);
-            this.txtGiaVe.TabIndex = 5;
+            this.txtGiaVe.TabIndex = 3;
             // 
             // txtTenGiaVe
             // 
             this.txtTenGiaVe.Location = new System.Drawing.Point(161, 66);
             this.txtTenGiaVe.Name = "txtTenGiaVe";
             this.txtTenGiaVe.Size = new System.Drawing.Size(251, 27);
-            this.txtTenGiaVe.TabIndex = 7;
+            this.txtTenGiaVe.TabIndex = 2;
             // 
             // txtMaGiaVe
             // 
             this.txtMaGiaVe.Location = new System.Drawing.Point(161, 20);
             this.txtMaGiaVe.Name = "txtMaGiaVe";
             this.txtMaGiaVe.Size = new System.Drawing.Size(252, 27);
-            this.txtMaGiaVe.TabIndex = 5;
+            this.txtMaGiaVe.TabIndex = 1;
             // 
             // btnReload
             // 

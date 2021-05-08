@@ -119,7 +119,7 @@ namespace Quanlybaidoxe.Form_Layer
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             this.pnlChucNang.Controls.Clear();
-            AdminForm FormAdmin = new AdminForm();
+            QLGiaVe FormAdmin = new QLGiaVe();
             FormAdmin.TopLevel = false;
             this.pnlChucNang.Controls.Add(FormAdmin);
             FormAdmin.Show();

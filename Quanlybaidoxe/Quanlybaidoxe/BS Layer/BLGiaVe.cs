@@ -72,14 +72,15 @@ namespace Quanlybaidoxe.BS_Layer
             }
             return true;
         }
-        public bool CheckType(string GioToiThieu, string GioToiDa, string UuDai)
+        public bool CheckType(string GioToiThieu, string GioToiDa, string UuDai,string GiaVe)
         {
+            bool check = true;
             try
             {
                 Int32.Parse(GioToiDa);
                 Int32.Parse(GioToiThieu);
                 Int32.Parse(UuDai);
-                return true;
+                float.Parse(GiaVe);
             }
             catch
             {
@@ -89,6 +90,29 @@ namespace Quanlybaidoxe.BS_Layer
                 //UuDai = "0";
                 return false;
             }
+            if (Int32.Parse(GioToiDa) < 0 || Int32.Parse(GioToiThieu)<0)
+            {
+                MessageBox.Show("Giờ tối đa và giờ tối thiểu phải lớn hơn hoặc bằng 0!");
+                check = false;
+            }
+            if(Int32.Parse(UuDai) < 0)
+            {
+                MessageBox.Show("Ưu đãi phải lớn hơn hoặc bằng 0!");
+                check = false;
+            }  
+            if(float.Parse(GiaVe) < 0)
+            {
+                MessageBox.Show("Giá vé phải lớn hơn hoặc bằng 0!");
+                check = false;
+            }
+            if (Int32.Parse(GioToiThieu) > Int32.Parse(GioToiDa))
+            {
+                MessageBox.Show("GIỜ TỐI ĐA phải lớn hơn GIỜ TỐI THIỂU");
+                check = false;
+            }
+
+            return check;
+
         }
 
         public bool DeleteTicket(string MaGiaVe, ref string err)
