@@ -69,12 +69,14 @@ Thành viên nhóm : Nguyễn Như Bảo Phương 18110180
 		+ Chọn mã vé trên bảng hiển thị danh sách giá vé.
 		+ Chọn "Xóa" trên giao diện, hộp thoại xác nhận xóa hiện lên để xác nhận xóa.
 		+ Chọn "Đồng ý" xóa để xóa mã vé đã chọn.
+		+ Nếu vé chọn là vé tháng thì sẽ xuất thông báo "Đã xóa xong"
+		+ Nếu vé được chọn là vé ngày thì sẽ xuất thông báo "Không cho phép xóa vé ngày!"
 	- Sửa giá vé: 
 		+ Chọn mã vé trên bảng hiển thị danh sách giá vé.
 		+ Chọn "Sửa" trên giao diện, cho phép sửa tất cả thông tin (trừ mã vé).
 		+ Chọn "Lưu" để xác nhận chỉnh sửa.
 		+ Lưu ý nếu nhập GIỜ TỐI THIẾU lớn hơn GIỜ TỐI ĐA thì sẽ xuất thông báo.
-		+ Các kiểu dữ liệu nếu nhập không đúng hoặc Tên giá vé bị trùng cũng sẽ hiện thông báo.
+		+ Các kiểu dữ liệu nếu nhập không đúng hoặc Tên giá vé bị trùng cũng sẽ hiện thông báo nhắc nhở.
 		+ Nếu trường hợp muốn hủy bỏ thao tác sửa, có thể nhấn "Hủy".
 	
 		
