@@ -3,13 +3,15 @@ Nhóm thực hiện: Nhóm 11
 Thành viên nhóm : Nguyễn Như Bảo Phương 18110180
                   Hoàng Minh Quang      18110181
                   Nguyễn Quốc Tiến      18110214
-Hướng dẫn sử dụng Phiên bản phầm mềm 1.0:
+---------Hướng dẫn sử dụng Phiên bản phầm mềm 1.0:----------
 * Chức năng "Đăng nhập":
 	- Sau chạy chương trình sẽ hiện lên form "Đăng nhập" gồm Tài khoản và Mật khẩu. Người dùng (quản lý/ nhân viên) đăng nhập theo tài khoản và mật khẩu tương ứng đã được cấp trước đó.
 	- Test thử chức năng cho người quản lý (Tài khoản: "quoctien", Mật khẩu: "tien123"), sau khi đăng nhập thành công sẽ chuyển sang form quản lý (bao gồm các chức năng: "Quản lý nhân viên", "Quản lý khách hàng", "Thống kê doanh thu", "Quản lý vị trí đỗ Xe").
 	- Test chức năng của Nhân viên (tài khoản: minhquang, mật khẩu: quang2k) sẽ hiện thông báo "Đăng nhập thành công với tài khoản nhân viên, giao diện nhân viên chưa hoàn thành !!".
 * Chức năng "Đăng xuất":
-	- 
+	- Nhấp "Đăng xuất", sẽ hiện hộp thoại "Bạn có chắc muốn thoát không?"
+	- Nhấp :OK: để xác nhận thoát.
+	- Nếu muốn thay đổi, có thể nhấn "Cancel".
 * Chức năng "Quản lý nhân viên": chọn chức năng "nhân viên" trên giao diện dashboard.
 	- "Thêm nhân viên/ Đăng ký tài khoản": 
 		+ Chọn "thêm" trên giao diện Quản lý nhân viên.
@@ -52,3 +54,27 @@ Hướng dẫn sử dụng Phiên bản phầm mềm 1.0:
 		+ Nhấn "Tìm" để tìm kiếm nội dung, kết quả trả ra tương ứng.
 		+ Nhấn "Làm mới" để tải lại danh sách vị trí bãi đỗ xe.
 
+---------Hướng dẫn sử dụng Phiên bản phầm mềm 1.1:----------
+* Chức năng quản lý giá vé: chọn chức năng "Bãi đỗ xe" trên giao diện dashboard.
+	- Thêm giá vé:
+		+ Chọn "Thêm" trên giao diện.
+		+ Nhập đầy đủ thông tin trong các ô cần thiết (cột ƯU ĐÃI mang đơn vị là %)
+		+ Chọn loại xe (có 2 lựa chọn: xe máy và ô tô)
+		+ Nếu vé đó thuộc loại vé tháng thì check vào ô "Vé tháng".
+		+ Sau khi hoàn tất, chọn "Lưu" để hệ thống hoàn thành việc thêm giá vé.
+		+ Lưu ý nếu nhập GIỜ TỐI THIẾU lớn hơn GIỜ TỐI ĐA thì sẽ xuất thông báo.
+		+ Các kiểu dữ liệu nếu nhập không đúng hoặc Mã vé/ Tên giá vé bị trùng cũng sẽ hiện thông báo.
+		+ Nếu trường hợp muốn hủy bỏ thao tác thêm, có thể nhấn "Hủy".
+	- Xóa giá vé:
+		+ Chọn mã vé trên bảng hiển thị danh sách giá vé.
+		+ Chọn "Xóa" trên giao diện, hộp thoại xác nhận xóa hiện lên để xác nhận xóa.
+		+ Chọn "Đồng ý" xóa để xóa mã vé đã chọn.
+	- Sửa giá vé: 
+		+ Chọn mã vé trên bảng hiển thị danh sách giá vé.
+		+ Chọn "Sửa" trên giao diện, cho phép sửa tất cả thông tin (trừ mã vé).
+		+ Chọn "Lưu" để xác nhận chỉnh sửa.
+		+ Lưu ý nếu nhập GIỜ TỐI THIẾU lớn hơn GIỜ TỐI ĐA thì sẽ xuất thông báo.
+		+ Các kiểu dữ liệu nếu nhập không đúng hoặc Tên giá vé bị trùng cũng sẽ hiện thông báo.
+		+ Nếu trường hợp muốn hủy bỏ thao tác sửa, có thể nhấn "Hủy".
+	
+		
