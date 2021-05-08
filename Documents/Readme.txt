@@ -31,9 +31,9 @@ Thành viên nhóm : Nguyễn Như Bảo Phương 18110180
 		+ Chọn "Sửa" trên giao diện Quản lý  nhân viên, cho phép sửa thông tin cá nhân và tài khoản của nhân viên ngoại trừ mã nhân viên.
 		+ Chọn "Lưu" để xác nhận chỉnh sửa, chỉnh sửa sẽ thành công khi tất cả thông tin nhập vào hợp lệ.
 		+ Nhấn "Hủy" để hủy bỏ thao tác chỉnh sữa
-* Chức năng quản lý vị trí đỗ xe: chọn chức năng "Bãi đỗ xe" trên giao diện dashboard.
+* Chức năng quản lý vị trí đỗ xe: chọn chức năng "Vị trí" trên giao diện dashboard.
 	- "Thêm vị trí":
-		+ Chọn "thêm" trên giao diện Quản lý bãi đỗ xe.
+		+ Chọn "thêm" trên giao diện Quản lý vị trí.
 		+ Nhập thông tin cho vị trí bao gồm: Mã vị trí, tên vị trí.
 		+ Nếu nhập thiếu thông tin sẽ có thông báo cần nhập đủ thông tin.
 		+ Chọn "Lưu" để thêm thông tin vị trí, khi tất cả thông tin hợp lệ sẽ thêm thành công vị trí. 
@@ -41,11 +41,11 @@ Thành viên nhóm : Nguyễn Như Bảo Phương 18110180
 		+ Nhấn "Hủy" để hủy bỏ thao tác thêm
 	- "Xóa vị trí": 
 		+ Chọn vị trí trên bảng hiển thị danh sách vị trí sẽ được đổ lên tương ứng.
-		+ Chọn "Xóa" trên giao diện Quản lý bãi đỗ xe, hộp thoại xác nhận xóa hiện lên để xác nhận xóa, nếu vị trí đang có xe đổ sex hiện thông báo "Vị trí hiện tại đang có xe, vui lòng cho xe ra khỏi vị trí trước khi xóa!".
+		+ Chọn "Xóa" trên giao diện Quản lý vị trí, hộp thoại xác nhận xóa hiện lên để xác nhận xóa, nếu vị trí đang có xe đổ sex hiện thông báo "Vị trí hiện tại đang có xe, vui lòng cho xe ra khỏi vị trí trước khi xóa!".
 		+ Chọn "Đồng ý" xóa để xóa vị trí được chọn.
 	- "Sửa vị trí":
 		+ Chọn vị trí bảng hiển thị danh sách vị trí đỗ xe, thông tin vị trí đỗ xe sẽ được đổ lên tương ứng.
-		+ Chọn "Sửa" trên giao diện Quản lý bãi đỗ xe, cho phép sửa thông tin tên vị trí.
+		+ Chọn "Sửa" trên giao diện Quản lý vị trí, cho phép sửa thông tin tên vị trí.
 		+ Chọn "Lưu" để xác nhận chỉnh sửa, chỉnh sửa sẽ thành công khi tên vị trí không bị trùng, nếu trùng sẽ hiện thông báo "Tên vị trí bị trùng vui lòng kiểm tra lại".
 		+ Nhấn "Hủy" để hủy bỏ thao tác chỉnh sửa
 	- "Tìm kiếm vị trí": 
@@ -55,7 +55,7 @@ Thành viên nhóm : Nguyễn Như Bảo Phương 18110180
 		+ Nhấn "Làm mới" để tải lại danh sách vị trí bãi đỗ xe.
 
 ---------Hướng dẫn sử dụng Phiên bản phầm mềm 1.1:----------
-* Chức năng quản lý giá vé: chọn chức năng "Bãi đỗ xe" trên giao diện dashboard.
+* Chức năng quản lý giá vé: chọn chức năng "Giá vé" trên giao diện dashboard.
 	- Thêm giá vé:
 		+ Chọn "Thêm" trên giao diện.
 		+ Nhập đầy đủ thông tin trong các ô cần thiết (cột ƯU ĐÃI mang đơn vị là %)
