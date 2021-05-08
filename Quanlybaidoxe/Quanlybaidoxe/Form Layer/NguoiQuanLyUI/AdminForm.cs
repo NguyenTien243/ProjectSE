@@ -72,59 +72,59 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 check = false;
             }
 
-            // kiểm tra giá vé có nhập đúng hay không
-            try
-            {
-                giave = float.Parse(txtGiaVe.Text.Trim());
-                if (giave < 0) // nếu giá vé nhỏ hơn 0 thì chia 0 cho xảy ra lỗi để nhảy vào catch
-                {
-                    MessageBox.Show("Giá vé phải là kiểu số và lớn hơn hoặc bằng 0!");
-                    check = false;
-                }    
-            }
-            catch
-            {
-                MessageBox.Show("Giá vé phải là kiểu số và lớn hơn hoặc bằng 0!");
-                check = false;
-            }
+            //// kiểm tra giá vé có nhập đúng hay không
+            //try
+            //{
+            //    giave = float.Parse(txtGiaVe.Text.Trim());
+            //    if (giave < 0) // nếu giá vé nhỏ hơn 0 thì chia 0 cho xảy ra lỗi để nhảy vào catch
+            //    {
+            //        MessageBox.Show("Giá vé phải là kiểu số và lớn hơn hoặc bằng 0!");
+            //        check = false;
+            //    }    
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Giá vé phải là kiểu số và lớn hơn hoặc bằng 0!");
+            //    check = false;
+            //}
 
-            // kiểm tra giờ tối thiểu và giờ tối đa có phải là kiểu int không
-            try
-            {
-                giotoithieu = int.Parse(txtGioToiThieu.Text.Trim());
-                giotoida = int.Parse(txtGioToiDa.Text.Trim());
-                if (giotoida < 0 || giotoida < 0) // nếu giờ tối thiểu hoặc giờ tối đa nhỏ hơn 0 thì chia 0 cho xảy ra lỗi để nhảy vào catch
-                {
-                    MessageBox.Show("Giờ tối thiểu và giờ tối đa phải là số nguyên và lớn hơn hoặc bằng 0!");
-                    check = false;
-                }    
-            }
-            catch
-            {
-                MessageBox.Show("Giờ tối thiểu và giờ tối đa phải là số nguyên và lớn hơn hoặc bằng 0!");
-                check = false;
-            }
-            // kiểm tra giờ tối thiểu phải nhỏ hơn giờ tối đa
-            if (giotoida < giotoithieu)
-            {
-                MessageBox.Show("Giờ tối thiểu phải nhỏ hơn giờ tối đa!");
-                check = false;
-            }
-            // kiểm tra ưu đãi >=0
-            try
-            {
-                uudai = int.Parse(txtUuDai.Text.Trim());
-                if (uudai < 0) // nếu ưu đãi nhỏ hơn 0 thì chia 0 cho lỗi nhảy vào hàm catch để thông báo
-                {
-                    MessageBox.Show("Vui lòng nhập ưu đãi là số nguyên không âm!");
-                    check = false;
-                }    
-            }
-            catch
-            {
-                MessageBox.Show("Vui lòng nhập ưu đãi là số nguyên không âm!");
-                check = false;
-            }
+            //// kiểm tra giờ tối thiểu và giờ tối đa có phải là kiểu int không
+            //try
+            //{
+            //    giotoithieu = int.Parse(txtGioToiThieu.Text.Trim());
+            //    giotoida = int.Parse(txtGioToiDa.Text.Trim());
+            //    if (giotoithieu < 0 || giotoida < 0) // nếu giờ tối thiểu hoặc giờ tối đa nhỏ hơn 0 thì chia 0 cho xảy ra lỗi để nhảy vào catch
+            //    {
+            //        MessageBox.Show("Giờ tối thiểu và giờ tối đa phải là số nguyên và lớn hơn hoặc bằng 0!");
+            //        check = false;
+            //    }    
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Giờ tối thiểu và giờ tối đa phải là số nguyên và lớn hơn hoặc bằng 0!");
+            //    check = false;
+            //}
+            //// kiểm tra giờ tối thiểu phải nhỏ hơn giờ tối đa
+            //if (giotoida < giotoithieu)
+            //{
+            //    MessageBox.Show("Giờ tối thiểu phải nhỏ hơn giờ tối đa!");
+            //    check = false;
+            //}
+            //// kiểm tra ưu đãi >=0
+            //try
+            //{
+            //    uudai = int.Parse(txtUuDai.Text.Trim());
+            //    if (uudai < 0) // nếu ưu đãi nhỏ hơn 0 thì chia 0 cho lỗi nhảy vào hàm catch để thông báo
+            //    {
+            //        MessageBox.Show("Vui lòng nhập ưu đãi là số nguyên không âm!");
+            //        check = false;
+            //    }    
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Vui lòng nhập ưu đãi là số nguyên không âm!");
+            //    check = false;
+            //}
             return check;
         }
         private void btnLuu_Click(object sender, EventArgs e)
