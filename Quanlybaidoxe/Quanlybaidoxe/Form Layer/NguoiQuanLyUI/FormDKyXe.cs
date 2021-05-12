@@ -31,6 +31,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            this.Dispose();
             string MaLoaiXe;
             if (radioBtnOto.Checked == true)
                 MaLoaiXe = "LX0";

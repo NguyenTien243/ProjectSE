@@ -22,7 +22,7 @@ namespace Quanlybaidoxe
             InitializeComponent();
         }
         DataTable dtTaiKhoan = null;
-        BLTaiKhoan dbBaiDoXe = new BLTaiKhoan();
+        BLTaiKhoan dbBaiDoXe ;
         private void label3_Click(object sender, EventArgs e)
         {
             // Khai báo biến traloi
@@ -128,6 +128,7 @@ namespace Quanlybaidoxe
                 //Lấy account nhân viên
                 dtTaiKhoan = new DataTable();
                 dtTaiKhoan.Clear();
+                dbBaiDoXe = new BLTaiKhoan();
                 DataSet dsANV = dbBaiDoXe.GetStaffAccounts();
                 dtTaiKhoan = dsANV.Tables[0];
                 // Xóa trống các đối tượng trong Panel

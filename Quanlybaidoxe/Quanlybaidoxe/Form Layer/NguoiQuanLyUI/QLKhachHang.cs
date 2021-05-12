@@ -16,8 +16,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         DataTable dataTableKhachHang = null;
         BLKhachHang blKhachHang = new BLKhachHang();
-        
-        
+
+        FormDKyXe frmDkyXe;
         bool Add;
         string err;
         private void LoadData()
@@ -59,7 +59,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+              
         }
 
         private void txtMaXe_TextChanged(object sender, EventArgs e)
@@ -70,8 +70,12 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private void txtMaXe_Click(object sender, EventArgs e) //mở panel đăng ký xe cho khách hàng
         {
             //this.pnlQuanLyKH.Controls.Clear();
+            foreach (Control control in pnlQuanLyKH.Controls)
+            {
+               control.Visible = false;
+            }
 
-            FormDKyXe frmDkyXe = new FormDKyXe();
+            frmDkyXe = new FormDKyXe();
             frmDkyXe.TopLevel = false;
 
             // Gắn vào panel
@@ -156,6 +160,32 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // this.btnThoat.Enabled = false;
             // Đưa con trỏ đến TextField txtXe
             this.txtMaKH.Focus();
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            //nguồn tham khảo xóa control https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.controlcollection.remove?view=net-5.0
+            if(pnlQuanLyKH.Controls.Contains(frmDkyXe))
+            {
+                pnlQuanLyKH.Controls.Remove(frmDkyXe);
+            }    
+            foreach ( Control ctr in pnlQuanLyKH.Controls)
+            {
+                ctr.Visible = true;
+            }    
+        }
+
+        //Phuong
+        private void pnlQuanLyKH_ControlRemoved(object sender, ControlEventArgs e)
+        {
+
+            if(pnlQuanLyKH.Controls.Contains(frmDkyXe) == false)
+            {
+                foreach (Control ctr in pnlQuanLyKH.Controls)
+                {
+                    ctr.Visible = true;
+                }
+            }    
         }
     }
 }
