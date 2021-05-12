@@ -208,7 +208,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             }
             catch
             {
-
+                MessageBox.Show("Có lỗi!");
             }
         }
 

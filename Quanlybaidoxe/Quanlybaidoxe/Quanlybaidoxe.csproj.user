@@ -16,6 +16,9 @@
     <Compile Update="Form Layer\NguoiQuanLyUI\DoXe.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\FormDKyXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form Layer\NguoiQuanLyUI\QLGiaVe.cs">
       <SubType>Form</SubType>
     </Compile>
