@@ -102,14 +102,15 @@ namespace Quanlybaidoxe.Form_Layer
             // 
             // btnDangXuat
             // 
+            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnDangXuat.FlatAppearance.BorderSize = 0;
             this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDangXuat.ForeColor = System.Drawing.Color.White;
             this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
-            this.btnDangXuat.Location = new System.Drawing.Point(0, 695);
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 677);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(256, 67);
+            this.btnDangXuat.Size = new System.Drawing.Size(256, 85);
             this.btnDangXuat.TabIndex = 1;
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -249,6 +250,7 @@ namespace Quanlybaidoxe.Form_Layer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnDangXuat;
             this.ClientSize = new System.Drawing.Size(1225, 762);
             this.Controls.Add(this.pnlChucNang);
             this.Controls.Add(this.panel1);
