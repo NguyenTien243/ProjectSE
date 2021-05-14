@@ -32,9 +32,11 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label1 = new System.Windows.Forms.Label();
             this.dtgiovao = new System.Windows.Forms.DateTimePicker();
             this.btnThongKe = new System.Windows.Forms.Button();
-            this.dgvDoanhThu = new System.Windows.Forms.DataGridView();
             this.dtgiora = new System.Windows.Forms.DateTimePicker();
+            this.dgvDoanhThu = new System.Windows.Forms.DataGridView();
+            this.dgvTongThu = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhThu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTongThu)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,17 +74,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnThongKe.UseVisualStyleBackColor = false;
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
-            // dgvDoanhThu
-            // 
-            this.dgvDoanhThu.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDoanhThu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvDoanhThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDoanhThu.Location = new System.Drawing.Point(12, 193);
-            this.dgvDoanhThu.Name = "dgvDoanhThu";
-            this.dgvDoanhThu.RowHeadersWidth = 51;
-            this.dgvDoanhThu.Size = new System.Drawing.Size(923, 510);
-            this.dgvDoanhThu.TabIndex = 54;
-            // 
             // dtgiora
             // 
             this.dtgiora.CustomFormat = "yyyy-MM-dd  HH:mm:ss";
@@ -92,22 +83,46 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.dtgiora.Size = new System.Drawing.Size(201, 27);
             this.dtgiora.TabIndex = 43;
             // 
+            // dgvDoanhThu
+            // 
+            this.dgvDoanhThu.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDoanhThu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDoanhThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDoanhThu.Location = new System.Drawing.Point(12, 213);
+            this.dgvDoanhThu.Name = "dgvDoanhThu";
+            this.dgvDoanhThu.RowHeadersWidth = 51;
+            this.dgvDoanhThu.Size = new System.Drawing.Size(637, 490);
+            this.dgvDoanhThu.TabIndex = 54;
+            // 
+            // dgvTongThu
+            // 
+            this.dgvTongThu.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTongThu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTongThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTongThu.Location = new System.Drawing.Point(655, 213);
+            this.dgvTongThu.Name = "dgvTongThu";
+            this.dgvTongThu.RowHeadersWidth = 51;
+            this.dgvTongThu.Size = new System.Drawing.Size(280, 490);
+            this.dgvTongThu.TabIndex = 55;
+            // 
             // ThongKeDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(947, 715);
+            this.Controls.Add(this.dgvTongThu);
             this.Controls.Add(this.dgvDoanhThu);
             this.Controls.Add(this.btnThongKe);
             this.Controls.Add(this.dtgiora);
             this.Controls.Add(this.dtgiovao);
             this.Controls.Add(this.label1);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ThongKeDoanhThu";
             this.Text = "ThongKeDoanhThu";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhThu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTongThu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,7 +133,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtgiovao;
         private System.Windows.Forms.Button btnThongKe;
-        private System.Windows.Forms.DataGridView dgvDoanhThu;
         private System.Windows.Forms.DateTimePicker dtgiora;
+        private System.Windows.Forms.DataGridView dgvDoanhThu;
+        private System.Windows.Forms.DataGridView dgvTongThu;
     }
 }

@@ -15,8 +15,14 @@ namespace Quanlybaidoxe.BS_Layer
         {
             dbDoanhThu = new DBQLBaiDoXe();
         }
-        public DataSet GetBillListByDate(string checkIn, string checkOut) {
-            string GetID = "USP_GetListBillByDate '"+checkIn+"', '"+checkOut+"'";
+        public DataSet GetBillListByDate(string checkIn, string checkOut)
+        {
+            string GetID = "USP_GetListBillByDate '" + checkIn + "', '" + checkOut + "'";
+            return dbDoanhThu.ExecuteQueryDataSet(GetID, CommandType.Text);
+        }
+        public DataSet GetSumBillByDate(string checkIn, string checkOut)
+        {
+            string GetID = "USP_GetSumBillByDate '" + checkIn + "', '" + checkOut + "'";
             return dbDoanhThu.ExecuteQueryDataSet(GetID, CommandType.Text);
         }
     }

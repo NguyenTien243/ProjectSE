@@ -11,15 +11,16 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 {
     public partial class ThongKeDoanhThu : Form
     {
-        
-        
+
+
         public ThongKeDoanhThu()
         {
             InitializeComponent();
             LoadDateTimePickerBill();
             LoadListByDate(dtgiovao.Value.ToString("yyyy-MM-dd HH:mm:ss"), dtgiora.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+            LoadSumByDate(dtgiovao.Value.ToString("yyyy-MM-dd HH:mm:ss"), dtgiora.Value.ToString("yyyy-MM-dd HH:mm:ss"));
         }
-        
+
         BLDoanhThu blDoanhThu = new BLDoanhThu();
         #region methods
         void LoadDateTimePickerBill()
@@ -30,8 +31,12 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         void LoadListByDate(string checkIn, string checkOut)
         {
-            dgvDoanhThu.DataSource = blDoanhThu.GetBillListByDate(checkIn, checkOut);
+            dgvDoanhThu.DataSource = blDoanhThu.GetBillListByDate(checkIn, checkOut).Tables[0];
 
+        }
+        void LoadSumByDate(string checkIn, string checkOut)
+        {
+            dgvTongThu.DataSource = blDoanhThu.GetSumBillByDate(checkIn, checkOut).Tables[0];
         }
         #endregion
 
@@ -41,6 +46,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             string GioVao = dtgiovao.Value.ToString("yyyy-MM-dd HH:mm:ss");
             string GioRa = dtgiora.Value.ToString("yyyy-MM-dd HH:mm:ss");
             LoadListByDate(GioVao, GioRa);
+            LoadSumByDate(GioVao, GioRa);
         }
         #endregion
 
