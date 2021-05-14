@@ -17,6 +17,12 @@ namespace Quanlybaidoxe.DB_Layer
             connect = new SqlConnection(ConnectString);
             command = connect.CreateCommand();
         }
+
+        internal DataTable ExecuteQueryDataSet(string v, object[] vs)
+        {
+            throw new NotImplementedException();
+        }
+
         public DataSet ExecuteQueryDataSet(string stringquery, CommandType commandtype)
         {
             if (connect.State == ConnectionState.Open)

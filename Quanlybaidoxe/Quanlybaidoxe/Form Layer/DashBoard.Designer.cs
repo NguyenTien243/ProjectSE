@@ -44,6 +44,7 @@ namespace Quanlybaidoxe.Form_Layer
             this.lbUserName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlChucNang = new System.Windows.Forms.Panel();
+            this.btnDoanhThu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,6 +53,7 @@ namespace Quanlybaidoxe.Form_Layer
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.btnDoanhThu);
             this.panel1.Controls.Add(this.btnAdmin);
             this.panel1.Controls.Add(this.btnDoXe);
             this.panel1.Controls.Add(this.btnDangXuat);
@@ -74,9 +76,9 @@ namespace Quanlybaidoxe.Form_Layer
             this.btnAdmin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdmin.ForeColor = System.Drawing.Color.White;
             this.btnAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmin.Image")));
-            this.btnAdmin.Location = new System.Drawing.Point(0, 579);
+            this.btnAdmin.Location = new System.Drawing.Point(0, 544);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(256, 67);
+            this.btnAdmin.Size = new System.Drawing.Size(256, 60);
             this.btnAdmin.TabIndex = 1;
             this.btnAdmin.Text = "Giá vé";
             this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -91,9 +93,9 @@ namespace Quanlybaidoxe.Form_Layer
             this.btnDoXe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDoXe.ForeColor = System.Drawing.Color.White;
             this.btnDoXe.Image = ((System.Drawing.Image)(resources.GetObject("btnDoXe.Image")));
-            this.btnDoXe.Location = new System.Drawing.Point(0, 512);
+            this.btnDoXe.Location = new System.Drawing.Point(0, 484);
             this.btnDoXe.Name = "btnDoXe";
-            this.btnDoXe.Size = new System.Drawing.Size(256, 67);
+            this.btnDoXe.Size = new System.Drawing.Size(256, 60);
             this.btnDoXe.TabIndex = 1;
             this.btnDoXe.Text = "Đỗ xe";
             this.btnDoXe.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -124,9 +126,9 @@ namespace Quanlybaidoxe.Form_Layer
             this.btnKhachHang.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnKhachHang.ForeColor = System.Drawing.Color.White;
             this.btnKhachHang.Image = ((System.Drawing.Image)(resources.GetObject("btnKhachHang.Image")));
-            this.btnKhachHang.Location = new System.Drawing.Point(0, 445);
+            this.btnKhachHang.Location = new System.Drawing.Point(0, 424);
             this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Size = new System.Drawing.Size(256, 67);
+            this.btnKhachHang.Size = new System.Drawing.Size(256, 60);
             this.btnKhachHang.TabIndex = 1;
             this.btnKhachHang.Text = "Khách hàng";
             this.btnKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -141,9 +143,9 @@ namespace Quanlybaidoxe.Form_Layer
             this.btnBaiDoXe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBaiDoXe.ForeColor = System.Drawing.Color.White;
             this.btnBaiDoXe.Image = ((System.Drawing.Image)(resources.GetObject("btnBaiDoXe.Image")));
-            this.btnBaiDoXe.Location = new System.Drawing.Point(0, 378);
+            this.btnBaiDoXe.Location = new System.Drawing.Point(0, 364);
             this.btnBaiDoXe.Name = "btnBaiDoXe";
-            this.btnBaiDoXe.Size = new System.Drawing.Size(256, 67);
+            this.btnBaiDoXe.Size = new System.Drawing.Size(256, 60);
             this.btnBaiDoXe.TabIndex = 1;
             this.btnBaiDoXe.Text = "Vị Trí";
             this.btnBaiDoXe.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -158,9 +160,9 @@ namespace Quanlybaidoxe.Form_Layer
             this.btnNhanVien.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNhanVien.ForeColor = System.Drawing.Color.White;
             this.btnNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.Image")));
-            this.btnNhanVien.Location = new System.Drawing.Point(0, 311);
+            this.btnNhanVien.Location = new System.Drawing.Point(0, 304);
             this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Size = new System.Drawing.Size(256, 67);
+            this.btnNhanVien.Size = new System.Drawing.Size(256, 60);
             this.btnNhanVien.TabIndex = 1;
             this.btnNhanVien.Text = "Nhân viên";
             this.btnNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -177,7 +179,7 @@ namespace Quanlybaidoxe.Form_Layer
             this.btnTrangChu.Image = ((System.Drawing.Image)(resources.GetObject("btnTrangChu.Image")));
             this.btnTrangChu.Location = new System.Drawing.Point(0, 250);
             this.btnTrangChu.Name = "btnTrangChu";
-            this.btnTrangChu.Size = new System.Drawing.Size(256, 61);
+            this.btnTrangChu.Size = new System.Drawing.Size(256, 54);
             this.btnTrangChu.TabIndex = 1;
             this.btnTrangChu.Text = "Trang chủ";
             this.btnTrangChu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -243,6 +245,23 @@ namespace Quanlybaidoxe.Form_Layer
             this.pnlChucNang.Size = new System.Drawing.Size(965, 762);
             this.pnlChucNang.TabIndex = 1;
             // 
+            // btnDoanhThu
+            // 
+            this.btnDoanhThu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDoanhThu.FlatAppearance.BorderSize = 0;
+            this.btnDoanhThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoanhThu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDoanhThu.ForeColor = System.Drawing.Color.White;
+            this.btnDoanhThu.Image = ((System.Drawing.Image)(resources.GetObject("btnDoanhThu.Image")));
+            this.btnDoanhThu.Location = new System.Drawing.Point(0, 604);
+            this.btnDoanhThu.Name = "btnDoanhThu";
+            this.btnDoanhThu.Size = new System.Drawing.Size(256, 60);
+            this.btnDoanhThu.TabIndex = 2;
+            this.btnDoanhThu.Text = "Doanh thu";
+            this.btnDoanhThu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnDoanhThu.UseVisualStyleBackColor = true;
+            this.btnDoanhThu.Click += new System.EventHandler(this.btnDoanhThu_Click);
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -282,5 +301,6 @@ namespace Quanlybaidoxe.Form_Layer
         private System.Windows.Forms.Label lbChucVu;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnDoXe;
+        private System.Windows.Forms.Button btnDoanhThu;
     }
 }
