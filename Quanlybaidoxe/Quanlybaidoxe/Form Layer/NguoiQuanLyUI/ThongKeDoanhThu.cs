@@ -23,6 +23,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         BLDoanhThu blDoanhThu = new BLDoanhThu();
         #region methods
+        //Hàm để mặc định hiển thị thời gian trong 1 tháng
         void LoadDateTimePickerBill()
         {
             DateTime today = DateTime.Now;
@@ -32,7 +33,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         void LoadListByDate(string checkIn, string checkOut)
         {
             dgvDoanhThu.DataSource = blDoanhThu.GetBillListByDate(checkIn, checkOut).Tables[0];
-
         }
         void LoadSumByDate(string checkIn, string checkOut)
         {

@@ -91,7 +91,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.dgvDoanhThu.Location = new System.Drawing.Point(12, 213);
             this.dgvDoanhThu.Name = "dgvDoanhThu";
             this.dgvDoanhThu.RowHeadersWidth = 51;
-            this.dgvDoanhThu.Size = new System.Drawing.Size(637, 490);
+            this.dgvDoanhThu.Size = new System.Drawing.Size(712, 490);
             this.dgvDoanhThu.TabIndex = 54;
             // 
             // dgvTongThu
@@ -99,10 +99,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.dgvTongThu.BackgroundColor = System.Drawing.Color.White;
             this.dgvTongThu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTongThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTongThu.Location = new System.Drawing.Point(655, 213);
+            this.dgvTongThu.Location = new System.Drawing.Point(730, 213);
             this.dgvTongThu.Name = "dgvTongThu";
             this.dgvTongThu.RowHeadersWidth = 51;
-            this.dgvTongThu.Size = new System.Drawing.Size(280, 490);
+            this.dgvTongThu.Size = new System.Drawing.Size(205, 490);
             this.dgvTongThu.TabIndex = 55;
             // 
             // ThongKeDoanhThu
