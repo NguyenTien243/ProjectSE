@@ -29,6 +29,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvQLDX = new System.Windows.Forms.DataGridView();
             this.pnlQuanLyDoXe = new System.Windows.Forms.Panel();
@@ -47,6 +48,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtGioVao = new System.Windows.Forms.TextBox();
             this.txtMaXe = new System.Windows.Forms.TextBox();
             this.txtBienSo = new System.Windows.Forms.TextBox();
+            this.lbTime = new System.Windows.Forms.Label();
             this.btnVaoBen = new System.Windows.Forms.Button();
             this.btnXuatBen = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,6 +62,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.labelThongBaoHetViTri = new System.Windows.Forms.Label();
+            this.timerThoiGianThuc = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLDX)).BeginInit();
             this.pnlQuanLyDoXe.SuspendLayout();
             this.SuspendLayout();
@@ -249,6 +252,17 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtBienSo.TabIndex = 1;
             this.txtBienSo.Leave += new System.EventHandler(this.txtBienSo_Leave);
             // 
+            // lbTime
+            // 
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.lbTime.Location = new System.Drawing.Point(678, 22);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(107, 28);
+            this.lbTime.TabIndex = 62;
+            this.lbTime.Text = "Thời gian:";
+            // 
             // btnVaoBen
             // 
             this.btnVaoBen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
@@ -269,12 +283,13 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnXuatBen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuatBen.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnXuatBen.ForeColor = System.Drawing.Color.White;
-            this.btnXuatBen.Location = new System.Drawing.Point(185, 307);
+            this.btnXuatBen.Location = new System.Drawing.Point(184, 307);
             this.btnXuatBen.Name = "btnXuatBen";
             this.btnXuatBen.Size = new System.Drawing.Size(159, 41);
             this.btnXuatBen.TabIndex = 12;
             this.btnXuatBen.Text = "Xuất bến";
             this.btnXuatBen.UseVisualStyleBackColor = false;
+            this.btnXuatBen.Click += new System.EventHandler(this.btnXuatBen_Click);
             // 
             // label7
             // 
@@ -404,6 +419,11 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.labelThongBaoHetViTri.Size = new System.Drawing.Size(0, 28);
             this.labelThongBaoHetViTri.TabIndex = 60;
             // 
+            // timerThoiGianThuc
+            // 
+            this.timerThoiGianThuc.Interval = 1000;
+            this.timerThoiGianThuc.Tick += new System.EventHandler(this.timerThoiGianThuc_Tick);
+            // 
             // DoXe
             // 
             this.AcceptButton = this.btnLuu;
@@ -411,6 +431,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1029, 762);
+            this.Controls.Add(this.lbTime);
             this.Controls.Add(this.labelThongBaoHetViTri);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
@@ -473,5 +494,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelThongBaoHetThe;
         private System.Windows.Forms.Label labelThongBaoHetViTri;
+        private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.Timer timerThoiGianThuc;
     }
 }

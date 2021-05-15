@@ -37,6 +37,7 @@ namespace Quanlybaidoxe.Form_Layer
         public void fundata(string manv)
         {
             this.manv = manv;
+            ShareValues.sharevarMaNV = manv.Trim();
         }
 
 
@@ -121,7 +122,17 @@ namespace Quanlybaidoxe.Form_Layer
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            
+            // Khai báo biến traloi
+            DialogResult traloi;
+            // Hiện hộp thoại hỏi đáp
+            traloi = MessageBox.Show("Bạn có chắc thoát không?", "Trả lời",
+            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            // Kiểm tra có nhắp chọn nút Ok không?
+            if (traloi == DialogResult.OK)
+            {
+                this.Close();
+                new DangNhap().Show();
+            }
         }
     }
 }

@@ -24,11 +24,12 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         BLDoXe blDoXe = new BLDoXe();
         string err;
         string MaTheGui, MaViTri;
+        string maloaixe;
         private void DoXe_Load(object sender, EventArgs e)
         {
             BLDoXe blDoXe = new BLDoXe();
             dataTableVehicleType = blDoXe.GetVehicleType().Tables[0];
-
+            timerThoiGianThuc.Enabled = true;
 
             cboLoaiXe.Items.Clear();
             foreach (DataRow row in dataTableVehicleType.Rows)
@@ -66,6 +67,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         private void UpdatePositionAvailable()
         {
+            cboViTri.ResetText();
             cboViTri.Items.Clear();
             BLDoXe blDoXe = new BLDoXe();
             dataTablePositionAvailable = blDoXe.GetPosition().Tables[0];
@@ -236,9 +238,16 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             txtTenXe.Text = dataRow["TenXe"].ToString().Trim();
             txtMauSac.Text = dataRow["MauSac"].ToString().Trim();
             txtGioVao.ResetText();
-            cboTheGui.Items.Add(dataRow["MaTheGuiXe"].ToString().Trim());
+            DataRow rowVehicle = dataTableVehicles.AsEnumerable().FirstOrDefault(c => c.Field<string>("MaXe").Trim() == txtMaXe.Text.Trim());
+            if (rowVehicle != null && rowVehicle["DangKyThang"].ToString().Trim() != "") // nếu xe này có đăng ký tháng
+            {
+                blDoXe = new BLDoXe();
+                DataRow getMonthStickID = blDoXe.GetMonthStickIDByVehicleID(txtMaXe.Text).Tables[0].Rows[0];
+                cboTheGui.Items.Add(getMonthStickID["MaTheGuiXe"].ToString().Trim());
+                cboTheGui.SelectedItem = getMonthStickID["MaTheGuiXe"].ToString().Trim();
+            }
             cboLoaiXe.SelectedItem = dataRow["TenLoaiXe"].ToString().Trim();
-            cboTheGui.SelectedItem = dataRow["MaTheGuiXe"].ToString().Trim();
+
         }
         private void btnReload_Click(object sender, EventArgs e)
         {
@@ -250,6 +259,114 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             DataRow rowVehicle = dataTableVehicles.AsEnumerable().FirstOrDefault(c => c.Field<string>("BienSo").Trim() == txtBienSo.Text.Trim());
             if (rowVehicle != null)
                 fillData(rowVehicle);
+        }
+        private void AddVarForShareVar()
+        {
+            ShareValues.sharevarMaXe = txtMaXe.Text.Trim();
+            ShareValues.sharevarBienSo = txtBienSo.Text.Trim();
+            ShareValues.sharevarLoaiXe = cboLoaiXe.Text.Trim();
+            ShareValues.sharevarTenXe = txtTenXe.Text.Trim();
+            ShareValues.sharevarMauXe = txtMauSac.Text.Trim();
+            ShareValues.sharevarTGVao = txtGioVao.Text.Trim();
+            ShareValues.sharevarTGRa = DateTime.Now.ToString().Trim();
+            ShareValues.sharevarThoiLuongGui = CountTimeInParking();
+            blDoXe = new BLDoXe();
+            DataRow rowVehicleType = dataTableVehicleType.AsEnumerable().FirstOrDefault(c => c.Field<string>("TenLoaiXe").Trim() == cboLoaiXe.Text.Trim());
+            string maloaixe = rowVehicleType["MaLoaiXe"].ToString();
+            DateTime stardate = Convert.ToDateTime(txtGioVao.Text.Trim());
+           
+
+            DataRow rowMonthTicket = dataTableDoXe.AsEnumerable().FirstOrDefault(c => c.Field<string>("MaXe").Trim() == txtMaXe.Text.Trim());
+            if (rowMonthTicket["DangKyThang"].ToString().Trim() == "") // khi vé này không phải là vé tháng
+                ShareValues.sharevarVeThang = false;
+            else
+                ShareValues.sharevarVeThang = true;
+            if (ShareValues.sharevarVeThang)
+            {
+                ShareValues.sharevarVeThanhToan = "Thanh Toán vé tháng";
+                ShareValues.sharevarVeTienThu = "0";
+               
+            }
+            else
+            {
+
+                TimeSpan Time = DateTime.Now - stardate;
+                int TongSoNgay = Time.Days;
+                
+      
+                if (TongSoNgay < 1) // chưa gửi qua ngày
+                {
+                    DataTable tableTicketFee = blDoXe.HourlParkingFee(maloaixe, stardate, DateTime.Now).Tables[0];
+                    if(tableTicketFee.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy giá vé như quy định, vui lòng kiểm tra lại bên quy định!");
+                        return;
+                    }    
+                    ShareValues.sharevarVeThanhToan = tableTicketFee.Rows[0]["TenGiaVe"].ToString().Trim();
+                    ShareValues.sharevarVeTienThu = tableTicketFee.Rows[0]["GiaTien"].ToString().Trim();
+                }
+                else
+                {
+                    DataTable tableTicketFee = blDoXe.HourlParkingFee(maloaixe, stardate, DateTime.Now.AddDays(-TongSoNgay)).Tables[0];
+                    if (tableTicketFee.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy giá vé như quy định, vui lòng kiểm tra lại bên quy định!");
+                        return;
+                    }
+                    blDoXe = new BLDoXe();
+                    // lấy giá qua ngày 
+                    DataTable dataTableFeeOverDay = blDoXe.GetFeeOverDay(maloaixe).Tables[0];
+                    if(dataTableFeeOverDay.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy giá vé như quy định, vui lòng kiểm tra lại bên quy định!");
+                        return;
+                    }
+                    float FeeOverDay = float.Parse(dataTableFeeOverDay.Rows[0]["GiaTien"].ToString().Trim());
+                    float FeeNewDay = float.Parse(tableTicketFee.Rows[0]["GiaTien"].ToString().Trim());
+                    float ToTalFee = (FeeOverDay * TongSoNgay) + FeeNewDay;
+                    ShareValues.sharevarVeThanhToan = tableTicketFee.Rows[0]["TenGiaVe"].ToString().Trim() + " (Qua ngày)";
+                    ShareValues.sharevarVeTienThu = ToTalFee.ToString().Trim();
+                }    
+            }
+
+
+        }
+        // tham khảo từ https://stackoverflow.com/questions/894461/how-can-i-convert-int-90-minutes-to-datetime-130
+        private string CountTimeInParking()
+        {
+            blDoXe = new BLDoXe();
+            DateTime stardate = Convert.ToDateTime(txtGioVao.Text.Trim());
+            DataRow rowTime = blDoXe.CountTimeInParkingAtMinute(stardate, DateTime.Now).Tables[0].Rows[0];
+            double minute = 0;
+            if (rowTime != null)
+            {
+                try
+                {
+                    minute = Convert.ToDouble(rowTime["Time"].ToString());
+                }
+                catch
+                {
+
+                }
+
+
+            }
+            TimeSpan time = TimeSpan.FromMinutes(minute);
+            string FomatShowTime = time.Days + " Ngày " + time.Hours + " Giờ " + time.Minutes + " Phút ";  
+            return FomatShowTime;
+        }
+        private void btnXuatBen_Click(object sender, EventArgs e)
+        {
+            AddVarForShareVar();
+            ThanhToanXeRa formthanhtoan = new ThanhToanXeRa();
+            formthanhtoan.ShowDialog();
+
+            LoadData();
+        }
+
+        private void timerThoiGianThuc_Tick(object sender, EventArgs e)
+        {
+            lbTime.Text = DateTime.Now.ToString();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -267,27 +384,65 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 MaViTri = cboViTri.SelectedItem.ToString();
             if (CheckDaTa(txtMaXe.Text, MaTheGui, MaViTri) == false)
                 return;
+
+
             // kiểm tra Trùng Tên
             blDoXe = new BLDoXe();
 
-            string maloaixe = dataTableVehicleType.Rows[cboViTri.SelectedIndex]["MaLoaiXe"].ToString();
+            maloaixe = dataTableVehicleType.Rows[cboViTri.SelectedIndex]["MaLoaiXe"].ToString();
             DataRow rowInfo = dataTableVehicles.AsEnumerable().FirstOrDefault(c => c.Field<string>("BienSo").Trim() == txtBienSo.Text.Trim());
             if (rowInfo != null) // xe này đã từng có thông tin rồi (đã từng vào bãi rồi, vẫn còn lưu lại thông tin --> cập nhật)
             {
-                if(rowInfo["MaXe"].ToString().Trim() != txtMaXe.Text.Trim()) // nếu mã xe của xe có biển số này bị sửa đổi
+                string matheguixe = "";
+               // kiểm tra xe có biển số này có đk vé tháng không 
+                if (rowInfo["DangKyThang"].ToString().Trim() != "" && rowInfo["MaXe"].ToString().Trim() == txtMaXe.Text.Trim())
+                {
+                    DataTable tablegetMonthStickID = blDoXe.GetMonthStickIDByVehicleID(txtMaXe.Text).Tables[0];
+                    if (tablegetMonthStickID.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Vui lòng kiểm tra lại thẻ đăng ký cho khách hàng!");
+                    }
+                    else
+                        matheguixe = tablegetMonthStickID.Rows[0]["MaTheGuiXe"].ToString().Trim();
+
+                }    
+                if (rowInfo["MaXe"].ToString().Trim() != txtMaXe.Text.Trim() || rowInfo["TenLoaiXe"].ToString().Trim() != cboLoaiXe.Text.Trim() || matheguixe != cboTheGui.Text.Trim()) // nếu mã xe của xe có biển số này bị sửa đổi
                 {
                     // Khai báo biến traloi
                     DialogResult traloi;
                     // Hiện hộp thoại hỏi đáp
-                    traloi = MessageBox.Show("Mã xe không trùng với biển số, bạn muốn phục hồi lại mã xe không?", "Trả lời",
+                    traloi = MessageBox.Show("Mã xe, loại xe hoặc thẻ gửi xe không trùng với biển số đã lưu khi trước, bạn muốn phục hồi lại mã xe không?", "Trả lời",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     // Kiểm tra có nhắp chọn nút Ok không?
                     if (traloi == DialogResult.OK)
                     {
                         txtMaXe.Text = rowInfo["MaXe"].ToString().Trim();
+                        cboLoaiXe.SelectedItem = rowInfo["TenLoaiXe"].ToString().Trim();
+                        cboTheGui.ResetText();
+                        cboTheGui.SelectedItem = matheguixe;
                         return;
                     }
-                }    
+                }
+                else
+                {
+
+                    DataRow rowVehicleInParking = dataTableDoXe.AsEnumerable().FirstOrDefault(c => c.Field<string>("MaXe").Trim() == txtMaXe.Text.Trim());
+                    if (rowVehicleInParking != null) // kiểm tra xe đã có xong bãi chưa, != null là xe này hiện đang ở trong bãi rồi
+                    {
+                        MessageBox.Show("Xe đã ở trong bãi từ trước, vui lòng kiểm tra lại!");
+                        return;
+                    }
+
+                    blDoXe = new BLDoXe();
+
+                    if (blDoXe.UpdateVehicle(txtBienSo.Text, txtMaXe.Text, txtTenXe.Text, txtMauSac.Text, DateTime.Now, maloaixe, cboTheGui.SelectedItem.ToString(), cboViTri.SelectedItem.ToString(), ref err))
+                    {
+                        MessageBox.Show("Thêm xe vào bãi thành công");
+                        LoadData();
+                    }
+                    else
+                        MessageBox.Show("Có lỗi xảy ra, chưa thêm được!!");
+                }
             }
             else
             {

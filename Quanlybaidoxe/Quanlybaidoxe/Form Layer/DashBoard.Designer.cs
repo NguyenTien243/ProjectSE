@@ -31,9 +31,9 @@ namespace Quanlybaidoxe.Form_Layer
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btnDoXe = new System.Windows.Forms.Button();
-            this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.btnBaiDoXe = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
@@ -52,9 +52,9 @@ namespace Quanlybaidoxe.Form_Layer
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.btnDangXuat);
             this.panel1.Controls.Add(this.btnAdmin);
             this.panel1.Controls.Add(this.btnDoXe);
-            this.panel1.Controls.Add(this.btnDangXuat);
             this.panel1.Controls.Add(this.btnKhachHang);
             this.panel1.Controls.Add(this.btnBaiDoXe);
             this.panel1.Controls.Add(this.btnNhanVien);
@@ -65,6 +65,23 @@ namespace Quanlybaidoxe.Form_Layer
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(256, 762);
             this.panel1.TabIndex = 0;
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDangXuat.FlatAppearance.BorderSize = 0;
+            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 646);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(256, 85);
+            this.btnDangXuat.TabIndex = 20;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // btnAdmin
             // 
@@ -99,23 +116,6 @@ namespace Quanlybaidoxe.Form_Layer
             this.btnDoXe.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnDoXe.UseVisualStyleBackColor = true;
             this.btnDoXe.Click += new System.EventHandler(this.btnDoXe_Click);
-            // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnDangXuat.FlatAppearance.BorderSize = 0;
-            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
-            this.btnDangXuat.Location = new System.Drawing.Point(0, 677);
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(256, 85);
-            this.btnDangXuat.TabIndex = 1;
-            this.btnDangXuat.Text = "Đăng xuất";
-            this.btnDangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnDangXuat.UseVisualStyleBackColor = true;
-            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // btnKhachHang
             // 
@@ -250,7 +250,6 @@ namespace Quanlybaidoxe.Form_Layer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.CancelButton = this.btnDangXuat;
             this.ClientSize = new System.Drawing.Size(1225, 762);
             this.Controls.Add(this.pnlChucNang);
             this.Controls.Add(this.panel1);
@@ -275,7 +274,6 @@ namespace Quanlybaidoxe.Form_Layer
         private System.Windows.Forms.Button btnTrangChu;
         private System.Windows.Forms.Label lbUserName;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnDangXuat;
         private System.Windows.Forms.Button btnKhachHang;
         private System.Windows.Forms.Button btnBaiDoXe;
         private System.Windows.Forms.Panel pnl;
@@ -284,5 +282,6 @@ namespace Quanlybaidoxe.Form_Layer
         private System.Windows.Forms.Label lbChucVu;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnDoXe;
+        private System.Windows.Forms.Button btnDangXuat;
     }
 }

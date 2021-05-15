@@ -185,6 +185,7 @@ namespace Quanlybaidoxe
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnDangXuat;
             this.ClientSize = new System.Drawing.Size(479, 723);
             this.Controls.Add(this.btnDangXuat);
             this.Controls.Add(this.pictureBox4);

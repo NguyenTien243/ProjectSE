@@ -20,7 +20,7 @@ namespace Quanlybaidoxe.BS_Layer
             string query = StringLoadData();
             return dbDoXe.ExecuteQueryDataSet(query, CommandType.Text);
         }
-        
+
         public DataSet SearchMonthTicket(string MaTheGuiXe)
         {
             string query = StringSearchMonthTicket(MaTheGuiXe);
@@ -75,11 +75,7 @@ namespace Quanlybaidoxe.BS_Layer
                     check = false;
                 }
                 dbDoXe = new DBQLBaiDoXe();
-                if (CheckVehicleID(MaXe) == false)
-                {
-                    MessageBox.Show("Mã xe bị trùng, vui lòng chọn mã xe mới!");
-                    check = false;
-                }
+
 
 
             }
@@ -106,7 +102,7 @@ namespace Quanlybaidoxe.BS_Layer
 
         private string StringSearchMonthTicket(string MaTheGuiXe)
         {
-            string query = "SELECT MaTheGuiXe,Xe.MaXe,BienSo,TenXe,MauSac,TenLoaiXe,GioVao,DangKyThang FROM dbo.TheGuiXe,dbo.Xe,dbo.LoaiXe WHERE TheGuiXe.MaXe = dbo.Xe.MaXe AND Xe.MaLoaiXe = LoaiXe.MaLoaiXe AND DangKyThang = 'True' And MaTheGuiXe = '" + MaTheGuiXe.Trim()+"'";
+            string query = "SELECT MaTheGuiXe,Xe.MaXe,BienSo,TenXe,MauSac,TenLoaiXe,GioVao,DangKyThang FROM dbo.TheGuiXe,dbo.Xe,dbo.LoaiXe WHERE TheGuiXe.MaXe = dbo.Xe.MaXe AND Xe.MaLoaiXe = LoaiXe.MaLoaiXe AND DangKyThang = 'True' And MaTheGuiXe = '" + MaTheGuiXe.Trim() + "'";
             return query;
         }
         public bool VehicleGoIn(string BienSo, string MaXe, string TenXe, string MauSac, DateTime GioVao, string MaLoaiXe, string MaTheGui, string MaViTri, ref string err)
@@ -119,41 +115,98 @@ namespace Quanlybaidoxe.BS_Layer
                 new SqlParameter("@MauSac",MauSac),
                 new SqlParameter("@GioVao",GioVao),
                 new SqlParameter("@MaLoaiXe",MaLoaiXe),
-                new SqlParameter("@MaTheGui",MaTheGui),
+                new SqlParameter("@MaTheGuiXe",MaTheGui),
                 new SqlParameter("@MaViTri",MaViTri)
                // new SqlParameter("@MaXe", "NULL"),
             };
             return dbDoXe.MyExecuteNonQuery(sqlString, parameters, CommandType.Text, ref err);
 
         }
-        public bool UpdateVehicle(string TenXe, string MauSac, DateTime GioVao, string MaLoaiXe, string MaTheGui, string MaViTri, ref string err)
+        public bool UpdateVehicle(string BienSo, string MaXe, string TenXe, string MauSac, DateTime GioVao, string MaLoaiXe, string MaTheGui, string MaViTri, ref string err)
         {
             string sqlString = StringUpdateVehicle();
             SqlParameter[] parameters = {
+                new SqlParameter("@MaXe", MaXe),
+                new SqlParameter("@BienSo",BienSo),
                 new SqlParameter("@TenXe",TenXe),
                 new SqlParameter("@MauSac",MauSac),
                 new SqlParameter("@GioVao",GioVao),
                 new SqlParameter("@MaLoaiXe",MaLoaiXe),
-                new SqlParameter("@MaTheGui",MaTheGui),
+                new SqlParameter("@MaTheGuiXe",MaTheGui),
                 new SqlParameter("@MaViTri",MaViTri)
                // new SqlParameter("@MaXe", "NULL"),
             };
             return dbDoXe.MyExecuteNonQuery(sqlString, parameters, CommandType.Text, ref err);
 
         }
-       
+        public DataSet GetMonthStickIDByVehicleID(string MaXe)
+        {
+            
+            string sqlString = "SELECT MaTheGuiXe FROM dbo.TheGuiXe WHERE MaXe = '"+MaXe.Trim()+"'";
+            return dbDoXe.ExecuteQueryDataSet(sqlString, CommandType.Text);
+        }
+
         public DataSet GetVihicles()
         {
-            string sqlString = "SELECT MaTheGuiXe,Xe.MaXe,BienSo,TenXe,MauSac,TenLoaiXe,GioVao,DangKyThang FROM dbo.TheGuiXe,dbo.Xe,dbo.LoaiXe WHERE TheGuiXe.MaXe = dbo.Xe.MaXe AND Xe.MaLoaiXe = LoaiXe.MaLoaiXe "; 
+           
+            string sqlString = "SELECT Xe.MaXe,BienSo,TenXe,MauSac,TenLoaiXe,DangKyThang FROM  dbo.Xe,dbo.LoaiXe WHERE  Xe.MaLoaiXe = LoaiXe.MaLoaiXe ";
             return dbDoXe.ExecuteQueryDataSet(sqlString, CommandType.Text);
         }
         private string StringQueryVehicleGoIn()
         {
-            return "INSERT INTO dbo.Xe(MaXe,BienSo,TenXe,MauSac,MaLoaiXe) VALUES ( @MaXe, @BienSo, @TenXe, @MauSac, @MaLoaiXe);UPDATE dbo.ViTri SET MaXe = @MaXe WHERE MaViTri = @MaViTri;UPDATE dbo.TheGuiXe SET MaXe = @MaXe , GioVao = @GioVao Where MaTheGuiXe = @MaTheGui ";
+            return "INSERT INTO dbo.Xe(MaXe,BienSo,TenXe,MauSac,MaLoaiXe) VALUES ( @MaXe, @BienSo, @TenXe, @MauSac, @MaLoaiXe);UPDATE dbo.ViTri SET MaXe = @MaXe WHERE MaViTri = @MaViTri;UPDATE dbo.TheGuiXe SET MaXe = @MaXe , GioVao = @GioVao Where MaTheGuiXe = @MaTheGuiXe ";
         }
         private string StringUpdateVehicle()
         {
             return "UPDATE dbo.Xe SET TenXe = @TenXe, MauSac = @MauSac,MaLoaiXe = @MaLoaiXe WHERE BienSo = @BienSo ;UPDATE dbo.TheGuiXe SET MaXe = @MaXe,GioVao = @GioVao WHERE MaTheGuiXe = @MaTheGuiXe;UPDATE dbo.ViTri SET MaXe = @MaXe WHERE MaViTri = @MaViTri";
+        }
+        public DataSet CountTimeInParkingAtMinute(DateTime Stardate, DateTime Enddate)
+        {
+            string StringQuery = "SELECT DATEDIFF(MINUTE, '"+Stardate.ToString().Trim()+"','"+ Enddate.ToString().Trim() + "') as Time";
+            
+            return dbDoXe.ExecuteQueryDataSet(StringQuery, CommandType.Text);
+        }
+        public DataSet HourlParkingFee(string MaLoaiXe, DateTime Stardate, DateTime Enddate)
+        {
+            string StringQuery = StringFindPriceByHour(MaLoaiXe, Stardate.ToString(),Enddate.ToString());
+            return dbDoXe.ExecuteQueryDataSet(StringQuery, CommandType.Text);
+        }
+        public DataSet GetFeeOverDay(string MaLoaiXe)
+        {
+            string StringQuery = "SELECT TenGiaVe, GiaTien FROM dbo.GiaVe WHERE MaLoaiXe = '"+MaLoaiXe.Trim()+"' AND GioToiDa = 24";
+            return dbDoXe.ExecuteQueryDataSet(StringQuery, CommandType.Text);
+        }
+        private string StringFindPriceByHour(string MaLoaiXe,string Stardate, string Enddate)
+        {
+            return "SELECT * FROM dbo.GiaVe WHERE VeThang = 'False' AND MaLoaiXe = '"+ MaLoaiXe.Trim() + "' AND GioToiThieu <= DATEDIFF(MINUTE, '"+Stardate.Trim()+"','"+Enddate.Trim()+"')/ 60 AND GioToiDa > DATEDIFF(MINUTE, '"+ Stardate.Trim() + "', '"+ Enddate.Trim() + "') / 60";
+        }
+
+        public bool CheckOutAndFree(string MaXe, DateTime GioVao,DateTime GioRa, string MaNV,bool TraTheoThang,float TienThu, ref string err)
+        {
+            string sqlString = "";
+            if (TraTheoThang)
+                sqlString = StringCheckOutWithMonthTicket();
+            else
+                sqlString = StringCheckOutWithNormalTicket();
+            SqlParameter[] parameters = {
+                new SqlParameter("@MaXe", MaXe),
+                new SqlParameter("@GioVao",GioVao),
+                new SqlParameter("@GioRa",GioRa),
+                new SqlParameter("@MaNV",MaNV),
+                new SqlParameter("@TienThu",TienThu),
+                new SqlParameter("@TraTheoThang",TraTheoThang),
+               // new SqlParameter("@MaXe", "NULL"),
+            };
+            return dbDoXe.MyExecuteNonQuery(sqlString, parameters, CommandType.Text, ref err);
+
+        }
+        private string StringCheckOutWithNormalTicket()
+        {
+            return "UPDATE dbo.ViTri SET MaXe = NULL WHERE MaXe = @MaXe;UPDATE dbo.TheGuiXe SET MaXe = NULL,GioVao = NULL WHERE MaXe = @MaXe;INSERT INTO dbo.PhieuThanhToan(MaXe,GioVao,GioRa,TienThu,TraTheoThang,MaNV) VALUES (@MaXe,@GioVao,@GioRa,@TienThu,@TraTheoThang,@MaNV)";
+        }
+        private string StringCheckOutWithMonthTicket()
+        {
+            return "UPDATE dbo.ViTri SET MaXe = NULL WHERE MaXe = @MaXe;UPDATE dbo.TheGuiXe SET GioVao = NULL WHERE MaXe = @MaXe;INSERT INTO dbo.PhieuThanhToan(MaXe,GioVao,GioRa,TienThu,TraTheoThang,MaNV) VALUES (@MaXe,@GioVao,@GioRa,@TienThu,@TraTheoThang,@MaNV)";
         }
     }
 }

@@ -74,6 +74,7 @@ namespace Quanlybaidoxe
                 if (rowAccount["MaCV"].ToString().Trim() == "CV01")
                 {
                     MessageBox.Show("Đăng nhập thành công !!");
+                    manv = rowAccount["MaNV"].ToString();
                     //txtTenDangNhap.ResetText();
                     //txtMatKhau.ResetText();
                     //txtTenDangNhap.Focus();
