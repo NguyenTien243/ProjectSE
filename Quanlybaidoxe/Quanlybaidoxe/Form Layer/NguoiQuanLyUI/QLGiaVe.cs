@@ -17,6 +17,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         DataTable dataTableGiaVe = null;
         BLGiaVe blGiaVe = new BLGiaVe();
+        BLXe blXe = new BLXe();  //mới thêm
         int VeThang;
         float giave;
         int giotoithieu, giotoida, uudai;
@@ -44,9 +45,9 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 btnHuy.Enabled = false;
                 btnLuu.Enabled = false;
                 cboLoaiXe.Items.Clear();
-                for (int dem = 0; dem < blGiaVe.GetVehicleCategory().Tables[0].Rows.Count; dem++) //Thêm loại xe vào combobox
+                for (int dem = 0; dem < blXe.GetVehicleCategory().Tables[0].Rows.Count; dem++) //Thêm loại xe vào combobox
                 {
-                    cboLoaiXe.Items.Add(blGiaVe.GetVehicleCategory().Tables[0].Rows[dem][0].ToString());
+                    cboLoaiXe.Items.Add(blXe.GetVehicleCategory().Tables[0].Rows[dem][0].ToString());
                 }
                 pnlQuanLyGiaVe.Enabled = false;
 
@@ -154,7 +155,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                         {
                             MessageBox.Show("Vị trí này đã tồn tại, hãy nhập mã vị trí khác");
                         }
-                        else if (blGiaVe.AddTicket(txtMaGiaVe.Text, txtTenGiaVe.Text, float.Parse(txtGiaVe.Text), blGiaVe.GetVechicleId(cboLoaiXe.Text).Tables[0].Rows[0][0].ToString(), txtGioToiThieu.Text, txtGioToiDa.Text, txtUuDai.Text, VeThang, ref err) == true)
+                        else if (blGiaVe.AddTicket(txtMaGiaVe.Text, txtTenGiaVe.Text, float.Parse(txtGiaVe.Text), blXe.GetVechicleId(cboLoaiXe.Text).Tables[0].Rows[0][0].ToString(), txtGioToiThieu.Text, txtGioToiDa.Text, txtUuDai.Text, VeThang, ref err) == true)
                         {
 
                             MessageBox.Show("Đã thêm giá vé mới");
@@ -170,7 +171,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             else
             {
                 blGiaVe = new BLGiaVe();
-                string maloaive = blGiaVe.GetVechicleId(cboLoaiXe.Text).Tables[0].Rows[0][0].ToString();
+                string maloaive = blXe.GetVechicleId(cboLoaiXe.Text).Tables[0].Rows[0][0].ToString();
                 int r = dgvGiaVe.CurrentCell.RowIndex;
                 string MaViTri = dgvGiaVe.Rows[r].Cells[0].Value.ToString();
                 blGiaVe = new BLGiaVe();
@@ -200,7 +201,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 txtGioToiThieu.Text = dgvGiaVe.Rows[r].Cells[4].Value.ToString();
                 txtGioToiDa.Text = dgvGiaVe.Rows[r].Cells[5].Value.ToString();
                 txtUuDai.Text = dgvGiaVe.Rows[r].Cells[6].Value.ToString();
-                cboLoaiXe.Text = blGiaVe.GetNameVehicle(dgvGiaVe.Rows[r].Cells[3].Value.ToString()).Tables[0].Rows[0][0].ToString();
+                cboLoaiXe.Text = blXe.GetNameVehicle(dgvGiaVe.Rows[r].Cells[3].Value.ToString()).Tables[0].Rows[0][0].ToString();
                 if (dgvGiaVe.Rows[r].Cells["VeThang"].Value.ToString() == "True")
                     checkBoxVeThang.Checked = true;
                 else

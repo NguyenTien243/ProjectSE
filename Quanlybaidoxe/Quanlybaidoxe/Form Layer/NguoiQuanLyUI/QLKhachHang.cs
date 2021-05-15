@@ -10,20 +10,25 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 {
     public partial class QLKhachHang : Form
     {
+   
         public QLKhachHang()
         {
+            
             InitializeComponent();
         }
         DataTable dataTableKhachHang = null;
         BLKhachHang blKhachHang = new BLKhachHang();
 
         FormDKyXe frmDkyXe;
-        bool Add;
+        bool Giahan = false;
         string err;
+        
         private void LoadData()
         {
             try
             {
+               
+
                 btnReload.Enabled = true;
                 dgvQLKhachHang.Enabled = true;
                 dataTableKhachHang = new DataTable();
@@ -41,11 +46,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 btnSua.Enabled = true;
                 btnHuy.Enabled = false;
                 btnLuu.Enabled = false;
+                btnGiaHan.Enabled = true;
+                dateTimePickerHetHan.Enabled = false;
                 cbVeThang.Items.Clear();
-                for (int dem = 0; dem < blKhachHang.GetNameTicket().Tables[0].Rows.Count; dem++) //Thêm tên loại vé tháng vào combobox
-                {
-                    cbVeThang.Items.Add(blKhachHang.GetNameTicket().Tables[0].Rows[dem][0].ToString());
-                }
+                
                 pnlQuanLyKH.Enabled = false;
 
                 dgvQLKhachHang_CellClick(null, null);
@@ -59,7 +63,27 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-              
+            dgvQLKhachHang.Enabled = false;
+            btnGiaHan.Enabled = false;
+            // Kich hoạt biến Them
+            SHAREVAR.Add = false;
+            int r = dgvQLKhachHang.CurrentCell.RowIndex;
+            SHAREVAR.MaKH = dgvQLKhachHang.Rows[r].Cells[0].Value.ToString();
+            // Cho thao tác trên các nút Lưu / Hủy / Panel
+            this.btnLuu.Enabled = true;
+            this.btnHuy.Enabled = true;
+            //   this.btnHuy.Enabled = true;
+            this.pnlQuanLyKH.Enabled = true;
+            dateTimePickerHetHan.Enabled = false;
+            // Không cho thao tác trên các nút Thêm / Xóa / Thoát
+            this.btnDangKy.Enabled = false;
+            this.btnSua.Enabled = false;
+            this.btnXoa.Enabled = false;
+            txtMaKH.Enabled = false;
+            txtMaXe.Enabled = true;
+            cbVeThang.Enabled = false;
+           
+            this.txtTenKH.Focus();
         }
 
         private void txtMaXe_TextChanged(object sender, EventArgs e)
@@ -74,7 +98,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             {
                control.Visible = false;
             }
-
+            
             frmDkyXe = new FormDKyXe();
             frmDkyXe.TopLevel = false;
 
@@ -83,7 +107,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
             // Hiển thị form
             frmDkyXe.Show();
-
+           
             btnLuu.Enabled = false;
         }
         public void ResetValues()
@@ -96,7 +120,9 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             txtCMND.ResetText();
             txtSDT.ResetText();
             txtDiaChi.ResetText();
-            txtNgayHetHan.ResetText();
+            txtMaXe.Enabled = true;
+            
+            dateTimePickerHetHan.ResetText();
             txtMaXe.ResetText();
         }
 
@@ -120,7 +146,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 txtCMND.Text = dgvQLKhachHang.Rows[r].Cells[4].Value.ToString();
                 txtSDT.Text = dgvQLKhachHang.Rows[r].Cells[5].Value.ToString();
                 txtDiaChi.Text = dgvQLKhachHang.Rows[r].Cells[6].Value.ToString();
-                txtNgayHetHan.Text = dgvQLKhachHang.Rows[r].Cells[7].Value.ToString();
+                dateTimePickerHetHan.Text = dgvQLKhachHang.Rows[r].Cells[7].Value.ToString();
                 txtMaXe.Text = dgvQLKhachHang.Rows[r].Cells[8].Value.ToString();
                 // cboLoaiXe.Text = blGiaVe.GetNameVehicle(dgvGiaVe.Rows[r].Cells[3].Value.ToString()).Tables[0].Rows[0][0].ToString();
                
@@ -134,15 +160,17 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void QLKhachHang_Load(object sender, EventArgs e)
         {
+            //dgvQLKhachHang.Columns["NgayHetHanVeThang"].DefaultCellStyle.Format = "dd/MM/yyyy hh:mm"; // fomat dạng ngày đổ lên datagridview https://www.ddth.com/showthread.php/312166-H%E1%BB%8Fi-v%E1%BB%81-format-datatime-trong-datagridview-c%E1%BB%A7a-c
             LoadData();
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
+            
             dgvQLKhachHang.Enabled = false;
             btnGiaHan.Enabled = false;
             // Kich hoạt biến Them
-            Add = true;
+            SHAREVAR.Add = true;
             // Xóa trống các đối tượng trong Panel
             ResetValues();
             
@@ -152,7 +180,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnHuy.Enabled = true;
             //   this.btnHuy.Enabled = true;
             this.pnlQuanLyKH.Enabled = true;
-            txtNgayHetHan.Enabled = false;
+            dateTimePickerHetHan.Enabled = false;
             // Không cho thao tác trên các nút Thêm / Xóa / Thoát
             this.btnDangKy.Enabled = false;
             this.btnSua.Enabled = false;
@@ -175,17 +203,190 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             }    
         }
 
-        //Phuong
+      
         private void pnlQuanLyKH_ControlRemoved(object sender, ControlEventArgs e)
         {
-
-            if(pnlQuanLyKH.Controls.Contains(frmDkyXe) == false)
+            if (pnlQuanLyKH.Controls.Contains(frmDkyXe) == false)
             {
+                
                 foreach (Control ctr in pnlQuanLyKH.Controls)
                 {
+
+                    //if (ctr.Name == "txtMaXe") ctr.Text = maxe;
                     ctr.Visible = true;
                 }
+                txtMaXe.Text = SHAREVAR.maxe;
+                if(SHAREVAR.Add == true)
+                txtMaXe.Enabled = false;
+                else txtMaXe.Enabled = true;
+                cbVeThang.Items.Clear();   //cho tên vé tháng tương ứng với loại xe vào combobox
+                for (int dem = 0; dem < blKhachHang.GetNameTicket(SHAREVAR.maloaixe).Tables[0].Rows.Count; dem++) //Thêm tên loại vé tháng vào combobox
+                {
+                    cbVeThang.Items.Add(blKhachHang.GetNameTicket(SHAREVAR.maloaixe).Tables[0].Rows[dem][0].ToString());
+                }
+                btnLuu.Enabled = true;
             }    
+        }
+
+        private void cbVeThang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            string months = blKhachHang.GetDetailOfTicket(cbVeThang.GetItemText(cbVeThang.SelectedItem)).Tables[0].Rows[0][8].ToString();  ////
+            float price = float.Parse(blKhachHang.GetDetailOfTicket(cbVeThang.GetItemText(cbVeThang.SelectedItem)).Tables[0].Rows[0][2].ToString());
+            int uudai = int.Parse(blKhachHang.GetDetailOfTicket(cbVeThang.GetItemText(cbVeThang.SelectedItem)).Tables[0].Rows[0][6].ToString()); //LỖI
+            SHAREVAR.PriceOfRegister = price - price * uudai / 100;
+            
+            //txtNgayHetHan.Text = now.AddMonths(Int32.Parse(months)).ToString();
+            if (Giahan == false)
+                dateTimePickerHetHan.Text = now.AddMonths(Int32.Parse(months)).ToString();
+            else
+            {              
+                dateTimePickerHetHan.Text = Convert.ToDateTime(dateTimePickerHetHan.Text).AddMonths(Int32.Parse(months)).ToString();
+            }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            string Gioitinh;
+            if (radNam.Checked == true)
+                Gioitinh = "Nam";
+            else Gioitinh = "Nữ";
+            if (radNam.Checked ==false && radNu.Checked == false)
+            {
+                MessageBox.Show("Bạn chưa chọn giới tính");              
+            }    
+            if (txtMaKH.Text.Trim().Length == 0 || txtTenKH.Text.Trim().Length == 0 || txtDiaChi.Text.Trim().Length == 0 || txtCMND.Text.Trim().Length == 0
+               || txtSDT.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập đủ  các thông tin cần thiết");
+                return;
+            } else if (DateTime.Now.Year - dateTimePickerKH.Value.Year < 18)
+            {
+                MessageBox.Show("Chưa đủ tuổi đăng ký xe");
+                return;
+            }
+            // kiểm tra Trùng CMND
+            blKhachHang = new BLKhachHang();
+            if (blKhachHang.CheckCMND(txtMaKH.Text, txtCMND.Text).Tables[0].Rows.Count!=0)
+            {
+                MessageBox.Show("CMND bị trùng vui lòng kiểm tra lại");
+                return;
+            }
+            if (SHAREVAR.Add == true)
+            {
+                blKhachHang = new BLKhachHang();
+                
+                if (cbVeThang.Text.Trim().Length == 0) MessageBox.Show("Chưa chọn vé tháng");
+                
+                
+                    {
+                        if (blKhachHang.CheckIdCustomer(txtMaKH.Text).Tables[0].Rows.Count != 0)
+                        {
+                            MessageBox.Show("Mã khách hàng này đã tồn tại, hãy nhập mã khác!!");
+                        }
+                        else if (blKhachHang.CustomerRegister(txtMaKH.Text, txtTenKH.Text, dateTimePickerKH.Value, Gioitinh, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, dateTimePickerHetHan.Value, txtMaXe.Text, SHAREVAR.PriceOfRegister, ref err) == true)
+                        {
+
+                            MessageBox.Show("Chúc mừng "+txtTenKH.Text+" đã đăng ký vé thành công!");
+
+                            LoadData();
+                        }
+                        else MessageBox.Show("Có lỗi xảy ra, chưa thêm được!!");
+                    }
+                
+
+
+            }
+            else if (SHAREVAR.Add == false && Giahan == false)
+            {
+                blKhachHang = new BLKhachHang();
+                //string maloaive = blXe.GetVechicleId(cboLoaiXe.Text).Tables[0].Rows[0][0].ToString();
+                int r = dgvQLKhachHang.CurrentCell.RowIndex;
+                SHAREVAR.MaKH = dgvQLKhachHang.Rows[r].Cells[0].Value.ToString();
+                blKhachHang = new BLKhachHang();
+                if (blKhachHang.UpdateCustomer(txtMaKH.Text, txtTenKH.Text, dateTimePickerKH.Value, Gioitinh, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, dateTimePickerHetHan.Value, txtMaXe.Text, SHAREVAR.PriceOfRegister, ref err) == true)
+                {
+                    MessageBox.Show("Chỉnh sửa thành công, đã cập nhật lại thông tin");
+                    LoadData();
+                    txtTenKH.Enabled = true;
+                    cbVeThang.Enabled = true;
+                }
+                else MessageBox.Show("Không thể chỉnh sửa!!");
+            }
+            if(SHAREVAR.Add == false && Giahan == true)
+            {
+                if (blKhachHang.UpdateCustomer(txtMaKH.Text, txtTenKH.Text, dateTimePickerKH.Value, Gioitinh, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, dateTimePickerHetHan.Value, txtMaXe.Text, SHAREVAR.PriceOfRegister, ref err) == true)
+                {
+                    MessageBox.Show("Gia hạn vé thành công!");
+                    LoadData();
+                    cbVeThang.Enabled = false;
+                    Giahan = false;
+                    
+                }
+                else MessageBox.Show("Bị lỗi gia hạn!!");
+
+            }    
+        }
+
+        private void btnGiaHan_Click(object sender, EventArgs e)
+        {
+            dgvQLKhachHang.Enabled = false;
+            btnGiaHan.Enabled = false;
+            // Kich hoạt biến Them
+            Giahan = true;
+            int r = dgvQLKhachHang.CurrentCell.RowIndex;
+            //string MaKH = dgvQLKhachHang.Rows[r].Cells[0].Value.ToString();
+            BLXe blXe = new BLXe();
+            string MaLoaiXe = blXe.GetVehicleCategoryId(txtMaXe.Text).Tables[0].Rows[0][0].ToString(); 
+            // Cho thao tác trên các nút Lưu / Hủy / Panel
+            this.btnLuu.Enabled = true;
+            this.btnHuy.Enabled = true;
+            //   this.btnHuy.Enabled = true;
+            pnlQuanLyKH.Enabled = true;
+            dateTimePickerHetHan.Enabled = false;
+            // Không cho thao tác trên các nút Thêm / Xóa / Thoát
+            this.btnDangKy.Enabled = false;
+            this.btnSua.Enabled = false;
+            this.btnXoa.Enabled = false;
+            txtMaKH.Enabled = false;
+            txtMaXe.Enabled = false;
+            txtTenKH.Enabled = false;
+            dateTimePickerKH.Enabled = false;
+            radNam.Enabled = false;
+            radNu.Enabled = false;
+            txtCMND.Enabled = false;
+            txtSDT.Enabled = false;
+            dateTimePickerKH.Enabled = false;
+            txtDiaChi.Enabled = false;
+
+            cbVeThang.Enabled = true;
+
+            this.cbVeThang.Focus();
+
+            cbVeThang.Items.Clear();   //cho tên vé tháng tương ứng với loại xe vào combobox
+            for (int dem = 0; dem < blKhachHang.GetNameTicket(MaLoaiXe).Tables[0].Rows.Count; dem++) //Thêm tên loại vé tháng vào combobox
+            {
+                cbVeThang.Items.Add(blKhachHang.GetNameTicket(MaLoaiXe).Tables[0].Rows[dem][0].ToString());
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            ResetValues();
+
+            btnDangKy.Enabled = true;
+            btnXoa.Enabled = true;
+            btnSua.Enabled = true;
+            btnHuy.Enabled = false;
+            btnLuu.Enabled = false;
+            btnGiaHan.Enabled = true;
+            dateTimePickerHetHan.Enabled = false;
+            cbVeThang.Items.Clear();
+            dgvQLKhachHang.Enabled = true;
+
+            pnlQuanLyKH.Enabled = false;
+
+            dgvQLKhachHang_CellClick(null, null);
         }
     }
 }

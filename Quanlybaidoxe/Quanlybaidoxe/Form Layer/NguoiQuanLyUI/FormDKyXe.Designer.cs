@@ -37,9 +37,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtTenXe = new System.Windows.Forms.TextBox();
             this.txtMaXe = new System.Windows.Forms.TextBox();
-            this.radioBtnXeMay = new System.Windows.Forms.RadioButton();
-            this.radioBtnOto = new System.Windows.Forms.RadioButton();
             this.pnlDKyXe = new System.Windows.Forms.Panel();
+            this.cbLoaiXe = new System.Windows.Forms.ComboBox();
             this.btnLuu = new System.Windows.Forms.Button();
             this.pnlDKyXe.SuspendLayout();
             this.SuspendLayout();
@@ -136,35 +135,10 @@
             this.txtMaXe.Size = new System.Drawing.Size(314, 31);
             this.txtMaXe.TabIndex = 5;
             // 
-            // radioBtnXeMay
-            // 
-            this.radioBtnXeMay.AutoSize = true;
-            this.radioBtnXeMay.Location = new System.Drawing.Point(837, 38);
-            this.radioBtnXeMay.Margin = new System.Windows.Forms.Padding(4);
-            this.radioBtnXeMay.Name = "radioBtnXeMay";
-            this.radioBtnXeMay.Size = new System.Drawing.Size(92, 29);
-            this.radioBtnXeMay.TabIndex = 28;
-            this.radioBtnXeMay.TabStop = true;
-            this.radioBtnXeMay.Text = "Xe máy";
-            this.radioBtnXeMay.UseVisualStyleBackColor = true;
-            // 
-            // radioBtnOto
-            // 
-            this.radioBtnOto.AutoSize = true;
-            this.radioBtnOto.Location = new System.Drawing.Point(1026, 36);
-            this.radioBtnOto.Margin = new System.Windows.Forms.Padding(4);
-            this.radioBtnOto.Name = "radioBtnOto";
-            this.radioBtnOto.Size = new System.Drawing.Size(69, 29);
-            this.radioBtnOto.TabIndex = 28;
-            this.radioBtnOto.TabStop = true;
-            this.radioBtnOto.Text = "Ô tô";
-            this.radioBtnOto.UseVisualStyleBackColor = true;
-            // 
             // pnlDKyXe
             // 
+            this.pnlDKyXe.Controls.Add(this.cbLoaiXe);
             this.pnlDKyXe.Controls.Add(this.btnLuu);
-            this.pnlDKyXe.Controls.Add(this.radioBtnOto);
-            this.pnlDKyXe.Controls.Add(this.radioBtnXeMay);
             this.pnlDKyXe.Controls.Add(this.txtMaXe);
             this.pnlDKyXe.Controls.Add(this.txtTenXe);
             this.pnlDKyXe.Controls.Add(this.label6);
@@ -178,6 +152,16 @@
             this.pnlDKyXe.Name = "pnlDKyXe";
             this.pnlDKyXe.Size = new System.Drawing.Size(1180, 290);
             this.pnlDKyXe.TabIndex = 29;
+            // 
+            // cbLoaiXe
+            // 
+            this.cbLoaiXe.FormattingEnabled = true;
+            this.cbLoaiXe.Location = new System.Drawing.Point(836, 42);
+            this.cbLoaiXe.Margin = new System.Windows.Forms.Padding(4);
+            this.cbLoaiXe.Name = "cbLoaiXe";
+            this.cbLoaiXe.Size = new System.Drawing.Size(314, 33);
+            this.cbLoaiXe.TabIndex = 4;
+            
             // 
             // btnLuu
             // 
@@ -217,9 +201,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTenXe;
         private System.Windows.Forms.TextBox txtMaXe;
-        private System.Windows.Forms.RadioButton radioBtnXeMay;
-        private System.Windows.Forms.RadioButton radioBtnOto;
         private System.Windows.Forms.Panel pnlDKyXe;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.ComboBox cbLoaiXe;
     }
 }

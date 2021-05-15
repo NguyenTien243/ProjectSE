@@ -10,6 +10,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 {
     public partial class FormDKyXe : Form
     {
+       // bool Add = false;
         public FormDKyXe()
         {
             InitializeComponent();
@@ -19,42 +20,88 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         BLXe blXe = new BLXe();
         private void FormDKyXe_Load(object sender, EventArgs e)
         {
-            txtTenXe.ResetText();
-            txtMaXe.ResetText();
-            txtMauSac.ResetText();
-            txtBienSo.ResetText();
-            radioBtnOto.Checked = false;
-            radioBtnXeMay.Checked = false;
-            
-
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            string MaLoaiXe;
-            if (radioBtnOto.Checked == true)
-                MaLoaiXe = "LX0";
-            else MaLoaiXe = "LXM";
-            if (txtTenXe.Text.Trim().Length == 0 || txtMaXe.Text.Trim().Length == 0 || txtMauSac.Text.Trim().Length == 0 || txtBienSo.Text.Trim().Length == 0 || radioBtnOto.Checked==false || radioBtnXeMay.Checked==false)
+            if (SHAREVAR.Add == false)
             {
-                if (blXe.AddVehicle(txtMaXe.Text, txtBienSo.Text, txtTenXe.Text, txtMauSac.Text, MaLoaiXe, ref err) == true)
-                {
-                    this.pnlDKyXe.Controls.Clear();
-                    
-                    QLKhachHang frmQLKH = new QLKhachHang();
-                    frmQLKH.TopLevel = false;
-                    
-                    // Gắn vào panel
-                    this.pnlDKyXe.Controls.Add(frmQLKH);
-
-                    // Hiển thị form
-                    frmQLKH.Show();
-                }
-                else MessageBox.Show("Có lỗi, không thể thêm được!");
+                blXe = new BLXe();
+                DataSet ds = blXe.GetVehicle(SHAREVAR.MaKH);
+                txtMaXe.Text = ds.Tables[0].Rows[0][0].ToString();
+                txtMaXe.Enabled = false;
+                txtBienSo.Text = ds.Tables[0].Rows[0][1].ToString();
+                txtTenXe.Text = ds.Tables[0].Rows[0][2].ToString();
+                txtMauSac.Text = ds.Tables[0].Rows[0][3].ToString();
+                cbLoaiXe.Enabled = false;
+                if (ds.Tables[0].Rows[0][4].ToString() == "Xe máy")
+                    cbLoaiXe.Text = "Xe máy";
+                else cbLoaiXe.Text = "Ô tô";
 
             }
-            else MessageBox.Show("Vui lòng điền đủ trước khi xác nhận!");
+            else
+            {
+                txtTenXe.ResetText();
+                txtMaXe.ResetText();
+                txtMauSac.ResetText();
+                txtBienSo.ResetText();
+                cbLoaiXe.ResetText();
+                cbLoaiXe.Items.Clear();
+                for (int dem = 0; dem < blXe.GetVehicleCategory().Tables[0].Rows.Count; dem++) //Thêm loại xe vào combobox
+                {
+                    cbLoaiXe.Items.Add(blXe.GetVehicleCategory().Tables[0].Rows[dem][0].ToString());
+                }
+            }
+
         }
+        public bool CheckValues(string MaXe, string BienSo)
+        {
+            bool check = false;
+            BLXe blXe = new BLXe();
+            if (blXe.CheckIdVehicle(MaXe).Tables[0].Rows.Count != 0)
+            {
+                MessageBox.Show("Mã xe này đã được sử dụng!!");               
+            }  else if (blXe.CheckLicensePlate(BienSo).Tables[0].Rows.Count != 0)
+            {
+                MessageBox.Show("Biển số này đã được sử dụng!!");             
+            }
+            else check = true;
+            return check;
+        }
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (txtTenXe.Text.Trim().Length == 0 || txtMaXe.Text.Trim().Length == 0 || txtMauSac.Text.Trim().Length == 0 || txtBienSo.Text.Trim().Length == 0 || cbLoaiXe.Text.Trim().Length == 0)
+            {
+
+                MessageBox.Show("Vui lòng điền đủ trước khi xác nhận!");
+                return;
+            }
+            if (SHAREVAR.Add == true)
+            {                
+                if (CheckValues(txtMaXe.Text, txtBienSo.Text) == true)
+                {
+                    if (blXe.AddVehicle(txtMaXe.Text, txtBienSo.Text, txtTenXe.Text, txtMauSac.Text, blXe.GetVechicleId(cbLoaiXe.Text).Tables[0].Rows[0][0].ToString(), ref err) == true)
+                    {
+                        SHAREVAR.maxe = txtMaXe.Text;
+                        SHAREVAR.maloaixe = blXe.GetVechicleId(cbLoaiXe.Text).Tables[0].Rows[0][0].ToString();
+                        this.Dispose();
+                        this.pnlDKyXe.Controls.Clear();
+
+                    }
+                    else MessageBox.Show("Có lỗi, không thể thêm được!");
+
+                }
+            }
+            else
+            {
+                if (blXe.UpdateVehicle(txtMaXe.Text, txtBienSo.Text, txtTenXe.Text, txtMauSac.Text, ref err) == true)
+                {
+                    SHAREVAR.maxe = txtMaXe.Text;
+                    MessageBox.Show("Đã cập nhật thông tin xe!");
+                    this.Dispose();
+                    this.pnlDKyXe.Controls.Clear();
+                }
+
+                else MessageBox.Show("Lỗi, chưa thể cập nhật!");
+            }
+
+        }
+
     }
 }

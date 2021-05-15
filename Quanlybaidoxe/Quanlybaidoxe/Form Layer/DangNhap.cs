@@ -88,6 +88,7 @@ namespace Quanlybaidoxe
                     
                     
                     manv = dtTaiKhoan.Rows[i]["MaNV"].ToString().Trim();
+                    SHAREVAR.MaNV = manv;
                     if (dtTaiKhoan.Rows[i]["MaCV"].ToString().Trim() == "CV01")
                         {
                         MessageBox.Show("Đăng nhập thành công !!");
