@@ -23,17 +23,7 @@ namespace Quanlybaidoxe
         }
         DataTable dtTaiKhoan = null;
         BLTaiKhoan dbBaiDoXe = new BLTaiKhoan();
-        private void label3_Click(object sender, EventArgs e)
-        {
-            // Khai báo biến traloi
-            DialogResult traloi;
-            // Hiện hộp thoại hỏi đáp
-            traloi = MessageBox.Show("Bạn có chắc thoát không?", "Trả lời",
-            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            // Kiểm tra có nhắp chọn nút Ok không?
-            if (traloi == DialogResult.OK) Application.Exit();
-
-        }
+       
         //Di chuyển form
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -76,42 +66,67 @@ namespace Quanlybaidoxe
                 return;
             }
 
-            //var kq = from account in dtTaiKhoan.AsEnumerable()
-            //         where account.Field<string>("TaiKhoan").Trim() == "tiendeptrai"// && account.Field<string>("MatKhau") == txtMatKhau.Text.Trim()
-            //         select new
-            //         { TK = account.Field<string>("TaiKhoan"),
-            //            mk = account.Field<string>("MatKhau")};
-            for (int i = 0; i < dtTaiKhoan.Rows.Count; i++)
+
+            // tham khảo từ https://stackoverflow.com/questions/42895750/c-sharp-datatable-select-with-multiple-conditions-on-a-single-column
+            DataRow rowAccount = dtTaiKhoan.AsEnumerable().FirstOrDefault(c => c.Field<string>("TaiKhoan").Trim() == txtTenDangNhap.Text.Trim() && c.Field<string>("MatKhau").Trim() == txtMatKhau.Text.Trim());
+            if(rowAccount != null)
             {
-                if (txtTenDangNhap.Text.Trim() == dtTaiKhoan.Rows[i]["TaiKhoan"].ToString().Trim() && txtMatKhau.Text.Trim() == dtTaiKhoan.Rows[i]["MatKhau"].ToString().Trim())
+                if (rowAccount["MaCV"].ToString().Trim() == "CV01")
                 {
-                    
-                    
-                    manv = dtTaiKhoan.Rows[i]["MaNV"].ToString().Trim();
-                    if (dtTaiKhoan.Rows[i]["MaCV"].ToString().Trim() == "CV01")
-                        {
-                        MessageBox.Show("Đăng nhập thành công !!");
-                        //txtTenDangNhap.ResetText();
-                        //txtMatKhau.ResetText();
-                        //txtTenDangNhap.Focus();
-                        formquanly = new DashBoard();  
-                        // chuyền mã nhân viên sang form DashBoard
-                        delPassData delpassdata = new delPassData(formquanly.fundata); //https://daynhauhoc.com/t/cach-truyen-du-lieu-giua-2-form-trong-c/33911
-                        delpassdata(manv);  
-                        this.Hide();
-                        formquanly.ShowDialog();
-   
-                      
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Đăng nhập thành công với tài khoản nhân viên, giao diện nhân viên chưa hoàn thành !!");
-                        return;
-                    }    
+                    MessageBox.Show("Đăng nhập thành công !!");
+                    manv = rowAccount["MaNV"].ToString();
+                    //txtTenDangNhap.ResetText();
+                    //txtMatKhau.ResetText();
+                    //txtTenDangNhap.Focus();
+                    formquanly = new DashBoard();
+                    // chuyền mã nhân viên sang form DashBoard
+                    delPassData delpassdata = new delPassData(formquanly.fundata); //https://daynhauhoc.com/t/cach-truyen-du-lieu-giua-2-form-trong-c/33911
+                    delpassdata(manv);
+                    this.Hide();
+                    formquanly.ShowDialog();
+
+
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Đăng nhập thành công với tài khoản nhân viên, giao diện nhân viên chưa hoàn thành !!");
+                    return;
                 }
             }
             MessageBox.Show("Sai tài khoản hoặc mật khẩu !!!");
+
+            //for (int i = 0; i < dtTaiKhoan.Rows.Count; i++)
+            //{
+            //    if (txtTenDangNhap.Text.Trim() == dtTaiKhoan.Rows[i]["TaiKhoan"].ToString().Trim() && txtMatKhau.Text.Trim() == dtTaiKhoan.Rows[i]["MatKhau"].ToString().Trim())
+            //    {
+                    
+                    
+            //        manv = dtTaiKhoan.Rows[i]["MaNV"].ToString().Trim();
+            //        if (dtTaiKhoan.Rows[i]["MaCV"].ToString().Trim() == "CV01")
+            //            {
+            //            MessageBox.Show("Đăng nhập thành công !!");
+            //            //txtTenDangNhap.ResetText();
+            //            //txtMatKhau.ResetText();
+            //            //txtTenDangNhap.Focus();
+            //            formquanly = new DashBoard();  
+            //            // chuyền mã nhân viên sang form DashBoard
+            //            delPassData delpassdata = new delPassData(formquanly.fundata); //https://daynhauhoc.com/t/cach-truyen-du-lieu-giua-2-form-trong-c/33911
+            //            delpassdata(manv);  
+            //            this.Hide();
+            //            formquanly.ShowDialog();
+   
+                      
+            //            return;
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Đăng nhập thành công với tài khoản nhân viên, giao diện nhân viên chưa hoàn thành !!");
+            //            return;
+            //        }    
+            //    }
+            //}
+            //MessageBox.Show("Sai tài khoản hoặc mật khẩu !!!");
             
         }
 
@@ -142,6 +157,20 @@ namespace Quanlybaidoxe
             }
         }
 
-        
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            // Khai báo biến traloi
+            DialogResult traloi;
+            // Hiện hộp thoại hỏi đáp
+            traloi = MessageBox.Show("Bạn có chắc thoát không?", "Trả lời",
+            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            // Kiểm tra có nhắp chọn nút Ok không?
+            if (traloi == DialogResult.OK) Application.Exit();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

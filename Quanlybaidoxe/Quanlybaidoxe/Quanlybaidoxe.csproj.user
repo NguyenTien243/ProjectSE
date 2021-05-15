@@ -25,6 +25,9 @@
     <Compile Update="Form Layer\NguoiQuanLyUI\QLNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\ThanhToanXeRa.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form Layer\NguoiQuanLyUI\ThongKe.cs">
       <SubType>Form</SubType>
     </Compile>

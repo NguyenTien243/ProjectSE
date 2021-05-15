@@ -326,7 +326,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // AdminForm
+            // QLGiaVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -342,7 +342,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.Controls.Add(this.dgvGiaVe);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AdminForm";
+            this.Name = "QLGiaVe";
             this.Text = "AdminForm";
             this.Load += new System.EventHandler(this.AdminForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaVe)).EndInit();
