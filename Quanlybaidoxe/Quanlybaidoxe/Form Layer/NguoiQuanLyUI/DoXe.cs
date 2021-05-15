@@ -55,10 +55,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             if (dataTableTicketAvailable.Rows.Count == 0)
             {
                 MessageBox.Show("Thông báo hết thẻ gửi xe!");
-                labelThongBaoHetThe.Text = "Hết thẻ!!!";
+                lbSLTheXeCon.Text = "Hết thẻ!!!";
             }
             else
-                labelThongBaoHetThe.Text = "";
+                lbSLTheXeCon.Text = dataTableTicketAvailable.Rows.Count.ToString();
             foreach (DataRow row in dataTableTicketAvailable.Rows)
             {
                 cboTheGui.Items.Add(row["MaTheGuiXe"].ToString());
@@ -74,10 +74,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             if (dataTablePositionAvailable.Rows.Count == 0)
             {
                 MessageBox.Show("Thông báo hết chỗ để xe!");
-                labelThongBaoHetViTri.Text = "Hết chỗ để xe!!!!";
+                lbSLViTriCon.Text = "Hết chỗ!";
             }
             else
-                labelThongBaoHetViTri.Text = "";
+                lbSLViTriCon.Text = dataTablePositionAvailable.Rows.Count.ToString();
             foreach (DataRow row in dataTablePositionAvailable.Rows)
             {
                 cboViTri.Items.Add(row["MaViTri"].ToString());
@@ -389,7 +389,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // kiểm tra Trùng Tên
             blDoXe = new BLDoXe();
 
-            maloaixe = dataTableVehicleType.Rows[cboViTri.SelectedIndex]["MaLoaiXe"].ToString();
+            maloaixe = dataTableVehicleType.Rows[cboLoaiXe.SelectedIndex]["MaLoaiXe"].ToString();
             DataRow rowInfo = dataTableVehicles.AsEnumerable().FirstOrDefault(c => c.Field<string>("BienSo").Trim() == txtBienSo.Text.Trim());
             if (rowInfo != null) // xe này đã từng có thông tin rồi (đã từng vào bãi rồi, vẫn còn lưu lại thông tin --> cập nhật)
             {
