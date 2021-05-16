@@ -19,6 +19,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         BLNhanVien blNV = new BLNhanVien();
         bool Them;
         string err;
+        string loaitimkiem;
         private void LoadThongTin()
         {
             try
@@ -41,7 +42,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 btnThem.Enabled = true;
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
-                pntTaiKhoan.Enabled = false;
+                
                 dgvQLNV_CellClick(null, null);
             }
             catch
@@ -141,7 +142,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            pntTaiKhoan.Enabled = true;
+            
             
             // Kich hoạt biến Them
             Them = true;
@@ -165,7 +166,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            pntTaiKhoan.Enabled = true;
+    
             txtLuong.Enabled = true;
             // Kich hoạt biến Them
             Them = false;
@@ -229,6 +230,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void QLNhanVien_Load(object sender, EventArgs e)
         {
+            cboTimKiem.DropDownStyle = ComboBoxStyle.DropDownList;
             LoadThongTin();
             dgvQLNV.Columns["NgaySinh"].DefaultCellStyle.Format = "dd/MM/yyyy"; // fomat dạng ngày đổ lên datagridview https://www.ddth.com/showthread.php/312166-H%E1%BB%8Fi-v%E1%BB%81-format-datatime-trong-datagridview-c%E1%BB%A7a-c
             dgvQLNV.Enabled = true;
@@ -305,9 +307,60 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnLuu.Enabled = false;
             this.btnHuy.Enabled = false;
             this.pnlQuanLyNV.Enabled = false;
-            pntTaiKhoan.Enabled = false;
+            
             dgvQLNV_CellClick(null, null);
         }
-        
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            if (cboTimKiem.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn loại tìm kiếm");
+                return;
+            }
+            if (txtTimKiem.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Vui lòng nhập nội dung tìm kiếm");
+                return;
+            }
+         
+            int luachon = cboTimKiem.SelectedIndex;
+            switch (luachon)
+            {
+                case 0:
+                    loaitimkiem = "NhanVien.MaNV";
+                    break;
+                case 1:
+                    loaitimkiem = "TenNV";
+                    break;
+                case 2:
+                    loaitimkiem = "GioiTinh";
+                    break;
+                case 3:
+                    loaitimkiem = "CMND";
+                    break;
+                case 4:
+                    loaitimkiem = "SDT";
+                    break;
+                case 5:
+                    loaitimkiem = "DiaChi";
+                    break;
+                case 6:
+                    loaitimkiem = "TaiKhoan";
+                    break;
+                default:
+                    MessageBox.Show("Loại tìm kiếm không hợp lệ, vui lòng kiểm tra lại!");
+                    break;
+            }
+            dgvQLNV.DataSource = blNV.SearchStaff(loaitimkiem, txtTimKiem.Text).Tables[0];
+            dgvQLNV_CellClick(null, null);
+            
+            
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadThongTin();
+        }
     }
 }
