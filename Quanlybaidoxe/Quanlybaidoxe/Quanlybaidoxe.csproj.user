@@ -34,8 +34,5 @@
     <Compile Update="Form Layer\NguoiQuanLyUI\ThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form Layer\NguoiQuanLyUI\ThongKeDoanhThu.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
 </Project>
