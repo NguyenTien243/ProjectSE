@@ -134,5 +134,14 @@ namespace Quanlybaidoxe.Form_Layer
                 new DangNhap().Show();
             }
         }
+
+        private void btnDoanhThu_Click(object sender, EventArgs e)
+        {
+            this.pnlChucNang.Controls.Clear();
+            ThongKeDoanhThu FormDoanhThu = new ThongKeDoanhThu();
+            FormDoanhThu.TopLevel = false;
+            this.pnlChucNang.Controls.Add(FormDoanhThu);
+            FormDoanhThu.Show();
+        }
     }
 }

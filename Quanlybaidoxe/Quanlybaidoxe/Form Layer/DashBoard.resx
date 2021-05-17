@@ -60,10 +60,28 @@
   <metadata name="panel1.Locked" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>True</value>
   </metadata>
-  <metadata name="btnDangXuat.Locked" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+  <metadata name="btnDoanhThu.Locked" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+  <data name="btnDoanhThu.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIkSURBVFhH7ZbPS1RRHMWHQSSkhUhEiEi0ajGLFi0iXLQS
+        CZGIVjK0EBfiKiRatAgiWokr/wBXISHRXxAR4TKiRYuQGCQkRAYXEiEi0+e8Offx3sybpyOOj2AOfHj3
+        nvude8+8X/eV+ipcjUZjGjbgXQvvc2itzUJzJnlr1uENrMGMAtSgKNUUYBcO4d4F8xd2FWBPHV+Rcxdz
+        X4JlGLcVif4fqKtRh64CUH8ZJtztKGoq8A30J+/ajkS/+wDU6d8sgS6bpJvtmodj4YkF0CIfYNRDsTy2
+        f6oAjA/CIuzAPryEKfju/jyUXTsCelJ0Xz0Lfqvw4wCa4NB+SvgDoMm34QBew4iHQ7AXoBvqI8zCL/gB
+        t12WKcb1m+wA9MtQhS1Q0hW44rFhmDBRGI434RNIer51j1yFUDekuqTwcgM8dsEqpK4xfZ36oBnb8sUt
+        d9XW2Qiq2I6FlxtAp37MR53mQQ9prC0AR6G6+HrTPnuAIHy9Oo9hy5a8rAC6BKoTs/a6CnBkPyV8BZB+
+        2pLXKUBQ1d5JAfSU9ANEAfQiOrafEv4r2IQNW/Lu2BPR65jj9YQ3ZW8y4d2QlxTeEeQH6KXaAsDzC0Zr
+        RpuRdqqitKcAv5vtQhR9kHxptgvRVwXQpnEfHsBD86hHhPm1ltZs+5Y4UfxoHOZA23QSeanPrp6IRfRF
+        1ElPXdYbsYB2x7DvZ+kzDLj8/MXkT0BfPnksubyv/0Gl0j87iHYeqesTPQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="btnDangXuat.Locked" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
   <data name="btnDangXuat.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -79,17 +97,17 @@
   </metadata>
   <data name="btnAdmin.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAg5JREFUWEe1l79LVWEcxi8i4tgYDeEkERHSFA0O4iAN0dDgENIgIg4S0T8gDiIR
-        4p8gEhIREQ0NDg4SEiEijg4SIRER4iQicv08530Q4RzPfd/ecz/w4V7O+T7Pe7nnnh+3lUq73X6Ia3iA
-        v/ArPkNPdBEWeY3nWMU7nMdhjzcLxU+0SiSvHGsGCntwv6iO4wRvOZ4PZaNFbRovHc+HsoXQmcSK4/lQ
-        9jF0JrHueD6U6VRLZcPxfCjTKZbKZ8fzoWw2dCbx1vF8VBY6k1hzPB+Vhc4kNh3PhzJdYlNp9Bu4g9fd
-        A65jxPFmoHAy9EbR3A/wKhRvhf5ajrDfkWah+EWxRD2LHm8eyntxu1immj94w+PdgQUeF0tVM+ux7sEi
-        c2GtSqY91iwU30Qdf12Q6k7HU3yPOmNuO/5/UCD1GLaOqdcAocwmjmOPa+MgMIQ/sA4tsIorfl/HHj5y
-        fT0M6hPrma4T444oMxM21XKGk45Uw8CIB2P4hvfwPn7Xhgj0TY15uTLs1DFLYQxTH1i3vFwZdupCEose
-        05WRKY/s/7xcGe0MM1Fc3nB4vxQ2RXHkWBl2HoaZKJ46ppz+G8Zy6FgZdr4JM1HcdUw5/RBj+ImjjpVh
-        p5zAXezE1Q8wGDZVcoyfUKd3nyOdYXgAn+MifkA9C+jH9ht1z5c6ZPqL/tevO/gFl3EKH2CvKytotS4A
-        iRi40GeHlAkAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVFhHxZbPK0RRFMcnTdJkYSErCwur+TssJFlMspAk
+        WVhayEK2VrKQrGRpIUmT1TQLC0kWkiRJmqRpkqZZSBbS+H7PPU8zTLrnjt771Kfuve/de868ub9SjdTr
+        9SG4Cy/hDbyFd/Beffhh6Q+jd9iP41zAPTgCNaKChgzch3FxADNRcHrI1pg5gpLAmFSTIccE8q6cCHkm
+        wImSFCUm8OTKQXC2c5V8Ss1OmQlUXNnMO4wm8qO02Hlm5xdXNlOV6ADlK9dkphqSAD/3FsxqfI5B++E8
+        fIW+SAJVV/ZmSuP+As+64Ju85UeNnWqu7EVBY7FfD9yAXMbbcFy1YE5gSeOz34JragtzAssan/0GIQ+a
+        djAncA47NAf27YTTkKdnCOYEyBr8ToKgTnmmWDe1oAQIv8Qw1BQcqA9Ay6oKTiCC2/AsbPxbVvnAk7YT
+        iFjU+Bxv1DV5YU6A+3/ZFZtY1/gcb8I1eWFOgFcpzvwc3IS8P67Abo3P8XagL5KAZdLMaZyW4DlXwoe8
+        6YckYDmMOPsnYZ/GFFDPQm7LluAk6DQkPBFPNH7oGEQSCL2QXGt8jmE5ghuRC0mrWe0DV0QRHkstjAoT
+        4L0uKeRSWnDlRCgyAZ5mSTHDBNLwVKrxcgbT0SzuhVzjccFYTXtJ9CV4q+XX4O7ILfo/5ZgcmzHcL0+l
+        Ul9f2sBlXgNOqwAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="btnDoXe.Locked" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
