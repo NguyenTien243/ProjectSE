@@ -137,6 +137,11 @@ namespace Quanlybaidoxe.Form_Layer
 
         private void btnDoanhThu_Click(object sender, EventArgs e)
         {
+            this.pnlChucNang.Controls.Clear();
+            ThongKeDoanhThu tkdt = new ThongKeDoanhThu();
+            tkdt.TopLevel = false;
+            this.pnlChucNang.Controls.Add(tkdt);
+            tkdt.Show();
         }
     }
 }
