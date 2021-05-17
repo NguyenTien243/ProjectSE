@@ -17,6 +17,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         //  DataTable datatableXe = null;
         string err;
+        bool check = true;
         BLXe blXe = new BLXe();
         private void FormDKyXe_Load(object sender, EventArgs e)
         {
@@ -50,20 +51,20 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             }
 
         }
-        public bool CheckValues(string MaXe, string BienSo)
-        {
-            bool check = false;
-            BLXe blXe = new BLXe();
-            if (blXe.CheckIdVehicle(MaXe).Tables[0].Rows.Count != 0)
-            {
-                MessageBox.Show("Mã xe này đã được sử dụng!!");               
-            }  else if (blXe.CheckLicensePlate(BienSo).Tables[0].Rows.Count != 0)
-            {
-                MessageBox.Show("Biển số này đã được sử dụng!!");             
-            }
-            else check = true;
-            return check;
-        }
+        //public bool CheckValues(string MaXe, string BienSo)
+        //{
+           
+        //    BLXe blXe = new BLXe();
+        //    if (blXe.CheckIdVehicle(MaXe).Tables[0].Rows.Count != 0)
+        //    {
+        //        MessageBox.Show("Mã xe này đã được sử dụng!!");               
+        //    }  else if (blXe.CheckLicensePlate(BienSo).Tables[0].Rows.Count != 0)
+        //    {
+        //        MessageBox.Show("Biển số này đã được sử dụng!!");             
+        //    }
+        //    else check = true;
+        //    return check;
+        //}
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (txtTenXe.Text.Trim().Length == 0 || txtMaXe.Text.Trim().Length == 0 || txtMauSac.Text.Trim().Length == 0 || txtBienSo.Text.Trim().Length == 0 || cbLoaiXe.Text.Trim().Length == 0)
@@ -74,7 +75,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             }
             if (SHAREVAR.Add == true)
             {                
-                if (CheckValues(txtMaXe.Text, txtBienSo.Text) == true)
+                if (check == true)
                 {
                     if (blXe.AddVehicle(txtMaXe.Text, txtBienSo.Text, txtTenXe.Text, txtMauSac.Text, blXe.GetVechicleId(cbLoaiXe.Text).Tables[0].Rows[0][0].ToString(), ref err) == true)
                     {
@@ -103,5 +104,32 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         }
 
+        private void txtMaXe_Validating(object sender, CancelEventArgs e)
+        {
+            if (blXe.CheckIdVehicle(txtMaXe.Text).Tables[0].Rows.Count != 0)
+            {
+                errorProvider1.SetError(txtMaXe, "Mã xe này đã được sử dụng!");
+                check = false;
+            }
+            else
+            {
+                errorProvider1.SetError(txtMaXe, null);
+                
+            }
+        }
+
+        private void txtBienSo_Validating(object sender, CancelEventArgs e)
+        {
+            if (blXe.CheckLicensePlate(txtBienSo.Text).Tables[0].Rows.Count != 0)
+            {
+                errorProvider1.SetError(txtBienSo, "Biển số này đã được sử dụng!");
+                check = false;
+            }
+            else
+            {
+                errorProvider1.SetError(txtBienSo, null);
+                
+            }
+        }
     }
 }

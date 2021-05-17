@@ -1,4 +1,4 @@
-﻿using Quanlybaidoxe.BS_Layer;
+﻿       using Quanlybaidoxe.BS_Layer;
 using Quanlybaidoxe.Form_Layer;
 using System;
 using System.Collections.Generic;

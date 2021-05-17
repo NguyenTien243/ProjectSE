@@ -67,7 +67,7 @@ namespace Quanlybaidoxe.BS_Layer
 
         public bool DeleteCustomer(string MaKH, string MaXe, ref string err)
         {
-            string sqlString = "DELETE FROM KhachHang Where MaKH = @MaKH; Delete From Xe Where MaXe = @MaXe";
+            string sqlString = "UPDATE TheGuiXe set MaXe = NULL WHERE MaXe = @MaXe; DELETE FROM KhachHang Where MaKH = @MaKH;  UPDATE Xe SET DangKyThang = 0 WHERE MaXe = @MaXe";
              SqlParameter[] para = { 
                 new SqlParameter("@MaKH", MaKH),
                 new SqlParameter("@MaXe", MaXe)
@@ -99,5 +99,25 @@ namespace Quanlybaidoxe.BS_Layer
             return dbKhachHang.ExecuteQueryDataSet("SELECT CMND FROM KhachHang WHERE MaKH != '" + MaKH + "' AND CMND='"+CMND+"'" , CommandType.Text);
          
         }
+        public bool GanTheXe(string MaXe, ref string err)
+        {
+           // return dbKhachHang.ExecuteQueryDataSet("UPDATE TheGuiXE SET MaXe ='"+MaXe+ "' WHERE MaTheGuiXe = (SELECT TOP 1 MaTheGuiXe FROM TheGuiXe WHERE MaXe IS NULL AND GioVao IS NULL)", CommandType.Text);
+            string sqlString = "UPDATE TheGuiXE SET MaXe = @MaXe WHERE MaTheGuiXe = (SELECT TOP 1 MaTheGuiXe FROM TheGuiXe WHERE MaXe IS NULL AND GioVao IS NULL)";
+            SqlParameter[] parameters = {
+            new SqlParameter("@MaXe", MaXe) };
+
+            return dbKhachHang.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
+        public DataSet MaThe(string MaXe)
+        {
+            return dbKhachHang.ExecuteQueryDataSet("SELECT MaTheGuiXe FROM TheGuiXe WHERE MaXe = '" + MaXe+ "'", CommandType.Text);
+
+        }
+        public DataSet GetInfo(string timkiem, string noidung, ref string err)
+        {
+            return dbKhachHang.ExecuteQueryDataSet("SELECT * FROM KhachHang WHERE "+timkiem+ " LIKE N'%"+noidung.Trim()+"%'", CommandType.Text);
+
+        }
+
     }
 }

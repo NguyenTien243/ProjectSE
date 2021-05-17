@@ -77,5 +77,12 @@ namespace Quanlybaidoxe.BS_Layer
             string GetCategoryId = "SELECT MaLoaiXe FROM KhachHang JOIN Xe ON KhachHang.MaXe = Xe.MaXe WHERE KhachHang.MaXe = '" + MaXe + "'";
             return dbXe.ExecuteQueryDataSet(GetCategoryId, CommandType.Text);
         }
+        public bool CheckDeleteVehicle(string MaXe, ref string err)
+        {
+            string sqlString = "SELECT * FROM ViTri WHERE MaXe = '" + MaXe + "'";
+            if (dbXe.ExecuteQueryDataSet(sqlString, CommandType.Text).Tables[0].Rows.Count >= 1)
+                return true; //xe đang đỗ trong bãi
+            return false;
+        }
     }
 }

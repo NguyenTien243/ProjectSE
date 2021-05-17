@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,7 +41,9 @@
             this.pnlDKyXe = new System.Windows.Forms.Panel();
             this.cbLoaiXe = new System.Windows.Forms.ComboBox();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlDKyXe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -86,6 +89,7 @@
             this.txtBienSo.Name = "txtBienSo";
             this.txtBienSo.Size = new System.Drawing.Size(313, 31);
             this.txtBienSo.TabIndex = 7;
+            this.txtBienSo.Validating += new System.ComponentModel.CancelEventHandler(this.txtBienSo_Validating);
             // 
             // label5
             // 
@@ -134,6 +138,7 @@
             this.txtMaXe.Name = "txtMaXe";
             this.txtMaXe.Size = new System.Drawing.Size(314, 31);
             this.txtMaXe.TabIndex = 5;
+            this.txtMaXe.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaXe_Validating);
             // 
             // pnlDKyXe
             // 
@@ -161,7 +166,6 @@
             this.cbLoaiXe.Name = "cbLoaiXe";
             this.cbLoaiXe.Size = new System.Drawing.Size(314, 33);
             this.cbLoaiXe.TabIndex = 4;
-            
             // 
             // btnLuu
             // 
@@ -172,6 +176,10 @@
             this.btnLuu.Text = "Xác nhận";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormDKyXe
             // 
@@ -186,6 +194,7 @@
             this.Load += new System.EventHandler(this.FormDKyXe_Load);
             this.pnlDKyXe.ResumeLayout(false);
             this.pnlDKyXe.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,5 +213,6 @@
         private System.Windows.Forms.Panel pnlDKyXe;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.ComboBox cbLoaiXe;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

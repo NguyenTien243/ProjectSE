@@ -29,6 +29,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlQuanLyKH = new System.Windows.Forms.Panel();
             this.dateTimePickerHetHan = new System.Windows.Forms.DateTimePicker();
@@ -65,8 +66,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.cboTimKiem = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnGiaHan = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlQuanLyKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLKhachHang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -140,6 +143,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(314, 31);
             this.txtSDT.TabIndex = 5;
+            this.txtSDT.Validating += new System.ComponentModel.CancelEventHandler(this.txtSDT_Validating);
             // 
             // dateTimePickerKH
             // 
@@ -150,6 +154,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.dateTimePickerKH.Name = "dateTimePickerKH";
             this.dateTimePickerKH.Size = new System.Drawing.Size(314, 31);
             this.dateTimePickerKH.TabIndex = 20;
+            this.dateTimePickerKH.Validating += new System.ComponentModel.CancelEventHandler(this.dateTimePickerKH_Validating);
             // 
             // cbVeThang
             // 
@@ -160,6 +165,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.cbVeThang.Size = new System.Drawing.Size(313, 33);
             this.cbVeThang.TabIndex = 29;
             this.cbVeThang.SelectedIndexChanged += new System.EventHandler(this.cbVeThang_SelectedIndexChanged);
+            this.cbVeThang.Validating += new System.ComponentModel.CancelEventHandler(this.cbVeThang_Validating);
             // 
             // label7
             // 
@@ -320,6 +326,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(314, 31);
             this.txtCMND.TabIndex = 5;
+            this.txtCMND.Validating += new System.ComponentModel.CancelEventHandler(this.txtCMND_Validating);
             // 
             // txtTenKH
             // 
@@ -336,6 +343,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(314, 31);
             this.txtMaKH.TabIndex = 5;
+            this.txtMaKH.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaKH_Validating);
             // 
             // dgvQLKhachHang
             // 
@@ -408,6 +416,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnXoa.TabIndex = 53;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -472,18 +481,21 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnTim.TabIndex = 60;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // cboTimKiem
             // 
             this.cboTimKiem.FormattingEnabled = true;
             this.cboTimKiem.Items.AddRange(new object[] {
-            "Mã Vị Trí",
-            "Tên Vị Trí"});
+            "Mã Khách Hàng",
+            "Tên Khách Hàng"});
             this.cboTimKiem.Location = new System.Drawing.Point(805, 385);
             this.cboTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.cboTimKiem.Name = "cboTimKiem";
             this.cboTimKiem.Size = new System.Drawing.Size(222, 33);
             this.cboTimKiem.TabIndex = 59;
+            this.cboTimKiem.SelectedIndexChanged += new System.EventHandler(this.cboTimKiem_SelectedIndexChanged);
+            this.cboTimKiem.Validating += new System.ComponentModel.CancelEventHandler(this.cboTimKiem_Validating);
             // 
             // label8
             // 
@@ -511,6 +523,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnGiaHan.Text = "Gia hạn";
             this.btnGiaHan.UseVisualStyleBackColor = false;
             this.btnGiaHan.Click += new System.EventHandler(this.btnGiaHan_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // QLKhachHang
             // 
@@ -541,6 +557,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.pnlQuanLyKH.ResumeLayout(false);
             this.pnlQuanLyKH.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLKhachHang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -584,5 +601,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.DateTimePicker dateTimePickerHetHan;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
