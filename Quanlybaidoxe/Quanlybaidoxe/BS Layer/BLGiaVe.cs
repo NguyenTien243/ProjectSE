@@ -15,20 +15,20 @@ namespace Quanlybaidoxe.BS_Layer
         {
             dbGiaVe = new DBQLBaiDoXe();
         }
-        public DataSet GetVehicleCategory()
-        {
-            return dbGiaVe.ExecuteQueryDataSet("SELECT DISTINCT TenLoaiXe FROM GiaVe JOIN LoaiXe ON GiaVe.MaLoaiXe = LoaiXe.MaLoaiXe", CommandType.Text);
-        }
-        public DataSet GetNameVehicle(string MaLoaiXe)
-        {
-            string GetName = "SELECT DISTINCT TenLoaiXe FROM GiaVe JOIN LoaiXe ON GiaVe.MaLoaiXe = LoaiXe.MaLoaiXe WHERE LoaiXe.MaLoaiXe = '" + MaLoaiXe +"'";
-            return dbGiaVe.ExecuteQueryDataSet(GetName, CommandType.Text); 
-        }
-        public DataSet GetVechicleId(string TenLoaiXe)
-        {
-            string GetID = "SELECT MaLoaiXe FROM LoaiXe WHERE TenLoaiXe = '" + TenLoaiXe + "'";
-            return dbGiaVe.ExecuteQueryDataSet(GetID, CommandType.Text);
-        }
+        //public DataSet GetVehicleCategory()
+        //{
+        //    return dbGiaVe.ExecuteQueryDataSet("SELECT DISTINCT TenLoaiXe FROM GiaVe JOIN LoaiXe ON GiaVe.MaLoaiXe = LoaiXe.MaLoaiXe", CommandType.Text);
+        //}
+        //public DataSet GetNameVehicle(string MaLoaiXe)
+        //{
+        //    string GetName = "SELECT DISTINCT TenLoaiXe FROM GiaVe JOIN LoaiXe ON GiaVe.MaLoaiXe = LoaiXe.MaLoaiXe WHERE LoaiXe.MaLoaiXe = '" + MaLoaiXe +"'";
+        //    return dbGiaVe.ExecuteQueryDataSet(GetName, CommandType.Text); 
+        //}
+        //public DataSet GetVechicleId(string TenLoaiXe)
+        //{
+        //    string GetID = "SELECT MaLoaiXe FROM LoaiXe WHERE TenLoaiXe = '" + TenLoaiXe + "'";
+        //    return dbGiaVe.ExecuteQueryDataSet(GetID, CommandType.Text);
+        //}
         public DataSet GetAllTickets()
         {
             return dbGiaVe.ExecuteQueryDataSet("SELECT * FROM GiaVe", CommandType.Text);

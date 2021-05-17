@@ -1,4 +1,4 @@
-﻿using Quanlybaidoxe.BS_Layer;
+﻿       using Quanlybaidoxe.BS_Layer;
 using Quanlybaidoxe.Form_Layer;
 using System;
 using System.Collections.Generic;
@@ -143,6 +143,7 @@ namespace Quanlybaidoxe
                 //Lấy account nhân viên
                 dtTaiKhoan = new DataTable();
                 dtTaiKhoan.Clear();
+                dbBaiDoXe = new BLTaiKhoan();
                 DataSet dsANV = dbBaiDoXe.GetStaffAccounts();
                 dtTaiKhoan = dsANV.Tables[0];
                 // Xóa trống các đối tượng trong Panel
