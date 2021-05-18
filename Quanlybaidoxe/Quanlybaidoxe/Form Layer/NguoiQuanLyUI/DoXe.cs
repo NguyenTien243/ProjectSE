@@ -262,14 +262,14 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         private void AddVarForShareVar()
         {
-            ShareValues.sharevarMaXe = txtMaXe.Text.Trim();
-            ShareValues.sharevarBienSo = txtBienSo.Text.Trim();
-            ShareValues.sharevarLoaiXe = cboLoaiXe.Text.Trim();
-            ShareValues.sharevarTenXe = txtTenXe.Text.Trim();
-            ShareValues.sharevarMauXe = txtMauSac.Text.Trim();
-            ShareValues.sharevarTGVao = txtGioVao.Text.Trim();
-            ShareValues.sharevarTGRa = DateTime.Now.ToString().Trim();
-            ShareValues.sharevarThoiLuongGui = CountTimeInParking();
+            SHAREVAR.sharevarMaXe = txtMaXe.Text.Trim();
+            SHAREVAR.sharevarBienSo = txtBienSo.Text.Trim();
+            SHAREVAR.sharevarLoaiXe = cboLoaiXe.Text.Trim();
+            SHAREVAR.sharevarTenXe = txtTenXe.Text.Trim();
+            SHAREVAR.sharevarMauXe = txtMauSac.Text.Trim();
+            SHAREVAR.sharevarTGVao = txtGioVao.Text.Trim();
+            SHAREVAR.sharevarTGRa = DateTime.Now.ToString().Trim();
+            SHAREVAR.sharevarThoiLuongGui = CountTimeInParking();
             blDoXe = new BLDoXe();
             DataRow rowVehicleType = dataTableVehicleType.AsEnumerable().FirstOrDefault(c => c.Field<string>("TenLoaiXe").Trim() == cboLoaiXe.Text.Trim());
             string maloaixe = rowVehicleType["MaLoaiXe"].ToString();
@@ -278,13 +278,13 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
             DataRow rowMonthTicket = dataTableDoXe.AsEnumerable().FirstOrDefault(c => c.Field<string>("MaXe").Trim() == txtMaXe.Text.Trim());
             if (rowMonthTicket["DangKyThang"].ToString().Trim() == "") // khi vé này không phải là vé tháng
-                ShareValues.sharevarVeThang = false;
+                SHAREVAR.sharevarVeThang = false;
             else
-                ShareValues.sharevarVeThang = true;
-            if (ShareValues.sharevarVeThang)
+                SHAREVAR.sharevarVeThang = true;
+            if (SHAREVAR.sharevarVeThang)
             {
-                ShareValues.sharevarVeThanhToan = "Thanh Toán vé tháng";
-                ShareValues.sharevarVeTienThu = "0";
+                SHAREVAR.sharevarVeThanhToan = "Thanh Toán vé tháng";
+                SHAREVAR.sharevarVeTienThu = "0";
                
             }
             else
@@ -301,9 +301,9 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                     {
                         MessageBox.Show("Không tìm thấy giá vé như quy định, vui lòng kiểm tra lại bên quy định!");
                         return;
-                    }    
-                    ShareValues.sharevarVeThanhToan = tableTicketFee.Rows[0]["TenGiaVe"].ToString().Trim();
-                    ShareValues.sharevarVeTienThu = tableTicketFee.Rows[0]["GiaTien"].ToString().Trim();
+                    }
+                    SHAREVAR.sharevarVeThanhToan = tableTicketFee.Rows[0]["TenGiaVe"].ToString().Trim();
+                    SHAREVAR.sharevarVeTienThu = tableTicketFee.Rows[0]["GiaTien"].ToString().Trim();
                 }
                 else
                 {
@@ -324,8 +324,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                     float FeeOverDay = float.Parse(dataTableFeeOverDay.Rows[0]["GiaTien"].ToString().Trim());
                     float FeeNewDay = float.Parse(tableTicketFee.Rows[0]["GiaTien"].ToString().Trim());
                     float ToTalFee = (FeeOverDay * TongSoNgay) + FeeNewDay;
-                    ShareValues.sharevarVeThanhToan = tableTicketFee.Rows[0]["TenGiaVe"].ToString().Trim() + " (Qua ngày)";
-                    ShareValues.sharevarVeTienThu = ToTalFee.ToString().Trim();
+                    SHAREVAR.sharevarVeThanhToan = tableTicketFee.Rows[0]["TenGiaVe"].ToString().Trim() + " (Qua ngày)";
+                    SHAREVAR.sharevarVeTienThu = ToTalFee.ToString().Trim();
                 }    
             }
 

@@ -37,7 +37,7 @@ namespace Quanlybaidoxe.Form_Layer
         public void fundata(string manv)
         {
             this.manv = manv;
-            ShareValues.sharevarMaNV = manv.Trim();
+            SHAREVAR.sharevarMaNV = manv.Trim();
         }
 
 

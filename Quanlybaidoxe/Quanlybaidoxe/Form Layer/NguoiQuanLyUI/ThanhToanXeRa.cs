@@ -29,8 +29,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             DateTime stardate = Convert.ToDateTime(lbThoiGianVao.Text);
             DateTime enddate = Convert.ToDateTime(lbThoiGianRa.Text);
             blDoXe = new BLDoXe();
-            float tienthu = float.Parse(ShareValues.sharevarVeTienThu.Trim());
-            bool result = blDoXe.CheckOutAndFree(ShareValues.sharevarMaXe.Trim(), stardate, enddate, ShareValues.sharevarMaNV, ShareValues.sharevarVeThang, tienthu, ref err);
+            float tienthu = float.Parse(SHAREVAR.sharevarVeTienThu.Trim());
+            bool result = blDoXe.CheckOutAndFree(SHAREVAR.sharevarMaXe.Trim(), stardate, enddate, SHAREVAR.sharevarMaNV, SHAREVAR.sharevarVeThang, tienthu, ref err);
             if (result)
             {
                 MessageBox.Show("Tính tiền thành công, mời xe ra.");
@@ -43,15 +43,15 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void LoadData()
         {
-            lbBienSo.Text = ShareValues.sharevarBienSo;
-            lbLoaiXe.Text = ShareValues.sharevarLoaiXe;
-            lbMauXe.Text = ShareValues.sharevarMauXe;
-            lbTenXe.Text = ShareValues.sharevarTenXe;
-            lbThoiGianRa.Text = ShareValues.sharevarTGRa;
-            lbThoiGianVao.Text = ShareValues.sharevarTGVao;
-            lbThoiLuongGui.Text = ShareValues.sharevarThoiLuongGui;
-            lbTienThu.Text = ShareValues.sharevarVeTienThu + " VND";
-            lbVeThanhToan.Text = ShareValues.sharevarVeThanhToan;
+            lbBienSo.Text = SHAREVAR.sharevarBienSo;
+            lbLoaiXe.Text = SHAREVAR.sharevarLoaiXe;
+            lbMauXe.Text = SHAREVAR.sharevarMauXe;
+            lbTenXe.Text = SHAREVAR.sharevarTenXe;
+            lbThoiGianRa.Text = SHAREVAR.sharevarTGRa;
+            lbThoiGianVao.Text = SHAREVAR.sharevarTGVao;
+            lbThoiLuongGui.Text = SHAREVAR.sharevarThoiLuongGui;
+            lbTienThu.Text = SHAREVAR.sharevarVeTienThu + " VND";
+            lbVeThanhToan.Text = SHAREVAR.sharevarVeThanhToan;
             
         }
 

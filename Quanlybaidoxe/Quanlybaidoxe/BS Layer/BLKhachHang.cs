@@ -25,9 +25,9 @@ namespace Quanlybaidoxe.BS_Layer
 
         public bool CustomerRegister(string MaKH, string TenKH, DateTime NgaySinh, string GioiTinh, string CMND, string SDT, string DiaChi, DateTime HetHan, string MaXe, float TienThu, ref string err)
         {
-           
+
             string sqlString = "Insert Into KhachHang Values( @MaKH,@TenKH,@NgaySinh, @GioiTinh, @CMND ,@SDT,@DiaChi, @HetHan, @MaXe); INSERT INTO PhieuThanhToan (MaXe, TienThu, TraTheoThang, MaNV) VALUES(@MaXe, @TienThu, 1, @MaNV) ";
-                SqlParameter[] parameters = {
+            SqlParameter[] parameters = {
             new SqlParameter("@MaKH", MaKH),
             new SqlParameter("@TenKH", TenKH),
             new SqlParameter("@GioiTinh", GioiTinh),
@@ -35,19 +35,19 @@ namespace Quanlybaidoxe.BS_Layer
             new SqlParameter("@CMND", CMND),
             new SqlParameter("@SDT", SDT),
             new SqlParameter("@DiaChi", DiaChi),
-            new SqlParameter("@HetHan", HetHan),  
+            new SqlParameter("@HetHan", HetHan),
             new SqlParameter("@MaXe", MaXe),
             new SqlParameter("@TienThu", TienThu),
             new SqlParameter("@MaNV", SHAREVAR.MaNV),
            };
-                return dbKhachHang.MyExecuteNonQuery(sqlString, parameters, CommandType.Text, ref err);
-            
+            return dbKhachHang.MyExecuteNonQuery(sqlString, parameters, CommandType.Text, ref err);
+
         }
 
-        public bool UpdateCustomer(string MaKH, string TenKH, DateTime NgaySinh, string GioiTinh, string CMND, string SDT, string DiaChi, DateTime NgayHetHan, string MaXe, float TienThu, ref string err)
+        public bool UpdateCustomer(string MaKH, string TenKH, DateTime NgaySinh, string GioiTinh, string CMND, string SDT, string DiaChi, DateTime NgayHetHan, string MaXe, ref string err)
         {
 
-            string sqlString = "UPDATE KhachHang SET TenKH = @TenKH, NgaySinh=@NgaySinh, GioiTinh=@GioiTinh, CMND=@CMND , SDT=@SDT, DiaChi=@DiaChi, NgayHetHanVeThang = @NgayHetHan WHERE MaXe = @MaXe; INSERT INTO PhieuThanhToan (MaNV, TienThu) VALUES (@MaNV,@TienThu)";
+            string sqlString = "UPDATE KhachHang SET TenKH = @TenKH, NgaySinh=@NgaySinh, GioiTinh=@GioiTinh, CMND=@CMND , SDT=@SDT, DiaChi=@DiaChi, NgayHetHanVeThang = @NgayHetHan WHERE MaXe = @MaXe";
             SqlParameter[] parameters = {
             new SqlParameter("@MaKH", MaKH),
             new SqlParameter("@TenKH", TenKH),
@@ -57,7 +57,7 @@ namespace Quanlybaidoxe.BS_Layer
             new SqlParameter("@SDT", SDT),
             new SqlParameter("@DiaChi", DiaChi),
             new SqlParameter("@NgayHetHan", NgayHetHan),
-            new SqlParameter("@TienThu", TienThu),
+            //new SqlParameter("@TienThu", TienThu),
             new SqlParameter("@MaNV", SHAREVAR.MaNV),
             new SqlParameter("@MaXe", MaXe),
            };
@@ -68,7 +68,7 @@ namespace Quanlybaidoxe.BS_Layer
         public bool DeleteCustomer(string MaKH, string MaXe, ref string err)
         {
             string sqlString = "UPDATE TheGuiXe set MaXe = NULL WHERE MaXe = @MaXe; DELETE FROM KhachHang Where MaKH = @MaKH;  UPDATE Xe SET DangKyThang = 0 WHERE MaXe = @MaXe";
-             SqlParameter[] para = { 
+            SqlParameter[] para = {
                 new SqlParameter("@MaKH", MaKH),
                 new SqlParameter("@MaXe", MaXe)
                 };
@@ -77,15 +77,15 @@ namespace Quanlybaidoxe.BS_Layer
 
         public DataSet GetNameTicket(string MaLoaiXe)
         {
-            return dbKhachHang.ExecuteQueryDataSet("SELECT TenGiaVe FROM GiaVe WHERE VeThang = 1 AND MaLoaiXe ='"+MaLoaiXe+"'", CommandType.Text);
+            return dbKhachHang.ExecuteQueryDataSet("SELECT TenGiaVe FROM GiaVe WHERE VeThang = 1 AND MaLoaiXe ='" + MaLoaiXe + "'", CommandType.Text);
         }
         public DataSet GetTicketNameOfCustomer(string MaKH)
         {
-            return dbKhachHang.ExecuteQueryDataSet("SELECT KhachHang.MaXe FROM KhachHang WHERE MaKH = '"+MaKH +"'", CommandType.Text);
+            return dbKhachHang.ExecuteQueryDataSet("SELECT KhachHang.MaXe FROM KhachHang WHERE MaKH = '" + MaKH + "'", CommandType.Text);
         }
         public DataSet GetDetailOfTicket(string TenGiaVe)
         {
-            string GetMonths = "SELECT * FROM GiaVe WHERE TenGiaVe = N'"+TenGiaVe+"'";
+            string GetMonths = "SELECT * FROM GiaVe WHERE TenGiaVe = N'" + TenGiaVe + "'";
             return dbKhachHang.ExecuteQueryDataSet(GetMonths, CommandType.Text);
 
         }
@@ -96,12 +96,12 @@ namespace Quanlybaidoxe.BS_Layer
         }
         public DataSet CheckCMND(string MaKH, string CMND)
         {
-            return dbKhachHang.ExecuteQueryDataSet("SELECT CMND FROM KhachHang WHERE MaKH != '" + MaKH + "' AND CMND='"+CMND+"'" , CommandType.Text);
-         
+            return dbKhachHang.ExecuteQueryDataSet("SELECT CMND FROM KhachHang WHERE MaKH != '" + MaKH + "' AND CMND='" + CMND + "'", CommandType.Text);
+
         }
         public bool GanTheXe(string MaXe, ref string err)
         {
-           // return dbKhachHang.ExecuteQueryDataSet("UPDATE TheGuiXE SET MaXe ='"+MaXe+ "' WHERE MaTheGuiXe = (SELECT TOP 1 MaTheGuiXe FROM TheGuiXe WHERE MaXe IS NULL AND GioVao IS NULL)", CommandType.Text);
+            // return dbKhachHang.ExecuteQueryDataSet("UPDATE TheGuiXE SET MaXe ='"+MaXe+ "' WHERE MaTheGuiXe = (SELECT TOP 1 MaTheGuiXe FROM TheGuiXe WHERE MaXe IS NULL AND GioVao IS NULL)", CommandType.Text);
             string sqlString = "UPDATE TheGuiXE SET MaXe = @MaXe WHERE MaTheGuiXe = (SELECT TOP 1 MaTheGuiXe FROM TheGuiXe WHERE MaXe IS NULL AND GioVao IS NULL)";
             SqlParameter[] parameters = {
             new SqlParameter("@MaXe", MaXe) };
@@ -110,12 +110,26 @@ namespace Quanlybaidoxe.BS_Layer
         }
         public DataSet MaThe(string MaXe)
         {
-            return dbKhachHang.ExecuteQueryDataSet("SELECT MaTheGuiXe FROM TheGuiXe WHERE MaXe = '" + MaXe+ "'", CommandType.Text);
+            return dbKhachHang.ExecuteQueryDataSet("SELECT MaTheGuiXe FROM TheGuiXe WHERE MaXe = '" + MaXe + "'", CommandType.Text);
 
         }
         public DataSet GetInfo(string timkiem, string noidung, ref string err)
         {
-            return dbKhachHang.ExecuteQueryDataSet("SELECT * FROM KhachHang WHERE "+timkiem+ " LIKE N'%"+noidung.Trim()+"%'", CommandType.Text);
+            return dbKhachHang.ExecuteQueryDataSet("SELECT * FROM KhachHang WHERE " + timkiem + " LIKE N'%" + noidung.Trim() + "%'", CommandType.Text);
+
+        }
+        public bool extensionCustomer(string MaKH, DateTime NgayHetHan, string MaXe, float TienThu, ref string err)
+        {
+
+            string sqlString = "UPDATE KhachHang SET NgayHetHanVeThang = @NgayHetHan WHERE MaKH =@MaKH; INSERT INTO PhieuThanhToan (MaXe, TienThu, TraTheoThang, MaNV) VALUES(@MaXe, @TienThu, 1, @MaNV)";
+            SqlParameter[] parameters = {
+            new SqlParameter("@MaKH", MaKH),
+            new SqlParameter("@NgayHetHan", NgayHetHan),
+            new SqlParameter("@TienThu", TienThu),
+            new SqlParameter("@MaNV", SHAREVAR.MaNV),
+            new SqlParameter("@MaXe", MaXe),
+           };
+            return dbKhachHang.MyExecuteNonQuery(sqlString, parameters, CommandType.Text, ref err);
 
         }
 

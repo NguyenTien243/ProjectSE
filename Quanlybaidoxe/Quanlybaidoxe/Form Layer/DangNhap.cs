@@ -75,6 +75,7 @@ namespace Quanlybaidoxe
                 {
                     MessageBox.Show("Đăng nhập thành công !!");
                     manv = rowAccount["MaNV"].ToString();
+                    SHAREVAR.MaNV = manv;
                     //txtTenDangNhap.ResetText();
                     //txtMatKhau.ResetText();
                     //txtTenDangNhap.Focus();

@@ -10,10 +10,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 {
     public partial class QLKhachHang : Form
     {
-   
+
         public QLKhachHang()
         {
-            
+
             InitializeComponent();
         }
         DataTable dataTableKhachHang = null;
@@ -22,12 +22,12 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         FormDKyXe frmDkyXe;
         bool Giahan = false;
         string err;
-        
+
         private void LoadData()
         {
             try
             {
-              
+
                 btnReload.Enabled = true;
                 dgvQLKhachHang.Enabled = true;
                 dataTableKhachHang = new DataTable();
@@ -48,7 +48,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 btnGiaHan.Enabled = true;
                 dateTimePickerHetHan.Enabled = false;
                 cbVeThang.Items.Clear();
-                
+
                 pnlQuanLyKH.Enabled = false;
 
                 dgvQLKhachHang_CellClick(null, null);
@@ -66,6 +66,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             btnGiaHan.Enabled = false;
             // Kich hoạt biến Them
             SHAREVAR.Add = false;
+            Giahan = false;
             int r = dgvQLKhachHang.CurrentCell.RowIndex;
             SHAREVAR.MaKH = dgvQLKhachHang.Rows[r].Cells[0].Value.ToString();
             // Cho thao tác trên các nút Lưu / Hủy / Panel
@@ -74,7 +75,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             //   this.btnHuy.Enabled = true;
             this.pnlQuanLyKH.Enabled = true;
             foreach (Control ctr in pnlQuanLyKH.Controls)
-            {             
+            {
                 ctr.Enabled = true;
             }
             // Không cho thao tác trên các nút Thêm / Xóa / Thoát
@@ -97,9 +98,9 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             //this.pnlQuanLyKH.Controls.Clear();
             foreach (Control control in pnlQuanLyKH.Controls)
             {
-               control.Visible = false;
+                control.Visible = false;
             }
-            
+
             frmDkyXe = new FormDKyXe();
             frmDkyXe.TopLevel = false;
 
@@ -108,7 +109,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
             // Hiển thị form
             frmDkyXe.Show();
-           
+
             btnLuu.Enabled = false;
         }
         public void ResetValues()
@@ -122,7 +123,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             txtSDT.ResetText();
             txtDiaChi.ResetText();
             txtMaXe.Enabled = true;
-            
+
             dateTimePickerHetHan.ResetText();
             txtMaXe.ResetText();
         }
@@ -150,8 +151,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 dateTimePickerHetHan.Text = dgvQLKhachHang.Rows[r].Cells[7].Value.ToString();
                 txtMaXe.Text = dgvQLKhachHang.Rows[r].Cells[8].Value.ToString();
                 // cboLoaiXe.Text = blGiaVe.GetNameVehicle(dgvGiaVe.Rows[r].Cells[3].Value.ToString()).Tables[0].Rows[0][0].ToString();
-               
-                
+
+
             }
             catch
             {
@@ -167,15 +168,16 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            
+
             dgvQLKhachHang.Enabled = false;
             btnGiaHan.Enabled = false;
             // Kich hoạt biến Them
             SHAREVAR.Add = true;
+            Giahan = false;
             // Xóa trống các đối tượng trong Panel
             ResetValues();
-            
-           
+
+
             // Cho thao tác trên các nút Lưu / Hủy / Panel
             this.btnLuu.Enabled = true;
             this.btnHuy.Enabled = true;
@@ -198,22 +200,22 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private void btnReload_Click(object sender, EventArgs e)
         {
             //nguồn tham khảo xóa control https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.controlcollection.remove?view=net-5.0
-            if(pnlQuanLyKH.Controls.Contains(frmDkyXe))
+            if (pnlQuanLyKH.Controls.Contains(frmDkyXe))
             {
                 pnlQuanLyKH.Controls.Remove(frmDkyXe);
-            }    
-            foreach ( Control ctr in pnlQuanLyKH.Controls)
+            }
+            foreach (Control ctr in pnlQuanLyKH.Controls)
             {
                 ctr.Visible = true;
-            }    
+            }
         }
 
-      
+
         private void pnlQuanLyKH_ControlRemoved(object sender, ControlEventArgs e)
         {
             if (pnlQuanLyKH.Controls.Contains(frmDkyXe) == false)
             {
-                
+
                 foreach (Control ctr in pnlQuanLyKH.Controls)
                 {
 
@@ -221,8 +223,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                     ctr.Visible = true;
                 }
                 txtMaXe.Text = SHAREVAR.maxe;
-                if(SHAREVAR.Add == true)
-                txtMaXe.Enabled = false;
+                if (SHAREVAR.Add == true)
+                    txtMaXe.Enabled = false;
                 else txtMaXe.Enabled = true;
                 cbVeThang.Items.Clear();   //cho tên vé tháng tương ứng với loại xe vào combobox
                 for (int dem = 0; dem < blKhachHang.GetNameTicket(SHAREVAR.maloaixe).Tables[0].Rows.Count; dem++) //Thêm tên loại vé tháng vào combobox
@@ -230,7 +232,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                     cbVeThang.Items.Add(blKhachHang.GetNameTicket(SHAREVAR.maloaixe).Tables[0].Rows[dem][0].ToString());
                 }
                 btnLuu.Enabled = true;
-            }    
+            }
         }
 
         private void cbVeThang_SelectedIndexChanged(object sender, EventArgs e)
@@ -243,7 +245,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
             //txtNgayHetHan.Text = now.AddMonths(Int32.Parse(months)).ToString();
             if (Giahan == false)
-            {               
+            {
                 dateTimePickerHetHan.Text = now.AddMonths(Int32.Parse(months)).ToString();
             }
             else
@@ -256,13 +258,14 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            
-            bool check = true;
+
+            check = true;
             string Gioitinh;
             if (radNam.Checked) Gioitinh = "Nữ";
             else Gioitinh = "Nam";
-           if(radNam.Checked==false && radNu.Checked==false)
-            {   MessageBox.Show("Bạn chưa chọn giới tính");
+            if (radNam.Checked == false && radNu.Checked == false)
+            {
+                MessageBox.Show("Bạn chưa chọn giới tính");
                 check = false;
             }
             if (txtMaKH.Text.Trim().Length == 0 || txtTenKH.Text.Trim().Length == 0 || txtDiaChi.Text.Trim().Length == 0 || txtCMND.Text.Trim().Length == 0
@@ -276,7 +279,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
             // kiểm tra Trùng CMND
             blKhachHang = new BLKhachHang();
-          
+
             if (check == true)
             {
                 if (SHAREVAR.Add == true && Giahan == false)
@@ -316,7 +319,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                     int r = dgvQLKhachHang.CurrentCell.RowIndex;
                     SHAREVAR.MaKH = dgvQLKhachHang.Rows[r].Cells[0].Value.ToString();
                     blKhachHang = new BLKhachHang();
-                    if (blKhachHang.UpdateCustomer(txtMaKH.Text, txtTenKH.Text, dateTimePickerKH.Value, Gioitinh, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, dateTimePickerHetHan.Value, txtMaXe.Text, SHAREVAR.PriceOfRegister, ref err) == true)
+                    if (blKhachHang.UpdateCustomer(txtMaKH.Text, txtTenKH.Text, dateTimePickerKH.Value, Gioitinh, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, dateTimePickerHetHan.Value, txtMaXe.Text, ref err) == true)
                     {
                         MessageBox.Show("Chỉnh sửa thành công, đã cập nhật lại thông tin");
                         LoadData();
@@ -327,9 +330,9 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 }
                 if (SHAREVAR.Add == false && Giahan == true)
                 {
-                    if (blKhachHang.UpdateCustomer(txtMaKH.Text, txtTenKH.Text, dateTimePickerKH.Value, Gioitinh, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, dateTimePickerHetHan.Value, txtMaXe.Text, SHAREVAR.PriceOfRegister, ref err) == true)
+                    if (blKhachHang.extensionCustomer(txtMaKH.Text, dateTimePickerHetHan.Value, txtMaXe.Text, SHAREVAR.PriceOfRegister, ref err) == true)
                     {
-                        MessageBox.Show("Gia hạn vé thành công!");
+                        MessageBox.Show("Gia hạn vé thành công! \nSố tiền vé của bạn là: " + SHAREVAR.PriceOfRegister.ToString() + " VNĐ");
                         LoadData();
                         cbVeThang.Enabled = false;
                         Giahan = false;
@@ -343,7 +346,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnGiaHan_Click(object sender, EventArgs e)
         {
-            
+            SHAREVAR.Add = false;
             dgvQLKhachHang.Enabled = false;
             btnGiaHan.Enabled = false;
             // Kich hoạt biến Them
@@ -351,13 +354,13 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             int r = dgvQLKhachHang.CurrentCell.RowIndex;
             //string MaKH = dgvQLKhachHang.Rows[r].Cells[0].Value.ToString();
             BLXe blXe = new BLXe();
-            string MaLoaiXe = blXe.GetVehicleCategoryId(txtMaXe.Text).Tables[0].Rows[0][0].ToString(); 
+            string MaLoaiXe = blXe.GetVehicleCategoryId(txtMaXe.Text).Tables[0].Rows[0][0].ToString();
             // Cho thao tác trên các nút Lưu / Hủy / Panel
             this.btnLuu.Enabled = true;
             this.btnHuy.Enabled = true;
             //   this.btnHuy.Enabled = true;
             pnlQuanLyKH.Enabled = true;
-            
+
             dateTimePickerHetHan.Enabled = false;
             // Không cho thao tác trên các nút Thêm / Xóa / Thoát
             this.btnDangKy.Enabled = false;
@@ -365,7 +368,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnXoa.Enabled = false;
 
             foreach (Control ctr in pnlQuanLyKH.Controls)
-            {              
+            {
                 ctr.Enabled = false;
             }
 
@@ -401,13 +404,17 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void txtMaKH_Validating(object sender, CancelEventArgs e)
         {
-       
+
             if (blKhachHang.CheckIdCustomer(txtMaKH.Text).Tables[0].Rows.Count != 0)
             {
                 errorProvider1.SetError(txtMaKH, "Mã khách hàng này đã tồn tại");
                 check = false;
             }
-            else errorProvider1.SetError(txtMaKH, null);
+            else
+            {
+                errorProvider1.SetError(txtMaKH, null);
+                check = true;
+            }
 
         }
 
@@ -417,47 +424,61 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             {
                 errorProvider1.SetError(dateTimePickerKH, "Chưa đủ tuổi đăng ký xe");
                 check = false;
-                
+
             }
-            else errorProvider1.SetError(dateTimePickerKH, null);
+            else
+            {
+                errorProvider1.SetError(dateTimePickerKH, null);
+                check = true;
+            }
         }
 
         private void txtCMND_Validating(object sender, CancelEventArgs e)
         {
-           
+
             if (blKhachHang.CheckCMND(txtMaKH.Text, txtCMND.Text).Tables[0].Rows.Count != 0)
             {
-                errorProvider1.SetError(txtCMND, "Chưa đủ tuổi đăng ký xe");               
+                errorProvider1.SetError(txtCMND, "Chưa đủ tuổi đăng ký xe");
                 check = false;
             }
-            else errorProvider1.SetError(txtCMND, null);
+            else
+            {
+                errorProvider1.SetError(txtCMND, null);
+                check = true;
+            }
         }
 
         private void cbVeThang_Validating(object sender, CancelEventArgs e)
         {
-           
+
         }
 
         private void txtSDT_Validating(object sender, CancelEventArgs e)
         {
             double temp;
-            string tam = txtSDT.Text;
+            string tam = txtSDT.Text.Trim();
             tam.Substring(0, 1);//Lấy kí tự đầu của chuỗi
-            if(txtSDT.Text.Length !=10 && txtSDT.Text.Length != 11)
+            if (txtSDT.Text.Trim().Length != 10)
             {
-                errorProvider1.SetError(txtSDT, "Số điện thoại gồm 10 hoặc 11 số");
+                errorProvider1.SetError(txtSDT, "Số điện thoại gồm 10 số");
                 check = false;
-            } else 
-            if(tam.Substring(0, 1) != "0")
+            }
+            else
+            if (tam.Substring(0, 1) != "0")
             {
                 errorProvider1.SetError(txtSDT, "Phải bắt đầu bằng số 0");
                 check = false;
-            } else if (double.TryParse(tam, out temp) != true)
+            }
+            else if (double.TryParse(tam, out temp) != true)
             {
                 errorProvider1.SetError(txtSDT, "Số điện thoại không chứa kí tự chữ");
-                check = false;       
+                check = false;
             }
-            else errorProvider1.SetError(txtSDT, null);
+            else
+            {
+                errorProvider1.SetError(txtSDT, null);
+                check = true;
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -467,7 +488,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 // Thực hiện lệnh
                 // Lấy thứ tự record hiện hành
                 int row = dgvQLKhachHang.CurrentCell.RowIndex;
-               
+
                 BLXe blXe = new BLXe();
                 // nếu mã vị trí hiện đang có xe thì không cho xóa
                 if (blXe.CheckDeleteVehicle(txtMaXe.Text.Trim(), ref err) == true)
@@ -508,14 +529,14 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             }
         }
 
-       
+
 
         private void cboTimKiem_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtTimKiem.ResetText();
             if (cboTimKiem.SelectedIndex == -1)
-                return; 
-          
+                return;
+
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -527,9 +548,9 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                     break;
                 case "Tên Khách Hàng":
                     dgvQLKhachHang.DataSource = blKhachHang.GetInfo("TenKH", txtTimKiem.Text, ref err).Tables[0];
-                    
+
                     break;
-                default: 
+                default:
                     break;
             }
         }
