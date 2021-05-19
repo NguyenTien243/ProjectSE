@@ -33,6 +33,15 @@ namespace Quanlybaidoxe.Form_Layer
             DataSet datasetInfo = blNhanVien.GetPositionStaff(manv); // lấy tên nhân viên và tên chức vụ của nhân viên
             lbUserName.Text += "  " + datasetInfo.Tables[0].Rows[0]["TenNV"].ToString();
             lbChucVu.Text += " " + datasetInfo.Tables[0].Rows[0]["TenCV"].ToString();
+            if (manv.Trim() != "Người Quản Lý")
+            {
+                btnBaiDoXe.Visible = false;
+                btnDoanhThu.Visible = false;
+                btnKhachHang.Visible = false;
+                btnNhanVien.Visible = false;
+                btnTheGuiXe.Visible = false;
+                btnGiaVe.Visible = false;
+            }                
         }
         public void fundata(string manv)
         {
@@ -102,7 +111,7 @@ namespace Quanlybaidoxe.Form_Layer
             FormDoXe.Show();
         }
 
-        private void btnAdmin_Click(object sender, EventArgs e)
+        private void btnGiaVe_Click(object sender, EventArgs e)
         {
             this.pnlChucNang.Controls.Clear();
             QLGiaVe FormAdmin = new QLGiaVe();
@@ -139,6 +148,19 @@ namespace Quanlybaidoxe.Form_Layer
         {
             this.pnlChucNang.Controls.Clear();
             ThongKeDoanhThu tkdt = new ThongKeDoanhThu();
+            tkdt.TopLevel = false;
+            this.pnlChucNang.Controls.Add(tkdt);
+            tkdt.Show();
+        }
+
+       
+
+        
+
+        private void btnTheGuiXe_Click(object sender, EventArgs e)
+        {
+            this.pnlChucNang.Controls.Clear();
+            QLTheGuiXe tkdt = new QLTheGuiXe();
             tkdt.TopLevel = false;
             this.pnlChucNang.Controls.Add(tkdt);
             tkdt.Show();

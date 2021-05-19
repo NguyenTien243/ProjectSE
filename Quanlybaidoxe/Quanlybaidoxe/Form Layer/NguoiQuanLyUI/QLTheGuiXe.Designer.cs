@@ -50,19 +50,17 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(222, 62);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(277, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 31);
+            this.label2.Size = new System.Drawing.Size(84, 28);
             this.label2.TabIndex = 25;
             this.label2.Text = "Mã thẻ:";
             // 
             // txtMaThe
             // 
-            this.txtMaThe.Location = new System.Drawing.Point(422, 67);
-            this.txtMaThe.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaThe.Location = new System.Drawing.Point(416, 59);
             this.txtMaThe.Name = "txtMaThe";
-            this.txtMaThe.Size = new System.Drawing.Size(314, 31);
+            this.txtMaThe.Size = new System.Drawing.Size(252, 27);
             this.txtMaThe.TabIndex = 1;
             this.txtMaThe.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaThe_Validating);
             // 
@@ -71,10 +69,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(369, 11);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(295, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(392, 50);
+            this.label3.Size = new System.Drawing.Size(350, 45);
             this.label3.TabIndex = 38;
             this.label3.Text = "QUẢN LÝ THẺ GỬI XE";
             // 
@@ -82,9 +79,10 @@
             // 
             this.panel1.Controls.Add(this.txtMaThe);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(39, 83);
+            this.panel1.Location = new System.Drawing.Point(97, 66);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1079, 190);
+            this.panel1.Size = new System.Drawing.Size(855, 152);
             this.panel1.TabIndex = 39;
             // 
             // btnLamMoi
@@ -93,10 +91,9 @@
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(489, 305);
-            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLamMoi.Location = new System.Drawing.Point(374, 252);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(118, 51);
+            this.btnLamMoi.Size = new System.Drawing.Size(94, 41);
             this.btnLamMoi.TabIndex = 4;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
@@ -108,10 +105,9 @@
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.Location = new System.Drawing.Point(319, 395);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHuy.Location = new System.Drawing.Point(238, 324);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(118, 51);
+            this.btnHuy.Size = new System.Drawing.Size(94, 41);
             this.btnHuy.TabIndex = 6;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
@@ -123,10 +119,9 @@
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(143, 395);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLuu.Location = new System.Drawing.Point(97, 324);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(118, 51);
+            this.btnLuu.Size = new System.Drawing.Size(94, 41);
             this.btnLuu.TabIndex = 5;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
@@ -138,10 +133,9 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(319, 305);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXoa.Location = new System.Drawing.Point(238, 252);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(118, 51);
+            this.btnXoa.Size = new System.Drawing.Size(94, 41);
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -153,10 +147,9 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(143, 305);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThem.Location = new System.Drawing.Point(97, 252);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(118, 51);
+            this.btnThem.Size = new System.Drawing.Size(94, 41);
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -166,10 +159,11 @@
             // 
             this.dgvTheGuiXe.BackgroundColor = System.Drawing.Color.White;
             this.dgvTheGuiXe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTheGuiXe.Location = new System.Drawing.Point(663, 315);
+            this.dgvTheGuiXe.Location = new System.Drawing.Point(530, 252);
+            this.dgvTheGuiXe.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTheGuiXe.Name = "dgvTheGuiXe";
             this.dgvTheGuiXe.RowHeadersWidth = 57;
-            this.dgvTheGuiXe.Size = new System.Drawing.Size(426, 603);
+            this.dgvTheGuiXe.Size = new System.Drawing.Size(422, 482);
             this.dgvTheGuiXe.TabIndex = 56;
             this.dgvTheGuiXe.Text = "dataGridView1";
             this.dgvTheGuiXe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTheGuiXe_CellClick);
@@ -180,10 +174,10 @@
             // 
             // QLTheGuiXe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1286, 952);
+            this.ClientSize = new System.Drawing.Size(1029, 762);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnLuu);
@@ -193,6 +187,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvTheGuiXe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "QLTheGuiXe";
             this.Text = "QLTheGuiXe";
             this.Load += new System.EventHandler(this.QLTheGuiXe_Load);

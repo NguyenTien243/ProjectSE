@@ -25,5 +25,6 @@ namespace Quanlybaidoxe
         public static string sharevarThoiLuongGui = "";
         public static string sharevarVeThanhToan = "";
         public static string sharevarVeTienThu = "";
+        public static string sharevarVeChucVu = "";
     }
 }

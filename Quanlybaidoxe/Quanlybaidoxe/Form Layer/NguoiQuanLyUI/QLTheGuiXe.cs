@@ -127,7 +127,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         {
             if (blTheGuiXe.CheckIdCard(txtMaThe.Text)==false)
             {
-                errorProvider1.SetError(txtMaThe, "Chưa đủ tuổi đăng ký xe");
+                errorProvider1.SetError(txtMaThe, "Mã Thẻ xe bị trùng!!!");
                 check = false;
             }
             else

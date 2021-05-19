@@ -71,27 +71,28 @@ namespace Quanlybaidoxe
             DataRow rowAccount = dtTaiKhoan.AsEnumerable().FirstOrDefault(c => c.Field<string>("TaiKhoan").Trim() == txtTenDangNhap.Text.Trim() && c.Field<string>("MatKhau").Trim() == txtMatKhau.Text.Trim());
             if(rowAccount != null)
             {
+                MessageBox.Show("Đăng nhập thành công !!!");
+                manv = rowAccount["MaNV"].ToString();
+                SHAREVAR.MaNV = manv;
+                //txtTenDangNhap.ResetText();
+                //txtMatKhau.ResetText();
+                //txtTenDangNhap.Focus();
+                formquanly = new DashBoard();
+                // chuyền mã nhân viên sang form DashBoard
+                delPassData delpassdata = new delPassData(formquanly.fundata); //https://daynhauhoc.com/t/cach-truyen-du-lieu-giua-2-form-trong-c/33911
+                delpassdata(manv);
+                this.Hide();
+                formquanly.ShowDialog();
                 if (rowAccount["MaCV"].ToString().Trim() == "CV01")
                 {
-                    MessageBox.Show("Đăng nhập thành công !!");
-                    manv = rowAccount["MaNV"].ToString();
-                    SHAREVAR.MaNV = manv;
-                    //txtTenDangNhap.ResetText();
-                    //txtMatKhau.ResetText();
-                    //txtTenDangNhap.Focus();
-                    formquanly = new DashBoard();
-                    // chuyền mã nhân viên sang form DashBoard
-                    delPassData delpassdata = new delPassData(formquanly.fundata); //https://daynhauhoc.com/t/cach-truyen-du-lieu-giua-2-form-trong-c/33911
-                    delpassdata(manv);
-                    this.Hide();
-                    formquanly.ShowDialog();
-
-
+                    MessageBox.Show("Đăng nhập thành công với tài khoản quản trị viên !!!");
+                    SHAREVAR.sharevarVeChucVu = "Người Quản Lý";
                     return;
                 }
                 else
                 {
-                    MessageBox.Show("Đăng nhập thành công với tài khoản nhân viên, giao diện nhân viên chưa hoàn thành !!");
+                    MessageBox.Show("Đăng nhập thành công với tài khoản nhân viên !!!");
+                    SHAREVAR.sharevarVeChucVu = "Nhân Viên";
                     return;
                 }
             }

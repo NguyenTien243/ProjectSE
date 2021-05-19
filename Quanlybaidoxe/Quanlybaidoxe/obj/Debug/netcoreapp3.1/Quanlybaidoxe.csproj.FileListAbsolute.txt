@@ -116,3 +116,4 @@ D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcore
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.pdb
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.genruntimeconfig.cache
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.QLTheGuiXe.resources
+C:\Users\Admin\Desktop\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.QLTheGuiXe.resources
