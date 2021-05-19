@@ -33,7 +33,7 @@ namespace Quanlybaidoxe.BS_Layer
         {
             return dbGiaVe.ExecuteQueryDataSet("SELECT * FROM GiaVe", CommandType.Text);
         }
-        public bool AddTicket(string MaGiaVe, string TenGiaVe, float GiaTien, string MaLoaiXe, string GioToiThieu, string GioToiDa, string UuDai, int VeThang, ref string err)
+        public bool AddTicket(string MaGiaVe, string TenGiaVe, float GiaTien, string MaLoaiXe, string GioToiThieu, string GioToiDa, string UuDai, int VeThang, int SoThang, ref string err)
         {
             //try { 
             //    Int32.Parse(GioToiDa); 
@@ -44,7 +44,7 @@ namespace Quanlybaidoxe.BS_Layer
             //    GioToiThieu = "0";
             //    UuDai = "0";
             //}
-            string sqlString = "INSERT INTO GiaVe VALUES(@MaGiaVe, @TenGiaVe, @GiaTien, @MaLoaiXe, @GioToiThieu, @GioToiDa, @UuDai, @VeThang)";
+            string sqlString = "INSERT INTO GiaVe VALUES(@MaGiaVe, @TenGiaVe, @GiaTien, @MaLoaiXe, @GioToiThieu, @GioToiDa, @UuDai, @VeThang, @SoThang)";
             SqlParameter[] parameters = {
                 new SqlParameter("@MaGiaVe", MaGiaVe),
                 new SqlParameter("@TenGiaVe",TenGiaVe),
@@ -53,8 +53,8 @@ namespace Quanlybaidoxe.BS_Layer
                 new SqlParameter("@GioToiThieu",GioToiThieu),
                 new SqlParameter("@GioToiDa",GioToiDa),
                 new SqlParameter("@UuDai",UuDai),
-                new SqlParameter("@VeThang",VeThang)
-               // new SqlParameter("@MaXe", "NULL"),
+                new SqlParameter("@VeThang",VeThang),
+                new SqlParameter("@SoThang", SoThang),
             };
             return dbGiaVe.MyExecuteNonQuery(sqlString, parameters, CommandType.Text, ref err);
 
@@ -134,9 +134,9 @@ namespace Quanlybaidoxe.BS_Layer
            return "Select * From Giave Where MaGiaVe = '" + MaVe + "' and VeThang = 1";
         }
 
-        public bool EditTicket(string magiave, string tengiave,float giatien,string maloaixe,int giotoithieu,int giotoida,int uudai,int vethang, ref string err)
+        public bool EditTicket(string magiave, string tengiave,float giatien,string maloaixe,int giotoithieu,int giotoida,int uudai,int vethang, int sothang, ref string err)
         {
-            string sqlString = "UPDATE GiaVe SET MaGiaVe = @MaGiaVe, TenGiaVe = @TenGiaVe, GiaTien = @GiaTien, MaLoaiXe = @MaLoaiXe, GioToiThieu = @GioToiThieu, GioToiDa = @GioToiDa,UuDai = @UuDai,VeThang = @VeThang where MaGiaVe = @MaGiaVe";
+            string sqlString = "UPDATE GiaVe SET MaGiaVe = @MaGiaVe, TenGiaVe = @TenGiaVe, GiaTien = @GiaTien, MaLoaiXe = @MaLoaiXe, GioToiThieu = @GioToiThieu, GioToiDa = @GioToiDa,UuDai = @UuDai, VeThang = @VeThang, SoThang = @SoThang  where MaGiaVe = @MaGiaVe";
             SqlParameter[] parameters = {
                 new SqlParameter("@MaGiaVe", magiave),
                 new SqlParameter("@TenGiaVe",tengiave),
@@ -146,6 +146,7 @@ namespace Quanlybaidoxe.BS_Layer
                 new SqlParameter("@GioToiDa",giotoida),
                 new SqlParameter("@UuDai",uudai),
                 new SqlParameter("@VeThang",vethang),
+                new SqlParameter("@SoThang", sothang),
             };
             return dbGiaVe.MyExecuteNonQuery(sqlString, parameters, CommandType.Text, ref err);
         }

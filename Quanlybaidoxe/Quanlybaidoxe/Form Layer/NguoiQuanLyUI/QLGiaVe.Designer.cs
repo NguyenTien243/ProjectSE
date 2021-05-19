@@ -29,9 +29,12 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvGiaVe = new System.Windows.Forms.DataGridView();
             this.pnlQuanLyGiaVe = new System.Windows.Forms.Panel();
+            this.txtSoThang = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.checkBoxVeThang = new System.Windows.Forms.CheckBox();
             this.cboLoaiXe = new System.Windows.Forms.ComboBox();
             this.txt3 = new System.Windows.Forms.Label();
@@ -53,8 +56,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaVe)).BeginInit();
             this.pnlQuanLyGiaVe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -62,9 +67,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(340, 9);
+            this.label1.Location = new System.Drawing.Point(425, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 45);
+            this.label1.Size = new System.Drawing.Size(310, 50);
             this.label1.TabIndex = 39;
             this.label1.Text = "QUẢN LÝ GIÁ VÉ";
             // 
@@ -73,15 +79,18 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.dgvGiaVe.BackgroundColor = System.Drawing.Color.White;
             this.dgvGiaVe.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvGiaVe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGiaVe.Location = new System.Drawing.Point(12, 432);
+            this.dgvGiaVe.Location = new System.Drawing.Point(15, 540);
+            this.dgvGiaVe.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGiaVe.Name = "dgvGiaVe";
             this.dgvGiaVe.RowHeadersWidth = 51;
-            this.dgvGiaVe.Size = new System.Drawing.Size(923, 318);
+            this.dgvGiaVe.Size = new System.Drawing.Size(1154, 398);
             this.dgvGiaVe.TabIndex = 46;
             this.dgvGiaVe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaVe_CellClick);
             // 
             // pnlQuanLyGiaVe
             // 
+            this.pnlQuanLyGiaVe.Controls.Add(this.txtSoThang);
+            this.pnlQuanLyGiaVe.Controls.Add(this.label6);
             this.pnlQuanLyGiaVe.Controls.Add(this.checkBoxVeThang);
             this.pnlQuanLyGiaVe.Controls.Add(this.cboLoaiXe);
             this.pnlQuanLyGiaVe.Controls.Add(this.txt3);
@@ -97,19 +106,42 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.pnlQuanLyGiaVe.Controls.Add(this.txtGiaVe);
             this.pnlQuanLyGiaVe.Controls.Add(this.txtTenGiaVe);
             this.pnlQuanLyGiaVe.Controls.Add(this.txtMaGiaVe);
-            this.pnlQuanLyGiaVe.Location = new System.Drawing.Point(12, 57);
+            this.pnlQuanLyGiaVe.Location = new System.Drawing.Point(15, 71);
+            this.pnlQuanLyGiaVe.Margin = new System.Windows.Forms.Padding(4);
             this.pnlQuanLyGiaVe.Name = "pnlQuanLyGiaVe";
-            this.pnlQuanLyGiaVe.Size = new System.Drawing.Size(944, 232);
+            this.pnlQuanLyGiaVe.Size = new System.Drawing.Size(1180, 290);
             this.pnlQuanLyGiaVe.TabIndex = 47;
+            // 
+            // txtSoThang
+            // 
+            this.txtSoThang.Location = new System.Drawing.Point(836, 233);
+            this.txtSoThang.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSoThang.Name = "txtSoThang";
+            this.txtSoThang.Size = new System.Drawing.Size(313, 31);
+            this.txtSoThang.TabIndex = 7;
+            this.txtSoThang.Validating += new System.ComponentModel.CancelEventHandler(this.txtSoThang_Validating);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(638, 242);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(116, 31);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Số tháng:";
             // 
             // checkBoxVeThang
             // 
             this.checkBoxVeThang.AutoSize = true;
             this.checkBoxVeThang.Font = new System.Drawing.Font("Segoe UI", 11.8209F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.checkBoxVeThang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.checkBoxVeThang.Location = new System.Drawing.Point(498, 153);
+            this.checkBoxVeThang.Location = new System.Drawing.Point(622, 191);
+            this.checkBoxVeThang.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxVeThang.Name = "checkBoxVeThang";
-            this.checkBoxVeThang.Size = new System.Drawing.Size(119, 32);
+            this.checkBoxVeThang.Size = new System.Drawing.Size(134, 35);
             this.checkBoxVeThang.TabIndex = 8;
             this.checkBoxVeThang.Text = "Vé tháng";
             this.checkBoxVeThang.UseVisualStyleBackColor = true;
@@ -118,9 +150,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // cboLoaiXe
             // 
             this.cboLoaiXe.FormattingEnabled = true;
-            this.cboLoaiXe.Location = new System.Drawing.Point(161, 154);
+            this.cboLoaiXe.Location = new System.Drawing.Point(201, 192);
+            this.cboLoaiXe.Margin = new System.Windows.Forms.Padding(4);
             this.cboLoaiXe.Name = "cboLoaiXe";
-            this.cboLoaiXe.Size = new System.Drawing.Size(252, 28);
+            this.cboLoaiXe.Size = new System.Drawing.Size(314, 33);
             this.cboLoaiXe.TabIndex = 4;
             // 
             // txt3
@@ -128,9 +161,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txt3.AutoSize = true;
             this.txt3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txt3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.txt3.Location = new System.Drawing.Point(498, 113);
+            this.txt3.Location = new System.Drawing.Point(622, 141);
+            this.txt3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txt3.Name = "txt3";
-            this.txt3.Size = new System.Drawing.Size(81, 28);
+            this.txt3.Size = new System.Drawing.Size(92, 31);
             this.txt3.TabIndex = 26;
             this.txt3.Text = "Ưu đãi:";
             // 
@@ -139,9 +173,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txt1.AutoSize = true;
             this.txt1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txt1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.txt1.Location = new System.Drawing.Point(498, 65);
+            this.txt1.Location = new System.Drawing.Point(622, 81);
+            this.txt1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txt1.Name = "txt1";
-            this.txt1.Size = new System.Drawing.Size(112, 28);
+            this.txt1.Size = new System.Drawing.Size(126, 31);
             this.txt1.TabIndex = 26;
             this.txt1.Text = "Giờ tối đa:";
             // 
@@ -150,9 +185,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(1, 154);
+            this.label5.Location = new System.Drawing.Point(1, 192);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 28);
+            this.label5.Size = new System.Drawing.Size(96, 31);
             this.label5.TabIndex = 26;
             this.label5.Text = "Loại xe:";
             // 
@@ -161,17 +197,19 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.txt2.AutoSize = true;
             this.txt2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txt2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.txt2.Location = new System.Drawing.Point(498, 20);
+            this.txt2.Location = new System.Drawing.Point(622, 25);
+            this.txt2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txt2.Name = "txt2";
-            this.txt2.Size = new System.Drawing.Size(137, 28);
+            this.txt2.Size = new System.Drawing.Size(155, 31);
             this.txt2.TabIndex = 25;
             this.txt2.Text = "Giờ tối thiểu:";
             // 
             // txtUuDai
             // 
-            this.txtUuDai.Location = new System.Drawing.Point(669, 113);
+            this.txtUuDai.Location = new System.Drawing.Point(836, 141);
+            this.txtUuDai.Margin = new System.Windows.Forms.Padding(4);
             this.txtUuDai.Name = "txtUuDai";
-            this.txtUuDai.Size = new System.Drawing.Size(251, 27);
+            this.txtUuDai.Size = new System.Drawing.Size(313, 31);
             this.txtUuDai.TabIndex = 7;
             // 
             // label4
@@ -179,17 +217,19 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(1, 109);
+            this.label4.Location = new System.Drawing.Point(1, 136);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 28);
+            this.label4.Size = new System.Drawing.Size(85, 31);
             this.label4.TabIndex = 25;
             this.label4.Text = "Giá vé:";
             // 
             // txtGioToiDa
             // 
-            this.txtGioToiDa.Location = new System.Drawing.Point(669, 68);
+            this.txtGioToiDa.Location = new System.Drawing.Point(836, 85);
+            this.txtGioToiDa.Margin = new System.Windows.Forms.Padding(4);
             this.txtGioToiDa.Name = "txtGioToiDa";
-            this.txtGioToiDa.Size = new System.Drawing.Size(251, 27);
+            this.txtGioToiDa.Size = new System.Drawing.Size(313, 31);
             this.txtGioToiDa.TabIndex = 6;
             // 
             // label3
@@ -197,17 +237,19 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(1, 64);
+            this.label3.Location = new System.Drawing.Point(1, 80);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 28);
+            this.label3.Size = new System.Drawing.Size(126, 31);
             this.label3.TabIndex = 26;
             this.label3.Text = "Tên giá vé:";
             // 
             // txtGioToiThieu
             // 
-            this.txtGioToiThieu.Location = new System.Drawing.Point(668, 19);
+            this.txtGioToiThieu.Location = new System.Drawing.Point(835, 24);
+            this.txtGioToiThieu.Margin = new System.Windows.Forms.Padding(4);
             this.txtGioToiThieu.Name = "txtGioToiThieu";
-            this.txtGioToiThieu.Size = new System.Drawing.Size(252, 27);
+            this.txtGioToiThieu.Size = new System.Drawing.Size(314, 31);
             this.txtGioToiThieu.TabIndex = 5;
             // 
             // label2
@@ -215,31 +257,35 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(1, 19);
+            this.label2.Location = new System.Drawing.Point(1, 24);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 28);
+            this.label2.Size = new System.Drawing.Size(123, 31);
             this.label2.TabIndex = 25;
             this.label2.Text = "Mã giá vé:";
             // 
             // txtGiaVe
             // 
-            this.txtGiaVe.Location = new System.Drawing.Point(161, 110);
+            this.txtGiaVe.Location = new System.Drawing.Point(201, 138);
+            this.txtGiaVe.Margin = new System.Windows.Forms.Padding(4);
             this.txtGiaVe.Name = "txtGiaVe";
-            this.txtGiaVe.Size = new System.Drawing.Size(252, 27);
+            this.txtGiaVe.Size = new System.Drawing.Size(314, 31);
             this.txtGiaVe.TabIndex = 3;
             // 
             // txtTenGiaVe
             // 
-            this.txtTenGiaVe.Location = new System.Drawing.Point(161, 66);
+            this.txtTenGiaVe.Location = new System.Drawing.Point(201, 82);
+            this.txtTenGiaVe.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenGiaVe.Name = "txtTenGiaVe";
-            this.txtTenGiaVe.Size = new System.Drawing.Size(251, 27);
+            this.txtTenGiaVe.Size = new System.Drawing.Size(313, 31);
             this.txtTenGiaVe.TabIndex = 2;
             // 
             // txtMaGiaVe
             // 
-            this.txtMaGiaVe.Location = new System.Drawing.Point(161, 20);
+            this.txtMaGiaVe.Location = new System.Drawing.Point(201, 25);
+            this.txtMaGiaVe.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaGiaVe.Name = "txtMaGiaVe";
-            this.txtMaGiaVe.Size = new System.Drawing.Size(252, 27);
+            this.txtMaGiaVe.Size = new System.Drawing.Size(314, 31);
             this.txtMaGiaVe.TabIndex = 1;
             // 
             // btnReload
@@ -248,9 +294,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReload.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Location = new System.Drawing.Point(354, 367);
+            this.btnReload.Location = new System.Drawing.Point(442, 459);
+            this.btnReload.Margin = new System.Windows.Forms.Padding(4);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(94, 41);
+            this.btnReload.Size = new System.Drawing.Size(118, 51);
             this.btnReload.TabIndex = 55;
             this.btnReload.Text = "Làm mới";
             this.btnReload.UseVisualStyleBackColor = false;
@@ -262,9 +309,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.Location = new System.Drawing.Point(186, 367);
+            this.btnHuy.Location = new System.Drawing.Point(232, 459);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(94, 41);
+            this.btnHuy.Size = new System.Drawing.Size(118, 51);
             this.btnHuy.TabIndex = 54;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
@@ -276,9 +324,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(13, 367);
+            this.btnLuu.Location = new System.Drawing.Point(16, 459);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(94, 41);
+            this.btnLuu.Size = new System.Drawing.Size(118, 51);
             this.btnLuu.TabIndex = 53;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
@@ -290,9 +339,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(354, 295);
+            this.btnXoa.Location = new System.Drawing.Point(442, 369);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(94, 41);
+            this.btnXoa.Size = new System.Drawing.Size(118, 51);
             this.btnXoa.TabIndex = 52;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -304,9 +354,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(186, 295);
+            this.btnSua.Location = new System.Drawing.Point(232, 369);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(94, 41);
+            this.btnSua.Size = new System.Drawing.Size(118, 51);
             this.btnSua.TabIndex = 51;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
@@ -318,20 +369,25 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(13, 295);
+            this.btnThem.Location = new System.Drawing.Point(16, 369);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(94, 41);
+            this.btnThem.Size = new System.Drawing.Size(118, 51);
             this.btnThem.TabIndex = 50;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // QLGiaVe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(965, 762);
+            this.ClientSize = new System.Drawing.Size(1206, 952);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
@@ -342,12 +398,14 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.Controls.Add(this.dgvGiaVe);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QLGiaVe";
             this.Text = "AdminForm";
             this.Load += new System.EventHandler(this.AdminForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaVe)).EndInit();
             this.pnlQuanLyGiaVe.ResumeLayout(false);
             this.pnlQuanLyGiaVe.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,5 +438,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private System.Windows.Forms.ComboBox cboLoaiXe;
         private System.Windows.Forms.CheckBox checkBoxVeThang;
         private System.Windows.Forms.Panel pnlQuanLyGiaVe;
+        private System.Windows.Forms.TextBox txtSoThang;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

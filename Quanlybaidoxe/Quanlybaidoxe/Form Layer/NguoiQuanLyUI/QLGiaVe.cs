@@ -23,6 +23,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         int giotoithieu, giotoida, uudai;
         bool Add;
         string err;
+        bool check = true;
         private void LoadData()
         {
             try
@@ -44,6 +45,9 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 btnSua.Enabled = true;
                 btnHuy.Enabled = false;
                 btnLuu.Enabled = false;
+                txtUuDai.Enabled = false;
+                txtSoThang.Enabled = false;
+                checkBoxVeThang.Checked = false;
                 cboLoaiXe.Items.Clear();
                 for (int dem = 0; dem < blXe.GetVehicleCategory().Tables[0].Rows.Count; dem++) //Thêm loại xe vào combobox
                 {
@@ -64,7 +68,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         /// </summary>
         private bool CheckDaTa(string Gia, string giotoithieu, string giotoida, string uudai)
         {
-            bool check = true;
+            
             // kiểm tra phải nhập đủ thông tin
             if (txtMaGiaVe.Text.Trim().Length == 0 || txtTenGiaVe.Text.Trim().Length == 0
                 || txtGiaVe.Text.Trim().Length == 0 || cboLoaiXe.Text.Trim().Length == 0
@@ -155,7 +159,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                         {
                             MessageBox.Show("Vị trí này đã tồn tại, hãy nhập mã vị trí khác");
                         }
-                        else if (blGiaVe.AddTicket(txtMaGiaVe.Text, txtTenGiaVe.Text, float.Parse(txtGiaVe.Text), blXe.GetVechicleId(cboLoaiXe.Text).Tables[0].Rows[0][0].ToString(), txtGioToiThieu.Text, txtGioToiDa.Text, txtUuDai.Text, VeThang, ref err) == true)
+                        else if (blGiaVe.AddTicket(txtMaGiaVe.Text, txtTenGiaVe.Text, float.Parse(txtGiaVe.Text), blXe.GetVechicleId(cboLoaiXe.Text).Tables[0].Rows[0][0].ToString(), txtGioToiThieu.Text, txtGioToiDa.Text, txtUuDai.Text, VeThang, int.Parse(txtSoThang.Text), ref err) == true)
                         {
 
                             MessageBox.Show("Đã thêm giá vé mới");
@@ -175,7 +179,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 int r = dgvGiaVe.CurrentCell.RowIndex;
                 string MaViTri = dgvGiaVe.Rows[r].Cells[0].Value.ToString();
                 blGiaVe = new BLGiaVe();
-                if (blGiaVe.EditTicket(txtMaGiaVe.Text.Trim(), txtTenGiaVe.Text.Trim(), giave, maloaive, giotoithieu, giotoida, uudai, VeThang, ref err) == true)
+                if (blGiaVe.EditTicket(txtMaGiaVe.Text.Trim(), txtTenGiaVe.Text.Trim(), giave, maloaive, giotoithieu, giotoida, uudai, VeThang, int.Parse(txtSoThang.Text), ref err) == true)
                 {
                     MessageBox.Show("Chỉnh sửa thành công, đã cập nhật lại thông tin");
                     LoadData();
@@ -203,9 +207,15 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 txtUuDai.Text = dgvGiaVe.Rows[r].Cells[6].Value.ToString();
                 cboLoaiXe.Text = blXe.GetNameVehicle(dgvGiaVe.Rows[r].Cells[3].Value.ToString()).Tables[0].Rows[0][0].ToString();
                 if (dgvGiaVe.Rows[r].Cells["VeThang"].Value.ToString() == "True")
+                {
                     checkBoxVeThang.Checked = true;
+                    txtSoThang.Text = dgvGiaVe.Rows[r].Cells[8].Value.ToString();
+                }
                 else
+                {
                     checkBoxVeThang.Checked = false;
+                    txtSoThang.Text = dgvGiaVe.Rows[r].Cells[8].Value.ToString();
+                }
             }
             catch
             {
@@ -247,6 +257,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             txtGioToiThieu.ResetText();
             txtGioToiDa.ResetText();
             txtUuDai.ResetText();
+            txtSoThang.ResetText();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -267,12 +278,17 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 txtGioToiDa.Text = "0";
                 txtGioToiThieu.Text = "0";
                 VeThang = 1;
+                txtSoThang.Enabled = true;
+                txtUuDai.Enabled = true;
             }
             else
             {
                 txtGioToiDa.Enabled = true;
                 txtGioToiThieu.Enabled = true;
                 VeThang = 0;
+                txtSoThang.Text = "0";
+                txtSoThang.Enabled = false;
+                txtUuDai.Enabled = false;
             }
         }
 
@@ -296,6 +312,32 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             Add = false;
         }
 
+        private void txtSoThang_Validating(object sender, CancelEventArgs e)
+        {
+            int temp;
+            string tam = txtSoThang.Text.Trim();
+            if (tam.Length > 0)
+                if (int.TryParse(tam, out temp) != true)
+                {
+                    errorProvider1.SetError(txtSoThang, "Vui lòng nhập dữ liệu số");
+                    check = false;
+                }
+                else
+                {
+                    if (int.Parse(tam) > 0)
+                    {
+                        errorProvider1.SetError(txtSoThang, "Nhập số tháng lớn hơn 0");
+                        check = false;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(txtSoThang, null);
+                        check = true;
+                    }
+                }
+        }
+
+       
 
         private void btnReload_Click(object sender, EventArgs e)
         {

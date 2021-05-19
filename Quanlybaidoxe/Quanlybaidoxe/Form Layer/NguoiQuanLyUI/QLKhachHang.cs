@@ -385,8 +385,22 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+
             ResetValues();
 
+            //if (pnlQuanLyKH.Controls.Contains(frmDkyXe) == true)
+            //{
+            //    pnlQuanLyKH.Dispose();
+                
+            //    QLKhachHang frmQLKH = new QLKhachHang();
+            //    frmQLKH.TopLevel = false;
+            //    this.pnlQuanLyKH.Controls.Add(frmQLKH);
+
+            //    foreach (Control ctr in pnlQuanLyKH.Controls)
+            //    {
+            //        ctr.Visible = true;
+            //    }
+            //}
             btnDangKy.Enabled = true;
             btnXoa.Enabled = true;
             btnSua.Enabled = true;
@@ -457,6 +471,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         {
             double temp;
             string tam = txtSDT.Text.Trim();
+            if(tam.Length > 0)
             tam.Substring(0, 1);//Lấy kí tự đầu của chuỗi
             if (txtSDT.Text.Trim().Length != 10)
             {
