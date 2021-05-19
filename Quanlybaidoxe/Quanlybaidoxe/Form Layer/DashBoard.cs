@@ -33,7 +33,7 @@ namespace Quanlybaidoxe.Form_Layer
             DataSet datasetInfo = blNhanVien.GetPositionStaff(manv); // lấy tên nhân viên và tên chức vụ của nhân viên
             lbUserName.Text += "  " + datasetInfo.Tables[0].Rows[0]["TenNV"].ToString();
             lbChucVu.Text += " " + datasetInfo.Tables[0].Rows[0]["TenCV"].ToString();
-            if (manv.Trim() != "Người Quản Lý")
+            if (SHAREVAR.sharevarVeChucVu != "Người Quản Lý")
             {
                 btnBaiDoXe.Visible = false;
                 btnDoanhThu.Visible = false;

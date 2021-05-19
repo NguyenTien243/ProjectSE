@@ -71,7 +71,18 @@ namespace Quanlybaidoxe
             DataRow rowAccount = dtTaiKhoan.AsEnumerable().FirstOrDefault(c => c.Field<string>("TaiKhoan").Trim() == txtTenDangNhap.Text.Trim() && c.Field<string>("MatKhau").Trim() == txtMatKhau.Text.Trim());
             if(rowAccount != null)
             {
-                MessageBox.Show("Đăng nhập thành công !!!");
+                if (rowAccount["MaCV"].ToString().Trim() == "CV01")
+                {
+                    MessageBox.Show("Đăng nhập thành công với tài khoản quản trị viên !!!");
+                    SHAREVAR.sharevarVeChucVu = "Người Quản Lý";
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Đăng nhập thành công với tài khoản nhân viên !!!");
+                    SHAREVAR.sharevarVeChucVu = "Nhân Viên";
+                    
+                }
                 manv = rowAccount["MaNV"].ToString();
                 SHAREVAR.MaNV = manv;
                 //txtTenDangNhap.ResetText();
@@ -83,19 +94,9 @@ namespace Quanlybaidoxe
                 delpassdata(manv);
                 this.Hide();
                 formquanly.ShowDialog();
-                if (rowAccount["MaCV"].ToString().Trim() == "CV01")
-                {
-                    MessageBox.Show("Đăng nhập thành công với tài khoản quản trị viên !!!");
-                    SHAREVAR.sharevarVeChucVu = "Người Quản Lý";
-                    return;
-                }
-                else
-                {
-                    MessageBox.Show("Đăng nhập thành công với tài khoản nhân viên !!!");
-                    SHAREVAR.sharevarVeChucVu = "Nhân Viên";
-                    return;
-                }
+                
             }
+            else
             MessageBox.Show("Sai tài khoản hoặc mật khẩu !!!");
 
             //for (int i = 0; i < dtTaiKhoan.Rows.Count; i++)

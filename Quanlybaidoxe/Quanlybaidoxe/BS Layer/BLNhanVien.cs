@@ -16,7 +16,7 @@ namespace Quanlybaidoxe.BS_Layer
         }
         public DataSet GetPositionStaff(string manv)
         {
-            return dbNhanVien.ExecuteQueryDataSet("SELECT TenNV, TenCV FROM NhanVien, ChucVu WHERE NhanVien.MaCV = ChucVu.MaCV", CommandType.Text);
+            return dbNhanVien.ExecuteQueryDataSet("SELECT TenNV, TenCV FROM NhanVien, ChucVu WHERE NhanVien.MaCV = ChucVu.MaCV AND MaNV = '"+manv.Trim()+"' ", CommandType.Text);
         }
         public DataSet GetStaffs()
         {
