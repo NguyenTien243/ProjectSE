@@ -47,5 +47,9 @@ namespace Quanlybaidoxe.BS_Layer
             SqlParameter[] para = { new SqlParameter("@MaTheGui", MaTheGui) };
             return dbTheGuiXe.MyExecuteNonQuery(sqlString, para, CommandType.Text, ref err);
         }
+        public DataSet CountSumTicket()
+        {
+            return dbTheGuiXe.ExecuteQueryDataSet("Select COUNT(MaTheGuiXe) as SoLuongThe From TheGuiXe", CommandType.Text);
+        }
     }
 }

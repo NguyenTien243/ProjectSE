@@ -331,6 +331,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             // cboTimKiem
             // 
+            this.cboTimKiem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTimKiem.FormattingEnabled = true;
             this.cboTimKiem.Items.AddRange(new object[] {
             "Mã Vị Trí",

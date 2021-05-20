@@ -25,8 +25,13 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         string err;
         string MaTheGui, MaViTri;
         string maloaixe;
+
+        internal BLTheGuiXe BLTheGuiXe { get; private set; }
+
         private void DoXe_Load(object sender, EventArgs e)
         {
+            lbTongSoThe.Text = CountSumTicket().ToString();
+            lbTongViTri.Text = CountSumPosition().ToString();
             BLDoXe blDoXe = new BLDoXe();
             dataTableVehicleType = blDoXe.GetVehicleType().Tables[0];
             timerThoiGianThuc.Enabled = true;
@@ -84,8 +89,23 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             }
 
         }
+        private int CountSumPosition()
+        {
+            int sum = 0;
+            BLViTriXe blViTriXe= new BLViTriXe();
+            sum = Convert.ToInt32(blViTriXe.CountVitrido().Tables[0].Rows[0][0].ToString());
+            return sum;
+        }
+        private int CountSumTicket()
+        {
+            int sum = 0;
+            BLTheGuiXe blTheGuiXe = new BLTheGuiXe();
+            sum = Convert.ToInt32(blTheGuiXe.CountSumTicket().Tables[0].Rows[0][0].ToString());
+            return sum;
+        }
         private void LoadData()
         {
+            //lbT
             UpdateVehicle();
             UpdatePositionAvailable();
             UpdateTicketAvailable();
@@ -369,6 +389,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             lbTime.Text = DateTime.Now.ToString();
         }
 
+        
         private void btnLuu_Click(object sender, EventArgs e)
         {
 

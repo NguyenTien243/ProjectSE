@@ -154,6 +154,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             // cbVeThang
             // 
+            this.cbVeThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVeThang.FormattingEnabled = true;
             this.cbVeThang.Location = new System.Drawing.Point(679, 152);
             this.cbVeThang.Margin = new System.Windows.Forms.Padding(2);
@@ -455,6 +456,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             // 
             // cboTimKiem
             // 
+            this.cboTimKiem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTimKiem.FormattingEnabled = true;
             this.cboTimKiem.Items.AddRange(new object[] {
             "Mã Khách Hàng",

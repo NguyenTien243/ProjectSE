@@ -18,14 +18,15 @@ namespace Quanlybaidoxe.Form_Layer
             hienthi();
         }
         BLNhanVien blNhanVien;
+        
         string manv;
         void hienthi()
         {
             this.pnlChucNang.Controls.Clear();
-            QLNhanVien formNhanVien = new QLNhanVien();
-            formNhanVien.TopLevel = false;
-            this.pnlChucNang.Controls.Add(formNhanVien);
-            formNhanVien.Show();
+            DoXe formDoXe = new DoXe();
+            formDoXe.TopLevel = false;
+            this.pnlChucNang.Controls.Add(formDoXe);
+            formDoXe.Show();
         }
         private void DashBoard_Load(object sender, EventArgs e)
         {
