@@ -318,7 +318,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.ForeColor = System.Drawing.Color.OrangeRed;
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "ThanhToanXeRa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ThanhToanXeRa";
