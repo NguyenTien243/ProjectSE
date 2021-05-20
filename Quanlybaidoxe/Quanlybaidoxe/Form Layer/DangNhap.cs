@@ -52,12 +52,7 @@ namespace Quanlybaidoxe
                 txtMatKhau.PasswordChar = '•';
             }
         }
-        private void label2_Click(object sender, EventArgs e)
-        {
-            new Form2().Show();
-            this.Hide();
-        }
-
+      
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             if (txtTenDangNhap.Text.Trim().Length == 0 || txtMatKhau.Text.Trim().Length == 0)

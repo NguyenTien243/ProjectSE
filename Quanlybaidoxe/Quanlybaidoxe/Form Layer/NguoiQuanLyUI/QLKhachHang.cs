@@ -208,6 +208,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             {
                 ctr.Visible = true;
             }
+            LoadData();
         }
 
 
@@ -385,7 +386,24 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            if (pnlQuanLyKH.Controls.Contains(frmDkyXe) == true)
+            {
+                pnlQuanLyKH.Controls.Remove(frmDkyXe);
+                foreach (Control ctr in pnlQuanLyKH.Controls)
+                {
 
+                    //if (ctr.Name == "txtMaXe") ctr.Text = maxe;
+                    ctr.Visible = true;
+                }
+                txtMaXe.Enabled = true;
+                cbVeThang.Items.Clear();   //cho tên vé tháng tương ứng với loại xe vào combobox
+                for (int dem = 0; dem < blKhachHang.GetNameTicket(SHAREVAR.maloaixe).Tables[0].Rows.Count; dem++) //Thêm tên loại vé tháng vào combobox
+                {
+                    cbVeThang.Items.Add(blKhachHang.GetNameTicket(SHAREVAR.maloaixe).Tables[0].Rows[dem][0].ToString());
+                }
+                btnLuu.Enabled = true;
+                return;
+            }
             ResetValues();
 
             //if (pnlQuanLyKH.Controls.Contains(frmDkyXe) == true)
