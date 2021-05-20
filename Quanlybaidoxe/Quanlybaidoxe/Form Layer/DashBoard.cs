@@ -23,10 +23,10 @@ namespace Quanlybaidoxe.Form_Layer
         void hienthi()
         {
             this.pnlChucNang.Controls.Clear();
-            DoXe formDoXe = new DoXe();
-            formDoXe.TopLevel = false;
-            this.pnlChucNang.Controls.Add(formDoXe);
-            formDoXe.Show();
+            QLNhanVien formQLNV = new QLNhanVien();
+            formQLNV.TopLevel = false;
+            this.pnlChucNang.Controls.Add(formQLNV);
+            formQLNV.Show();
         }
         private void DashBoard_Load(object sender, EventArgs e)
         {
@@ -42,6 +42,11 @@ namespace Quanlybaidoxe.Form_Layer
                 btnNhanVien.Visible = false;
                 btnTheGuiXe.Visible = false;
                 btnGiaVe.Visible = false;
+                this.pnlChucNang.Controls.Clear();
+                DoXe formDoXe = new DoXe();
+                formDoXe.TopLevel = false;
+                this.pnlChucNang.Controls.Add(formDoXe);
+                formDoXe.Show();
             }                
         }
         public void fundata(string manv)
