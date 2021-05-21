@@ -25,5 +25,10 @@ namespace Quanlybaidoxe.BS_Layer
             string GetID = "USP_GetSumBillByDate '" + checkIn + "', '" + checkOut + "'";
             return dbDoanhThu.ExecuteQueryDataSet(GetID, CommandType.Text);
         }
+        public DataSet LoadData()
+        {
+            string StringQuery = "SELECT TenKH, GioVao, GioRa, TienThu, TenNV FROM dbo.PhieuThanhToan, dbo.KhachHang, dbo.NhanVien WHERE PhieuThanhToan.MaXe = KhachHang.MaXe AND NhanVien.MaNV = PhieuThanhToan.MaNV";
+            return dbDoanhThu.ExecuteQueryDataSet(StringQuery, CommandType.Text);
+        }
     }
 }

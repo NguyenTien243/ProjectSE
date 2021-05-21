@@ -71,5 +71,11 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             }
             else errorProvider1.SetError(dtgiora, null);
         }
+
+        private void ThongKeDoanhThu_Load(object sender, EventArgs e)
+        {
+            blDoanhThu = new BLDoanhThu();
+            dgvDoanhThu.DataSource = blDoanhThu.LoadData().Tables[0];
+        }
     }
 }

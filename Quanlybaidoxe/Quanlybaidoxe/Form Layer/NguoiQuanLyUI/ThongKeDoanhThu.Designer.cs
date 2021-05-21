@@ -39,6 +39,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTongThu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhThu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -138,12 +140,36 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.label3.TabIndex = 63;
             this.label3.Text = "Giờ vào";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(97, 165);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(380, 28);
+            this.label4.TabIndex = 64;
+            this.label4.Text = "Hóa đơn khách hàng đăng ký vé tháng";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(730, 165);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(209, 28);
+            this.label5.TabIndex = 65;
+            this.label5.Text = "Thu ngày + vé tháng";
+            // 
             // ThongKeDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(947, 715);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvTongThu);
@@ -155,6 +181,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ThongKeDoanhThu";
             this.Text = "ThongKeDoanhThu";
+            this.Load += new System.EventHandler(this.ThongKeDoanhThu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTongThu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhThu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -174,5 +201,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
