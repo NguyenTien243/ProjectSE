@@ -105,6 +105,14 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         private void LoadData()
         {
+            foreach (Control ctr in pnlQuanLyDoXe.Controls)
+            {
+                if (ctr is TextBox || ctr is ComboBox)
+                {
+                    ctr.Enabled = true;
+                }
+
+            }
             //lbT
             UpdateVehicle();
             UpdatePositionAvailable();
@@ -249,6 +257,15 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             else
             {
                 fillData(seachVevicleInTicket.Rows[0]);
+                foreach (Control ctr in pnlQuanLyDoXe.Controls)
+                {
+                    if (ctr is TextBox || ctr is ComboBox)
+                    {
+                        ctr.Enabled = false;
+                    }
+                    
+                }
+                cboViTri.Enabled = true;
             }
         }
         private void fillData(DataRow dataRow)
@@ -259,7 +276,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             txtMauSac.Text = dataRow["MauSac"].ToString().Trim();
             txtGioVao.ResetText();
             DataRow rowVehicle = dataTableVehicles.AsEnumerable().FirstOrDefault(c => c.Field<string>("MaXe").Trim() == txtMaXe.Text.Trim());
-            if (rowVehicle != null && rowVehicle["DangKyThang"].ToString().Trim() != "") // nếu xe này có đăng ký tháng
+            if (rowVehicle != null && rowVehicle["DangKyThang"].ToString().Trim() != "False") // nếu xe này có đăng ký tháng
             {
                 blDoXe = new BLDoXe();
                 DataRow getMonthStickID = blDoXe.GetMonthStickIDByVehicleID(txtMaXe.Text).Tables[0].Rows[0];
@@ -297,7 +314,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
            
 
             DataRow rowMonthTicket = dataTableDoXe.AsEnumerable().FirstOrDefault(c => c.Field<string>("MaXe").Trim() == txtMaXe.Text.Trim());
-            if (rowMonthTicket["DangKyThang"].ToString().Trim() == "") // khi vé này không phải là vé tháng
+            if (rowMonthTicket["DangKyThang"].ToString().Trim() == "False") // khi vé này không phải là vé tháng
                 SHAREVAR.sharevarVeThang = false;
             else
                 SHAREVAR.sharevarVeThang = true;
@@ -416,7 +433,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             {
                 string matheguixe = "";
                // kiểm tra xe có biển số này có đk vé tháng không 
-                if (rowInfo["DangKyThang"].ToString().Trim() != "" && rowInfo["MaXe"].ToString().Trim() == txtMaXe.Text.Trim())
+                if (rowInfo["DangKyThang"].ToString().Trim() != "False" && rowInfo["MaXe"].ToString().Trim() == txtMaXe.Text.Trim())
                 {
                     DataTable tablegetMonthStickID = blDoXe.GetMonthStickIDByVehicleID(txtMaXe.Text).Tables[0];
                     if (tablegetMonthStickID.Rows.Count == 0)

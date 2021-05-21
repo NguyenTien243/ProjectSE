@@ -7,7 +7,7 @@
     <Compile Update="Form Layer\DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form Layer\NguoiQuanLyUI\BaiDoXe.cs">
+    <Compile Update="Form Layer\NguoiQuanLyUI\ViTriDo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Form Layer\NguoiQuanLyUI\DoXe.cs">

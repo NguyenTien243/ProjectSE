@@ -154,7 +154,7 @@ namespace Quanlybaidoxe.BS_Layer
         }
         private string StringQueryVehicleGoIn()
         {
-            return "INSERT INTO dbo.Xe(MaXe,BienSo,TenXe,MauSac,MaLoaiXe) VALUES ( @MaXe, @BienSo, @TenXe, @MauSac, @MaLoaiXe);UPDATE dbo.ViTri SET MaXe = @MaXe WHERE MaViTri = @MaViTri;UPDATE dbo.TheGuiXe SET MaXe = @MaXe , GioVao = @GioVao Where MaTheGuiXe = @MaTheGuiXe ";
+            return "INSERT INTO dbo.Xe(MaXe,BienSo,TenXe,MauSac,MaLoaiXe,DangKyThang) VALUES ( @MaXe, @BienSo, @TenXe, @MauSac, @MaLoaiXe,0);UPDATE dbo.ViTri SET MaXe = @MaXe WHERE MaViTri = @MaViTri;UPDATE dbo.TheGuiXe SET MaXe = @MaXe , GioVao = @GioVao Where MaTheGuiXe = @MaTheGuiXe ";
         }
         private string StringUpdateVehicle()
         {
@@ -162,13 +162,13 @@ namespace Quanlybaidoxe.BS_Layer
         }
         public DataSet CountTimeInParkingAtMinute(DateTime Stardate, DateTime Enddate)
         {
-            string StringQuery = "SELECT DATEDIFF(MINUTE, '"+Stardate.ToString().Trim()+"','"+ Enddate.ToString().Trim() + "') as Time";
+            string StringQuery = "SELECT DATEDIFF(MINUTE, '"+Stardate.ToString("MM/dd/yyyy h:mm tt").Trim()+"','"+ Enddate.ToString("MM/dd/yyyy h:mm tt").Trim() + "') as Time";
             
             return dbDoXe.ExecuteQueryDataSet(StringQuery, CommandType.Text);
         }
         public DataSet HourlParkingFee(string MaLoaiXe, DateTime Stardate, DateTime Enddate)
         {
-            string StringQuery = StringFindPriceByHour(MaLoaiXe, Stardate.ToString(),Enddate.ToString());
+            string StringQuery = StringFindPriceByHour(MaLoaiXe, Stardate.ToString("MM/dd/yyyy h:mm tt"),Enddate.ToString("MM/dd/yyyy h:mm tt"));
             return dbDoXe.ExecuteQueryDataSet(StringQuery, CommandType.Text);
         }
         public DataSet GetFeeOverDay(string MaLoaiXe)
