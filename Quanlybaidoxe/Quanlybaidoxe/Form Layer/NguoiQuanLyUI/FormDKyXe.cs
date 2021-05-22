@@ -114,6 +114,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             else
             {
                 errorProvider1.SetError(txtMaXe, null);
+                check = true;
                 
             }
         }
@@ -128,7 +129,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             else
             {
                 errorProvider1.SetError(txtBienSo, null);
-                
+                check = true;
             }
         }
     }

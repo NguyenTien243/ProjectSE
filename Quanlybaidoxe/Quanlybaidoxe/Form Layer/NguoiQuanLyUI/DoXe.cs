@@ -444,7 +444,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                         matheguixe = tablegetMonthStickID.Rows[0]["MaTheGuiXe"].ToString().Trim();
 
                 }    
-                if (rowInfo["MaXe"].ToString().Trim() != txtMaXe.Text.Trim() || rowInfo["TenLoaiXe"].ToString().Trim() != cboLoaiXe.Text.Trim() || matheguixe != cboTheGui.Text.Trim()) // nếu mã xe của xe có biển số này bị sửa đổi
+                if (rowInfo["MaXe"].ToString().Trim() != txtMaXe.Text.Trim() || rowInfo["TenLoaiXe"].ToString().Trim() != cboLoaiXe.Text.Trim()) // nếu mã xe của xe có biển số này bị sửa đổi
                 {
                     // Khai báo biến traloi
                     DialogResult traloi;

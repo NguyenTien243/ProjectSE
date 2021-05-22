@@ -298,7 +298,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                     else
                     {
                         blKhachHang = new BLKhachHang();
-                        if (blKhachHang.CustomerRegister(txtMaKH.Text, txtTenKH.Text, dateTimePickerKH.Value, Gioitinh, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, dateTimePickerHetHan.Value, txtMaXe.Text, SHAREVAR.PriceOfRegister, ref err) == true)
+                        if (blKhachHang.CustomerRegister(txtMaKH.Text, txtTenKH.Text, dateTimePickerKH.Value, Gioitinh, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, dateTimePickerHetHan.Value, txtMaXe.Text, DateTime.Now, DateTime.Now, SHAREVAR.PriceOfRegister, ref err) == true)
                         {
 
                             if (blKhachHang.GanTheXe(txtMaXe.Text, ref err) == true)
@@ -331,7 +331,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 }
                 if (SHAREVAR.Add == false && Giahan == true)
                 {
-                    if (blKhachHang.extensionCustomer(txtMaKH.Text, dateTimePickerHetHan.Value, txtMaXe.Text, SHAREVAR.PriceOfRegister, ref err) == true)
+                    if (blKhachHang.extensionCustomer(txtMaKH.Text, dateTimePickerHetHan.Value, txtMaXe.Text, DateTime.Now, DateTime.Now, SHAREVAR.PriceOfRegister, ref err) == true)
                     {
                         MessageBox.Show("Gia hạn vé thành công! \nSố tiền vé của bạn là: " + SHAREVAR.PriceOfRegister.ToString() + " VNĐ");
                         LoadData();
@@ -386,6 +386,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            SHAREVAR.Add = false;
             if (pnlQuanLyKH.Controls.Contains(frmDkyXe) == true)
             {
                 pnlQuanLyKH.Controls.Remove(frmDkyXe);
