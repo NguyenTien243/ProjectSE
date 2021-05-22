@@ -22,6 +22,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         string loaitimkiem;
         private void LoadThongTin()
         {
+            dgvQLNV.Enabled = true;
             try
             {
                 datatableNV = new DataTable();
@@ -73,7 +74,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             if (txtMaNV.Text.Trim().Length == 0 || txtTenNV.Text.Trim().Length == 0 || txtDiaChi.Text.Trim().Length == 0 || txtCMND.Text.Trim().Length == 0
                 || txtSDT.Text.Trim().Length == 0 || txtTaiKhoan.Text.Trim().Length == 0 || txtMatKhau.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Bạn phải nhập đủ  các thông tin cần thiết");
+                MessageBox.Show("Bạn phải nhập đủ các thông tin cần thiết");
                 return;
             }
             // kiểm tra Trùng CMND
@@ -83,13 +84,18 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 MessageBox.Show("CMND bị trùng vui lòng kiểm tra lại");
                 return;
             }
-
+            DateTime now = DateTime.Today;
+            if (now.Year - dateTimePickerNgay.Value.Year < 18)
+            {
+                MessageBox.Show("Chỉ nhận người đủ 18 tuổi");
+                return;
+            }
             if (Them == true)
             {
                 try
 
                 {
-                    DateTime now = DateTime.Today;
+                    
                     if (blNV.CheckStaffId(txtMaNV.Text).Tables[0].Rows.Count != 0)
                     {
                         MessageBox.Show("Mã nhân viên bị trùng, vui lòng nhập mã khác!");
@@ -99,10 +105,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                     {
                         MessageBox.Show("Tài khoản đã có người sử dụng, vui lòng đổi tài khoản!");
                     }                   
-                    else if(now.Year - dateTimePickerNgay.Value.Year < 18)
-                    {
-                        MessageBox.Show("Chỉ nhận người đủ 18 tuổi");
-                    }    
                         else
                     {
                         blNV = new BLNhanVien();
@@ -122,7 +124,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 blNV = new BLNhanVien();
                 if (blNV.CheckAcount(txtTaiKhoan.Text,txtMaNV.Text).Tables[0].Rows.Count != 0)
                 {
-                    MessageBox.Show("Tài khoản đã có người sử dụng, vui lòng đổi tài khoảnc!");
+                    MessageBox.Show("Tài khoản đã có người sử dụng, vui lòng đổi tài khoản!");
                     return;
                 }               
                 blNV = new BLNhanVien();
@@ -166,7 +168,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-    
+            txtTaiKhoan.Enabled = false;
             txtLuong.Enabled = true;
             // Kich hoạt biến Them
             Them = false;
@@ -279,6 +281,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         private void ResetValue()
         {
+            txtTaiKhoan.Enabled = true;
             txtMaNV.ResetText();
             txtTenNV.ResetText();
             txtCMND.ResetText();

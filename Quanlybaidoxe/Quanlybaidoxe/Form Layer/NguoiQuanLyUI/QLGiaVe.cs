@@ -157,7 +157,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                     {
                         if (blGiaVe.CheckTicketId(txtMaGiaVe.Text).Tables[0].Rows.Count != 0)
                         {
-                            MessageBox.Show("Vị trí này đã tồn tại, hãy nhập mã vị trí khác");
+                            MessageBox.Show("Giá vé này đã tồn tại, hãy nhập mã giá vé khác");
                         }
                         else if (blGiaVe.AddTicket(txtMaGiaVe.Text, txtTenGiaVe.Text, float.Parse(txtGiaVe.Text), blXe.GetVechicleId(cboLoaiXe.Text).Tables[0].Rows[0][0].ToString(), txtGioToiThieu.Text, txtGioToiDa.Text, txtUuDai.Text, VeThang, int.Parse(txtSoThang.Text), ref err) == true)
                         {
@@ -363,7 +363,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 // Khai báo biến traloi
                 DialogResult traloi;
                 // Hiện hộp thoại hỏi đáp
-                traloi = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời",
+                traloi = MessageBox.Show("Bạn có chắc xóa vé này không?", "Trả lời",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 // Kiểm tra có nhắp chọn nút Ok không?
                 if (traloi == DialogResult.Yes)

@@ -152,7 +152,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 {
                     if (blViTri.CheckPositionId(txtMaViTri.Text).Tables[0].Rows.Count != 0)
                     {
-                        MessageBox.Show("Vị trí này đã tồn tại, hãy nhập mã vị trí khác");
+                        MessageBox.Show("Mã vị trí này đã tồn tại, hãy nhập mã vị trí khác");
+                        return;
                     }
                     if (blViTri.AddPosition(txtMaViTri.Text, txtTenViTri.Text, ref err) == true)
                     {

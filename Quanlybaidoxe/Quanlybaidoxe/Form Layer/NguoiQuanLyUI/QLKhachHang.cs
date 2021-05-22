@@ -470,7 +470,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
             if (blKhachHang.CheckCMND(txtMaKH.Text, txtCMND.Text).Tables[0].Rows.Count != 0)
             {
-                errorProvider1.SetError(txtCMND, "Chưa đủ tuổi đăng ký xe");
+                errorProvider1.SetError(txtCMND, "CMND bị trùng vui lòng kiểm tra lại");
                 check = false;
             }
             else

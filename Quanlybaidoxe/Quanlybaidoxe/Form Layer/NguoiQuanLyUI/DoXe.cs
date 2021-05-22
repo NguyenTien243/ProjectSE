@@ -449,7 +449,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                     // Khai báo biến traloi
                     DialogResult traloi;
                     // Hiện hộp thoại hỏi đáp
-                    traloi = MessageBox.Show("Mã xe, loại xe hoặc thẻ gửi xe không trùng với biển số đã lưu khi trước, bạn muốn phục hồi lại mã xe không?", "Trả lời",
+                    traloi = MessageBox.Show("Mã xe hoặc loại xe không trùng với biển số đã lưu khi trước, bạn muốn phục hồi lại mã xe và loại xe không?", "Trả lời",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     // Kiểm tra có nhắp chọn nút Ok không?
                     if (traloi == DialogResult.OK)
@@ -484,6 +484,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             }
             else
             {
+                // "Mã xe bị trùng, vui lòng nhập mã xe khác!!!"
                 if (blDoXe.VehicleGoIn(txtBienSo.Text, txtMaXe.Text, txtTenXe.Text, txtMauSac.Text, DateTime.Now, maloaixe, cboTheGui.SelectedItem.ToString(), cboViTri.SelectedItem.ToString(), ref err) == true)
                 {
                     MessageBox.Show("Thêm xe vào bãi thành công");

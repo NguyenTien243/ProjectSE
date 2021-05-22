@@ -25,6 +25,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         {
             try
             {
+                txtMaThe.ResetText();
                 dgvTheGuiXe.Enabled = true;
                 datatableTheGuiXe = new DataTable();
                 datatableTheGuiXe.Clear();
