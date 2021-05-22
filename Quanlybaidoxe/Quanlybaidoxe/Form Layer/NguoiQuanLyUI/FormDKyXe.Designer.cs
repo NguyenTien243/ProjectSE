@@ -51,9 +51,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(545, 34);
+            this.label1.Location = new System.Drawing.Point(681, 42);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 28);
+            this.label1.Size = new System.Drawing.Size(96, 31);
             this.label1.TabIndex = 26;
             this.label1.Text = "Loại xe:";
             // 
@@ -62,9 +63,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(4, 122);
+            this.label2.Location = new System.Drawing.Point(5, 152);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 28);
+            this.label2.Size = new System.Drawing.Size(98, 31);
             this.label2.TabIndex = 26;
             this.label2.Text = "Biển số:";
             // 
@@ -73,17 +75,19 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(557, 94);
+            this.label3.Location = new System.Drawing.Point(696, 118);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 28);
+            this.label3.Size = new System.Drawing.Size(99, 31);
             this.label3.TabIndex = 26;
             this.label3.Text = "Màu xe:";
             // 
             // txtBienSo
             // 
-            this.txtBienSo.Location = new System.Drawing.Point(170, 123);
+            this.txtBienSo.Location = new System.Drawing.Point(212, 154);
+            this.txtBienSo.Margin = new System.Windows.Forms.Padding(4);
             this.txtBienSo.Name = "txtBienSo";
-            this.txtBienSo.Size = new System.Drawing.Size(251, 27);
+            this.txtBienSo.Size = new System.Drawing.Size(313, 31);
             this.txtBienSo.TabIndex = 7;
             this.txtBienSo.Validating += new System.ComponentModel.CancelEventHandler(this.txtBienSo_Validating);
             // 
@@ -92,17 +96,19 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(2, 77);
+            this.label5.Location = new System.Drawing.Point(2, 96);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 28);
+            this.label5.Size = new System.Drawing.Size(88, 31);
             this.label5.TabIndex = 26;
             this.label5.Text = "Tên xe:";
             // 
             // txtMauSac
             // 
-            this.txtMauSac.Location = new System.Drawing.Point(670, 95);
+            this.txtMauSac.Location = new System.Drawing.Point(838, 119);
+            this.txtMauSac.Margin = new System.Windows.Forms.Padding(4);
             this.txtMauSac.Name = "txtMauSac";
-            this.txtMauSac.Size = new System.Drawing.Size(251, 27);
+            this.txtMauSac.Size = new System.Drawing.Size(313, 31);
             this.txtMauSac.TabIndex = 7;
             // 
             // label6
@@ -110,24 +116,27 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(2, 29);
+            this.label6.Location = new System.Drawing.Point(2, 36);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 28);
+            this.label6.Size = new System.Drawing.Size(85, 31);
             this.label6.TabIndex = 25;
             this.label6.Text = "Mã xe:";
             // 
             // txtTenXe
             // 
-            this.txtTenXe.Location = new System.Drawing.Point(170, 81);
+            this.txtTenXe.Location = new System.Drawing.Point(212, 101);
+            this.txtTenXe.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenXe.Name = "txtTenXe";
-            this.txtTenXe.Size = new System.Drawing.Size(251, 27);
+            this.txtTenXe.Size = new System.Drawing.Size(313, 31);
             this.txtTenXe.TabIndex = 7;
             // 
             // txtMaXe
             // 
-            this.txtMaXe.Location = new System.Drawing.Point(170, 34);
+            this.txtMaXe.Location = new System.Drawing.Point(212, 42);
+            this.txtMaXe.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaXe.Name = "txtMaXe";
-            this.txtMaXe.Size = new System.Drawing.Size(252, 27);
+            this.txtMaXe.Size = new System.Drawing.Size(314, 31);
             this.txtMaXe.TabIndex = 5;
             this.txtMaXe.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaXe_Validating);
             // 
@@ -145,26 +154,27 @@
             this.pnlDKyXe.Controls.Add(this.label2);
             this.pnlDKyXe.Controls.Add(this.label1);
             this.pnlDKyXe.Location = new System.Drawing.Point(2, 2);
-            this.pnlDKyXe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlDKyXe.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDKyXe.Name = "pnlDKyXe";
-            this.pnlDKyXe.Size = new System.Drawing.Size(944, 232);
+            this.pnlDKyXe.Size = new System.Drawing.Size(1180, 290);
             this.pnlDKyXe.TabIndex = 29;
             // 
             // cbLoaiXe
             // 
             this.cbLoaiXe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLoaiXe.FormattingEnabled = true;
-            this.cbLoaiXe.Location = new System.Drawing.Point(669, 34);
+            this.cbLoaiXe.Location = new System.Drawing.Point(836, 42);
+            this.cbLoaiXe.Margin = new System.Windows.Forms.Padding(4);
             this.cbLoaiXe.Name = "cbLoaiXe";
-            this.cbLoaiXe.Size = new System.Drawing.Size(252, 28);
+            this.cbLoaiXe.Size = new System.Drawing.Size(314, 33);
             this.cbLoaiXe.TabIndex = 4;
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(670, 176);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLuu.Location = new System.Drawing.Point(838, 220);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(84, 26);
+            this.btnLuu.Size = new System.Drawing.Size(105, 32);
             this.btnLuu.TabIndex = 29;
             this.btnLuu.Text = "Xác nhận";
             this.btnLuu.UseVisualStyleBackColor = true;
@@ -176,13 +186,13 @@
             // 
             // FormDKyXe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1013, 466);
+            this.ClientSize = new System.Drawing.Size(1266, 582);
             this.Controls.Add(this.pnlDKyXe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormDKyXe";
             this.Text = "FormDKyXe";
             this.Load += new System.EventHandler(this.FormDKyXe_Load);

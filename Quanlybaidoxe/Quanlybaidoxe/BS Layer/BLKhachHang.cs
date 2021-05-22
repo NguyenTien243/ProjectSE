@@ -23,10 +23,10 @@ namespace Quanlybaidoxe.BS_Layer
             return dbKhachHang.ExecuteQueryDataSet("Select * From KhachHang ", CommandType.Text);
         }
 
-        public bool CustomerRegister(string MaKH, string TenKH, DateTime NgaySinh, string GioiTinh, string CMND, string SDT, string DiaChi, DateTime HetHan, string MaXe, float TienThu, ref string err)
+        public bool CustomerRegister(string MaKH, string TenKH, DateTime NgaySinh, string GioiTinh, string CMND, string SDT, string DiaChi, DateTime HetHan, string MaXe, DateTime GioRa, DateTime GioVao, float TienThu, ref string err)
         {
 
-            string sqlString = "Insert Into KhachHang Values( @MaKH,@TenKH,@NgaySinh, @GioiTinh, @CMND ,@SDT,@DiaChi, @HetHan, @MaXe); INSERT INTO PhieuThanhToan (MaXe, TienThu, TraTheoThang, MaNV) VALUES(@MaXe, @TienThu, 1, @MaNV) ";
+            string sqlString = "Insert Into KhachHang Values( @MaKH,@TenKH,@NgaySinh, @GioiTinh, @CMND ,@SDT,@DiaChi, @HetHan, @MaXe); INSERT INTO PhieuThanhToan (MaXe, GioRa, GioVao, TienThu, TraTheoThang, MaNV) VALUES(@MaXe, @GioRa, @GioVao, @TienThu, 1, @MaNV) ";
             SqlParameter[] parameters = {
             new SqlParameter("@MaKH", MaKH),
             new SqlParameter("@TenKH", TenKH),
@@ -38,6 +38,8 @@ namespace Quanlybaidoxe.BS_Layer
             new SqlParameter("@HetHan", HetHan),
             new SqlParameter("@MaXe", MaXe),
             new SqlParameter("@TienThu", TienThu),
+            new SqlParameter("@GioRa", GioRa),
+            new SqlParameter("@GioVao", GioVao),
             new SqlParameter("@MaNV", SHAREVAR.MaNV),
            };
             return dbKhachHang.MyExecuteNonQuery(sqlString, parameters, CommandType.Text, ref err);
@@ -118,15 +120,17 @@ namespace Quanlybaidoxe.BS_Layer
             return dbKhachHang.ExecuteQueryDataSet("SELECT * FROM KhachHang WHERE " + timkiem + " LIKE N'%" + noidung.Trim() + "%'", CommandType.Text);
 
         }
-        public bool extensionCustomer(string MaKH, DateTime NgayHetHan, string MaXe, float TienThu, ref string err)
+        public bool extensionCustomer(string MaKH, DateTime NgayHetHan, string MaXe, DateTime GioRa, DateTime GioVao, float TienThu, ref string err)
         {
 
-            string sqlString = "UPDATE KhachHang SET NgayHetHanVeThang = @NgayHetHan WHERE MaKH =@MaKH; INSERT INTO PhieuThanhToan (MaXe, TienThu, TraTheoThang, MaNV) VALUES(@MaXe, @TienThu, 1, @MaNV)";
+            string sqlString = "UPDATE KhachHang SET NgayHetHanVeThang = @NgayHetHan,  WHERE MaKH =@MaKH; INSERT INTO PhieuThanhToan (MaXe, GioRa, GioVao, TienThu, TraTheoThang, MaNV) VALUES(@MaXe, @GioRa, @GioVao, @TienThu, 1, @MaNV)";
             SqlParameter[] parameters = {
             new SqlParameter("@MaKH", MaKH),
             new SqlParameter("@NgayHetHan", NgayHetHan),
             new SqlParameter("@TienThu", TienThu),
             new SqlParameter("@MaNV", SHAREVAR.MaNV),
+            new SqlParameter("@GioRa", GioRa),
+            new SqlParameter("@GioVao", GioVao),
             new SqlParameter("@MaXe", MaXe),
            };
             return dbKhachHang.MyExecuteNonQuery(sqlString, parameters, CommandType.Text, ref err);
