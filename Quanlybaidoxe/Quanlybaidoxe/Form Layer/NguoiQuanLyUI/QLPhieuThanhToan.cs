@@ -164,7 +164,9 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
         private void btnChiTietPhieuThu_Click(object sender, EventArgs e)
         {
-
+            ChiTietPhieuThu ctpt = new ChiTietPhieuThu();
+            SHAREVAR.sharevarMaPhieuThanhToan = txtMaPhieuThu.Text;
+            ctpt.ShowDialog();
         }
     }
 
