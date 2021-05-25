@@ -115,3 +115,4 @@ D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcore
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.QLTheGuiXe.resources
 C:\Users\Admin\Desktop\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.QLTheGuiXe.resources
 C:\Users\Admin\Documents\GitHub\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.QLTheGuiXe.resources
+C:\Users\Admin\Desktop\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.QLPhieuThanhToan.resources
