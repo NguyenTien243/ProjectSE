@@ -406,7 +406,38 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             lbTime.Text = DateTime.Now.ToString();
         }
 
-        
+        private bool KiemTraKyTuToiDa()
+        {
+            bool check = true;
+            string thongbaoloi = "";
+            if (txtBienSo.Text.Trim().Length > 20)
+            {
+                thongbaoloi += "\nBiến số tối đa 20 ký tự!!!";
+                check = false;
+            }
+            if (txtMaXe.Text.Trim().Length > 10)
+            {
+                thongbaoloi += "\nMã xe tối đa 10 ký tự!!!";
+                check = false;
+            }
+            if (txtTenXe.Text.Trim().Length > 30)
+            {
+                thongbaoloi += "\nTên xe tối đa 30 ký tự!!!";
+                check = false;
+            }
+            if (txtMauSac.Text.Trim().Length > 20)
+            {
+                thongbaoloi += "\nMàu sắc tối đa 20 ký tự!!!";
+                check = false;
+            }
+          
+
+            if (check == false)
+            {
+                MessageBox.Show(thongbaoloi);
+            }
+            return check;
+        }
         private void btnLuu_Click(object sender, EventArgs e)
         {
 
@@ -422,7 +453,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 MaViTri = cboViTri.SelectedItem.ToString();
             if (CheckDaTa(txtMaXe.Text, MaTheGui, MaViTri) == false)
                 return;
-
+            if (KiemTraKyTuToiDa() == false)
+                return;
 
             // kiểm tra Trùng Tên
             blDoXe = new BLDoXe();

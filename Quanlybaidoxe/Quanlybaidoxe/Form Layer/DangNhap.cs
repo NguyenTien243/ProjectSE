@@ -52,7 +52,27 @@ namespace Quanlybaidoxe
                 txtMatKhau.PasswordChar = '•';
             }
         }
-      
+        private bool KiemTraKyTuToiDa()
+        {
+            bool check = true;
+            string thongbaoloi = "";
+            if (txtTenDangNhap.Text.Trim().Length > 10)
+            {
+                thongbaoloi += "\nTên đăng nhập tối đa 30 ký tự!!!";
+                check = false;
+            }
+            if (txtMatKhau.Text.Trim().Length > 30)
+            {
+                thongbaoloi += "\nMật khẩu tối đa 30 ký tự!!!";
+                check = false;
+            }
+
+            if (check == false)
+            {
+                MessageBox.Show(thongbaoloi);
+            }
+            return check;
+        }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             if (txtTenDangNhap.Text.Trim().Length == 0 || txtMatKhau.Text.Trim().Length == 0)
@@ -60,7 +80,8 @@ namespace Quanlybaidoxe
                 MessageBox.Show("Vui lòng nhập đủ thông tin!");
                 return;
             }
-
+            if (KiemTraKyTuToiDa() == false)
+                return;
 
             // tham khảo từ https://stackoverflow.com/questions/42895750/c-sharp-datatable-select-with-multiple-conditions-on-a-single-column
             DataRow rowAccount = dtTaiKhoan.AsEnumerable().FirstOrDefault(c => c.Field<string>("TaiKhoan").Trim() == txtTenDangNhap.Text.Trim() && c.Field<string>("MatKhau").Trim() == txtMatKhau.Text.Trim());

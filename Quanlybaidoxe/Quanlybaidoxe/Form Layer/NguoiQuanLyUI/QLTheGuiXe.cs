@@ -87,14 +87,32 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
 
             Add = true;
         }
+        private bool KiemTraKyTuToiDa()
+        {
+            bool check = true;
+            string thongbaoloi = "";
+            if (txtMaThe.Text.Trim().Length > 10)
+            {
+                thongbaoloi += "\nMã thẻ gửi xe tối đa 10 ký tự!!!";
+                check = false;
+            }
+            
 
+            if (check == false)
+            {
+                MessageBox.Show(thongbaoloi);
+            }
+            return check;
+        }
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (txtMaThe.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Vui lòng nhập mã thẻ!!");
                 return;
-            }                    
+            }
+            if (KiemTraKyTuToiDa() == false)
+                return;
             if (Add == true && check == true)
             {
                 blTheGuiXe = new BLTheGuiXe();

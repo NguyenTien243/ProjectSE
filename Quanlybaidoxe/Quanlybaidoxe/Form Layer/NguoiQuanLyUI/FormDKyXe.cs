@@ -53,7 +53,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         //public bool CheckValues(string MaXe, string BienSo)
         //{
-           
+
         //    BLXe blXe = new BLXe();
         //    if (blXe.CheckIdVehicle(MaXe).Tables[0].Rows.Count != 0)
         //    {
@@ -65,6 +65,36 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         //    else check = true;
         //    return check;
         //}
+        private bool KiemTraKyTuToiDa()
+        {
+            bool check = true;
+            string thongbaoloi = "";
+            if (txtMaXe.Text.Trim().Length > 10)
+            {
+                thongbaoloi += "\nMã xe tối đa 10 ký tự!!!";
+                check = false;
+            }
+            if (txtTenXe.Text.Trim().Length > 30)
+            {
+                thongbaoloi += "\nTên xe tối đa 30 ký tự!!!";
+                check = false;
+            }
+            if (txtBienSo.Text.Trim().Length > 20)
+            {
+                thongbaoloi += "\nBiển số tối đa 30 ký tự!!!";
+                check = false;
+            }
+            if (txtMauSac.Text.Trim().Length > 20)
+            {
+                thongbaoloi += "\nMàu xe tối đa 30 ký tự!!!";
+                check = false;
+            }
+            if (check == false)
+            {
+                MessageBox.Show(thongbaoloi);
+            }
+            return check;
+        }
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (txtTenXe.Text.Trim().Length == 0 || txtMaXe.Text.Trim().Length == 0 || txtMauSac.Text.Trim().Length == 0 || txtBienSo.Text.Trim().Length == 0 || cbLoaiXe.Text.Trim().Length == 0)
@@ -73,6 +103,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 MessageBox.Show("Vui lòng điền đủ trước khi xác nhận!");
                 return;
             }
+            if (KiemTraKyTuToiDa() == false)
+                return;
             if (SHAREVAR.Add == true)
             {                
                 if (check == true)

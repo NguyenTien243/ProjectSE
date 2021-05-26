@@ -134,9 +134,39 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             //}
             return check;
         }
+        private bool KiemTraKyTuToiDa()
+        {
+            bool check = true;
+            string thongbaoloi = "";
+            if (txtMaGiaVe.Text.Trim().Length > 10)
+            {
+                thongbaoloi += "\nMã giá vé tối đa 10 ký tự!!!";
+                check = false;
+            }
+            if (txtTenGiaVe.Text.Trim().Length > 30)
+            {
+                thongbaoloi += "\nTên giá vé tối đa 30 ký tự!!!";
+                check = false;
+            }
+            
+            
+            if (txtTenGiaVe.Text.Trim().Length > 30)
+            {
+                thongbaoloi += "\nTên giá vé tối đa 30 ký tự!!!";
+                check = false;
+            }
+
+            if (check == false)
+            {
+                MessageBox.Show(thongbaoloi);
+            }
+            return check;
+        }
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (CheckDaTa(txtGiaVe.Text, txtGioToiThieu.Text, txtGioToiDa.Text, txtUuDai.Text) == false)
+                return;
+            if (KiemTraKyTuToiDa() == false)
                 return;
             // kiểm tra Trùng Tên
             blGiaVe = new BLGiaVe();

@@ -51,18 +51,58 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 MessageBox.Show("Không lấy được nội dung trong table Xe. Lỗi rồi!!!");
             }
         }
+        private bool KiemTraKyTuToiDa()
+        {
+            bool check = true;
+            string thongbaoloi = "";
+            if (txtMaNV.Text.Trim().Length > 10)
+            {
+                thongbaoloi += "\nMã nhân viên tối đa 10 ký tự!!!";
+                check = false;
+            }
+            if (txtTenNV.Text.Trim().Length > 30)
+            {
+                thongbaoloi += "\nTên nhân viên tối đa 30 ký tự!!!";
+                check = false;
+            }
+            if (txtCMND.Text.Trim().Length > 20)
+            {
+                thongbaoloi += "\nCMND tối đa 20 ký tự!!!";
+                check = false;
+            }
+
+            if (txtSDT.Text.Trim().Length > 15)
+            {
+                thongbaoloi += "\nSố điện thoại tối đa 15 ký tự!!!";
+                check = false;
+            }
+
+            if (txtDiaChi.Text.Trim().Length > 50)
+            {
+                thongbaoloi += "\nĐịa chỉ tối đa 50 ký tự!!!";
+                check = false;
+            }
+
+            if (txtTaiKhoan.Text.Trim().Length > 30)
+            {
+                thongbaoloi += "\nTài khoản tối đa 30 ký tự!!!";
+                check = false;
+            }
+            if (txtMatKhau.Text.Trim().Length > 30)
+            {
+                thongbaoloi += "\nMật khẩu tối đa 30 ký tự!!!";
+                check = false;
+            }
+
+            if (check == false)
+            {
+                MessageBox.Show(thongbaoloi);
+            }
+            return check;
+        }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            float luong = 0;
-            try
-            {
-                luong = float.Parse(txtLuong.Text);
-            }
-            catch
-            {
-                MessageBox.Show("Lương phải là giá trị số và lớn hơn hoặc bằng 0!");
-                return;
-            }
+            
 
            
             string Gioitinh;
@@ -77,11 +117,23 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 MessageBox.Show("Bạn phải nhập đủ các thông tin cần thiết");
                 return;
             }
+            if (KiemTraKyTuToiDa() == false)
+                return;
             // kiểm tra Trùng CMND
             blNV = new BLNhanVien();
             if (blNV.CheckCMND(txtMaNV.Text.Trim(), txtCMND.Text.Trim(), ref err) == false)
             {
                 MessageBox.Show("CMND bị trùng vui lòng kiểm tra lại");
+                return;
+            }
+            float luong = 0;
+            try
+            {
+                luong = float.Parse(txtLuong.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Lương phải là giá trị số và lớn hơn hoặc bằng 0!");
                 return;
             }
             DateTime now = DateTime.Today;
