@@ -41,14 +41,24 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             lbLoaiXe.Text = tbXe.Rows[0]["TenLoaiXe"].ToString();
             lbTenXe.Text = tbXe.Rows[0]["TenXe"].ToString();
             lbMauXe.Text = tbXe.Rows[0]["MauSac"].ToString();
-            lbThoiGianVao.Text = Convert.ToDateTime( tbXe.Rows[0]["GioVao"].ToString()).ToString("dd/MM/yyyy h:mm tt");
-            lbThoiGianRa.Text = Convert.ToDateTime(tbXe.Rows[0]["GioRa"].ToString()).ToString("dd/MM/yyyy h:mm tt");
+            string giovao = "Không có thời gian";
+            string giora = "Không có thời gian";
+            try {
+                giovao = Convert.ToDateTime(tbXe.Rows[0]["GioVao"].ToString()).ToString("dd/MM/yyyy h:mm tt");
+                giora = Convert.ToDateTime(tbXe.Rows[0]["GioRa"].ToString()).ToString("dd/MM/yyyy h:mm tt");
+            }
+            catch
+            {
+
+            }
+            lbThoiGianVao.Text = giovao;
+            lbThoiGianRa.Text = giora;
             DateTime stardate = DateTime.Now;
             DateTime enddate = DateTime.Now;
             try 
             {
-                stardate = Convert.ToDateTime(lbThoiGianVao.Text);
-                enddate = Convert.ToDateTime(lbThoiGianRa.Text);
+                stardate = Convert.ToDateTime(tbXe.Rows[0]["GioVao"].ToString());
+                enddate = Convert.ToDateTime(tbXe.Rows[0]["GioRa"].ToString());
             }
             catch 
             { }

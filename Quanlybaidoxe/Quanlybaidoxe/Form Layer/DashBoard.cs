@@ -172,7 +172,8 @@ namespace Quanlybaidoxe.Form_Layer
             tkdt.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       
+        private void btnPhieuThu_Click(object sender, EventArgs e)
         {
             this.pnlChucNang.Controls.Clear();
             QLPhieuThanhToan tkdt = new QLPhieuThanhToan();
