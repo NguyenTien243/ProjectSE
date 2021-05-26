@@ -127,16 +127,38 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             Add = false;
             
         }
+        private bool KiemTraKyTuToiDa()
+        {
+            bool check = true;
+            string thongbaoloi = "";
+            if(txtMaViTri.Text.Trim().Length > 10)
+            {
+                thongbaoloi += "\nMã vị trí tối đa 10 ký tự!!!";
+                check = false;
+            }
+            if (txtTenViTri.Text.Trim().Length > 30)
+            {
+                thongbaoloi += "\nTên vị trí tối đa 30 ký tự!!!";
+                check = false;
+            }
 
+            if(check == false)
+            {
+                MessageBox.Show(thongbaoloi);
+            }    
+            return check;
+        }
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            
             if (txtMaViTri.Text.Trim().Length == 0 || txtTenViTri.Text.Trim().Length == 0)
 
             {
                 MessageBox.Show("Vui lòng điền đủ thông tin!!");
                 return;
             }
-
+            if (KiemTraKyTuToiDa() == false)
+                return;
             // kiểm tra Trùng Tên
             blViTri = new BLViTriXe();
             if (blViTri.CheckNamePosition(txtMaViTri.Text.Trim(), txtTenViTri.Text.Trim(), ref err) == false)

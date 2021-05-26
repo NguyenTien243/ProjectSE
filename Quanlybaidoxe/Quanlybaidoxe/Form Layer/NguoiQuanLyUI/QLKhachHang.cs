@@ -256,7 +256,47 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 dateTimePickerHetHan.Text = Convert.ToDateTime(dateTimePickerHetHan.Text).AddMonths(Int32.Parse(months)).ToString();
             }
         }
-
+        private bool KiemTraKyTuToiDa()
+        {
+            bool check = true;
+            string thongbaoloi = "";
+            if (txtMaKH.Text.Trim().Length > 10)
+            {
+                thongbaoloi += "\nMã khách hàng tối đa 10 ký tự!!!";
+                check = false;
+            }
+            if (txtTenKH.Text.Trim().Length > 30)
+            {
+                thongbaoloi += "\nTên khách hàng tối đa 30 ký tự!!!";
+                check = false;
+            }
+            if (txtCMND.Text.Trim().Length > 20)
+            {
+                thongbaoloi += "\nCMND tối đa 30 ký tự!!!";
+                check = false;
+            }
+            if (txtDiaChi.Text.Trim().Length > 50)
+            {
+                thongbaoloi += "\nĐịa chỉ tối đa 50 ký tự!!!";
+                check = false;
+            }
+            if (txtSDT.Text.Trim().Length > 15)
+            {
+                thongbaoloi += "\nSố điện thoại tối đa 15 ký tự!!!";
+                check = false;
+            }
+            if (txtMaXe.Text.Trim().Length > 10)
+            {
+                thongbaoloi += "\nMã xe tối đa 10 ký tự!!!";
+                check = false;
+            }
+            
+            if (check == false)
+            {
+                MessageBox.Show(thongbaoloi);
+            }
+            return check;
+        }
         private void btnLuu_Click(object sender, EventArgs e)
         {
 
@@ -277,7 +317,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 check = false;
                 return;
             }
-
+            if (KiemTraKyTuToiDa() == false)
+                return;
             // kiểm tra Trùng CMND
             blKhachHang = new BLKhachHang();
 

@@ -31,6 +31,7 @@ namespace Quanlybaidoxe.Form_Layer
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPhieuThu = new System.Windows.Forms.Button();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnTheGuiXe = new System.Windows.Forms.Button();
             this.btnDoanhThu = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@ namespace Quanlybaidoxe.Form_Layer
             this.lbUserName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlChucNang = new System.Windows.Forms.Panel();
-            this.btnPhieuThu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,6 +72,23 @@ namespace Quanlybaidoxe.Form_Layer
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(256, 762);
             this.panel1.TabIndex = 0;
+            // 
+            // btnPhieuThu
+            // 
+            this.btnPhieuThu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPhieuThu.FlatAppearance.BorderSize = 0;
+            this.btnPhieuThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPhieuThu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPhieuThu.ForeColor = System.Drawing.Color.White;
+            this.btnPhieuThu.Image = ((System.Drawing.Image)(resources.GetObject("btnPhieuThu.Image")));
+            this.btnPhieuThu.Location = new System.Drawing.Point(0, 699);
+            this.btnPhieuThu.Name = "btnPhieuThu";
+            this.btnPhieuThu.Size = new System.Drawing.Size(235, 60);
+            this.btnPhieuThu.TabIndex = 41;
+            this.btnPhieuThu.Text = "Phiếu thanh toán";
+            this.btnPhieuThu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnPhieuThu.UseVisualStyleBackColor = true;
+            this.btnPhieuThu.Click += new System.EventHandler(this.btnPhieuThu_Click);
             // 
             // btnDangXuat
             // 
@@ -286,23 +303,6 @@ namespace Quanlybaidoxe.Form_Layer
             this.pnlChucNang.Size = new System.Drawing.Size(965, 762);
             this.pnlChucNang.TabIndex = 1;
             // 
-            // btnPhieuThu
-            // 
-            this.btnPhieuThu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPhieuThu.FlatAppearance.BorderSize = 0;
-            this.btnPhieuThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPhieuThu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPhieuThu.ForeColor = System.Drawing.Color.White;
-            this.btnPhieuThu.Image = ((System.Drawing.Image)(resources.GetObject("btnPhieuThu.Image")));
-            this.btnPhieuThu.Location = new System.Drawing.Point(0, 699);
-            this.btnPhieuThu.Name = "btnPhieuThu";
-            this.btnPhieuThu.Size = new System.Drawing.Size(235, 60);
-            this.btnPhieuThu.TabIndex = 41;
-            this.btnPhieuThu.Text = "Phiếu thanh toán";
-            this.btnPhieuThu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnPhieuThu.UseVisualStyleBackColor = true;
-            this.btnPhieuThu.Click += new System.EventHandler(this.btnPhieuThu_Click);
-            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -316,6 +316,7 @@ namespace Quanlybaidoxe.Form_Layer
             this.Name = "DashBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DashBoard";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DashBoard_FormClosing);
             this.Load += new System.EventHandler(this.DashBoard_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DashBoard_MouseDown);
             this.panel1.ResumeLayout(false);
