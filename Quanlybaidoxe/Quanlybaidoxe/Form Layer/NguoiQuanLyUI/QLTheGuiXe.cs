@@ -106,13 +106,14 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (KiemTraKyTuToiDa() == false)
+                return;
             if (txtMaThe.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Vui lòng nhập mã thẻ!!");
                 return;
             }
-            if (KiemTraKyTuToiDa() == false)
-                return;
+            
             if (Add == true && check == true)
             {
                 blTheGuiXe = new BLTheGuiXe();

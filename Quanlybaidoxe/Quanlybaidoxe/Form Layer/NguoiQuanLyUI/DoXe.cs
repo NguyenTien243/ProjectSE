@@ -441,7 +441,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         private void btnLuu_Click(object sender, EventArgs e)
         {
 
-
+            if (KiemTraKyTuToiDa() == false)
+                return;
             if (cboTheGui.SelectedIndex == -1)
                 MaTheGui = "";
             else
@@ -453,8 +454,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 MaViTri = cboViTri.SelectedItem.ToString();
             if (CheckDaTa(txtMaXe.Text, MaTheGui, MaViTri) == false)
                 return;
-            if (KiemTraKyTuToiDa() == false)
-                return;
+            
 
             // kiểm tra Trùng Tên
             blDoXe = new BLDoXe();

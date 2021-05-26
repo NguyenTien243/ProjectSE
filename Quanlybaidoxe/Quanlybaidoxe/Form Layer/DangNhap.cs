@@ -188,9 +188,6 @@ namespace Quanlybaidoxe
             if (traloi == DialogResult.OK) Application.Exit();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

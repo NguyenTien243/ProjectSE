@@ -299,7 +299,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
+            if (KiemTraKyTuToiDa() == false)
+                return;
             check = true;
             string Gioitinh;
             if (radNam.Checked) Gioitinh = "Nữ";
@@ -317,8 +318,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 check = false;
                 return;
             }
-            if (KiemTraKyTuToiDa() == false)
-                return;
+            
             // kiểm tra Trùng CMND
             blKhachHang = new BLKhachHang();
 

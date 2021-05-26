@@ -102,9 +102,10 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            
 
-           
+            if (KiemTraKyTuToiDa() == false)
+                return;
+
             string Gioitinh;
 
             if (radNam.Checked == true)
@@ -117,8 +118,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 MessageBox.Show("Bạn phải nhập đủ các thông tin cần thiết");
                 return;
             }
-            if (KiemTraKyTuToiDa() == false)
-                return;
+            
             // kiểm tra Trùng CMND
             blNV = new BLNhanVien();
             if (blNV.CheckCMND(txtMaNV.Text.Trim(), txtCMND.Text.Trim(), ref err) == false)

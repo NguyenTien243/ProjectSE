@@ -97,14 +97,15 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (KiemTraKyTuToiDa() == false)
+                return;
             if (txtTenXe.Text.Trim().Length == 0 || txtMaXe.Text.Trim().Length == 0 || txtMauSac.Text.Trim().Length == 0 || txtBienSo.Text.Trim().Length == 0 || cbLoaiXe.Text.Trim().Length == 0)
             {
 
                 MessageBox.Show("Vui lòng điền đủ trước khi xác nhận!");
                 return;
             }
-            if (KiemTraKyTuToiDa() == false)
-                return;
+            
             if (SHAREVAR.Add == true)
             {                
                 if (check == true)

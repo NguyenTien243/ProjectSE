@@ -164,10 +164,11 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (CheckDaTa(txtGiaVe.Text, txtGioToiThieu.Text, txtGioToiDa.Text, txtUuDai.Text) == false)
-                return;
             if (KiemTraKyTuToiDa() == false)
                 return;
+            if (CheckDaTa(txtGiaVe.Text, txtGioToiThieu.Text, txtGioToiDa.Text, txtUuDai.Text) == false)
+                return;
+            
             // kiểm tra Trùng Tên
             blGiaVe = new BLGiaVe();
             if (blGiaVe.CheckNameTicket(txtMaGiaVe.Text.Trim(), txtTenGiaVe.Text.Trim(), ref err) == false)

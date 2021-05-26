@@ -120,3 +120,4 @@ C:\Users\Admin\Desktop\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreap
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.ChiTietPhieuThu.resources
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.QLPhieuThanhToan.resources
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.ThongTinCaNhan.resources
+C:\Users\Admin\Desktop\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.ThongTinCaNhan.resources
