@@ -171,5 +171,15 @@ namespace Quanlybaidoxe.Form_Layer
             this.pnlChucNang.Controls.Add(tkdt);
             tkdt.Show();
         }
+
+       
+        private void btnPhieuThu_Click(object sender, EventArgs e)
+        {
+            this.pnlChucNang.Controls.Clear();
+            QLPhieuThanhToan tkdt = new QLPhieuThanhToan();
+            tkdt.TopLevel = false;
+            this.pnlChucNang.Controls.Add(tkdt);
+            tkdt.Show();
+        }
     }
 }
