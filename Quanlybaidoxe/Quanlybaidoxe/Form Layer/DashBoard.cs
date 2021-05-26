@@ -181,5 +181,10 @@ namespace Quanlybaidoxe.Form_Layer
             this.pnlChucNang.Controls.Add(tkdt);
             tkdt.Show();
         }
+
+        private void DashBoard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            new DangNhap().Show();
+        }
     }
 }

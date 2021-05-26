@@ -123,7 +123,7 @@ namespace Quanlybaidoxe.BS_Layer
         public bool extensionCustomer(string MaKH, DateTime NgayHetHan, string MaXe, DateTime GioRa, DateTime GioVao, float TienThu, ref string err)
         {
 
-            string sqlString = "UPDATE KhachHang SET NgayHetHanVeThang = @NgayHetHan,  WHERE MaKH =@MaKH; INSERT INTO PhieuThanhToan (MaXe, GioRa, GioVao, TienThu, TraTheoThang, MaNV) VALUES(@MaXe, @GioRa, @GioVao, @TienThu, 1, @MaNV)";
+            string sqlString = "UPDATE KhachHang SET NgayHetHanVeThang = @NgayHetHan,  WHERE MaKH =@MaKH; INSERT INTO PhieuThanhToan (MaXe, GioRa, GioVao, TienThu, TraTheoThang, MaNV) VALUES(@MaXe, @GioRa, @GioVao, @TienThu, 1, @MaNV);UPDATE dbo.Xe SET DangKyThang = 1 WHERE MaXe = @MaXe";
             SqlParameter[] parameters = {
             new SqlParameter("@MaKH", MaKH),
             new SqlParameter("@NgayHetHan", NgayHetHan),
