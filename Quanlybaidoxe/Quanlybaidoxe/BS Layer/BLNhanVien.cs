@@ -107,8 +107,11 @@ namespace Quanlybaidoxe.BS_Layer
         {
             return " SELECT TaiKhoan.MaNV, TenNV, NgaySinh, GioiTinh, CMND, SDT, DiaChi, TaiKhoan, MatKhau, Luong FROM TaiKhoan, NhanVien WHERE TaiKhoan.MaNV = NhanVien.MaNV AND NhanVien.MaCV = 'CV02' AND "+LoaiTimKiem.Trim()+" LIKE N'%"+KyTuTimKiem.Trim()+"%'";
         }
-        
-        
+
+        public DataSet GetInfoStaff(string MaNV)
+        {
+            return dbNhanVien.ExecuteQueryDataSet("SELECT * FROM NhanVien WHERE MaNV ='"+MaNV+"'", CommandType.Text);
+        }
     }
 
 }
