@@ -107,7 +107,6 @@ D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcore
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.csproj.GenerateResource.cache
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.AssemblyInfoInputs.cache
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.AssemblyInfo.cs
-D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.csproj.CoreCompileInputs.cache
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.csproj.CopyComplete
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.dll
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.pdb
@@ -121,3 +120,6 @@ D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcore
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.QLPhieuThanhToan.resources
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.ThongTinCaNhan.resources
 C:\Users\Admin\Desktop\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.ThongTinCaNhan.resources
+D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Microsoft.ReportViewer.WinForms.dll
+D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.csproj.CoreCompileInputs.cache
+D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.ThongTinXe.resources

@@ -11,6 +11,15 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.ReportViewer.WinForms.v12/12.0.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.ReportViewer.WinForms.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.ReportViewer.WinForms.dll": {}
+        }
+      },
       "Microsoft.Win32.Registry/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -222,6 +231,18 @@
         "runtime.json",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Microsoft.ReportViewer.WinForms.v12/12.0.0.1": {
+      "sha512": "Yb2ri50WcIMPRiqYMlwLaDUcGqw5jCMgQHiLkZlK6kOdA4uqOtC+AtoPL0iwUuaIhNiyULbr/ez2NKvc5zwaWA==",
+      "type": "package",
+      "path": "microsoft.reportviewer.winforms.v12/12.0.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/Microsoft.ReportViewer.WinForms.dll",
+        "microsoft.reportviewer.winforms.v12.12.0.0.1.nupkg.sha512",
+        "microsoft.reportviewer.winforms.v12.nuspec"
       ]
     },
     "Microsoft.Win32.Registry/4.5.0": {
@@ -634,30 +655,30 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Microsoft.ReportViewer.WinForms.v12 >= 12.0.0.1",
       "System.Data.SqlClient >= 4.6.0",
       "System.Drawing.Common >= 5.0.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\dell\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj",
+      "projectUniqueName": "D:\\CongNghe PhanMem\\DoAn\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj",
       "projectName": "Quanlybaidoxe",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\obj\\",
+      "projectPath": "D:\\CongNghe PhanMem\\DoAn\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj",
+      "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+      "outputPath": "D:\\CongNghe PhanMem\\DoAn\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -668,7 +689,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -680,8 +700,11 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "Microsoft.ReportViewer.WinForms.v12": {
+            "target": "Package",
+            "version": "[12.0.0.1, )"
+          },
           "System.Data.SqlClient": {
             "target": "Package",
             "version": "[4.6.0, )"
@@ -709,8 +732,20 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.409\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.ReportViewer.WinForms.v12 12.0.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.ReportViewer.WinForms.v12",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

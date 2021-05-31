@@ -187,5 +187,15 @@ namespace Quanlybaidoxe.Form_Layer
             ThongTinCaNhan ThongTinCaNhan = new ThongTinCaNhan();
             ThongTinCaNhan.ShowDialog();
         }
+
+        private void btnThongTinXe_Click(object sender, EventArgs e)
+        {
+            this.pnlChucNang.Controls.Clear();
+            ThongTinXe ThongTinXe = new ThongTinXe();
+            ThongTinXe.TopLevel = false;
+            this.pnlChucNang.Controls.Add(ThongTinXe);
+            ThongTinXe.Show();
+
+        }
     }
 }

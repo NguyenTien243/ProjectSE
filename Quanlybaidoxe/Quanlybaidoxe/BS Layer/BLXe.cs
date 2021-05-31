@@ -84,5 +84,16 @@ namespace Quanlybaidoxe.BS_Layer
                 return true; //xe đang đỗ trong bãi
             return false;
         }
+
+        public DataSet GetInfoVehicleRegistered()
+        {
+            string GetInf = "SELECT Xe.MaXe, BienSo, TenXe, MauSac,  TenLoaiXe, TenKH FROM((KhachHang INNER JOIN Xe ON KhachHang.MaXe = Xe.MaXe) JOIN LoaiXe ON Xe.MaLoaiXe = LoaiXe.MaLoaiXe) WHERE DangKyThang = 1";
+            return dbXe.ExecuteQueryDataSet(GetInf, CommandType.Text);
+        }
+        public DataSet GetInfoVehicleNotRegisted()
+        {
+            string GetInf = "SELECT Xe.MaXe, BienSo, TenXe, MauSac,  TenLoaiXe FROM Xe JOIN LoaiXe ON Xe.MaLoaiXe = LoaiXe.MaLoaiXe WHERE DangKyThang = 0";
+            return dbXe.ExecuteQueryDataSet(GetInf, CommandType.Text);
+        }
     }
 }
