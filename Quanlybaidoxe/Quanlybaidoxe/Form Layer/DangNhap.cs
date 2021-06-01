@@ -56,7 +56,7 @@ namespace Quanlybaidoxe
         {
             bool check = true;
             string thongbaoloi = "";
-            if (txtTenDangNhap.Text.Trim().Length > 10)
+            if (txtTenDangNhap.Text.Trim().Length > 30)
             {
                 thongbaoloi += "\nTên đăng nhập tối đa 30 ký tự!!!";
                 check = false;
