@@ -12,6 +12,7 @@ namespace Quanlybaidoxe
         public static string MaKH;
         public static string MaNV;
         public static float PriceOfRegister;
+        public static bool DkyXe = false;
 
         public static bool sharevarVeThang = false;
         public static string sharevarMaNV = "";

@@ -110,15 +110,20 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             {                
                 if (check == true)
                 {
-                    if (blXe.AddVehicle(txtMaXe.Text, txtBienSo.Text, txtTenXe.Text, txtMauSac.Text, blXe.GetVechicleId(cbLoaiXe.Text).Tables[0].Rows[0][0].ToString(), ref err) == true)
+                    if (blXe.AddVehicle(txtMaXe.Text, txtBienSo.Text, txtTenXe.Text, txtMauSac.Text, blXe.GetVehicleId(cbLoaiXe.Text).Tables[0].Rows[0][0].ToString(), ref err) == true)
                     {
                         SHAREVAR.maxe = txtMaXe.Text;
-                        SHAREVAR.maloaixe = blXe.GetVechicleId(cbLoaiXe.Text).Tables[0].Rows[0][0].ToString();
+                        SHAREVAR.maloaixe = blXe.GetVehicleId(cbLoaiXe.Text).Tables[0].Rows[0][0].ToString();
+                        SHAREVAR.DkyXe = true;
                         this.Dispose();
                         this.pnlDKyXe.Controls.Clear();
 
                     }
-                    else MessageBox.Show("Có lỗi, không thể thêm được!");
+                    else
+                    {
+                        MessageBox.Show("Có lỗi, không thể thêm được!");
+                        SHAREVAR.DkyXe = false;
+                    }
 
                 }
             }

@@ -290,7 +290,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 thongbaoloi += "\nMã xe tối đa 10 ký tự!!!";
                 check = false;
             }
-            
+
             if (check == false)
             {
                 MessageBox.Show(thongbaoloi);
@@ -318,7 +318,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 check = false;
                 return;
             }
-            
+
             // kiểm tra Trùng CMND
             blKhachHang = new BLKhachHang();
 
@@ -446,12 +446,24 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 btnLuu.Enabled = true;
                 return;
             }
+            if (SHAREVAR.DkyXe == true)
+            {
+                BLXe blXe = new BLXe();
+                try
+                {
+                    blXe.DeleteVehicle(SHAREVAR.maxe);
+                    SHAREVAR.DkyXe = false;
+                    SHAREVAR.maxe = null;
+                    SHAREVAR.maloaixe = null;
+                }
+                catch { MessageBox.Show("Chưa thể hủy thông tin xe đã đăng ký"); };
+            }
             ResetValues();
 
             //if (pnlQuanLyKH.Controls.Contains(frmDkyXe) == true)
             //{
             //    pnlQuanLyKH.Dispose();
-                
+
             //    QLKhachHang frmQLKH = new QLKhachHang();
             //    frmQLKH.TopLevel = false;
             //    this.pnlQuanLyKH.Controls.Add(frmQLKH);
@@ -476,9 +488,9 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             dgvQLKhachHang_CellClick(null, null);
         }
 
+
         private void txtMaKH_Validating(object sender, CancelEventArgs e)
         {
-
             if (blKhachHang.CheckIdCustomer(txtMaKH.Text).Tables[0].Rows.Count != 0)
             {
                 errorProvider1.SetError(txtMaKH, "Mã khách hàng này đã tồn tại");
@@ -489,7 +501,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 errorProvider1.SetError(txtMaKH, null);
                 check = true;
             }
-
         }
 
         private void dateTimePickerKH_Validating(object sender, CancelEventArgs e)
@@ -531,8 +542,8 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         {
             double temp;
             string tam = txtSDT.Text.Trim();
-            if(tam.Length > 0)
-            tam.Substring(0, 1);//Lấy kí tự đầu của chuỗi
+            if (tam.Length > 0)
+                tam.Substring(0, 1);//Lấy kí tự đầu của chuỗi
             if (txtSDT.Text.Trim().Length != 10)
             {
                 errorProvider1.SetError(txtSDT, "Số điện thoại gồm 10 số");
@@ -635,3 +646,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
         }
     }
 }
+
+       
+   

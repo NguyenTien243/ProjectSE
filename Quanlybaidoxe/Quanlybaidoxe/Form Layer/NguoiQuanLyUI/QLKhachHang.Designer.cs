@@ -417,7 +417,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnXoa.TabIndex = 21;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -482,7 +481,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.btnTim.TabIndex = 14;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // cboTimKiem
             // 
@@ -496,7 +494,6 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             this.cboTimKiem.Name = "cboTimKiem";
             this.cboTimKiem.Size = new System.Drawing.Size(222, 33);
             this.cboTimKiem.TabIndex = 12;
-            this.cboTimKiem.SelectedIndexChanged += new System.EventHandler(this.cboTimKiem_SelectedIndexChanged);
             this.cboTimKiem.Validating += new System.ComponentModel.CancelEventHandler(this.cboTimKiem_Validating);
             // 
             // label8

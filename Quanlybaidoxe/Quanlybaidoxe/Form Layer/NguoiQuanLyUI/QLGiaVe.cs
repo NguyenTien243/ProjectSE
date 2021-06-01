@@ -190,7 +190,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                         {
                             MessageBox.Show("Giá vé này đã tồn tại, hãy nhập mã giá vé khác");
                         }
-                        else if (blGiaVe.AddTicket(txtMaGiaVe.Text, txtTenGiaVe.Text, float.Parse(txtGiaVe.Text), blXe.GetVechicleId(cboLoaiXe.Text).Tables[0].Rows[0][0].ToString(), txtGioToiThieu.Text, txtGioToiDa.Text, txtUuDai.Text, VeThang, int.Parse(txtSoThang.Text), ref err) == true)
+                        else if (blGiaVe.AddTicket(txtMaGiaVe.Text, txtTenGiaVe.Text, float.Parse(txtGiaVe.Text), blXe.GetVehicleId(cboLoaiXe.Text).Tables[0].Rows[0][0].ToString(), txtGioToiThieu.Text, txtGioToiDa.Text, txtUuDai.Text, VeThang, int.Parse(txtSoThang.Text), ref err) == true)
                         {
 
                             MessageBox.Show("Đã thêm giá vé mới");
@@ -206,7 +206,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             else
             {
                 blGiaVe = new BLGiaVe();
-                string maloaive = blXe.GetVechicleId(cboLoaiXe.Text).Tables[0].Rows[0][0].ToString();
+                string maloaive = blXe.GetVehicleId(cboLoaiXe.Text).Tables[0].Rows[0][0].ToString();
                 int r = dgvGiaVe.CurrentCell.RowIndex;
                 string MaViTri = dgvGiaVe.Rows[r].Cells[0].Value.ToString();
                 blGiaVe = new BLGiaVe();

@@ -31,10 +31,15 @@ namespace Quanlybaidoxe.BS_Layer
 
             return dbXe.MyExecuteNonQuery(sqlString, parameters, CommandType.Text, ref err);
         }
-        public DataSet GetVechicleId(string TenLoaiXe)
+        public DataSet GetVehicleId(string TenLoaiXe)
         {
             string GetID = "SELECT MaLoaiXe FROM LoaiXe WHERE TenLoaiXe = '" + TenLoaiXe + "'";
             return dbXe.ExecuteQueryDataSet(GetID, CommandType.Text);
+        }
+        public DataSet DeleteVehicle(string MaXe)
+        {
+            string DeleteVehicle = "DELETE FROM Xe WHERE MaXe ='" + MaXe + "'";
+            return dbXe.ExecuteQueryDataSet(DeleteVehicle, CommandType.Text);
         }
         public DataSet GetVehicleCategory()
         {
