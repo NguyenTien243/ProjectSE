@@ -123,3 +123,5 @@ C:\Users\Admin\Desktop\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreap
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Microsoft.ReportViewer.WinForms.dll
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.csproj.CoreCompileInputs.cache
 D:\CongNghe PhanMem\DoAn\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.ThongTinXe.resources
+C:\Users\Admin\Desktop\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\bin\Debug\netcoreapp3.1\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Admin\Desktop\ProjectSE\Quanlybaidoxe\Quanlybaidoxe\obj\Debug\netcoreapp3.1\Quanlybaidoxe.Form_Layer.NguoiQuanLyUI.ThongTinXe.resources

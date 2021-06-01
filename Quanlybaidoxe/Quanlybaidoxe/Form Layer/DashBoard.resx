@@ -57,7 +57,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+  <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
   <data name="btnPhieuThu.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -81,7 +81,7 @@
   <data name="btnTheGuiXe.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAcJJREFUWEfFlz1KA0EYhoMEEckZcpRgIcEDWIiIhVjmAPaewEIsxCKIiIhYSBBL
+        vAAADrwBlbxySQAAAcJJREFUWEfFlz1KA0EYhoMEEckZcpRgIcEDWIiIhVjmAPaewEIsxCKIiIhYSBBL
         T2ElqUSsxELEQuLzbr6N4/5nnVkfeGGz+808yZD52ZZPJpNJmxyRMenZ7WYw+QWJeSdr9jgsiCS/kjXB
         G1m2snAgOY90aY6tJAwI9Mu7ZFu2DLas1D90LvkleSZ35IN8EZcdK/cLHcdylx2yMb2cMbIm/qDTLLl4
         IifTy18MrOkM7nXscj5omCd32Sfr08sZt2SX6L+iL6nZ0bduq0GDKnKhkdgjyf9DEq0TK9Z9MRRWlbsM
