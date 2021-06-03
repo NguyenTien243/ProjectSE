@@ -116,7 +116,6 @@ namespace Quanlybaidoxe.Form_Layer
             this.btnPhieuThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPhieuThu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPhieuThu.ForeColor = System.Drawing.Color.White;
-            this.btnPhieuThu.Image = ((System.Drawing.Image)(resources.GetObject("btnPhieuThu.Image")));
             this.btnPhieuThu.Location = new System.Drawing.Point(0, 699);
             this.btnPhieuThu.Name = "btnPhieuThu";
             this.btnPhieuThu.Size = new System.Drawing.Size(235, 60);

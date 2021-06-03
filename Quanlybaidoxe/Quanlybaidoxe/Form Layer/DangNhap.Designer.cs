@@ -34,7 +34,6 @@ namespace Quanlybaidoxe
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDangNhap = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.cboxShowPass = new System.Windows.Forms.CheckBox();
@@ -89,17 +88,6 @@ namespace Quanlybaidoxe
             this.btnDangNhap.Text = "ĐĂNG NHẬP";
             this.btnDangNhap.UseVisualStyleBackColor = false;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(161, 602);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 25);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Quên mật khẩu?";
             // 
             // txtTenDangNhap
             // 
@@ -192,7 +180,6 @@ namespace Quanlybaidoxe
             this.Controls.Add(this.cboxShowPass);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtTenDangNhap);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -219,7 +206,6 @@ namespace Quanlybaidoxe
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnDangNhap;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTenDangNhap;
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.CheckBox cboxShowPass;
