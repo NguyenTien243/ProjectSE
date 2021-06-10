@@ -661,24 +661,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\dell\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj",
+      "projectUniqueName": "D:\\CongNghe PhanMem\\DoAn\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj",
       "projectName": "Quanlybaidoxe",
-      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\obj\\",
+      "projectPath": "D:\\CongNghe PhanMem\\DoAn\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\Quanlybaidoxe.csproj",
+      "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+      "outputPath": "D:\\CongNghe PhanMem\\DoAn\\ProjectSE\\Quanlybaidoxe\\Quanlybaidoxe\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -690,7 +689,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -702,7 +700,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.ReportViewer.WinForms.v12": {
             "target": "Package",
@@ -735,7 +732,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.409\\RuntimeIdentifierGraph.json"
       }
     }
   },

@@ -16,7 +16,7 @@ namespace Quanlybaidoxe.BS_Layer
         }
         public DataSet CountXe()
         {
-            return dbXe.ExecuteQueryDataSet("Select COUNT(Xe.MaXe) From Xe ", CommandType.Text);
+            return dbXe.ExecuteQueryDataSet("SELECT COUNT(MaXe) FROM ViTri WHERE MaXe IS NOT NULL", CommandType.Text);
         }
         public bool AddVehicle(string MaXe, string BienSo, string TenXe, string MauSac, string MaLoaiXe, ref string err)
         {
