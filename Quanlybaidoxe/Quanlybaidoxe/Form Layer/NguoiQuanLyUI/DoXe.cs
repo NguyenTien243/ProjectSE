@@ -181,6 +181,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
             btnXuatBen.Enabled = false;
             btnHuy.Enabled = true;
             btnLuu.Enabled = true;
+            txtGioVao.Enabled = false;
             ResetValue();
             pnlQuanLyDoXe.Enabled = true;
             dgvQLDX.Enabled = false;
@@ -520,6 +521,7 @@ namespace Quanlybaidoxe.Form_Layer.NguoiQuanLyUI
                 if (blDoXe.VehicleGoIn(txtBienSo.Text, txtMaXe.Text, txtTenXe.Text, txtMauSac.Text, DateTime.Now, maloaixe, cboTheGui.SelectedItem.ToString(), cboViTri.SelectedItem.ToString(), ref err) == true)
                 {
                     MessageBox.Show("Thêm xe vào bãi thành công");
+                    txtGioVao.Enabled = true;
                     LoadData();
                 }
                 else
