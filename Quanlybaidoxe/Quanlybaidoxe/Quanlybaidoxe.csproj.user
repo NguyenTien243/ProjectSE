@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Form Layer\DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form Layer\DashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\ChiTietPhieuThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\QLPhieuThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\ThongTinXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\ThongTinCaNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\ViTriDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\DoXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\FormDKyXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\QLGiaVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\QLKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\QLNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\QLTheGuiXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\ThanhToanXeRa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\ThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form Layer\NguoiQuanLyUI\ThongKeDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
